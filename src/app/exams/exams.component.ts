@@ -16,4 +16,5 @@ export class ExamsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  
 }
