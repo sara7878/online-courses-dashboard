@@ -17,6 +17,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { ExamsComponent } from './exams/exams.component';
 import { QuestionsComponent } from './questions/questions.component';
+import { AddCategoryComponent } from './Forms/add-category/add-category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TestComponent } from './Forms/test/test.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,12 +38,16 @@ import { QuestionsComponent } from './questions/questions.component';
     ContactUsComponent,
     FeedbacksComponent,
     ExamsComponent,
-    QuestionsComponent
+    QuestionsComponent,
+    AddCategoryComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

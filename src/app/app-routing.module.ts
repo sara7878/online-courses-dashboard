@@ -7,6 +7,8 @@ import { CourseContentComponent } from './course-content/course-content.componen
 import { CoursesComponent } from './courses/courses.component';
 import { ExamsComponent } from './exams/exams.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
+import { AddCategoryComponent } from './Forms/add-category/add-category.component';
+import { TestComponent } from './Forms/test/test.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { StudentsComponent } from './students/students.component';
@@ -25,6 +27,9 @@ const routes: Routes = [
   {path:'feedbacks' , component : FeedbacksComponent} ,
   {path:'questions' , component : QuestionsComponent} ,
   {path:'exams' , component : ExamsComponent} ,
+  {path:'add-category' , component : AddCategoryComponent} ,
+  {path:'test' , component : TestComponent} ,
+
 ];
 
 @NgModule({
