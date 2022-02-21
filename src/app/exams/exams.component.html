@@ -1,0 +1,44 @@
+
+    <div class="col-lg-12 grid-margin stretch-card " >
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Exams Table</h4>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr >
+                    <th> ID</th>
+                    <th> Course Name</th>
+                    <th> Max score</th>
+                    <th> Show Exam</th>
+                    <th> Update</th>
+                    <th> Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let exam of ExamArray; let i=index" >
+                    <td>{{exam.Id}}</td>
+                    <td>{{exam.course_id?.name}}</td>
+                    <td>100</td>
+                    <td>                     
+                        <button type="button" class="btn btn-success"> Show </button>
+                    </td>
+                    <td>
+                      <button type="button" class="btn btn-warning"> Update </button>
+                    </td>
+                    <td>                     
+                     <button type="button" class="btn btn-inverse-danger"> Delete </button>
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course </button>
+            </div>
+          </div>          
+    
+        </div>
+      </div>
+  
+  
+  

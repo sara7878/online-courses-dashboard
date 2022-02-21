@@ -1,0 +1,42 @@
+
+    <div class="col-lg-12 grid-margin stretch-card " >
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Feedback Table</h4>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr >
+                    <th> ID</th>
+                    <th> Student Name</th>
+                    <th> Course Name</th>
+                    <th> Update</th>
+                    <th> Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let feedback of FeedbackArray; let i=index" >
+                    <td>{{feedback.id}}</td>
+                    <td>{{feedback.student_id?.fname}}</td>
+                    <td>{{feedback.course_id?.name}}</td>
+
+                    <td>
+                      <button type="button" class="btn btn-warning "> Update </button>
+                      
+                    </td>
+                    <td>                     
+                     <button type="button" class="btn btn-inverse-danger "> Delete </button>
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Feedback </button>
+            </div>
+          </div>          
+    
+        </div>
+      </div>
+  
+  
+  

@@ -1,0 +1,40 @@
+
+    <div class="col-lg-12 grid-margin stretch-card " >
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Course Content Table</h4>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr >
+                    <th> ID</th>
+                    <th> Course Name</th>
+                    <th> Content</th>
+                    <th> Update</th>
+                    <th> Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let course of CourseContentArray; let i=index" >
+                    <td>{{course.Id}}</td>
+                    <td>{{course.course_id?.name}}</td>
+                    <td>{{course.content}}</td>
+                    <td>
+                      <button type="button" class="btn btn-warning "> Update </button>
+                    </td>
+                    <td>                     
+                     <button type="button" class="btn btn-inverse-danger "> Delete </button>
+                    </td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course content</button>
+            </div>
+          </div>          
+    
+        </div>
+      </div>
+  
+  
+  
