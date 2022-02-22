@@ -12,6 +12,7 @@ export class ExamsComponent implements OnInit {
   ExamArray:Exam[]=[
     // {Id:1,course_id:{name:"web development"},max_score:10}
     // {Id:1,course_id:{name:"web development",Id:1},max_score:10}
+    // {Id:1,course_id:{name:"web development",id:1},max_score:10}
   ]
 
   ngOnInit(): void {

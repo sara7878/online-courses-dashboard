@@ -21,7 +21,7 @@ export class QuestionService {
 
 
    CreateQestion(data: Question): Observable<{data:Question[],status:boolean,error:any}>{
-    return this.httpClient.post<{data:Question[],status:boolean,error:any}>(`${environment.baseUrl}questions`,JSON.stringify(data));
+    return this.httpClient.post<{data:Question[],status:boolean,error:any}>(`${environment.baseUrl}questions`,data);
   }
 
 }
