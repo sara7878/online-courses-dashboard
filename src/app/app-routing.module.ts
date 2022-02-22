@@ -8,8 +8,10 @@ import { CoursesComponent } from './courses/courses.component';
 import { ExamsComponent } from './exams/exams.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './Forms/add-category/add-category.component';
+import { AddCourseComponent } from './Forms/add-course/add-course.component';
 import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { TestComponent } from './Forms/test/test.component';
+import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
@@ -32,6 +34,8 @@ const routes: Routes = [
   {path:'add-category' , component : AddCategoryComponent} ,
   {path:'add-question' , component : AddQuestionComponent},
   {path:'update-question' , component : UpdateQuestionComponent},
+  {path:'add-course' , component : AddCourseComponent} ,
+  {path:'update-course' , component : UpdateCourseComponent} ,
   {path:'test' , component : TestComponent} ,
 
 ];

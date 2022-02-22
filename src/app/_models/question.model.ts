@@ -1,3 +1,5 @@
+import { Exam } from "./exam.model";
+
 export interface Question{
     id ?:number,
     header ?:string,
@@ -7,6 +9,5 @@ export interface Question{
     choice_4 ?:string,
     answer?:string,
     score?:number,
-    exam_id?:[]
 
 }

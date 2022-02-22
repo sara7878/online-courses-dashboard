@@ -7,7 +7,7 @@
       <form class="forms-sample" #questionForm=ngForm>
         <div class="form-group">
           <label for="exampleInputName1">header :</label>
-          <input #headerNameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter Question " name="header" [value]=""/>
+          <input #headerNameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter Question " name="header" [(ngModel)]="QuestionArr[0].header" />
               <span *ngIf="headerNameInput.touched && headerNameInput.invalid && headerNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
               <span *ngIf="headerNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
               <span *ngIf="headerNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -17,7 +17,7 @@
 
           <div class="form-group">
             <label for="exampleInputName1">choice_1  :</label>
-            <input #choice_1NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_1 " name="choice_1" />
+            <input #choice_1NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_1 " name="choice_1" [(ngModel)]="QuestionArr[0].choice_1" />
                 <span *ngIf="choice_1NameInput.touched && choice_1NameInput.invalid && choice_1NameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                 <span *ngIf="choice_1NameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
                 <span *ngIf="choice_1NameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -27,7 +27,7 @@
 
             <div class="form-group">
               <label for="exampleInputName1">choice_2  :</label>
-              <input #choice_2NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_2 " name="choice_2" />
+              <input #choice_2NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_2 " name="choice_2"  [(ngModel)]="QuestionArr[0].choice_2" />
                   <span *ngIf="choice_2NameInput.touched && choice_2NameInput.invalid && choice_2NameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                   <span *ngIf="choice_2NameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
                   <span *ngIf="choice_2NameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -37,7 +37,7 @@
 
               <div class="form-group">
                 <label for="exampleInputName1">choice_3  :</label>
-                <input #choice_3NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_3 " name="choice_3" />
+                <input #choice_3NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_3 " name="choice_3"  [(ngModel)]="QuestionArr[0].choice_3" />
                     <span *ngIf="choice_3NameInput.touched && choice_3NameInput.invalid && choice_3NameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                     <span *ngIf="choice_3NameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
                     <span *ngIf="choice_3NameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -46,7 +46,7 @@
 
                 <div class="form-group">
                   <label for="exampleInputName1">choice_4  :</label>
-                  <input #choice_4NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_4" name="choice_4" />
+                  <input #choice_4NameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter choice_4" name="choice_4"  [(ngModel)]="QuestionArr[0].choice_4" />
                       <span *ngIf="choice_4NameInput.touched && choice_4NameInput.invalid && choice_4NameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                       <span *ngIf="choice_4NameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
                       <span *ngIf="choice_4NameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -55,7 +55,7 @@
 
                   <div class="form-group">
                     <label for="exampleInputName1">answer  :</label>
-                    <input #answerNameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter answer" name="answer" />
+                    <input #answerNameInput=ngModel ngModel required minlength="3" maxlength="191"  type="text" class="form-control" id="exampleInputName1" placeholder="Enter answer" name="answer" [(ngModel)]="QuestionArr[0].answer" />
                         <span *ngIf="answerNameInput.touched && answerNameInput.invalid && answerNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                         <span *ngIf="answerNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
                         <span *ngIf="answerNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -64,7 +64,7 @@
 
                     <div class="form-group">
                       <label for="exampleInputName1">score  :</label>
-                      <input #scoreNameInput=ngModel ngModel required maxlength="20"  type="number" class="form-control" id="exampleInputName1" placeholder="Enter score" name="score" />
+                      <input #scoreNameInput=ngModel ngModel required maxlength="20"  type="number" class="form-control" id="exampleInputName1" placeholder="Enter score" name="score" [(ngModel)]="QuestionArr[0].score" />
                           <span *ngIf="scoreNameInput.touched && scoreNameInput.invalid && scoreNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                       </div>
 

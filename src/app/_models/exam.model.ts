@@ -5,6 +5,6 @@ export interface Exam{
     Id ?:number,
     name ?:string,
     course_id ?:Course,
-    questions_id ?:Question,
+    //questions_id ?:Question,
     max_score ?:number
 }

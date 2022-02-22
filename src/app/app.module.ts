@@ -23,6 +23,9 @@ import { TestComponent } from './Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
+import { AddCourseComponent } from './Forms/add-course/add-course.component';
+import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { UpdateQuestionComponent } from './Forms/update-question/update-question
     AddCategoryComponent,
     TestComponent,
     AddQuestionComponent,
-    UpdateQuestionComponent
+    UpdateQuestionComponent,
+    AddAdminComponent,
+    AddCourseComponent,
+    UpdateCourseComponent
   ],
   imports: [
     BrowserModule,
