@@ -33,11 +33,11 @@
           <input
             #contentNameInput="ngModel"
             ngModel
-            [ngModel]="this.CourseContentArray[0].name"
+            [ngModel]="this.courseContent.name"
             required
             minlength="3"
             maxlength="20"
-            pattern="[A-Za-z]+"
+            pattern="^[a-zA-Z0-9 _.-]*$"
             type="text"
             class="form-control"
             id="exampleInputName2"
@@ -74,11 +74,11 @@
           <input
             #courseContentInput="ngModel"
             ngModel
-            [ngModel]="this.CourseContentArray[0].content"
+            [ngModel]="this.courseContent.content"
             required
             minlength="3"
             maxlength="255"
-            pattern="[A-Za-z]+"
+            pattern="^[a-zA-Z0-9 _.-]*$"
             type="text"
             class="form-control"
             id="exampleInputName3"
@@ -115,10 +115,12 @@
           type="submit"
           class="btn btn-primary mr-2"
           [disabled]="!courseContentForm.valid"
+          (click)="updateCourseContent(this.courseContent.id!,courseContentForm)"
+          routerLink="/contents"
         >
           Edit
         </button>
-        <button class="btn btn-light">Cancel</button>
+        <button class="btn btn-light" (click)="resetForm(courseContentForm)">Cancel</button>
       </form>
     </div>
   </div>

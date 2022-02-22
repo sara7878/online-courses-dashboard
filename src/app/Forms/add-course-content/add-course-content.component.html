@@ -1,7 +1,7 @@
 <div class="col-12 grid-margin stretch-card text-primary ">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title text-center ">Add New Course Content</h4>
+        <h4 class="card-title text-center">Add New Course Content</h4>
 
 
         <form class="forms-sample" #courseContentForm=ngForm>
@@ -35,7 +35,7 @@
 
 
 
-          <button type="submit" class="btn btn-primary mr-2" [disabled]="!courseContentForm.valid" (click)="addCourseContent(courseContentForm)"> Submit </button>
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="!courseContentForm.valid" routerLink="/contents" (click)="addCourseContent(courseContentForm)"> Submit </button>
           <button class="btn btn-light" (click)="resetForm(courseContentForm)">Cancel</button>
         </form>
       </div>

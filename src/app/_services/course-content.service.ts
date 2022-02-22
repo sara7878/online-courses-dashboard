@@ -39,8 +39,20 @@ export class CourseContentService {
 
   addCourseContent(newContent : CourseContent): Observable<CourseContent> {
     console.log(newContent);
-    
      return this.httpClient.post<CourseContent>(`${environment.baseUrl}Course_content`,newContent);
+  }
+
+  editCourseContent(id:number,updatedContent:CourseContent): Observable<CourseContent> {
+    console.log(id);
+    console.log(updatedContent);
+    
+    return this.httpClient.put<CourseContent>(`${environment.baseUrl}Course_content/${id}`,updatedContent);
+  }
+
+  deleteCourseContent(id:number){
+    console.log(id);
+
+    return this.httpClient.delete<CourseContent>(`${environment.baseUrl}Course_content/${id}`);
   }
 
 }
