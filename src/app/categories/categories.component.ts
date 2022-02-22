@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Category } from '../_models/category.model';
+import { Category, Categoryobj } from '../_models/category.model';
 import { CategororyService } from '../_services/categorory.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class CategoriesComponent implements OnInit {
 
   constructor(private categoryService:CategororyService) { }
 
-  CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development",created_at:"19/3",updated_at:"2147"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development",created_at:"19/3",updated_at:"2147"}];
+  // CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development",created_at:"19/3",updated_at:"2147"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development",created_at:"19/3",updated_at:"2147"}];
   catarray!:Category[];
   ngOnInit(): void {
   this.getAll();
@@ -20,11 +20,14 @@ export class CategoriesComponent implements OnInit {
   getAll(){
     this.categoryService.getcategories().subscribe(
       (res)=>{
-        this.catarray=res;
+        this.catarray=res.data;
+        console.log(res);
+        
       },
       (err)=>{
         console.log(err);
       },
       ()=>{}
     );}
+    
 }

@@ -8,6 +8,8 @@ import { CoursesComponent } from './courses/courses.component';
 import { ExamsComponent } from './exams/exams.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './Forms/add-category/add-category.component';
+import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { AddCourseComponent } from './Forms/add-course/add-course.component';
 import { UpdateCategoryComponent } from './Forms/update-category/update-category.component';
 import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
@@ -40,6 +42,15 @@ const routes: Routes = [
 
   {path:'add-exam' , component : AddExamComponent} ,
   {path:'update-exam' , component : UpdateExamComponent} ,
+
+  {path:'add-course-content' , component : AddCourseContentComponent} ,
+  {path:'edit-course-content' , component : EditCourseContentComponent} ,
+  {path:'add-course' , component : AddCourseComponent} ,
+  {path:'update-course' , component : UpdateCourseComponent} ,
+  {path:'add-exam' , component : AddExamComponent} ,
+  {path:'update-exam' , component : UpdateExamComponent} ,
+
+
 
   {path:'test' , component : TestComponent} ,
 

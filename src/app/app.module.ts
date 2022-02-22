@@ -27,6 +27,9 @@ import { UpdateCourseComponent } from './Forms/update-course/update-course.compo
 import { UpdateCategoryComponent } from './Forms/update-category/update-category.component';
 import { AddExamComponent } from './Forms/add-exam/add-exam.component';
 import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
+import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +55,9 @@ import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
     UpdateCourseComponent,
     UpdateCategoryComponent,
     AddExamComponent,
-    UpdateExamComponent
+    UpdateExamComponent,
+    AddCourseContentComponent,
+    EditCourseContentComponent
   ],
   imports: [
     BrowserModule,
