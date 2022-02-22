@@ -21,6 +21,8 @@ import { AddCategoryComponent } from './Forms/add-category/add-category.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddExamComponent } from './Forms/add-exam/add-exam.component';
+import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { HttpClientModule } from '@angular/common/http';
     ExamsComponent,
     QuestionsComponent,
     AddCategoryComponent,
-    TestComponent
+    TestComponent,
+    AddExamComponent,
+    UpdateExamComponent
   ],
   imports: [
     BrowserModule,
