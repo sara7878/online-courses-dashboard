@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../_models/category.model';
+import { CategororyService } from '../_services/categorory.service';
 
 @Component({
   selector: 'app-categories',
@@ -8,10 +9,22 @@ import { Category } from '../_models/category.model';
 })
 export class CategoriesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private categoryService:CategororyService) { }
 
-  CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development"}];
+  CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development",created_at:"19/3",updated_at:"2147"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development",created_at:"19/3",updated_at:"2147"}];
+  catarray!:Category[];
   ngOnInit(): void {
+  this.getAll();
   }
 
+  getAll(){
+    this.categoryService.getcategories().subscribe(
+      (res)=>{
+        this.catarray=res;
+      },
+      (err)=>{
+        console.log(err);
+      },
+      ()=>{}
+    );}
 }

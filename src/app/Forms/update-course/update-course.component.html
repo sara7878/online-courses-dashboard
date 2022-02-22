@@ -39,9 +39,9 @@
 
   <div class="form-group">
     <label for="">Category</label>
-    <select ngModel class="form-control" name="Category" id="" >
-        <option *ngFor="let category of CourseArray ;let i=index" [selected]="category === CourseArray[0].category_id" >
-          <!-- <option *ngFor="let category of CourseArray; index as i"  [value]="category.category_id"> -->
+    <select formControlName="fieldName" ngModel class="form-control" name="Category" id="" >
+        <!-- <option value="7">{{CourseArray[0].category_id?.name}}</option> -->
+          <option *ngFor="let category of CourseArray; index as i"  [value]="category.category_id" >
           {{category.category_id?.name}}
         </option>          
       </select>
