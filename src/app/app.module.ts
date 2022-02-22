@@ -21,6 +21,9 @@ import { AddCategoryComponent } from './Forms/add-category/add-category.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
+import { AddCourseComponent } from './Forms/add-course/add-course.component';
+import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,10 @@ import { HttpClientModule } from '@angular/common/http';
     ExamsComponent,
     QuestionsComponent,
     AddCategoryComponent,
-    TestComponent
+    TestComponent,
+    AddAdminComponent,
+    AddCourseComponent,
+    UpdateCourseComponent
   ],
   imports: [
     BrowserModule,
