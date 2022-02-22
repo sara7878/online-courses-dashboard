@@ -2,8 +2,8 @@ import { Category } from "./category.model"
 import { Trainer } from "./trainer.model"
 
 export interface Course{
-    Id?:number,
-    name ?:string,
+    Id:number,
+    name?:string,
     img?:string,
     trainer_id  ?:Trainer, 
     category_id ?: Category,

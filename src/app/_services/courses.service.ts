@@ -14,8 +14,8 @@ import { Observable } from "rxjs";
 export class CoursesService {
 
   constructor(private httpClient: HttpClient) { }
-  getAllCourses(): Observable<{course:Course[]}>{
-    return this.httpClient.get<{course:Course[]}>(`${environment.baseUrl}courses`)
+  getAllCourses(): Observable<Course[]>{
+    return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
    
  
      

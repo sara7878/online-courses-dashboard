@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Contactus } from '../_models/contactus.model';
+import { ContactUsService } from '../_services/contact-us.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -8,13 +9,31 @@ import { Contactus } from '../_models/contactus.model';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private contactUS: ContactUsService) { }
 
-  ContactusArray:Contactus[]=[
-    {id:1,email:"hbmn",name:"dfg",subject:"njnk",message:"hbkj"}
+  ContactusArray!:Contactus[]
+   
 
-  ]
+  
   ngOnInit(): void {
+    this.getAllcontacts();
   }
 
+
+
+
+
+  getAllcontacts()
+ {
+  this.contactUS.getAllContacs().subscribe(
+    (res)=>{
+      this.ContactusArray=res;
+      console.log(this.ContactusArray)}, 
+      (err)=>{
+        console.log("cant load data from contact us")
+      }
+
+  )
+
+ }
 }

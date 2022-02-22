@@ -3,7 +3,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Course Content Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Course content</button>
+            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/add-course-content"> Add New Course content</button>
 
             <div class="table-responsive">
               <table class="table table-striped">
@@ -17,12 +17,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let course of CourseContentArray; let i=index" >
-                    <td>{{course.Id}}</td>
-                    <td>{{course.course_id?.name}}</td>
+                  <tr *ngFor="let course of coursesContentsArr; let i=index" >
+                    <td>{{course.id}}</td>
+                    <td>{{course.name}}</td>
                     <td>{{course.content}}</td>
                     <td>
-                      <button type="button" class="btn btn-warning "> Update </button>
+                      <button type="button" class="btn btn-warning " routerLink="/edit-course-content"> Update </button>
                     </td>
                     <td>                     
                      <button type="button" class="btn btn-inverse-danger "> Delete </button>

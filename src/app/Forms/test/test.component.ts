@@ -74,7 +74,7 @@ export class TestComponent implements OnInit {
    */
   submit(){
     console.log(this.myForm.value);
-    this.http.post('http://localhost:8001/upload.php', this.myForm.value)
+    this.http.post('http://localhost:8002/upload.php', this.myForm.value)
       .subscribe(res => {
         console.log(res);
         alert('Uploaded Successfully.');

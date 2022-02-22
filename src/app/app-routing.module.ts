@@ -8,13 +8,17 @@ import { CoursesComponent } from './courses/courses.component';
 import { ExamsComponent } from './exams/exams.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './Forms/add-category/add-category.component';
-import { AddExamComponent } from './Forms/add-exam/add-exam.component';
+import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
+import { AddCourseComponent } from './Forms/add-course/add-course.component';
 import { TestComponent } from './Forms/test/test.component';
-import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
+import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { StudentsComponent } from './students/students.component';
 import { TrainersComponent } from './trainers/trainers.component';
+import { AddExamComponent } from './Forms/add-exam/add-exam.component';
+import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
 
 const routes: Routes = [
   {path:'home' , component : StatisticsComponent} ,
@@ -30,6 +34,10 @@ const routes: Routes = [
   {path:'questions' , component : QuestionsComponent} ,
   {path:'exams' , component : ExamsComponent} ,
   {path:'add-category' , component : AddCategoryComponent} ,
+  {path:'add-course-content' , component : AddCourseContentComponent} ,
+  {path:'edit-course-content' , component : EditCourseContentComponent} ,
+  {path:'add-course' , component : AddCourseComponent} ,
+  {path:'update-course' , component : UpdateCourseComponent} ,
   {path:'add-exam' , component : AddExamComponent} ,
   {path:'update-exam' , component : UpdateExamComponent} ,
 

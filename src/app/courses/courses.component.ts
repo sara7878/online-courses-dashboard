@@ -25,7 +25,7 @@ export class CoursesComponent implements OnInit {
  {
   this.courseService.getAllCourses().subscribe(
     (res)=>{
-      this.Arr=res.course;
+      this.Arr=res;
       console.log(this.Arr)}, 
       (err)=>{
         console.log("cant load data")
