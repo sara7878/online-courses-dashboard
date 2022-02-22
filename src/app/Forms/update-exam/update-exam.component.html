@@ -21,14 +21,14 @@
                    
                 </div>
 
-            
+
                 <div class="form-group">
                     <label for="">Maximum score</label>
                     <select #maxscoreInput=ngModel ngModel placeholder="select maximum score" class="form-control" required name="max_score" [(ngModel)]="ExamArray[0].max_score">
                         <option *ngFor="let score of ExamArray ;let i=index" [value]="score.max_score">{{score.max_score}}</option>
 
                     </select>
-                    <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+                    <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field  required *</span>
 
                 </div>
 
