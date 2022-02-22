@@ -24,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
 import { AddCourseComponent } from './Forms/add-course/add-course.component';
 import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
+import { UpdateCategoryComponent } from './Forms/update-category/update-category.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { UpdateCourseComponent } from './Forms/update-course/update-course.compo
     TestComponent,
     AddAdminComponent,
     AddCourseComponent,
-    UpdateCourseComponent
+    UpdateCourseComponent,
+    UpdateCategoryComponent
   ],
   imports: [
     BrowserModule,

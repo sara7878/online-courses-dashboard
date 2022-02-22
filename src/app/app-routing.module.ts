@@ -10,6 +10,7 @@ import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './Forms/add-category/add-category.component';
 import { AddCourseComponent } from './Forms/add-course/add-course.component';
 import { TestComponent } from './Forms/test/test.component';
+import { UpdateCategoryComponent } from './Forms/update-category/update-category.component';
 import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'add-category' , component : AddCategoryComponent} ,
   {path:'add-course' , component : AddCourseComponent} ,
   {path:'update-course' , component : UpdateCourseComponent} ,
+  {path:'update-category' , component : UpdateCategoryComponent} ,
 
   {path:'test' , component : TestComponent} ,
 

@@ -3,7 +3,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Feedback Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Feedback </button>
+            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Feedback </button> -->
 
             <div class="table-responsive">
               <table class="table table-striped">
@@ -12,7 +12,6 @@
                     <th> ID</th>
                     <th> Student Name</th>
                     <th> Course Name</th>
-                    <th> Update</th>
                     <th> Delete</th>
                   </tr>
                 </thead>
@@ -22,10 +21,7 @@
                     <td>{{feedback.student_id?.fname}}</td>
                     <td>{{feedback.course_id?.name}}</td>
 
-                    <td>
-                      <button type="button" class="btn btn-warning "> Update </button>
-                      
-                    </td>
+
                     <td>                     
                      <button type="button" class="btn btn-inverse-danger "> Delete </button>
                     </td>
