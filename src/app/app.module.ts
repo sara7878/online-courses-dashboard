@@ -26,6 +26,9 @@ import { EditCourseContentComponent } from './Forms/edit-course-content/edit-cou
 import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
 import { AddCourseComponent } from './Forms/add-course/add-course.component';
 import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
+import { AddExamComponent } from './Forms/add-exam/add-exam.component';
+import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { UpdateCourseComponent } from './Forms/update-course/update-course.compo
     EditCourseContentComponent,
     AddAdminComponent,
     AddCourseComponent,
-    UpdateCourseComponent
+    UpdateCourseComponent,
+    AddExamComponent,
+    UpdateExamComponent,
   ],
   imports: [
     BrowserModule,

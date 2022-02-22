@@ -17,6 +17,8 @@ import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { StudentsComponent } from './students/students.component';
 import { TrainersComponent } from './trainers/trainers.component';
+import { AddExamComponent } from './Forms/add-exam/add-exam.component';
+import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
 
 const routes: Routes = [
   {path:'home' , component : StatisticsComponent} ,
@@ -36,6 +38,9 @@ const routes: Routes = [
   {path:'edit-course-content' , component : EditCourseContentComponent} ,
   {path:'add-course' , component : AddCourseComponent} ,
   {path:'update-course' , component : UpdateCourseComponent} ,
+  {path:'add-exam' , component : AddExamComponent} ,
+  {path:'update-exam' , component : UpdateExamComponent} ,
+
 
   {path:'test' , component : TestComponent} ,
 
