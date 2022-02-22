@@ -6,6 +6,7 @@ export interface Question{
     choice_3 ?:string,
     choice_4 ?:string,
     answer?:string,
-    score?:number
+    score?:number,
+    exam_id?:[]
 
 }

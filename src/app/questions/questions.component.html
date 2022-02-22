@@ -3,7 +3,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">Questions Table</h4>
-          <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Question </button>
+          <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/add-question" > Add New Question </button>
 
           <div class="table-responsive">
             <table class="table table-striped">
@@ -33,19 +33,19 @@
                   <td>{{question.answer}}</td>
                   <td>{{question.score}}</td>
                   <td>
-                    <button type="button" class="btn btn-warning "> Update </button>
+                    <button type="button" class="btn btn-warning " routerLink="/update-question" > Update </button>
                   </td>
-                  <td>                     
+                  <td>
                    <button type="button" class="btn btn-inverse-danger "> Delete </button>
                   </td>
-                  
+
                 </tr>
               </tbody>
             </table>
           <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Question </button> -->
           </div>
-        </div>          
-  
+        </div>
+
       </div>
     </div>
 
