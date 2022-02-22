@@ -12,22 +12,30 @@ import { QuestionService } from '../_services/question.service';
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor(private QuestionService:QuestionService) { }
+  constructor(private QuestionService: QuestionService) { }
 
-
-  QuetionArray:Question[]=[
-    {id:1,header:"how old jh?",choice_1:"1",choice_2:"2",choice_3:"3",choice_4:"4",answer:"1",score:10}
-  ]
+  QuetionArray!: Question[];
+  
   ngOnInit(): void {
-    // this.getAllQuestion()
-    //   this.QuetionArray$ = this.QuestionService.getAllQuestion();
 
+    this.getAll();
 
+  }
+  getAll() {
+    this.QuestionService.getAllQuestion().subscribe(
+      (res) => {
+        this.QuetionArray = res.data;
+        console.log(res);
 
-
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => { }
+    );
+  }
 }
 
 
 
 
-}

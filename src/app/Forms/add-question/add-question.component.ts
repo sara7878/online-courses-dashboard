@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Question } from 'src/app/_models/question.model';
+import { QuestionService } from 'src/app/_services/question.service';
 
 @Component({
   selector: 'app-add-question',
@@ -7,11 +9,35 @@ import { Question } from 'src/app/_models/question.model';
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent implements OnInit {
-
-  constructor() { }
+  data = [] as Question;
+  // data !:Question ;
+  // QuetionArray!: Question[];
+  constructor(private QuestionService: QuestionService ,private router: Router) { }
 
   ngOnInit(): void {
   }
-  QuestionArr:Question[]=[{id:1,header:"header header",choice_1:"choice choice 1  ",choice_2:"choice 2",choice_3:"choice 1",choice_4:"choice 4",answer:"answer ",score:10}]
+
+  saveQuestion(){
+    this.QuestionService.CreateQestion(this.data).subscribe( data =>{
+      console.log(data);
+      this.goToQuestionList();
+    },
+    error => console.log(error));
+  }
+
+  goToQuestionList(){
+    this.router.navigate(['/questions']);
+  }
+  
+  onSubmit(form:any): void{
+    console.log(this.data);
+    this.saveQuestion();
+    console.log(form.value);
+    
+  }
 
 }
+
+
+
+

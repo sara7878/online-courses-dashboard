@@ -11,8 +11,17 @@ export class QuestionService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllQuestion():Observable<{question:Question[]}> {
-   return this.httpClient.get<{question:Question[]}>(`${environment.baseUrl}question`);
+  getAllQuestion():Observable<{data:Question[],status:boolean,error:any}> {
+   return this.httpClient.get<{data:Question[],status:boolean,error:any}>(`${environment.baseUrl}questions`);
+  }
+
+  getoneQestion(id:number):Observable<{data:Question[],status:boolean,error:any}> {
+    return this.httpClient.get<{data:Question[],status:boolean,error:any}>(`${environment.baseUrl}questions/${id}`);
+   }
+
+
+   CreateQestion(data: Question): Observable<{data:Question[],status:boolean,error:any}>{
+    return this.httpClient.post<{data:Question[],status:boolean,error:any}>(`${environment.baseUrl}questions`,JSON.stringify(data));
   }
 
 }
