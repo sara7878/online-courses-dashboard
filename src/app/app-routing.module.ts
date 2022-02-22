@@ -9,6 +9,7 @@ import { ExamsComponent } from './exams/exams.component';
 import { FeedbacksComponent } from './feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './Forms/add-category/add-category.component';
 import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { TestComponent } from './Forms/test/test.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path:'exams' , component : ExamsComponent} ,
   {path:'add-category' , component : AddCategoryComponent} ,
   {path:'add-course-content' , component : AddCourseContentComponent} ,
+  {path:'edit-course-content' , component : EditCourseContentComponent} ,
   {path:'test' , component : TestComponent} ,
 
 ];
