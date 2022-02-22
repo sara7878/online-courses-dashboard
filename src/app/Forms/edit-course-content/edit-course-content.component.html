@@ -15,11 +15,10 @@
             name="courseId"
           >
             <option value="">--Choose your course--</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
+            <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.Id}}" >{{courseContent.name}}</option>
+            <!-- [selected]="this.CourseContentArray[0].course_id.Id===courseContent.Id" -->
+            <!-- <option value="1" [selected]="this.CourseContentArray[0].course_id?.Id===1">1</option> -->
+            
           </select>
           <span
             *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required'] && courseIdInput.value===''"
@@ -34,7 +33,7 @@
           <input
             #contentNameInput="ngModel"
             ngModel
-            [ngModel]="this.courseContent.name"
+            [ngModel]="this.CourseContentArray[0].name"
             required
             minlength="3"
             maxlength="20"
@@ -75,7 +74,7 @@
           <input
             #courseContentInput="ngModel"
             ngModel
-            [ngModel]="this.courseContent.content"
+            [ngModel]="this.CourseContentArray[0].content"
             required
             minlength="3"
             maxlength="255"

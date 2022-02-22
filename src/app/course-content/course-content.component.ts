@@ -10,10 +10,11 @@ export class CourseContentComponent implements OnInit {
 
   constructor() { }
 CourseContentArray:CourseContent[]=[
-  {Id:1,course_id:{Id:1,name:"web"},content:"fgghhj jkhbk"}
+  {Id:1,course_id:{Id:1,name:"web"},content:"fgghhj jkhbk",name:"week 1"}
 ]
 
   ngOnInit(): void {
   }
+
 
 }
