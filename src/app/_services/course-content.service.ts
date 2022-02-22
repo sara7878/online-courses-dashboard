@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { CourseContent } from '../_models/course_content.model';
 
 @Injectable({
@@ -7,7 +10,7 @@ import { CourseContent } from '../_models/course_content.model';
 export class CourseContentService {
   coursesContents: CourseContent[] = [
     {
-      Id: 1,
+      id: 1,
       name: 'Week 1',
       course_id: {
         Id: 1,
@@ -17,15 +20,18 @@ export class CourseContentService {
     },
   ];
 
-  constructor() {}
+  constructor(private httpClient:HttpClient) {}
 
-  getAllContents(): CourseContent[] {
-    return this.coursesContents;
+  // getAllContents(): CourseContent[] {
+  //   return this.coursesContents;
+  // }
+  getAllContents(): Observable<CourseContent[]> {
+    return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`);
   }
 
   getCourseContent(id: number): CourseContent {
     return this.coursesContents.find((c) => c.course_id.Id === id)!;
   }
 
-  
+
 }

@@ -12,7 +12,7 @@ export class EditCourseContentComponent implements OnInit {
   {Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer_id:{id:2,fname:"mohamed"},category_id:{Id:2,name:"design"}}];
 
   CourseContentArray:CourseContent[]=[
-    {Id:1,course_id:{Id:1,name:"web"},content:"fgghhj jkhbk",name:"week 1"}
+    {id:1,course_id:{Id:1,name:"web"},content:"fgghhj jkhbk",name:"week 1"}
   ];
 
   constructor() { }

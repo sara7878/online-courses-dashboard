@@ -17,9 +17,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let course of CourseContentArray; let i=index" >
-                    <td>{{course.Id}}</td>
-                    <td>{{course.course_id?.name}}</td>
+                  <tr *ngFor="let course of coursesContentsArr; let i=index" >
+                    <td>{{course.id}}</td>
+                    <td>{{course.name}}</td>
                     <td>{{course.content}}</td>
                     <td>
                       <button type="button" class="btn btn-warning " routerLink="/edit-course-content"> Update </button>
