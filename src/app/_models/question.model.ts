@@ -1,7 +1,7 @@
 import { Exam } from "./exam.model";
 
 export interface Question{
-    id ?:number,
+    id?:number,
     header ?:string,
     choice_1 ?:string,
     choice_2 ?:string,

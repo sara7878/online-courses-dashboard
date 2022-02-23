@@ -33,10 +33,10 @@
                   <td>{{question.answer}}</td>
                   <td>{{question.score}}</td>
                   <td>
-                    <button type="button" class="btn btn-warning " routerLink="/update-question" > Update </button>
+                    <button type="button" class="btn btn-warning " [routerLink]="'/update-question/'+question.id">Update </button>
                   </td>
                   <td>
-                   <button type="button" class="btn btn-inverse-danger "> Delete </button>
+                   <button type="button" class="btn btn-inverse-danger " (click)="deleteQestion(question.id!)"> Delete </button>
                   </td>
 
                 </tr>

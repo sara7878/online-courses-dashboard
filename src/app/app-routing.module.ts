@@ -37,7 +37,7 @@ const routes: Routes = [
   {path:'exams' , component : ExamsComponent} ,
   {path:'add-category' , component : AddCategoryComponent} ,
   {path:'add-question' , component : AddQuestionComponent},
-  {path:'update-question' , component : UpdateQuestionComponent},
+  {path:'update-question/:id' , component : UpdateQuestionComponent},
   {path:'add-course' , component : AddCourseComponent} ,
   {path:'update-course' , component : UpdateCourseComponent} ,
   {path:'add-course-content' , component : AddCourseContentComponent} ,

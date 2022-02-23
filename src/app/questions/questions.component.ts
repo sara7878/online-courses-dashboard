@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Question } from '../_models/question.model';
 import { QuestionService } from '../_services/question.service';
@@ -12,10 +13,11 @@ import { QuestionService } from '../_services/question.service';
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor(private QuestionService: QuestionService) { }
+  constructor(private QuestionService: QuestionService ,private router: Router) { }
 
   QuetionArray!: Question[];
-  
+  Quetion!: Question;
+
   ngOnInit(): void {
 
     this.getAll();
@@ -34,6 +36,33 @@ export class QuestionsComponent implements OnInit {
       () => { }
     );
   }
+
+
+  getone(id:number) {
+    this.QuestionService.getoneQestion(id).subscribe(
+      (res) => {
+        this.Quetion = res.data;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => { }
+    );
+  }
+
+  deleteQestion(id:number){
+    this.QuestionService.deleteQestion(id).subscribe(
+      (res) => {
+        console.log(res.data);
+      },
+      (err) => {
+        console.log('Error deleting deleteQestion ');
+      }
+    );
+      }
+
+
 }
 
 
