@@ -13,10 +13,9 @@ export class AddExamComponent implements OnInit {
   constructor(private examService: ExamsService) { }
   newexam: Exam={
     id: 0,
-    course_id :0,
+    course_id: 0,
     name: '',
     max_score: 0,
-
   };
 
   ngOnInit(): void {
@@ -26,6 +25,7 @@ export class AddExamComponent implements OnInit {
     this.newexam.course_id= form.value['course_id'];
     this.newexam.max_score = form.value['max_score'];
     // console.log(this.newContent);
+
 
 
     this.examService.addExam(this.newexam).subscribe(

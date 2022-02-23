@@ -24,8 +24,9 @@ deleteExam(id:number){
 
 
 
-getexam(id: number): Observable<Exam> {
-  return this.httpClient.get<Exam>(`${environment.baseUrl}exams/${id}`)
+
+getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
+  return this.httpClient.get<{data:Exam,status:boolean,error:any}> (`${environment.baseUrl}exams/${id}`)
 }
 
 
@@ -37,7 +38,6 @@ addExam(newExam: Exam): Observable<Exam> {
 editExam(id:number,updatedExam:Exam): Observable<Exam> {
   console.log(id);
   console.log(updatedExam);
-
   return this.httpClient.post<Exam>(`${environment.baseUrl}exams/${id}`,updatedExam);
 }
 
