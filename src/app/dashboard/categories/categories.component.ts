@@ -11,7 +11,6 @@ export class CategoriesComponent implements OnInit {
 
   constructor(private categoryService:CategororyService) { }
 
-  // CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development",created_at:"19/3",updated_at:"2147"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development",created_at:"19/3",updated_at:"2147"}];
   catarray!:Category[];
   ngOnInit(): void {
   this.getAll();
@@ -21,7 +20,7 @@ export class CategoriesComponent implements OnInit {
     this.categoryService.getcategories().subscribe(
       (res)=>{
         this.catarray=res.data;
-        console.log(res);
+        // console.log(res);
         
       },
       (err)=>{

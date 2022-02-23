@@ -29,11 +29,8 @@
             </div>
 
 
-
-
-
-          <button type="submit" class="btn btn-primary mr-2" [disabled]="!categoryForm.valid"> Submit </button>
-          <button class="btn btn-light">Cancel</button>
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="!categoryForm.valid" (click)="addcategory(categoryForm)"> Submit </button>
+          <button class="btn btn-light" (click)="resetForm(categoryForm)">Cancel</button>
         </form>
       </div>
     </div>

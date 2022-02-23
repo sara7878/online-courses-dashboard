@@ -10,7 +10,7 @@ export class FeedbacksComponent implements OnInit {
 
   constructor() { }
   FeedbackArray:Feedback[]=[
-    {id:1,desc:"sgjvash asxbksjhbx",student_id:{fname:"sara"},course_id:{name:"web development",Id:1}}
+    {id:1,desc:"sgjvash asxbksjhbx",student_id:{fname:"sara"},course_id:{name:"web development",id:1}}
   ]
 
   ngOnInit(): void {

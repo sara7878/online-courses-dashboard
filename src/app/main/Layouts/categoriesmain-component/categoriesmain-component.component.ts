@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/_models/category.model';
+import { CategororyService } from 'src/app/_services/categorory.service';
 
 @Component({
   selector: 'app-categoriesmain-component',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriesmainComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private categoryService:CategororyService) { }
 
+  catarray!:Category[];
   ngOnInit(): void {
+  this.getAll();
   }
 
+  getAll(){
+    this.categoryService.getcategories().subscribe(
+      (res)=>{
+        this.catarray=res.data;
+        // console.log(res);
+        
+      },
+      (err)=>{
+        console.log(err);
+      },
+      ()=>{}
+    );}
+    
 }

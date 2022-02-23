@@ -12,6 +12,7 @@ export class UpdateCategoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development"}];
+  CategoryArray!:Category[];
+  // =[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development"}];
 
 }

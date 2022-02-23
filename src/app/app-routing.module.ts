@@ -29,19 +29,6 @@ import { CoursesPageComponent } from './main/courses-page/courses-page.component
 import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
 
-function mapToAllOutlets(routes: Routes): Routes {
-  const outlets = ['outlet-a', 'outlet-b', 'outlet-c'];
-  const result = [];
-  for (const route of routes) {
-    for (const outlet of outlets) {
-      result.push({
-        ...route,
-        outlet
-      })
-    }
-  }
-  return result;
-}
 
 const routes: Routes = [
   {path:'',redirectTo:'/dashboard/home',pathMatch:'full'},

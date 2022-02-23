@@ -21,4 +21,11 @@ categoryArray!:Categoryobj
 getcategories():Observable<Categoryobj>{
   return this.httpClient.get<Categoryobj>(environment.baseUrl+'categories')
 }
+
+
+addcategory(data:Category):Observable<Categoryobj>{
+  return this.httpClient.post<Categoryobj>(environment.baseUrl+'categories',data);
+}
+
+
 }

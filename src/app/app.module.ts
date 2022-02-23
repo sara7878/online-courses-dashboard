@@ -60,6 +60,7 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
+import { UploadImagesComponent } from './upload-images/upload-images.component';
 
 
 @NgModule({
@@ -115,6 +116,7 @@ import { NavbarMainComponent } from './navbar-main/navbar-main.component';
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
     NavbarMainComponent,
+    UploadImagesComponent,
   ],
   imports: [
     BrowserModule,
