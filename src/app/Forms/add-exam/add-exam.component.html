@@ -25,16 +25,16 @@
                 <div class="form-group">
                     <label for="">Maximum score</label>
                     <select #maxscoreInput=ngModel ngModel placeholder="select maximum score" class="form-control" required name="max_score">
-                        <option value="50">50</option>
-                        <option value="80">80</option>
-                        <option value="100">100</option>
+                        <option value="5">5</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
 
                     </select>
                     <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
 
                 </div>
 
-          <button type="submit" class="btn btn-primary mr-2" [disabled]="!examForm.valid"> Submit </button>
+          <button type="submit" class="btn btn-primary mr-2" routerLink="/add-exam" (click)="addExam(examForm) "[disabled]="!examForm.valid"> Submit </button>
           <button class="btn btn-light">Cancel</button>
         </form>
       </div>

@@ -19,12 +19,13 @@ export class ContactUsService {
      
  }
  
- getContactById(id: number): Observable<Contactus> {
-   return this.httpClient.get<Contactus>(environment.baseUrl+'Contact_us/'+id)
- }
+//  getContactById(id: number): Observable<Contactus> {
+//    return this.httpClient.get<Contactus>(environment.baseUrl+'Contact_us/'+id)
+//  }
 
- create(data:Contactus): Observable<Contactus> {
-  return this.httpClient.post(environment.baseUrl+'Contact_us', data);
+deleteContact(id:number){
+  return this.httpClient.delete<Contactus>(environment.baseUrl+'Contact_us/'+id)
+
 }
  
 }

@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:'add-course' , component : AddCourseComponent} ,
   {path:'update-course' , component : UpdateCourseComponent} ,
   {path:'add-exam' , component : AddExamComponent} ,
-  {path:'update-exam' , component : UpdateExamComponent} ,
+  {path:'update-exam/:id' , component : UpdateExamComponent} ,
 
 
   {path:'test' , component : TestComponent} ,
