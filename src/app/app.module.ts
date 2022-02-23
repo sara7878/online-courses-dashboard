@@ -3,32 +3,63 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { StatisticsComponent } from './statistics/statistics.component';
-import { StfooterComponent } from './stfooter/stfooter.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { CoursesComponent } from './courses/courses.component';
-import { TrainersComponent } from './trainers/trainers.component';
-import { StudentsComponent } from './students/students.component';
-import { AdminsComponent } from './admins/admins.component';
-import { CourseContentComponent } from './course-content/course-content.component';
-import { ContactUsComponent } from './contact-us/contact-us.component';
-import { FeedbacksComponent } from './feedbacks/feedbacks.component';
-import { ExamsComponent } from './exams/exams.component';
-import { QuestionsComponent } from './questions/questions.component';
-import { AddCategoryComponent } from './Forms/add-category/add-category.component';
+import { SideBarComponent } from './dashboard/side-bar/side-bar.component';
+import { NavBarComponent } from './dashboard/nav-bar/nav-bar.component';
+import { StatisticsComponent } from './dashboard/statistics/statistics.component';
+import { StfooterComponent } from './dashboard/stfooter/stfooter.component';
+import { CategoriesComponent } from './dashboard/categories/categories.component';
+import { CoursesComponent } from './dashboard/courses/courses.component';
+import { TrainersComponent } from './dashboard/trainers/trainers.component';
+import { StudentsComponent } from './dashboard/students/students.component';
+import { AdminsComponent } from './dashboard/admins/admins.component';
+import { CourseContentComponent } from './dashboard/course-content/course-content.component';
+import { ContactUsComponent } from './dashboard/contact-us/contact-us.component';
+import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
+import { ExamsComponent } from './dashboard/exams/exams.component';
+import { QuestionsComponent } from './dashboard/questions/questions.component';
+import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TestComponent } from './Forms/test/test.component';
+import { TestComponent } from './dashboard/Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
-import { AddCourseComponent } from './Forms/add-course/add-course.component';
-import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
-import { UpdateCategoryComponent } from './Forms/update-category/update-category.component';
-import { AddExamComponent } from './Forms/add-exam/add-exam.component';
-import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
-import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
+import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
+import { AddCourseComponent } from './dashboard/Forms/add-course/add-course.component';
+import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-course.component';
+import { UpdateCategoryComponent } from './dashboard/Forms/update-category/update-category.component';
+import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
+import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
+import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
+import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
+import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
+
+
+
+import { HomeComponent } from './main/Layouts/home/home.component';
+import { AboutComponent } from './main/Layouts/about/about.component';
+import { CourcesComponent } from './main/Layouts/cources/cources.component';
+import { PricesComponent } from './main/Layouts/prices/prices.component';
+import { ContactComponent } from './main/Layouts/contact/contact.component';
+import { NavbarComponent } from './main/navbar/navbar.component';
+import { FooterComponent } from './main/footer/footer.component';
+import { FeedbackComponent } from './main/Layouts/feedback/feedback.component';
+import { AboutPageComponent } from './main/about-page/about-page.component';
+import { CountsComponent } from './main/Layouts/counts/counts.component';
+import { WhyUsComponent } from './main/Layouts/why-us/why-us.component';
+import { FeaturesComponent } from './main/Layouts/features/features.component';
+import { PopularCourcesComponent } from './main/Layouts/popular-cources/popular-cources.component';
+// import { TrainersmainComponent } from './main/Layouts/trainers/trainers.component';
+import { HeroComponent } from './main/Layouts/hero/hero.component';
+import { HomePageComponent } from './main/home-page/home-page.component';
+import { CoursesPageComponent } from './main/courses-page/courses-page.component';
+// import { CategoriesmainComponent } from './main/Layouts/categories/categories.component';
+import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
+import { CategoriesPageComponent } from './main/categories-page/categories-page.component';
+import { ContactPageComponent } from './main/contact-page/contact-page.component';
+import { CoursesDetailsPageComponent } from './main/courses-details-page/courses-details-page.component';
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
+import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
+import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 
 
 @NgModule({
@@ -57,14 +88,41 @@ import { EditCourseContentComponent } from './Forms/edit-course-content/edit-cou
     AddExamComponent,
     UpdateExamComponent,
     AddCourseContentComponent,
-    EditCourseContentComponent
+    EditCourseContentComponent,
+    TestrouterComponent,
+
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    CourcesComponent,
+    PricesComponent,
+    ContactComponent,
+    NavbarComponent,
+    FooterComponent,
+    FeedbackComponent,
+    AboutPageComponent,
+    CountsComponent,
+    WhyUsComponent,
+    FeaturesComponent,
+    PopularCourcesComponent,
+    HeroComponent,
+    HomePageComponent,
+    CoursesPageComponent,
+    TrainersPageComponent,
+    CategoriesPageComponent,
+    ContactPageComponent,
+    CoursesDetailsPageComponent,
+    TrainersmainComponentComponent,
+    CategoriesmainComponentComponent,
+    NavbarMainComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUsefulSwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
