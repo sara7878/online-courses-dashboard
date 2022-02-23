@@ -18,7 +18,14 @@
     <div class="form-group">
     <label>Image upload :</label>
     <div class="input-group col-xs-12">
-      <input type="file" #courseImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$"  required class="form-control file-upload-info" placeholder="Upload Image" name="courseImage"/>
+      <input type="file" #courseImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$" enctype="multipart/form-data"
+        required class="form-control file-upload-info" placeholder="Upload Image" name="courseImage"/>
+        <!-- (change)="uploadImage($event)" [ngClass]="{'is-invalid':submitted}"/> -->
+        <!-- <div *ngIf="submitted & courseImageInput.image.errors" class="invalid-feedback">
+          <div *ngIf="courseImageInput.image.errors.required">
+            Image is required
+          </div> 
+        </div>-->
       <span class="input-group-append">
         <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
       </span>
@@ -31,16 +38,19 @@
   <div class="form-group">
     <label for="">Trainer</label>
     <select ngModel class="form-control" name="trainer" id="">
-        <!-- <option *ngFor="let category of categories ;let i=index" [value]="category._id">{{category.name}}</option> -->
-        <option value=1>ahmed</option>
+        <option *ngFor="let trainer of TrainersArray ;let i=index" [value]="trainer.id">{{trainer.fname}}</option>
+        <!-- <option value="1">ahmed</option> -->
       </select>
 </div>
 
 
   <div class="form-group">
     <label for="">Category</label>
+
     <select ngModel class="form-control" name="Category" id="">
-        <option value=1>web</option>
+      <option *ngFor="let category of categories ;let i=index" [value]="category.id">{{category.name}}</option>
+
+        <!-- <option value="1">web</option> -->
     </select>
 </div>
 
