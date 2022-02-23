@@ -16,23 +16,27 @@
             </div>
 
             <div class="form-group">
-                <label for="course">Course Name :</label>
-                <input #courseIdInput=ngModel ngModel required placeholder="course" type="text" name="course_id"  class="form-control" [(ngModel)]="ExamArray[1].course_id.name" />
-                <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-            </div>
+
+                <label for="course">CourseId :</label>
+                <input #courseIdInput=ngModel ngModel [(ngModel)]="ExamArray[0].course_id" required placeholder="course" name="course_id"  class="form-control" />
+                    <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+
+                </div>
 
 
                 <div class="form-group">
                     <label for="">Maximum score</label>
-                    <select #maxscoreInput=ngModel ngModel placeholder="select maximum score" class="form-control" required name="max_score" [(ngModel)]="ExamArray[0].max_score">
+                    <select #maxscoreInput=ngModel ngModel placeholder="select maximum score" class="form-control" required name="max_score" [(ngModel)]="this.updatedExam.max_score">
                         <option *ngFor="let score of ExamArray ;let i=index" [value]="score.max_score">{{score.max_score}}</option>
 
                     </select>
                     <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field  required *</span>
 
                 </div>
-
-          <button type="submit" class="btn btn-primary mr-2" [disabled]="!examForm.valid"> Submit </button>
+            <div *ngFor="let exam of ExamArray;">
+          <button type="submit" (click)="updateExam(this.exam.id!,examForm)" routerLink="/exams"
+          class="btn btn-primary mr-2" [disabled]="!examForm.valid"> Submit </button>
+        </div>
           <button class="btn btn-light">Cancel</button>
         </form>
       </div>

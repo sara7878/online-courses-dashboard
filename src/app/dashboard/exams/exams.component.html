@@ -20,16 +20,17 @@
                 <tbody>
                   <tr *ngFor="let exam of ExamArray; let i=index" >
                     <td>{{exam.id}}</td>
-                    <td>{{exam.course_id?.name}}</td>
-                    <td>100</td>
+
+                    <td>{{exam.course?.name}}</td>
+                    <td>{{exam.max_score}}</td>
                     <td>
                         <button type="button" class="btn btn-success"> Show </button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-warning" routerLink="/update-exam"> Update </button>
+                      <button type="button" class="btn btn-warning" [routerLink]="'/dashboard/update-exam/'+exam.id"> Update </button>
                     </td>
                     <td>
-                     <button type="button" class="btn btn-inverse-danger"> Delete </button>
+                     <button type="button" class="btn btn-inverse-danger"  (click)="deleteExam(exam.id)"> Delete </button>
                     </td>
 
                   </tr>

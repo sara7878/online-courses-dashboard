@@ -38,26 +38,33 @@ export class ContactUsComponent implements OnInit {
 
  }
 
- saveContact(): void {
-  const data = {
-    name: this.newcontact.name,
-    email:this.newcontact.email,
-  subject:this.newcontact.subject,
-  message:this.newcontact.message,
-  };
+//  saveContact(): void {
+//   const data = {
+//     name: this.newcontact.name,
+//     email:this.newcontact.email,
+//   subject:this.newcontact.subject,
+//   message:this.newcontact.message,
+//   };
 
 
-  this.contactUS.create(data)
-  .subscribe(
-    response => {
-      console.log(response);
+//   this.contactUS.create(data)
+//   .subscribe(
+//     response => {
+//       console.log(response);
 
+
+ deleteContactus(id:number){
+  this.contactUS.deleteContact(id).subscribe(
+    (res) => {
+      // this.coursesContentsArr = res;
+      console.log(res);
     },
-    error => {
-      console.log(error);
-    });
+    (err) => {
+      console.log('Error deleting contact');
+    }
+  );
+    }
+  }
 
 
-
- }}
 
