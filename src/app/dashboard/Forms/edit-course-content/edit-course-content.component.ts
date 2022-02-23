@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
+import { CoursesService } from 'src/app/_services/courses.service';
 
 @Component({
   selector: 'app-edit-course-content',
@@ -12,11 +13,11 @@ import { CourseContentService } from 'src/app/_services/course-content.service';
 })
 export class EditCourseContentComponent implements OnInit {
 
-  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer_id:1,category_id:1},
-]
-  CourseContentArray:CourseContent[]=[
-    {id:1,course_id:1,content:"fgghhj jkhbk",name:"week 1"}
-  ];
+ 
+  CourseArray!:Course[];
+  // CourseContentArray:CourseContent[]=[
+  //   {id:1,course_id:1,content:"fgghhj jkhbk",name:"week 1"}
+  // ];
 
   courseContent: CourseContent = {
     course_id: 0,
@@ -31,25 +32,39 @@ export class EditCourseContentComponent implements OnInit {
 
   constructor(
     private CourseContentService: CourseContentService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private courseService: CoursesService
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
-      console.log(params);
+      // console.log(params);
       if (id) {
         this.getCourseContent(id);
-        console.log(this.courseContent);
+        // console.log(this.courseContent);
       }
     });
+    this.getAllCourses();
+  }
+
+  getAllCourses() {
+    this.courseService.getAllCourses().subscribe(
+      (res) => {
+        this.CourseArray = res;
+        // console.log(this.CourseArray);
+      },
+      (err) => {
+        console.log('cant load data');
+      }
+    );
   }
 
   getCourseContent(id: number) {
     this.CourseContentService.getCourseContent(id).subscribe(
       (res) => {
         this.courseContent = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error adding course content');
@@ -61,10 +76,9 @@ export class EditCourseContentComponent implements OnInit {
     this.updatedContent.name = form.value['contentName'];
     this.updatedContent.content = form.value['courseContent'];
     this.updatedContent.course_id = form.value['courseId'];
-    // console.log(this.newContent);
+    console.log(this.updatedContent);
     this.CourseContentService.editCourseContent(id,this.updatedContent).subscribe(
       (res) => {
-        // this.coursesContentsArr = res;
         console.log(res);
       },
       (err) => {

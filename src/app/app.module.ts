@@ -16,7 +16,7 @@ import { CourseContentComponent } from './dashboard/course-content/course-conten
 import { ContactUsComponent } from './dashboard/contact-us/contact-us.component';
 import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
 import { ExamsComponent } from './dashboard/exams/exams.component';
-import { QuestionsComponent } from './dashboard/questions/questions.component';
+
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './dashboard/Forms/test/test.component';
@@ -68,6 +68,7 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
