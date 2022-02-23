@@ -23,8 +23,8 @@ getcategories():Observable<Categoryobj>{
 }
 
 
-addcategory(data:Category):Observable<Categoryobj>{
-  return this.httpClient.post<Categoryobj>(environment.baseUrl+'categories',data);
+addcategory(data:Category):Observable<{data:Category,status:boolean,error:any}>{
+  return this.httpClient.post<{data:Category,status:boolean,error:any}>(environment.baseUrl+'categories',data);
 }
 
 deleteCategoryById(id: number): Observable<Category>{

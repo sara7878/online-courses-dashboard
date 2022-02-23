@@ -22,10 +22,10 @@
                     <td>{{course.course?.name}}</td>
                     <td>{{course.content}}</td>
                     <td>
-                      <button type="button" class="btn btn-warning " [routerLink]="'/dashboard/edit-course-content/'+course.id"> Update </button>
+                      <button type="button" class="btn btn-warning "  [routerLink]="'/dashboard/edit-course-content/'+course.id"> Update </button>
                     </td>
                     <td>
-                     <button type="button" class="btn btn-inverse-danger " routerLink="contents" (click)="deleteCourseContent(course.id!)"> Delete </button>
+                     <button type="button" class="btn btn-inverse-danger " routerLink="/dashboard/contents" (click)="deleteCourseContent(course.id!)"> Delete </button>
                     </td>
 
                   </tr>

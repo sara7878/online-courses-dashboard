@@ -12,19 +12,18 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(private categoryservice:CategororyService) { }
 
-  data:Category={name:"sara",img:"image"};
+  data:Category={name:"sara",img:"img.png"};
   ngOnInit(): void {
   }
 
   addcategory(form: NgForm) {
     this.data.name = form.value['catName'];
-    this.data.img = form.value['catImage'];
+    this.data.img = this.data["img"];
     console.log(this.data.name);
-    console.log(this.data.img);
     
     this.categoryservice.addcategory(this.data).subscribe(
       (res) => {
-        console.log(res);
+        console.log(res.data);
       },
       (err) => {
         console.log('Error adding category');

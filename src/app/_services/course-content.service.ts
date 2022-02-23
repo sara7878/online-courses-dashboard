@@ -17,8 +17,6 @@ export class CourseContentService {
     return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`);
   }
 
-
-
   getCourseContent(id: number): Observable<CourseContent> {
     return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`)
   }
