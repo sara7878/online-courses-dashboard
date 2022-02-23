@@ -11,5 +11,7 @@ export interface Course{
     duration ?:number,
     preq?:string,
     desc ?:string,
+    trainer?:Trainer,
+    category?:Category
 }
 

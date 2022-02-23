@@ -29,8 +29,9 @@ import { CoursesDetailsPageComponent } from './main/courses-details-page/courses
 import { CoursesPageComponent } from './main/courses-page/courses-page.component';
 import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
-import { AddQuestionComponent } from './Forms/add-question/add-question.component';
-import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
+import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },

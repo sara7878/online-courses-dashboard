@@ -21,8 +21,8 @@ import { AddCategoryComponent } from './dashboard/Forms/add-category/add-categor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddQuestionComponent } from './Forms/add-question/add-question.component';
-import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+// import { AddQuestionComponent } from './Forms/add-question/add-question.component';
+// import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 // import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
 // import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 // import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
@@ -68,6 +68,8 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
+import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
 
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';

@@ -27,8 +27,8 @@
                     <img [src]="course.img" alt="image" />
                   </td>
                   <td>{{course.name}}</td>
-                  <td>{{course.category_id}}</td>
-                  <td>{{course.trainer_id}}</td>
+                  <td>{{course.category?.name}}</td>
+                  <td>{{course.trainer?.fname}}</td>
                   <td>
                       <button type="button" class="btn btn-success "> Show </button>
                   </td>

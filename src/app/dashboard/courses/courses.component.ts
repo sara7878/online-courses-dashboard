@@ -10,9 +10,9 @@ import { CourseService } from '../../_services/course.service';
 })
 export class CoursesComponent implements OnInit {
   constructor(private courseService: CoursesService) {}
-  CourseArray: Course[] = [
-    { id: 2, img: '../../assets/images/faces-clipart/pic-1.png', name: 'css' },
-  ];
+  // CourseArray: Course[] = [
+  //   { id: 2, img: '../../assets/images/faces-clipart/pic-1.png', name: 'css' },
+  // ];
 
   Arr!: Course[];
 
