@@ -32,4 +32,16 @@ export class CoursesComponent implements OnInit {
       }
     );
   }
+
+  deleteCourse(id:number){
+    this.courseService.deleteCourseById(id).subscribe(
+      (res) => {
+        // this.coursesContentsArr = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error deleting course');
+      }
+    );
+  }
 }
