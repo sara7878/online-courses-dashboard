@@ -14,7 +14,10 @@ export class ExamsComponent implements OnInit {
   constructor(private examService : ExamsService) { }
   ExamArray!:Exam[]
 
-  ngOnInit(): void {
+  // ExamArr =[{id:11,name:"edf", course_id:1, max_score:8, course:{id:1, name:"coursename"}}]
+
+
+ngOnInit(): void {
     this.getAllExams();
 
   }
@@ -31,4 +34,20 @@ export class ExamsComponent implements OnInit {
       },
       ()=>{}
     );}
+
+
+
+    deleteExam(id:number){
+      console.log(id)
+      this.examService.deleteExam(id).subscribe(
+        (res) => {
+          // this.coursesContentsArr = res;
+          console.log(res);
+
+        },
+        (err) => {
+          console.log('Error deleting exam');
+        }
+      );
+        }
 }

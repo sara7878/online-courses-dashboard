@@ -17,7 +17,7 @@
 
             <div class="form-group">
                 <label for="course">Course Name :</label>
-                <input #courseIdInput=ngModel ngModel required placeholder="course" type="text" name="course_id"  class="form-control" [(ngModel)]="ExamArray[1].course_id.name" />
+                <input #courseIdInput=ngModel ngModel required placeholder="course" type="text" name="course_id"  class="form-control" [(ngModel)]="ExamArray[1].course_id" />
                 <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
             </div>
 

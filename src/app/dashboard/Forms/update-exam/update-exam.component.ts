@@ -12,8 +12,9 @@ export class UpdateExamComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  ExamArray:Exam[]=[{id:1,name:"html",course_id:{id:1,name:"html"}, max_score:50},
- 
+  ExamArray:Exam[]=[
+    // {id:1,name:"html",course_id:{id:1,name:"html"}, max_score:50},
+
 
 ]
 
