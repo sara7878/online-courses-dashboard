@@ -15,7 +15,7 @@
               name="courseId"
             >
               <option value="">--Choose your course--</option>
-              <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}" >{{courseContent.name}}</option>
+              <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}">{{courseContent.name}}</option>
               <!-- [selected]="this.CourseContentArray[0].course_id.Id===courseContent.Id" -->
               <!-- <option value="1" [selected]="this.CourseContentArray[0].course_id?.Id===1">1</option> -->
 
@@ -37,7 +37,7 @@
               required
               minlength="3"
               maxlength="20"
-              pattern="[A-Za-z]+"
+              pattern="^[a-zA-Z0-9 _.-]*$"
               type="text"
               class="form-control"
               id="exampleInputName2"
@@ -78,7 +78,7 @@
               required
               minlength="3"
               maxlength="255"
-              pattern="[A-Za-z]+"
+              pattern="^[a-zA-Z0-9 _.-]*$"
               type="text"
               class="form-control"
               id="exampleInputName3"
@@ -115,9 +115,12 @@
             type="submit"
             class="btn btn-primary mr-2"
             [disabled]="!courseContentForm.valid"
+            routerLink="/dashboard/contents"
+            (click)="updateCourseContent(this.courseContent.id!,courseContentForm)"
           >
             Edit
           </button>
+
           <button class="btn btn-light">Cancel</button>
         </form>
       </div>

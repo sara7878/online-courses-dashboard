@@ -24,8 +24,8 @@ deleteExam(id:number){
 
 
 
-getexam(id: number): Observable<Exam> {
-  return this.httpClient.get<Exam>(`${environment.baseUrl}exams/${id}`)
+getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
+  return this.httpClient.get<{data:Exam,status:boolean,error:any}> (`${environment.baseUrl}exams/${id}`)
 }
 
 
