@@ -12,13 +12,10 @@ import { CourseContentService } from 'src/app/_services/course-content.service';
 })
 export class EditCourseContentComponent implements OnInit {
 
-  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer_id:{id:1,fname:"sara"},category_id:{id:1,name:"web development"}},
-  {id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer_id:{id:2,fname:"mohamed"},category_id:{id:2,name:"design"}}];
-
+  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer_id:1,category_id:1},
+]
   CourseContentArray:CourseContent[]=[
-
-    // {id:1,course_id:{id:1,name:"web"},content:"fgghhj jkhbk",name:"week 1"}
-
+    {id:1,course_id:1,content:"fgghhj jkhbk",name:"week 1"}
   ];
 
   courseContent: CourseContent = {

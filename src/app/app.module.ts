@@ -70,6 +70,10 @@ import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
 
 
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,

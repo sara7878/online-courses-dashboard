@@ -11,16 +11,6 @@ export class CourseContentComponent implements OnInit {
   constructor(private CourseContentService: CourseContentService) {}
   coursesContentsArr!: CourseContent[];
 
-  // CourseContentArray: CourseContent[] = [
-  //   {
-  //     id: 1,
-  //     course_id: { id: 1, name: 'web' },
-  //     content: 'fgghhj jkhbk',
-  //     name: 'week 1',
-  //   },
-  // ];
-
-  
 
   ngOnInit(): void {
     this.getAllCoursesContents();
@@ -38,15 +28,15 @@ export class CourseContentComponent implements OnInit {
     );
   }
 
-  deleteCourseContent(id:number){
-this.CourseContentService.deleteCourseContent(id).subscribe(
-  (res) => {
-    // this.coursesContentsArr = res;
-    console.log(res);
-  },
-  (err) => {
-    console.log('Error deleting course content');
-  }
-);
+  deleteCourseContent(id: number) {
+    this.CourseContentService.deleteCourseContent(id).subscribe(
+      (res) => {
+        // this.coursesContentsArr = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error deleting course content');
+      }
+    );
   }
 }

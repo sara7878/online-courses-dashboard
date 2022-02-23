@@ -12,11 +12,10 @@ export class CourseContentService {
 
   constructor(private httpClient:HttpClient) {}
 
-  
+
   getAllContents(): Observable<CourseContent[]> {
     return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`);
   }
-
 
 
 

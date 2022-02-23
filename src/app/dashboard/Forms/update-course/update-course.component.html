@@ -9,7 +9,8 @@
 
     <div class="form-group">
     <label for="exampleInputName1">Name :</label>
-    <input #coursename=ngModel ngModel required minlength="3" maxlength="191" pattern="[A-Za-z ]+" type="text" class="form-control" id="exampleInputName1"  name="coursename" [(ngModel)]="CourseArray[0].name"/>
+
+    <input #coursename=ngModel ngModel required minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName1"  name="coursename" [(ngModel)]="CourseArray[0].name"/>
     <span *ngIf="coursename.touched && coursename.invalid && coursename.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
     <span *ngIf="coursename.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
     <span *ngIf="coursename.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -32,7 +33,7 @@
   <div class="form-group">
     <label for="">Trainer</label>
     <select ngModel class="form-control" name="trainer" id="" >
-        <option *ngFor="let course of CourseArray ;let i=index" [value]="course.trainer_id" >{{course.trainer_id?.fname}}</option>
+        <option *ngFor="let course of CourseArray ;let i=index" [value]="course.trainer_id" >{{course.trainer_id}}</option>
     </select>
 </div>
 
@@ -42,8 +43,8 @@
     <select formControlName="fieldName" ngModel class="form-control" name="Category" id="" >
         <!-- <option value="7">{{CourseArray[0].category_id?.name}}</option> -->
           <option *ngFor="let category of CourseArray; index as i"  [value]="category.category_id" >
-          {{category.category_id?.name}}
-        </option>          
+          {{category.category_id}}
+        </option>
       </select>
 </div>
 
@@ -83,4 +84,4 @@
     </div>
     </div>
     </div>
-    
+

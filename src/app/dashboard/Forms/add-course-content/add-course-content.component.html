@@ -10,8 +10,6 @@
               <select class="form-control" id="exampleFormControlSelect1" #courseIdInput=ngModel ngModel required name="courseId">
                 <option value="">--Choose your course--</option>
 
-                <!-- <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.Id}}">{{courseContent.name}}</option> -->
-
                 <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}">{{courseContent.name}}</option>
 
               </select>
