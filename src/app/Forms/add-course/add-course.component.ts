@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Form, NgForm } from '@angular/forms';
 import { Course } from 'src/app/_models/course.model';
+import { CoursesService } from 'src/app/_services/courses.service';
 
 @Component({
   selector: 'app-add-course',
@@ -8,12 +10,61 @@ import { Course } from 'src/app/_models/course.model';
 })
 export class AddCourseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private courseService:CoursesService) { }
+  newCourse: Course={
+    id: 0,
+ 
+    name: '',
+   trainer_id:1,
+   category_id:1,
+    img:'',
+    price:0,
+    duration:5,
+    preq:'',
+    desc:''
+};
 
   ngOnInit(): void {
+  
   }
-  CourseArray:Course[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer_id:{id:1,fname:"sara"},category_id:{Id:1,name:"web development"}},
-  {Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer_id:{id:2,fname:"mohamed"},category_id:{Id:2,name:"design"}}];
 
+
+
+  addCourse(form: NgForm) {
+    this.newCourse.name = form.value['name'];
+    this.newCourse.img=form.value['courseImage'];
+    this.newCourse.trainer_id=form.value['trainer'];
+    this.newCourse.category_id=form.value['Category'];
+    this.newCourse.price=form.value['price'];
+    this.newCourse.duration=form.value['duration'];
+    this.newCourse.preq=form.value['preq']
+    this.newCourse.desc=form.value['desc'];
+
+
+
+
+
+  
+    console.log(this.newCourse);
+
+  
+
+
+    this.courseService.create(this.newCourse).subscribe(
+      (res) => {
+        // this.coursesContentsArr = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error adding course content');
+      }
+    );
+  }
+
+  onsubmit(form: NgForm) {
+    console.log(form);
+    console.log(form.value);
+  }
 
 }
+

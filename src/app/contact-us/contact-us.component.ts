@@ -13,7 +13,7 @@ export class ContactUsComponent implements OnInit {
 
   ContactusArray!:Contactus[]
    
-
+  newcontact!:Contactus
   
   ngOnInit(): void {
     this.getAllcontacts();
@@ -36,4 +36,27 @@ export class ContactUsComponent implements OnInit {
   )
 
  }
-}
+
+ saveContact(): void {
+  const data = {
+    name: this.newcontact.name,
+    email:this.newcontact.email,
+  subject:this.newcontact.subject,
+  message:this.newcontact.message,
+  };
+
+
+  this.contactUS.create(data)
+  .subscribe(
+    response => {
+      console.log(response);
+      
+    },
+    error => {
+      console.log(error);
+    });
+
+
+
+ }}
+

@@ -19,8 +19,12 @@ export class ContactUsService {
      
  }
  
- getCourseById(id: number): Observable<Contactus> {
+ getContactById(id: number): Observable<Contactus> {
    return this.httpClient.get<Contactus>(environment.baseUrl+'Contact_us/'+id)
  }
+
+ create(data:Contactus): Observable<Contactus> {
+  return this.httpClient.post(environment.baseUrl+'Contact_us', data);
+}
  
 }

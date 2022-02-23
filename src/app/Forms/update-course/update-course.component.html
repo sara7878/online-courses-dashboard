@@ -32,16 +32,16 @@
   <div class="form-group">
     <label for="">Trainer</label>
     <select ngModel class="form-control" name="trainer" id="" >
-        <option *ngFor="let course of CourseArray ;let i=index" [value]="course.trainer_id" >{{course.trainer_id?.fname}}</option>
+        <option *ngFor="let course of CourseArray ;let i=index" [value]="course.trainer_id" >{{course.trainer_id}}</option>
     </select>
 </div>
 
 
   <div class="form-group">
     <label for="">Category</label>
-    <select ngModel class="form-control" name="Category" id="" [value]="CourseArray[0].category_id?.name">
-        <option *ngFor="let category of CourseArray ;let i=index" [value]="category.category_id">{{category.category_id?.name}}</option>
-    </select>
+    <!-- <select ngModel class="form-control" name="Category" id="" [value]="CourseArray[0].category_id?.name"> -->
+        <!-- <option *ngFor="let category of CourseArray ;let i=index" [value]="category.category_id">{{course.category_id}}</option> -->
+    <!-- </select> -->
 </div>
 
   <div class="form-group">

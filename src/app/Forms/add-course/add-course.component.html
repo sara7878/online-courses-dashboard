@@ -32,14 +32,15 @@
     <label for="">Trainer</label>
     <select ngModel class="form-control" name="trainer" id="">
         <!-- <option *ngFor="let category of categories ;let i=index" [value]="category._id">{{category.name}}</option> -->
-    </select>
+        <option value=1>ahmed</option>
+      </select>
 </div>
 
 
   <div class="form-group">
     <label for="">Category</label>
     <select ngModel class="form-control" name="Category" id="">
-        <!-- <option *ngFor="let category of categories ;let i=index" [value]="category._id">{{category.name}}</option> -->
+        <option value=1>web</option>
     </select>
 </div>
 
@@ -57,7 +58,7 @@
 
         <div class="form-group">
             <label for="exampleInputName1">Prerequests :</label>
-            <input ngModel type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" />
+            <input ngModel type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="preq" />
        </div>
 
             <div class="form-group">
@@ -67,7 +68,7 @@
                 <span *ngIf="coursedesc.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
             </div>
 
-    <button type="submit" class="btn btn-primary mr-2" [disabled]="!CourseForm.valid"> Submit </button>
+    <button type="submit" class="btn btn-primary mr-2" (click)="addCourse(CourseForm)" [disabled]="!CourseForm.valid"> Submit </button>
     <button class="btn btn-light">Cancel</button>
     </form>
     </div>

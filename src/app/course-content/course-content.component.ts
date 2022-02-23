@@ -13,7 +13,7 @@ export class CourseContentComponent implements OnInit {
   CourseContentArray: CourseContent[] = [
     {
       id: 1,
-      course_id: { Id: 1, name: 'web' },
+      course_id: { id: 1, name: 'web' },
       content: 'fgghhj jkhbk',
       name: 'week 1',
     },
