@@ -9,7 +9,7 @@
                 <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                   <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4>{{course.category_id}}</h4>
+                    <h4>{{course.category?.name}}</h4>
                     <p class="price">${{course.price}}</p>
                   </div>
   
@@ -19,7 +19,7 @@
                   <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                       <img src="assets/main/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
-                      <span>{{course.trainer_id}}</span>
+                      <span>{{course.trainer?.fname}}</span>
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
                       <i class="bx bx-user"></i>&nbsp;50

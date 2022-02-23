@@ -12,8 +12,8 @@ export class AddCourseComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer_id:{id:1,fname:"sara"},category_id:{id:1,name:"web development"}},
-  {id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer_id:{id:2,fname:"mohamed"},category_id:{id:2,name:"design"}}];
+  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer:{id:1,fname:"sara"},category:{id:1,name:"web development"}},
+  {id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer:{id:2,fname:"mohamed"},category:{id:2,name:"design"}}];
 
 
 }
