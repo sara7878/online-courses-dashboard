@@ -6,6 +6,6 @@ export interface Feedback{
     name ?:string,
     desc?:string,
     student_id ?:Student,
-    course_id ?:Course
+    course_id?:Course
 
 }

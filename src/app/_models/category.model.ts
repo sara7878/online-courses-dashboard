@@ -1,5 +1,12 @@
 export interface Category{
-    Id?:number,
-    name?:string,
-    img?:string
+
+    id?:number,
+    name:string,
+    img?:string,
+    
+}
+export interface Categoryobj{
+    data:Category[],
+    status: boolean,
+    error: any[]
 }

@@ -1,0 +1,52 @@
+
+    <div class="col-lg-12 grid-margin stretch-card " >
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Course Table</h4>
+          <button type="button" routerLink="/add-course" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Course </button>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr >
+                  <th> ID</th>
+                  <th> Image</th>
+                  <th> Course Name</th>
+                  <th> Category</th>
+                  <th> Trainer</th>
+                  <th> Show Details</th>
+                  <th> Update</th>
+                  <th> Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let course of courseArray; let i=index" >
+                  <td>{{course.id}}</td>
+                  <td class="py-1">
+                    <img [src]="course.img" alt="image" />
+                  </td>
+                  <td>{{course.name}}</td>
+                  <td>{{course.category_id?.name}}</td>
+                  <td>{{course.trainer_id?.fname}}</td>
+                  <td>
+                      <button type="button" class="btn btn-success "> Show </button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn-warning " routerLink="/update-course"> Update </button>
+
+                  </td>
+                  <td>
+                   <button type="button" class="btn btn-inverse-danger "> Delete </button>
+                  </td>
+
+                </tr>
+              </tbody>
+            </table>
+          <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course </button> -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+

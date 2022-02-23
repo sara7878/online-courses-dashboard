@@ -8,36 +8,18 @@ import { CourseContent } from '../_models/course_content.model';
   providedIn: 'root',
 })
 export class CourseContentService {
-  // coursesContents: CourseContent[] = [
-  //   {
-  //     id: 1,
-  //     name: 'Week 1',
-  //     course_id: {
-  //       Id: 1,
-  //       id: 1,
-  //       name: 'CSS',
-  //     },
-  //     content: 'this is week 1 content',
-  //   },
-  // ];
+
 
   constructor(private httpClient:HttpClient) {}
 
-  // getAllContents(): CourseContent[] {
-  //   return this.coursesContents;
-  // }
+  
   getAllContents(): Observable<CourseContent[]> {
     return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`);
   }
 
 
-  
-  // getCourseContent(id: number): CourseContent {
-  //   return this.coursesContents.find((c) => c.course_id.Id === id)!;
-  // }
-  // getCourseContent(id: number): CourseContent {
-  //   return this.coursesContents.find((c) => c.course_id.Id === id)!;
-  // }
+
+
   getCourseContent(id: number): Observable<CourseContent> {
     return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`)
   }
@@ -50,7 +32,7 @@ export class CourseContentService {
   editCourseContent(id:number,updatedContent:CourseContent): Observable<CourseContent> {
     console.log(id);
     console.log(updatedContent);
-    
+
     return this.httpClient.put<CourseContent>(`${environment.baseUrl}Course_content/${id}`,updatedContent);
   }
 
