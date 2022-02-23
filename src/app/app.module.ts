@@ -21,6 +21,15 @@ import { AddCategoryComponent } from './dashboard/Forms/add-category/add-categor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddQuestionComponent } from './Forms/add-question/add-question.component';
+import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+// import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
+// import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
+// import { AddCourseComponent } from './Forms/add-course/add-course.component';
+// import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
+// import { AddExamComponent } from './Forms/add-exam/add-exam.component';
+// import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { AddCourseComponent } from './dashboard/Forms/add-course/add-course.component';
 import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-course.component';
@@ -28,7 +37,6 @@ import { UpdateCategoryComponent } from './dashboard/Forms/update-category/updat
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
 import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
 
 
@@ -46,11 +54,9 @@ import { CountsComponent } from './main/Layouts/counts/counts.component';
 import { WhyUsComponent } from './main/Layouts/why-us/why-us.component';
 import { FeaturesComponent } from './main/Layouts/features/features.component';
 import { PopularCourcesComponent } from './main/Layouts/popular-cources/popular-cources.component';
-// import { TrainersmainComponent } from './main/Layouts/trainers/trainers.component';
 import { HeroComponent } from './main/Layouts/hero/hero.component';
 import { HomePageComponent } from './main/home-page/home-page.component';
 import { CoursesPageComponent } from './main/courses-page/courses-page.component';
-// import { CategoriesmainComponent } from './main/Layouts/categories/categories.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
 import { CategoriesPageComponent } from './main/categories-page/categories-page.component';
 import { ContactPageComponent } from './main/contact-page/contact-page.component';
@@ -60,8 +66,11 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
-import { UploadImagesComponent } from './upload-images/upload-images.component';
 
+
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -82,6 +91,10 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
     QuestionsComponent,
     AddCategoryComponent,
     TestComponent,
+    AddQuestionComponent,
+    UpdateQuestionComponent,
+    AddCourseContentComponent,
+    EditCourseContentComponent,
     AddAdminComponent,
     AddCourseComponent,
     UpdateCourseComponent,
@@ -89,7 +102,6 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
     AddExamComponent,
     UpdateExamComponent,
     AddCourseContentComponent,
-    EditCourseContentComponent,
     TestrouterComponent,
 
     AppComponent,
@@ -115,9 +127,8 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
-    NavbarMainComponent,
-    UploadImagesComponent,
-  ],
+    NavbarMainComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

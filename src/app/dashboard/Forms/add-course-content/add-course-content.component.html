@@ -1,24 +1,24 @@
 <div class="col-12 grid-margin stretch-card text-primary ">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title text-center ">Add New Course Content</h4>
+        <h4 class="card-title text-center">Add New Course Content</h4>
 
 
         <form class="forms-sample" #courseContentForm=ngForm>
             <div class="form-group">
-              <label for="exampleFormControlSelect1">Course ID:</label>
+              <label for="exampleFormControlSelect1">Course Name:</label>
               <select class="form-control" id="exampleFormControlSelect1" #courseIdInput=ngModel ngModel required name="courseId">
                 <option value="">--Choose your course--</option>
 
                 <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}">{{courseContent.name}}</option>
-                
+
               </select>
               <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required'] && courseIdInput.value===''" style="color: red;" class="alert" >This field is required *</span>
             </div>
 
           <div class="form-group">
             <label for="exampleInputName2">Name :</label>
-            <input #contentNameInput=ngModel ngModel required minlength="3" maxlength="20" pattern="[A-Za-z]+" type="text" class="form-control" id="exampleInputName2" placeholder="Name" name="contentName" />
+            <input #contentNameInput=ngModel ngModel required minlength="3" maxlength="20" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName2" placeholder="Name" name="contentName" />
                 <span *ngIf="contentNameInput.touched && contentNameInput.invalid && contentNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                 <span *ngIf="contentNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 3 characters *</span>
                 <span *ngIf="contentNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 20 characters *</span>
@@ -26,7 +26,7 @@
             </div>
           <div class="form-group">
             <label for="exampleInputName3">Content :</label>
-            <input #courseContentInput=ngModel ngModel required minlength="3" maxlength="255" pattern="[A-Za-z]+" type="text" class="form-control" id="exampleInputName3" placeholder="Content" name="courseContent" />
+            <input #courseContentInput=ngModel ngModel required minlength="3" maxlength="255" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName3" placeholder="Content" name="courseContent" />
                 <span *ngIf="courseContentInput.touched && courseContentInput.invalid && courseContentInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                 <span *ngIf="courseContentInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 3 characters *</span>
                 <span *ngIf="courseContentInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 255 characters *</span>
@@ -35,8 +35,8 @@
 
 
 
-          <button type="submit" class="btn btn-primary mr-2" [disabled]="!courseContentForm.valid"> Submit </button>
-          <button class="btn btn-light">Cancel</button>
+          <button type="submit" class="btn btn-primary mr-2" [disabled]="!courseContentForm.valid" routerLink="/dashboard/contents" (click)="addCourseContent(courseContentForm)"> Submit </button>
+          <button class="btn btn-light" (click)="resetForm(courseContentForm)">Cancel</button>
         </form>
       </div>
     </div>

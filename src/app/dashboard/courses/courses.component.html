@@ -20,7 +20,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let course of courseArray; let i=index" >
+
+                <tr *ngFor="let course of Arr; let i=index" >
                   <td>{{course.id}}</td>
                   <td class="py-1">
                     <img [src]="course.img" alt="image" />
@@ -33,19 +34,19 @@
                   </td>
                   <td>
                     <button type="button" class="btn btn-warning " routerLink="/update-course"> Update </button>
-                    
+
                   </td>
-                  <td>                     
-                   <button type="button" class="btn btn-inverse-danger "> Delete </button>
+
+                  <td>
+                   <button type="button" class="btn btn-inverse-danger " routerLink="contents" (click)="deleteCourse(course.id!)"> Delete </button>
                   </td>
-                  
+
                 </tr>
               </tbody>
             </table>
-          <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course </button> -->
           </div>
-        </div>          
-  
+        </div>
+
       </div>
     </div>
 

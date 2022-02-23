@@ -27,5 +27,8 @@ addcategory(data:Category):Observable<Categoryobj>{
   return this.httpClient.post<Categoryobj>(environment.baseUrl+'categories',data);
 }
 
+deleteCategoryById(id: number): Observable<Category>{
+  return this.httpClient.delete<Category>(environment.baseUrl + 'categories/' + id);
+}
 
 }

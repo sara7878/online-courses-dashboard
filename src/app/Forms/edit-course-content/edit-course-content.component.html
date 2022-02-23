@@ -2,7 +2,7 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title text-center">Edit Course Content</h4>
-  
+
         <form class="forms-sample" #courseContentForm="ngForm">
           <div class="form-group">
             <label for="exampleFormControlSelect1">Course ID:</label>
@@ -15,10 +15,10 @@
               name="courseId"
             >
               <option value="">--Choose your course--</option>
-              <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}" >{{courseContent.name}}</option>
+              <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}">{{courseContent.name}}</option>
               <!-- [selected]="this.CourseContentArray[0].course_id.Id===courseContent.Id" -->
               <!-- <option value="1" [selected]="this.CourseContentArray[0].course_id?.Id===1">1</option> -->
-              
+
             </select>
             <span
               *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required'] && courseIdInput.value===''"
@@ -27,17 +27,17 @@
               >This field is required *</span
             >
           </div>
-  
+
           <div class="form-group">
             <label for="exampleInputName2">Name :</label>
             <input
               #contentNameInput="ngModel"
               ngModel
-              [ngModel]="this.CourseContentArray[0].name"
+              [ngModel]="this.courseContent.name"
               required
               minlength="3"
               maxlength="20"
-              pattern="[A-Za-z]+"
+              pattern="^[a-zA-Z0-9 _.-]*$"
               type="text"
               class="form-control"
               id="exampleInputName2"
@@ -74,11 +74,11 @@
             <input
               #courseContentInput="ngModel"
               ngModel
-              [ngModel]="this.CourseContentArray[0].content"
+              [ngModel]="this.courseContent.content"
               required
               minlength="3"
               maxlength="255"
-              pattern="[A-Za-z]+"
+              pattern="^[a-zA-Z0-9 _.-]*$"
               type="text"
               class="form-control"
               id="exampleInputName3"
@@ -110,14 +110,25 @@
               >Please enter alphabets characters only *</span
             >
           </div>
-  
+
           <button
             type="submit"
             class="btn btn-primary mr-2"
             [disabled]="!courseContentForm.valid"
+            routerLink="/dashboard/contents"
+            (click)="updateCourseContent(this.courseContent.id!,courseContentForm)"
           >
             Edit
           </button>
+          <!-- <button
+          type="submit"
+          class="btn btn-primary mr-2"
+          [disabled]="!courseContentForm.valid"
+          (click)="updateCourseContent(this.courseContent.id!,courseContentForm)"
+          routerLink="/dashboard/contents"
+        >
+          Edit
+        </button> -->
           <button class="btn btn-light">Cancel</button>
         </form>
       </div>

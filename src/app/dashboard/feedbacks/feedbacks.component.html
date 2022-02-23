@@ -16,15 +16,10 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let feedback of FeedbackArray; let i=index" >
+                  <tr *ngFor="let feedback of feed; let i=index" >
                     <td>{{feedback.id}}</td>
-                    <td>{{feedback.student_id?.fname}}</td>
-                    <td>{{feedback.course_id?.name}}</td>
-
-
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger "> Delete </button>
-                    </td>
+                    <td>{{feedback.student?.fname}}</td>
+                    <td>{{feedback.course?.name}}</td>
                     
                   </tr>
                 </tbody>

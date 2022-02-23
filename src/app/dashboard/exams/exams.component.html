@@ -3,14 +3,14 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Exams Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/add-exam"> Add New Exam </button>
+            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-exam"> Add New Exam </button>
 
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
                   <tr >
                     <th> ID</th>
-                    <th> Course Name</th>
+                    <th> Name</th>
                     <th> Max score</th>
                     <th> Show Exam</th>
                     <th> Update</th>
@@ -19,28 +19,28 @@
                 </thead>
                 <tbody>
                   <tr *ngFor="let exam of ExamArray; let i=index" >
-                    <td>{{exam.Id}}</td>
-                    <td>{{exam.course_id?.name}}</td>
-                    <td>100</td>
-                    <td>                     
+                    <td>{{exam.id}}</td>
+
+                    <td>{{exam.name}}</td>
+                    <td>{{exam.max_score}}</td>
+                    <td>
                         <button type="button" class="btn btn-success"> Show </button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-warning" routerLink="/update-exam"> Update </button>
+                      <button type="button" class="btn btn-warning" [routerLink]="'/dashboard/update-exam/'+exam.id"> Update </button>
                     </td>
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger"> Delete </button>
+                    <td>
+                     <button type="button" class="btn btn-inverse-danger"  (click)="deleteExam(exam.id)"> Delete </button>
                     </td>
-                    
+
                   </tr>
                 </tbody>
               </table>
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course </button> -->
             </div>
-          </div>          
-    
+          </div>
+
         </div>
       </div>
-  
-  
-  
+
+

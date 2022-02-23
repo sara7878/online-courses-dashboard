@@ -7,9 +7,11 @@ export interface Course{
     img?:string,
     trainer?:Trainer, 
     category?: Category,
+    trainer_id  ?:number, 
+    category_id ?: number,
     price ?:number,
     duration ?:number,
     preq?:string,
-    desc ?:string
+    desc ?:string,
 }
 

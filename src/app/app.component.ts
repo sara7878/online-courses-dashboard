@@ -7,7 +7,7 @@ import { SwiperOptions } from 'swiper';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'online-courses-dashboard';
@@ -40,12 +40,12 @@ export class AppComponent {
 
 
     }
-  }); 
+  });
 }
 
 config: SwiperOptions = {
-  pagination: { 
-    el: '.swiper-pagination', 
+  pagination: {
+    el: '.swiper-pagination',
     clickable: true
   },
   navigation: {
@@ -53,5 +53,6 @@ config: SwiperOptions = {
     prevEl: '.swiper-button-prev'
   },
   spaceBetween: 30
-};  
+};
+
 }

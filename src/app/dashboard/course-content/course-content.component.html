@@ -3,7 +3,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Course Content Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/add-course-content"> Add New Course content</button>
+            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3 " routerLink="/dashboard/add-course-content"> Add New Course content</button>
 
             <div class="table-responsive">
               <table class="table table-striped">
@@ -19,24 +19,23 @@
                 <tbody>
                   <tr *ngFor="let course of coursesContentsArr; let i=index" >
                     <td>{{course.id}}</td>
-                    <td>{{course.name}}</td>
+                    <td>{{course.course?.name}}</td>
                     <td>{{course.content}}</td>
                     <td>
-                      <button type="button" class="btn btn-warning " routerLink="/edit-course-content"> Update </button>
+                      <button type="button" class="btn btn-warning " [routerLink]="'/dashboard/edit-course-content/'+course.id"> Update </button>
                     </td>
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger "> Delete </button>
+                    <td>
+                     <button type="button" class="btn btn-inverse-danger " routerLink="contents" (click)="deleteCourseContent(course.id!)"> Delete </button>
                     </td>
-                    
+
                   </tr>
                 </tbody>
               </table>
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course content</button> -->
             </div>
-          </div>          
-    
+          </div>
+
         </div>
       </div>
-  
-  
-  
+
+

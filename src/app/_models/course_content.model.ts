@@ -2,7 +2,8 @@ import { Course } from "./course.model"
 
 export interface CourseContent{
     id ?:number,
-    course_id :Course,
+    course_id :number,
     name ?:string,
-    content ?:string
+    content ?:string,
+    course?:Course,
 }

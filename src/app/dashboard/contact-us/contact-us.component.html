@@ -23,8 +23,9 @@
                     <td>{{contact.subject}}</td>
                     <td>{{contact.message}}                      
                     </td>
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger">Delete</button>
+ 
+  <td>                     
+                     <button type="button"  class="btn btn-inverse-danger" (click)=" deleteContactus(contact.id!)" routerLink="contactus">Delete</button>
                     </td>
                     
                   </tr>
