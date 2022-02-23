@@ -8,18 +8,7 @@ import { CourseContent } from '../_models/course_content.model';
   providedIn: 'root',
 })
 export class CourseContentService {
-  // coursesContents: CourseContent[] = [
-  //   {
-  //     id: 1,
-  //     name: 'Week 1',
-  //     course_id: {
-  //       Id: 1,
-  //       id: 1,
-  //       name: 'CSS',
-  //     },
-  //     content: 'this is week 1 content',
-  //   },
-  // ];
+
 
   constructor(private httpClient:HttpClient) {}
 
@@ -31,7 +20,6 @@ export class CourseContentService {
   }
 
 
-  
   // getCourseContent(id: number): CourseContent {
   //   return this.coursesContents.find((c) => c.course_id.Id === id)!;
   // }

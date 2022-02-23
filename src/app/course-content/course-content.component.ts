@@ -10,14 +10,7 @@ import { CourseContentService } from '../_services/course-content.service';
 export class CourseContentComponent implements OnInit {
   constructor(private CourseContentService: CourseContentService) {}
   coursesContentsArr!: CourseContent[];
-  // CourseContentArray: CourseContent[] = [
-  //   {
-  //     id: 1,
-  //     course_id: { id: 1, name: 'web' },
-  //     content: 'fgghhj jkhbk',
-  //     name: 'week 1',
-  //   },
-  // ];
+
 
   ngOnInit(): void {
     this.getAllCoursesContents();

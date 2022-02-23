@@ -1,13 +1,13 @@
 <div class="col-12 grid-margin stretch-card text-primary ">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title text-center ">update Exam</h4>
+        <h4 class="card-title text-center ">Update Exam</h4>
 
 
         <form class="forms-sample" #examForm=ngForm>
           <div class="form-group">
             <label for="exampleInputName1">Name :</label>
-            <input #examNameInput=ngModel  required minlength="3" maxlength="191" pattern="[A-Za-z]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="examName"  [(ngModel)]="ExamArray[0].name"/>
+            <input #examNameInput=ngModel  required minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="examName"  [(ngModel)]="ExamArray[0].name"/>
                 <span *ngIf="examNameInput.touched && examNameInput.invalid && examNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
                 <span *ngIf="examNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
                 <span *ngIf="examNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>

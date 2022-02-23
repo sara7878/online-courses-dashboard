@@ -8,7 +8,7 @@
 
     <div class="form-group">
     <label for="exampleInputName1">Name :</label>
-    <input #coursename=ngModel ngModel required minlength="3" maxlength="191" pattern="[A-Za-z]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name"/>
+    <input #coursename=ngModel ngModel required minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name"/>
     <span *ngIf="coursename.touched && coursename.invalid && coursename.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
     <span *ngIf="coursename.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
     <span *ngIf="coursename.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
@@ -18,7 +18,14 @@
     <div class="form-group">
     <label>Image upload :</label>
     <div class="input-group col-xs-12">
-      <input type="file" #courseImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$"  required class="form-control file-upload-info" placeholder="Upload Image" name="courseImage"/>
+      <input type="file" #courseImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$" enctype="multipart/form-data"
+        required class="form-control file-upload-info" placeholder="Upload Image" name="courseImage"/>
+        <!-- (change)="uploadImage($event)" [ngClass]="{'is-invalid':submitted}"/> -->
+        <!-- <div *ngIf="submitted & courseImageInput.image.errors" class="invalid-feedback">
+          <div *ngIf="courseImageInput.image.errors.required">
+            Image is required
+          </div> 
+        </div>-->
       <span class="input-group-append">
         <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
       </span>
@@ -31,15 +38,19 @@
   <div class="form-group">
     <label for="">Trainer</label>
     <select ngModel class="form-control" name="trainer" id="">
-        <!-- <option *ngFor="let category of categories ;let i=index" [value]="category._id">{{category.name}}</option> -->
-    </select>
+        <option *ngFor="let trainer of TrainersArray ;let i=index" [value]="trainer.id">{{trainer.fname}}</option>
+        <!-- <option value="1">ahmed</option> -->
+      </select>
 </div>
 
 
   <div class="form-group">
     <label for="">Category</label>
+
     <select ngModel class="form-control" name="Category" id="">
-        <!-- <option *ngFor="let category of categories ;let i=index" [value]="category._id">{{category.name}}</option> -->
+      <option *ngFor="let category of categories ;let i=index" [value]="category.id">{{category.name}}</option>
+
+        <!-- <option value="1">web</option> -->
     </select>
 </div>
 
@@ -57,7 +68,7 @@
 
         <div class="form-group">
             <label for="exampleInputName1">Prerequests :</label>
-            <input ngModel type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="name" />
+            <input ngModel type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="preq" />
        </div>
 
             <div class="form-group">
@@ -67,7 +78,7 @@
                 <span *ngIf="coursedesc.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
             </div>
 
-    <button type="submit" class="btn btn-primary mr-2" [disabled]="!CourseForm.valid"> Submit </button>
+    <button type="submit" class="btn btn-primary mr-2" (click)="addCourse(CourseForm)" [disabled]="!CourseForm.valid"> Submit </button>
     <button class="btn btn-light">Cancel</button>
     </form>
     </div>
