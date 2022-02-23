@@ -4,10 +4,20 @@ import { Category } from './_models/category.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'online-courses-dashboard';
-  CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development"}];
-
+  CategoryArray: Category[] = [
+    {
+      id: 1,
+      img: '../../assets/images/faces-clipart/pic-1.png',
+      name: 'web development',
+    },
+    {
+      id: 2,
+      img: '../../assets/images/faces-clipart/pic-1.png',
+      name: 'design development',
+    },
+  ];
 }

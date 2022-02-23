@@ -30,6 +30,10 @@ import { AddExamComponent } from './Forms/add-exam/add-exam.component';
 import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
 
 
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +67,8 @@ import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+    // BrowserAnimationsModule, // required animations module
+    // ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
