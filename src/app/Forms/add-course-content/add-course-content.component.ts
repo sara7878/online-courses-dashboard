@@ -10,11 +10,7 @@ import { CourseContentService } from 'src/app/_services/course-content.service';
   styleUrls: ['./add-course-content.component.css'],
 })
 export class AddCourseContentComponent implements OnInit {
-  newContent: CourseContent={
-      course_id: 0,
-      content: '',
-      name: ''
-  };
+
 
   CourseArray: Course[] = [
     {
@@ -32,10 +28,40 @@ export class AddCourseContentComponent implements OnInit {
       category_id: { Id: 2, name: 'design' },
     },
   ];
+  
+  newContent: CourseContent={
+      course_id: 0,
+      content: '',
+      name: ''
+  };
+
+  // CourseArray: Course[] =
+  //  [
+  //   {
+  //     id: 1,
+  //     img: '../../assets/images/faces-clipart/pic-1.png',
+  //     name: 'angular',
+  //     trainer_id: { id: 1, fname: 'sara' },
+  //     category_id: { Id: 1, name: 'web development' },
+  //   },
+  //   {
+  //     id: 2,
+  //     img: '../../assets/images/faces-clipart/pic-1.png',
+  //     name: 'css',
+  //     trainer_id: { id: 2, fname: 'mohamed' },
+  //     category_id: { Id: 2, name: 'design' },
+  //   },
+  // ];
 
   // CourseContentArray: CourseContent[] = [
   //   {
   //     id: 1,
+  //     course_id: { Id: 1, name: 'angular' },
+  //     content: 'fgghhj jkhbk',
+  //     name: 'week 1',
+  //   },
+  // ];
+  // constructor() {}
   //     course_id: { id: 1, name: 'angular' },
   //     content: 'fgghhj jkhbk',
   //     name: 'week 1',
@@ -64,6 +90,7 @@ export class AddCourseContentComponent implements OnInit {
       }
     );
   }
+
 
   onSubmit(form: NgForm) {
     console.log(form);

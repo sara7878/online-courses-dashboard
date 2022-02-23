@@ -21,6 +21,8 @@ import { AddCategoryComponent } from './Forms/add-category/add-category.componen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddQuestionComponent } from './Forms/add-question/add-question.component';
+import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
 import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
@@ -49,6 +51,8 @@ import { UpdateExamComponent } from './Forms/update-exam/update-exam.component';
     QuestionsComponent,
     AddCategoryComponent,
     TestComponent,
+    AddQuestionComponent,
+    UpdateQuestionComponent,
     AddCourseContentComponent,
     EditCourseContentComponent,
     AddAdminComponent,

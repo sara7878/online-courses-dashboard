@@ -11,8 +11,10 @@ import { AddCategoryComponent } from './Forms/add-category/add-category.componen
 import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
 import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { AddCourseComponent } from './Forms/add-course/add-course.component';
+import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { TestComponent } from './Forms/test/test.component';
 import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
+import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { StudentsComponent } from './students/students.component';
@@ -34,13 +36,16 @@ const routes: Routes = [
   {path:'questions' , component : QuestionsComponent} ,
   {path:'exams' , component : ExamsComponent} ,
   {path:'add-category' , component : AddCategoryComponent} ,
+  {path:'add-question' , component : AddQuestionComponent},
+  {path:'update-question/:id' , component : UpdateQuestionComponent},
+  {path:'add-course' , component : AddCourseComponent} ,
+  {path:'update-course' , component : UpdateCourseComponent} ,
   {path:'add-course-content' , component : AddCourseContentComponent} ,
   {path:'edit-course-content/:id' , component : EditCourseContentComponent} ,
   {path:'add-course' , component : AddCourseComponent} ,
   {path:'update-course' , component : UpdateCourseComponent} ,
   {path:'add-exam' , component : AddExamComponent} ,
   {path:'update-exam' , component : UpdateExamComponent} ,
-
 
   {path:'test' , component : TestComponent} ,
 

@@ -5,7 +5,7 @@ export interface Course{
     id:number,
     name ?:string,
     img?:string,
-    trainer_id  ?:Trainer, 
+    trainer_id  ?:Trainer,
     category_id ?: Category,
     price ?:number,
     duration ?:number,

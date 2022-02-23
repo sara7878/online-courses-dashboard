@@ -13,6 +13,7 @@ export class CourseContentService {
   //     id: 1,
   //     name: 'Week 1',
   //     course_id: {
+  //       Id: 1,
   //       id: 1,
   //       name: 'CSS',
   //     },
@@ -29,13 +30,17 @@ export class CourseContentService {
     return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`);
   }
 
+
+  
+  // getCourseContent(id: number): CourseContent {
+  //   return this.coursesContents.find((c) => c.course_id.Id === id)!;
+  // }
   // getCourseContent(id: number): CourseContent {
   //   return this.coursesContents.find((c) => c.course_id.Id === id)!;
   // }
   getCourseContent(id: number): Observable<CourseContent> {
     return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`)
   }
-
 
   addCourseContent(newContent : CourseContent): Observable<CourseContent> {
     console.log(newContent);
