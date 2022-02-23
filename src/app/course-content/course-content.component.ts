@@ -34,4 +34,16 @@ export class CourseContentComponent implements OnInit {
       }
     );
   }
+
+  deleteCourseContent(id:number){
+this.CourseContentService.deleteCourseContent(id).subscribe(
+  (res) => {
+    // this.coursesContentsArr = res;
+    console.log(res);
+  },
+  (err) => {
+    console.log('Error deleting course content');
+  }
+);
+  }
 }

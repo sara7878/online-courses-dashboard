@@ -79,8 +79,6 @@ export class AddCourseContentComponent implements OnInit {
     this.newContent.course_id = form.value['courseId'];
     // console.log(this.newContent);
 
-    // this.CourseContentService.addCourseContent(this.newContent);
-
 
     this.CourseContentService.addCourseContent(this.newContent).subscribe(
       (res) => {
