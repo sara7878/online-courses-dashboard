@@ -19,7 +19,7 @@
                 <tbody>
                   <tr *ngFor="let course of coursesContentsArr; let i=index" >
                     <td>{{course.id}}</td>
-                    <td>{{course.name}}</td>
+                    <td>{{course.course?.name}}</td>
                     <td>{{course.content}}</td>
                     <td>
                       <button type="button" class="btn btn-warning " [routerLink]="'/edit-course-content/'+course.id"> Update </button>
