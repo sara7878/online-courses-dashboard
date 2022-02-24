@@ -14,9 +14,6 @@ export class ContactUsService {
 
   getAllContacs(): Observable<Contactus[]>{
     return this.httpClient.get<Contactus[]>(`${environment.baseUrl}Contact_us`);
-
-
-
  }
 
 
@@ -24,6 +21,10 @@ export class ContactUsService {
 deleteContact(id:number){
   return this.httpClient.delete<Contactus>(environment.baseUrl+'Contact_us/'+id)
 
+}
+addContact(newContact: Contactus): Observable<Contactus> {
+  console.log(newContact)
+   return this.httpClient.post<Contactus>(`${environment.baseUrl}Contact_us`,newContact);
 }
 
 }

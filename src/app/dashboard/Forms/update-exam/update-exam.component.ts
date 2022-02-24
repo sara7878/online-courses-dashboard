@@ -11,19 +11,20 @@ import { ExamsService } from 'src/app/_services/exams.service';
 })
 
 export class UpdateExamComponent implements OnInit {
-  ExamArray=[{id:1,course_id:1,max_score:2,name:"updateexam"}]
+  ExamArray!:Exam[];
+
   examContent: Exam = {
-    id:0,
     course_id: 0,
     max_score: 0,
     name: '',
   };
+
   updatedExam: Exam = {
-    id:0,
     course_id: 0,
     max_score: 0,
     name: '',
   };
+
   constructor(   private examService: ExamsService,
     private activatedRoute: ActivatedRoute) { }
 
@@ -37,16 +38,30 @@ export class UpdateExamComponent implements OnInit {
           console.log(this.examContent);
         }
       });
+      this.getAllExams();
     }
+
+    getAllExams(){
+      this.examService.getAllExams().subscribe(
+        res=>{
+          this.ExamArray = res.data;
+          console.log(res);
+        },
+        (err) => {
+          console.log('Error getting exams');
+        }
+      )
+    }
+
 
     getExams(id: number) {
       this.examService.getexam(id).subscribe(
         (res) => {
-          this.examContent = res;
+          this.examContent = res.data;
           console.log(res);
         },
         (err) => {
-          console.log('Error adding course content');
+          console.log('Error getting exam');
         }
       );
     }

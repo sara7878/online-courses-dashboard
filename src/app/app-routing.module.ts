@@ -74,7 +74,7 @@ const routes: Routes = [
 
       { path: 'add-course', component: AddCourseComponent },
       { path: 'update-course', component: UpdateCourseComponent },
-      { path: 'update-category', component: UpdateCategoryComponent },
+      { path: 'update-category/:id', component: UpdateCategoryComponent },
 
       { path: 'add-exam', component: AddExamComponent },
       { path: 'update-exam/:id', component: UpdateExamComponent },
@@ -98,8 +98,8 @@ const routes: Routes = [
       // { path: 'questions', component: QuestionsComponent },
       // { path: 'exams', component: ExamsComponent },
       // { path: 'add-category', component: AddCategoryComponent },
-      // { path: 'add-question', component: AddQuestionComponent },
-      // { path: 'update-question/:id', component: UpdateQuestionComponent },
+      { path: 'add-question', component: AddQuestionComponent },
+      { path: 'update-question/:id', component: UpdateQuestionComponent },
       // { path: 'add-course', component: AddCourseComponent },
       // { path: 'update-course', component: UpdateCourseComponent },
       // { path: 'add-course-content', component: AddCourseContentComponent },

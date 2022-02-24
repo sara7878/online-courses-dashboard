@@ -69,6 +69,8 @@ import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
+import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
+
 
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -133,6 +135,7 @@ import { QuestionsComponent } from './dashboard/questions/questions/questions.co
     CategoriesmainComponentComponent,
     NavbarMainComponent,
     UploadImagesComponent,
+    FeedbackFormComponent,
   ],
   imports: [
     BrowserModule,

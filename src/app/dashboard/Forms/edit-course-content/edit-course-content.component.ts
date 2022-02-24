@@ -18,12 +18,14 @@ export class EditCourseContentComponent implements OnInit {
   // CourseContentArray:CourseContent[]=[
   //   {id:1,course_id:1,content:"fgghhj jkhbk",name:"week 1"}
   // ];
+ 
 
   courseContent: CourseContent = {
     course_id: 0,
     content: '',
     name: '',
   };
+
   updatedContent: CourseContent = {
     course_id: 0,
     content: '',
