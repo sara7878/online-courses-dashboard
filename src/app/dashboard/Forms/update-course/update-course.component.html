@@ -1,87 +1,219 @@
-
 <div class="col-12 grid-margin stretch-card text-primary">
-    <div class="card">
+  <div class="card">
     <div class="card-body">
-    <h4 class="card-title text-center ">Update Course</h4>
-    <!-- <p class="card-description">Basic form elements</p> -->
-    <form class="forms-sample" #CourseForm=ngForm>
+      <h4 class="card-title text-center">Update Course</h4>
+      <!-- <p class="card-description">Basic form elements</p> -->
+      <form class="forms-sample" #CourseForm="ngForm">
+        <div class="form-group">
+          <label for="exampleInputName1">Name :</label>
 
+          <input
+            #coursename="ngModel"
+            ngModel
+            required
+            minlength="3"
+            maxlength="191"
+            pattern="^[a-zA-Z0-9 _.-]*$"
+            type="text"
+            class="form-control"
+            id="exampleInputName1"
+            name="coursename"
+            [ngModel]="this.course.name"
+          />
+          <span
+            *ngIf="coursename.touched && coursename.invalid && coursename.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+          <span
+            *ngIf="coursename.errors?.['minlength']"
+            style="color: red"
+            class="alert"
+            >Please enter more than 2 characters *</span
+          >
+          <span
+            *ngIf="coursename.errors?.['maxlength']"
+            style="color: red"
+            class="alert"
+            >Please enter less than 192 characters *</span
+          >
+          <span
+            *ngIf="coursename.errors?.['pattern']"
+            style="color: red"
+            class="alert"
+            >Please enter alphabets characters only *</span
+          >
+        </div>
 
-    <div class="form-group">
-    <label for="exampleInputName1">Name :</label>
+        <div class="form-group">
+          <label>Image upload :</label>
+          <div class="input-group col-xs-12">
+            <input
+              type="file"
+              #courseImageInput="ngModel"
+              ngModel
+              pattern="(.*?)\.(jpg|png|jpeg)$"
+              required
+              class="form-control file-upload-info"
+              placeholder="Upload Image"
+              name="courseImage"
+              [ngModel]="this.course.img"
+            />
+            <span class="input-group-append">
+              <button class="file-upload-browse btn btn-primary" type="button">
+                Upload
+              </button>
+            </span>
+          </div>
+          <span
+            *ngIf="courseImageInput.touched && courseImageInput.invalid && courseImageInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+          <span
+            *ngIf="courseImageInput.errors?.['pattern']"
+            style="color: red"
+            class="alert"
+            >Please upload images only *</span
+          >
+        </div>
 
-    <input #coursename=ngModel ngModel required minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName1"  name="coursename" [(ngModel)]="CourseArray[0].name"/>
-    <span *ngIf="coursename.touched && coursename.invalid && coursename.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-    <span *ngIf="coursename.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
-    <span *ngIf="coursename.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
-    <span *ngIf="coursename.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
-    </div>
+        <div class="form-group">
+          <label for="">Trainer</label>
+          <div class="input-group col-xs-12">
+          <input type="text" name="trainer" id="" [ngModel]="this.course.trainer?.fname" disabled>
+        </div>
+          <!-- <select ngModel class="form-control" name="trainer" id="">
+            <option
+              *ngFor="let trainer of this.trainers; let i = index"
+              [value]="trainer.id"
+            >
+              {{ trainer.id }}
+            </option>
+          </select> -->
+        </div>
 
-    <div class="form-group">
-    <label>Image upload :</label>
-    <div class="input-group col-xs-12">
-      <input type="file" #courseImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$"  required class="form-control file-upload-info" placeholder="Upload Image" name="courseImage" [(ngModel)]="CourseArray[0].img"/>
-      <span class="input-group-append">
-        <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
-      </span>
-    </div>
-    <span *ngIf="courseImageInput.touched && courseImageInput.invalid && courseImageInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-    <span *ngIf="courseImageInput.errors?.['pattern']" style="color: red;" class="alert">Please upload images only *</span>
-  </div>
+        <div class="form-group">
+          <label for="">Category</label>
+          <select
+            #categoryIdInput="ngModel" 
+            ngModel
+            class="form-control"
+            name="Category"
+            id="category"
+          >
+            <!-- <option value="7">{{CourseArray[0].category_id?.name}}</option> -->
+            <option
+              *ngFor="let category of this.categories"
+              value="{{this.category.id}}"
+            >
+              {{ this.category.name }}
+            </option>
+          </select>
+        </div>
 
-
-  <div class="form-group">
-    <label for="">Trainer</label>
-    <select ngModel class="form-control" name="trainer" id="" >
-        <option *ngFor="let course of CourseArray ;let i=index" [value]="course.trainer_id" >{{course.trainer_id}}</option>
-    </select>
-</div>
-
-
-  <div class="form-group">
-    <label for="">Category</label>
-    <select formControlName="fieldName" ngModel class="form-control" name="Category" id="" >
-        <!-- <option value="7">{{CourseArray[0].category_id?.name}}</option> -->
-          <option *ngFor="let category of CourseArray; index as i"  [value]="category.category_id" >
-          {{category.category_id}}
-        </option>
-      </select>
-</div>
-
-  <!-- <select formControlName="fieldName">
+        <!-- <select formControlName="fieldName">
     <option *ngFor="let category of CourseArray; index as i" [selected]="category === CourseArray[0].category_id">
       {{category.category_id?.name}}
     </option>
   </select> -->
 
-  <div class="form-group">
-    <label for="exampleInputName1">Price :</label>
-    <input #courseprice=ngModel ngModel required  type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="price" [(ngModel)]="CourseArray[0].price"/>
-    <span *ngIf="courseprice.touched && courseprice.invalid && courseprice.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-      </div>
-
-    <div class="form-group">
-        <label for="exampleInputName1">Duration :</label>
-        <input #courseduration=ngModel ngModel required  type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="duration" [(ngModel)]="CourseArray[0].duration"/>
-        <span *ngIf="courseduration.touched && courseduration.invalid && courseduration.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-    </div>
+        <div class="form-group">
+          <label for="exampleInputName1">Price :</label>
+          <input
+            #courseprice="ngModel"
+            ngModel
+            required
+            type="text"
+            class="form-control"
+            id="exampleInputName1"
+            placeholder="Name"
+            name="price"
+            [ngModel]="this.course.price"
+          />
+          <span
+            *ngIf="courseprice.touched && courseprice.invalid && courseprice.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
 
         <div class="form-group">
-            <label for="exampleInputName1">Prerequests :</label>
-            <input ngModel type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="preqname" [(ngModel)]="CourseArray[0].preq"/>
-       </div>
+          <label for="exampleInputName1">Duration :</label>
+          <input
+            #courseduration="ngModel"
+            ngModel
+            required
+            type="text"
+            class="form-control"
+            id="exampleInputName1"
+            placeholder="Name"
+            name="duration"
+            [ngModel]="this.course.duration"
+          />
+          <span
+            *ngIf="courseduration.touched && courseduration.invalid && courseduration.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
 
-            <div class="form-group">
-                <label for="exampleInputName1">Description :</label>
-                <input #coursedesc=ngModel ngModel required minlength="3" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="desc" [(ngModel)]="CourseArray[0].desc"/>
-                <span *ngIf="coursedesc.touched && coursedesc.invalid && coursedesc.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-                <span *ngIf="coursedesc.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
-            </div>
+        <div class="form-group">
+          <label for="exampleInputName1">Prerequests :</label>
+          <input
+            ngModel
+            type="text"
+            class="form-control"
+            id="exampleInputName1"
+            placeholder="Name"
+            name="preqname"
+            [ngModel]="this.course.preq"
+          />
+        </div>
 
-    <button type="submit" class="btn btn-primary mr-2" [disabled]="!CourseForm.valid"> Submit </button>
-    <button class="btn btn-light">Cancel</button>
-    </form>
-    </div>
-    </div>
-    </div>
+        <div class="form-group">
+          <label for="exampleInputName1">Description :</label>
+          <input
+            #coursedesc="ngModel"
+            ngModel
+            required
+            minlength="3"
+            type="text"
+            class="form-control"
+            id="exampleInputName1"
+            placeholder="Name"
+            name="desc"
+            [ngModel]="this.course.desc"
+          />
+          <span
+            *ngIf="coursedesc.touched && coursedesc.invalid && coursedesc.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+          <span
+            *ngIf="coursedesc.errors?.['minlength']"
+            style="color: red"
+            class="alert"
+            >Please enter more than 2 characters *</span
+          >
+        </div>
 
+        <button
+          type="submit"
+          class="btn btn-primary mr-2"
+          [disabled]="!CourseForm.valid"
+          routerLink="/dashboard/courses"
+            (click)="updateCourse(this.course.id!,CourseForm)"
+        >
+          Update
+        </button>
+        <button class="btn btn-light" (click)="resetForm(CourseForm)">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

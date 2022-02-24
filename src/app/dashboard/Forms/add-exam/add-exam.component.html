@@ -34,7 +34,7 @@
                 </div>
 
           <button type="submit" class="btn btn-primary mr-2" routerLink="/dashboard/add-exam" (click)="addExam(examForm) "[disabled]="!examForm.valid"> Submit </button>
-          <button class="btn btn-light">Cancel</button>
+          <button class="btn btn-light" (click)="resetForm(examForm)">Cancel</button>
         </form>
       </div>
     </div>

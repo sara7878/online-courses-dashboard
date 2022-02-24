@@ -72,7 +72,7 @@ const routes: Routes = [
       { path: 'add-category', component: AddCategoryComponent },
 
       { path: 'add-course', component: AddCourseComponent },
-      { path: 'update-course', component: UpdateCourseComponent },
+      { path: 'update-course/:id', component: UpdateCourseComponent },
       { path: 'update-category/:id', component: UpdateCategoryComponent },
 
       { path: 'add-exam', component: AddExamComponent },

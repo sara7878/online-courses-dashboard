@@ -29,11 +29,11 @@
                 <td>{{category.name}}</td>
                 <td>
 
-                  <button type="button" class="btn btn-warning btn-fw" routerLink="/update-category"> Update </button>
+                  <button type="button" class="btn btn-warning btn-fw" [routerLink]="'/dashboard/update-category/'+category.id"> Update </button>
 
                 </td>
                 <td>
-                <button type="button" class="btn btn-inverse-danger btn-fw"> Delete </button>
+                <button type="button" class="btn btn-inverse-danger btn-fw" (click)="deleteCategory(category.id!)"> Delete </button>
                 </td>
               </tr>
 

@@ -3,7 +3,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title">Course Table</h4>
-          <button type="button" routerLink="/add-course" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Course </button>
+          <button type="button" routerLink="/dashboard/add-course" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Course </button>
 
           <div class="table-responsive">
             <table class="table table-striped">
@@ -33,12 +33,12 @@
                       <button type="button" class="btn btn-success "> Show </button>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-warning " routerLink="/update-course"> Update </button>
+                    <button type="button" class="btn btn-warning " [routerLink]="'/dashboard/update-course/'+course.id"> Update </button>
 
                   </td>
 
                   <td>
-                   <button type="button" class="btn btn-inverse-danger " routerLink="contents" (click)="deleteCourse(course.id!)"> Delete </button>
+                   <button type="button" class="btn btn-inverse-danger " routerLink="/dashboard/courses" (click)="deleteCourse(course.id!)"> Delete </button>
                   </td>
 
                 </tr>

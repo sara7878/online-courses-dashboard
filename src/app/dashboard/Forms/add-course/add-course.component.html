@@ -39,7 +39,7 @@
   <div class="form-group">
     <label for="">Trainer</label>
     <select ngModel class="form-control" name="trainer" id="">
-        <option *ngFor="let trainer of TrainersArray ;let i=index" [value]="trainer.id">{{trainer.fname}}</option>
+        <option *ngFor="let trainer of trainers ;let i=index" [value]="trainer.id">{{trainer.fname}}</option>
         <!-- <option value="1">ahmed</option> -->
       </select>
 </div>
@@ -79,8 +79,8 @@
                 <span *ngIf="coursedesc.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
             </div>
 
-    <button type="submit" class="btn btn-primary mr-2" (click)="addCourse(CourseForm)" [disabled]="!CourseForm.valid"> Submit </button>
-    <button class="btn btn-light">Cancel</button>
+    <button type="submit" class="btn btn-primary mr-2" routerLink="/dashboard/courses" (click)="addCourse(CourseForm)" [disabled]="!CourseForm.valid"> Submit </button>
+    <button class="btn btn-light" (click)="resetForm(CourseForm)">Cancel</button>
     </form>
     </div>
     </div>

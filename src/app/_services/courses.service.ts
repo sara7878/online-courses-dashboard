@@ -20,11 +20,18 @@ export class CoursesService {
     return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
   }
 
-  create(data: Course): Observable<Course> {
+  addCourse(data: Course): Observable<Course> {
     return this.httpClient.post<Course>(environment.baseUrl + 'courses', data);
   }
 
   deleteCourseById(id: number): Observable<Course>{
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id);
+  }
+
+  editCourse(id: number, updatedCourse: Course): Observable<Course> {
+    console.log(id);
+    console.log(updatedCourse);
+
+    return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse);
   }
 }

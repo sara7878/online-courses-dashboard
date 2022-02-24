@@ -1,31 +1,39 @@
-import { EventEmitter } from "@angular/core";
+import { EventEmitter } from '@angular/core';
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { environment } from "src/environments/environment";
-import { Observable } from "rxjs";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 import { Category, Categoryobj } from 'src/app/_models/category.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CategororyService {
+  constructor(private httpClient: HttpClient) {}
+  categoryArray!: Categoryobj;
 
-  constructor(private httpClient : HttpClient) { }
-categoryArray!:Categoryobj
+  //   getcategories():Observable<{data:Category[],status:boolean,error:any}>{
+  //    return this.httpClient.get<{data:Category[],status:boolean,error:any}>(environment.baseUrl+'categories')
+  //  }
 
+  getcategories(): Observable<Categoryobj> {
+    return this.httpClient.get<Categoryobj>(environment.baseUrl + 'categories');
+  }
 
-//   getcategories():Observable<{data:Category[],status:boolean,error:any}>{
-//    return this.httpClient.get<{data:Category[],status:boolean,error:any}>(environment.baseUrl+'categories')
-//  }
+  addcategory(data: Category): Observable<Categoryobj> {
+    return this.httpClient.post<Categoryobj>(environment.baseUrl + 'categories',data);
+  }
 
-getcategories():Observable<Categoryobj>{
-  return this.httpClient.get<Categoryobj>(environment.baseUrl+'categories')
-}
+  getCategoryById(id:number): Observable<{ data: Category; status: boolean; error: any }>{
+    return this.httpClient.get<{ data: Category; status: boolean; error: any }>(environment.baseUrl + 'categories/'+ id);
+  }
 
+  deleteCategory(id:number): Observable<Category>{
+    return this.httpClient.delete<Category>(environment.baseUrl + 'categories/'+ id);
+  }
 
-addcategory(data:Category):Observable<Categoryobj>{
-  return this.httpClient.post<Categoryobj>(environment.baseUrl+'categories',data);
-}
-
+  editCategory(id:number,updatedCategory: Category):Observable<Category>{
+    return this.httpClient.post<Category>(environment.baseUrl + 'categories/'+ id,updatedCategory);
+  }
 
 }

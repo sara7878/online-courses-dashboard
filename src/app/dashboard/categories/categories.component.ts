@@ -29,4 +29,14 @@ export class CategoriesComponent implements OnInit {
       ()=>{}
     );}
     
+    deleteCategory(id:number){
+      this.categoryService.deleteCategory(id).subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (err) => {
+          console.log('Error deleting category');
+        }
+      );
+    }
 }
