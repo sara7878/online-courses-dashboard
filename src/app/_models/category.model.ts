@@ -10,5 +10,4 @@ export interface Categoryobj{
     data:Category[],
     status: boolean,
     error: any[]
-
 }

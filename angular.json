@@ -42,7 +42,8 @@
               "src/assets/dashboard/vendors/css/vendor.bundle.base.css",
               "src/assets/dashboard/vendors/font-awesome/css/font-awesome.min.css",
               "src/assets/dashboard/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css",
-              "src/assets/dashboard/css/style.css"
+              "src/assets/dashboard/css/style.css",
+              "node_modules/ngx-toastr/toastr.css"
 
 
             ],

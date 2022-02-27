@@ -67,7 +67,8 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 
-
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -134,6 +135,8 @@ import { NavbarMainComponent } from './navbar-main/navbar-main.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule,
     HttpClientModule,
     NgxUsefulSwiperModule
   ],
