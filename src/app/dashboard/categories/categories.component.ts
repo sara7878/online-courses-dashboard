@@ -27,10 +27,11 @@ export class CategoriesComponent implements OnInit {
         console.log(err);
       },
       ()=>{}
-    );}
+    );
+  }
     
-    deleteCategory(id:number){
-      this.categoryService.deleteCategory(id).subscribe(
+    deletecategory(id:number){
+      this.categoryService.deleteCategoryById(id).subscribe(
         (res) => {
           console.log(res);
         },

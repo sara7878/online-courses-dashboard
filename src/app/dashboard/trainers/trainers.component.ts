@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrainerService } from 'src/app/_services/trainer.service';
 import { Trainer } from '../../_models/trainer.model';
 
 @Component({
@@ -8,16 +9,45 @@ import { Trainer } from '../../_models/trainer.model';
 })
 export class TrainersComponent implements OnInit {
 
-  TrainersArray:Trainer[]=[
-    {id:1,fname:"sara",lname:"mohamed",phone:"123446",img:"../../assets/images/faces-clipart/pic-1.png",
-  email:"sara.mahamed7878@gmail.com"},    
-  {id:2,fname:"salma",lname:"mohamed",phone:"276489",img:"../../assets/images/faces-clipart/pic-1.png",
-  email:"salma.mahamed7878@gmail.com"}
-  ]
+  constructor(private trainerservice: TrainerService) {}
 
-  constructor() { }
+  TrainersArray:Trainer[]=[]
 
+
+  
   ngOnInit(): void {
+    this.getAlltrainers();
   }
+
+  getAlltrainers() {
+    this.trainerservice.getAllTrainers().subscribe(
+      (res) => {
+        this.TrainersArray = res.data;
+        console.log(this.TrainersArray);
+      },
+      (err) => {
+        console.log('error in get trainers');
+      }
+    );}
+    
+ deleteTrainer(id:number){
+      this.trainerservice.deleteTrainerById(id).subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (err) => {
+          console.log('Error deleting trainer');
+        }
+      );
+    }
+
+
+
+
+
+
+
+
+
 
 }

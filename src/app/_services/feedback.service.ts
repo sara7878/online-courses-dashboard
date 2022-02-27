@@ -20,4 +20,9 @@ export class FeedbackService {
       environment.baseUrl + 'feedbacks/' + id
     );
   }
+
+
+  deleteFeedbackById(id: number): Observable<Feedback>{
+    return this.httpClient.delete<Feedback>(environment.baseUrl + 'feedbacks/' + id);
+  }
 }

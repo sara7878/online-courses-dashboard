@@ -12,28 +12,29 @@ export class CategororyService {
   constructor(private httpClient: HttpClient) {}
   categoryArray!: Categoryobj;
 
-  //   getcategories():Observable<{data:Category[],status:boolean,error:any}>{
-  //    return this.httpClient.get<{data:Category[],status:boolean,error:any}>(environment.baseUrl+'categories')
-  //  }
 
   getcategories(): Observable<Categoryobj> {
     return this.httpClient.get<Categoryobj>(environment.baseUrl + 'categories');
   }
 
-  addcategory(data: Category): Observable<Categoryobj> {
-    return this.httpClient.post<Categoryobj>(environment.baseUrl + 'categories',data);
-  }
+
 
   getCategoryById(id:number): Observable<{ data: Category; status: boolean; error: any }>{
     return this.httpClient.get<{ data: Category; status: boolean; error: any }>(environment.baseUrl + 'categories/'+ id);
   }
 
-  deleteCategory(id:number): Observable<Category>{
-    return this.httpClient.delete<Category>(environment.baseUrl + 'categories/'+ id);
+
+  addcategory(data:any){
+    return this.httpClient.post(environment.baseUrl+'categories',data);
   }
+
 
   editCategory(id:number,updatedCategory: Category):Observable<Category>{
     return this.httpClient.post<Category>(environment.baseUrl + 'categories/'+ id,updatedCategory);
+  }
+
+  deleteCategoryById(id: number): Observable<Category>{
+    return this.httpClient.delete<Category>(environment.baseUrl + 'categories/' + id);
   }
 
 }

@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 // import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 // import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 // import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
-// import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 // import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
 // import { AddCourseComponent } from './Forms/add-course/add-course.component';
 // import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
@@ -37,7 +37,6 @@ import { UpdateCategoryComponent } from './dashboard/Forms/update-category/updat
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
 import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
 
 
@@ -67,11 +66,16 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
+<<<<<<< HEAD
 import { UploadImagesComponent } from './upload-images/upload-images.component';
 import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
 
+=======
+>>>>>>> 3e63b50c89b7504565f0076f21e0e497fe0427ec
 
+import { ToastrModule } from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -106,7 +110,6 @@ import { UpdateQuestionComponent } from './dashboard/Forms/update-question/updat
     AddExamComponent,
     UpdateExamComponent,
     AddCourseContentComponent,
-    EditCourseContentComponent,
     TestrouterComponent,
 
     AppComponent,
@@ -132,14 +135,15 @@ import { UpdateQuestionComponent } from './dashboard/Forms/update-question/updat
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
-    NavbarMainComponent,
-    UploadImagesComponent,
-  ],
+    NavbarMainComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule,
     HttpClientModule,
     NgxUsefulSwiperModule
   ],

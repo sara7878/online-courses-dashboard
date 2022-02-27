@@ -54,6 +54,7 @@ export class AddCourseComponent implements OnInit {
   categories!: Category[];
   trainers!: Trainer[];
   newCourse: Course = {
+    id:1,
     name: '',
     trainer_id: 0,
     category_id: 0,
@@ -117,6 +118,8 @@ export class AddCourseComponent implements OnInit {
       }
     );
   }
+  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer:{id:1,fname:"sara"},category:{id:1,name:"web development"}},
+  {id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer:{id:2,fname:"mohamed"},category:{id:2,name:"design"}}];
 
   onsubmit(form: NgForm) {
     console.log(form);

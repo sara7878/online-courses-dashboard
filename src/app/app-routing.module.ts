@@ -10,7 +10,7 @@ import { ExamsComponent } from './dashboard/exams/exams.component';
 import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { AddCourseComponent } from './dashboard/Forms/add-course/add-course.component';
 import { UpdateCategoryComponent } from './dashboard/Forms/update-category/update-category.component';
 import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-course.component';
@@ -34,6 +34,7 @@ import { UpdateQuestionComponent } from './dashboard/Forms/update-question/updat
 
 
 const routes: Routes = [
+
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
 
   {
