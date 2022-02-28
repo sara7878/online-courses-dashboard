@@ -69,6 +69,8 @@ import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { LoginComponent } from './dashboard/login/login.component';
+import { RegisterComponent } from './dashboard/register/register.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -128,7 +130,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
-    NavbarMainComponent
+    NavbarMainComponent,
+    LoginComponent,
+    RegisterComponent
     ],
   imports: [
     BrowserModule,

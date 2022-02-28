@@ -4,6 +4,7 @@ import { Category } from 'src/app/_models/category.model';
 import { CategororyService } from 'src/app/_services/categorory.service';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/post.model';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -11,7 +12,7 @@ import { Post } from 'src/app/post.model';
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor(private formbuilder:FormBuilder,private categoryservice:CategororyService,) { }
+  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,) { }
 
   ff=new FormData();
   data:Category={name:"sara",img:this.ff};
@@ -81,12 +82,16 @@ export class AddCategoryComponent implements OnInit {
     //  console.log(form.value);
     const formdata=new FormData();
     formdata.append("image",this.files,this.files.name);
-    console.log(formdata);
+    console.log(formdata); 
+
+   this.http.post('http://localhost:4200/assets', formdata)
+    .subscribe(res => {
+      console.log(res);
+    });
+
     formdata.append("name",form.value.catname);
-    const name=form.value.catname;
-    this.data.name=form.value.catname;
-    this.data.img=formdata;
-    console.log(this.data);
+    // console.log(this.data);
+
 
     this.categoryservice.addcategory(formdata).subscribe(
       (res) =>{
@@ -97,4 +102,7 @@ export class AddCategoryComponent implements OnInit {
       }
     );
    }
+
+
+
 }

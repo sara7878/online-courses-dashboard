@@ -31,6 +31,8 @@ import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
 import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 
 const routes: Routes = [
 
@@ -58,12 +60,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     children: [
-      { path: 'home', component: StatisticsComponent },
+      { path: 'login' , component: LoginComponent },
+      { path: 'home' , component: StatisticsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'trainers', component: TrainersComponent },
       { path: 'students', component: StudentsComponent },
       { path: 'admins', component: AdminsComponent },
+      { path: 'add-admin', component: AddAdminComponent },
+
       { path: 'contactus', component: ContactUsComponent },
       { path: 'contents', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
