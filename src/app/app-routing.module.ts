@@ -35,6 +35,7 @@ import { UpdateQuestionComponent } from './Forms/update-question/update-question
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -49,8 +50,10 @@ const routes: Routes = [
       {path:'register/student', component:RegisterStudentComponent},
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
+      {path:'checkout' , component:CheckoutComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
+      {path:'test', component:TestComponent},
       {
         path: 'courses',
         children: [

@@ -77,6 +77,9 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+import { StripeModule } from 'stripe-angular';
+
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -143,6 +146,7 @@ import { LoginStudentComponent } from './main/login-student/login-student.compon
       
        RegisterStudentComponent,
        LoginStudentComponent,
+       CheckoutComponent,
   ],
 
    
@@ -155,7 +159,8 @@ import { LoginStudentComponent } from './main/login-student/login-student.compon
     BrowserAnimationsModule,
     ToastrModule,
     HttpClientModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") 
   ],
   providers: [],
   bootstrap: [AppComponent]
