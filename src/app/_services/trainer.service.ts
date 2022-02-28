@@ -4,6 +4,11 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Trainer } from '../_models/trainer.model';
 
+interface admin {
+  access_token:any,
+  token_type: any,
+  expires_in: any
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -23,9 +28,14 @@ export class TrainerService {
     return this.httpClient.delete<Trainer>(environment.baseUrl + 'trainers/' + id);
   }
 
-  addTrainer(data: any){
-    return this.httpClient.post(environment.baseUrl+'trainers/',data);
+  addTrainer(data: any): Observable<{data:Trainer,status: boolean,error: any[]}>{
+    return this.httpClient.post<{data:Trainer,status: boolean,error: any[]}>(environment.baseUrl+'trainers/register',data);
   }
 
+
+  checkTrainer(data:any): Observable<admin>{
+    console.log(data);
+    return this.httpClient.post<admin>(environment.baseUrl+'trainers/login',data);
+  }
 
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Trainer } from 'src/app/_models/trainer.model';
+import { TrainerService } from 'src/app/_services/trainer.service';
 
 @Component({
   selector: 'app-trainer-login',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private trainerService:TrainerService) { }
 
   ngOnInit(): void {
   }
 
+  trainer = {
+    email: '',
+    password: '',
+  };
+
+  checkTrainer(form: NgForm) {
+    console.log(form.value);
+    this.trainer.email = form.value['email'];
+    this.trainer.password = form.value['password'];
+// console.log(this.trainer);
+
+    this.trainerService.checkTrainer(this.trainer).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error logging in Trainer');
+        console.log(err);
+        
+      }
+    );
+  }
+
+  resetForm(form: NgForm) {
+    form.reset();
+  }
 }

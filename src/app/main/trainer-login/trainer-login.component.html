@@ -5,7 +5,7 @@
       <!-- <p class="card-description">Basic form elements</p> -->
       <form class="forms-sample" #TrainerLoginForm="ngForm">
         <div class="form-group">
-          <label for="exampleInputEmail3" style="color: #5fcf80"
+          <label for="email" style="color: #5fcf80"
             >Email address :</label
           >
           <input
@@ -14,7 +14,7 @@
             required
             type="email"
             class="form-control"
-            id="exampleInputEmail3"
+            id="email"
             placeholder="Email"
             name="email"
           />
@@ -26,7 +26,7 @@
           >
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword4" style="color: #5fcf80"
+          <label for="password" style="color: #5fcf80"
             >Password :</label
           >
           <input
@@ -35,7 +35,7 @@
             required
             type="password"
             class="form-control"
-            id="exampleInputPassword4"
+            id="password"
             placeholder="Password"
             name="password"
           />
@@ -52,10 +52,12 @@
           class="btn text-light border-none mr-2"
           style="background-color: #5fcf80"
           [disabled]="!TrainerLoginForm.valid"
+          routerLink="/dashboard/trainers"
+          (click)="checkTrainer(TrainerLoginForm)"
         >
           Sign In
         </button>
-        <button class="btn btn-light">Cancel</button>
+        <button class="btn btn-light" (click)="resetForm(TrainerLoginForm)">Cancel</button>
       </form>
     </div>
   </div>

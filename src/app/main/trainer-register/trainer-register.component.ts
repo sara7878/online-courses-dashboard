@@ -25,6 +25,7 @@ export class TrainerRegisterComponent implements OnInit {
   };
 
   addTrainer(form: NgForm) {
+    console.log(form.value);
     this.newTrainer.fname = form.value['fname'];
     this.newTrainer.lname = form.value['lname'];
     this.newTrainer.gender = form.value['gender'];
@@ -38,6 +39,8 @@ export class TrainerRegisterComponent implements OnInit {
       },
       (err) => {
         console.log('Error registering Trainer');
+        console.log(err);
+        
       }
     );
   }
