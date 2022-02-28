@@ -29,6 +29,7 @@ export class TrainerLoginComponent implements OnInit {
     this.trainerService.checkTrainer(this.trainer).subscribe(
       (res) => {
         console.log(res);
+        localStorage.setItem('token', res.access_token);
       },
       (err) => {
         console.log('Error logging in Trainer');
