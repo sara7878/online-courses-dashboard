@@ -68,6 +68,7 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { UploadImagesComponent } from './upload-images/upload-images.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -132,6 +133,7 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
     CategoriesmainComponentComponent,
     NavbarMainComponent,
     UploadImagesComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
