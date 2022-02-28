@@ -36,6 +36,8 @@ import { TrainerLoginComponent } from './main/trainer-login/trainer-login.compon
 import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
@@ -65,12 +67,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     children: [
-      { path: 'home', component: StatisticsComponent },
+      { path: 'login' , component: LoginComponent },
+      { path: 'home' , component: StatisticsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'trainers', component: TrainersComponent },
       { path: 'students', component: StudentsComponent },
       { path: 'admins', component: AdminsComponent },
+      { path: 'add-admin', component: AddAdminComponent },
+
       { path: 'contactus', component: ContactUsComponent },
       { path: 'contents', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },

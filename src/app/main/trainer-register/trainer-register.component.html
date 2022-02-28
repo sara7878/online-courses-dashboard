@@ -1,10 +1,11 @@
 <div class="container mt-5 grid-margin stretch-card text-primary">
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title text-center">Sign Up</h4>
+      <h4 class="card-title text-center fw-bold">Sign Up</h4>
 
       <form class="forms-sample" #trainerRegisterForm="ngForm">
-        <div class="form-group">
+        <div class="form-row">
+        <div class="col">
           <label for="fname">First Name :</label>
           <input
             #firstNameInput="ngModel"
@@ -16,7 +17,7 @@
             type="text"
             class="form-control"
             id="fname"
-            placeholder="Name"
+            placeholder="First Name"
             name="fname"
           />
           <span
@@ -45,7 +46,7 @@
           >
         </div>
 
-        <div class="form-group">
+        <div class="col">
           <label for="lname">Last Name :</label>
           <input
             #lastNameInput="ngModel"
@@ -57,7 +58,7 @@
             type="text"
             class="form-control"
             id="lname"
-            placeholder="lName"
+            placeholder="Last Name"
             name="lname"
           />
           <span
@@ -85,55 +86,36 @@
             >Please enter alphabets characters only *</span
           >
         </div>
-
-        <div class="form-group">
-          <label>gender :</label>
-          <!-- <input
-            #genderInput="ngModel"
-            ngModel
-            required
-            type="text"
-            class="form-control"
-            id="exampleInputName3"
-            placeholder="gender"
-            name="gender"
-          /> -->
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              #genderInput="ngModel"
-              ngModel
-              name="gender"
-              id="male"
-              value="male"
-              checked
-            />
-            <label class="form-check-label" for="male">Male</label>
+      </div>
+        <fieldset class="row mt-3">
+          <legend class="col-form-label col-sm-2 pt-0" style="color: #5fcf80; font-weight: bold;">Gender:</legend>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" #genderInput="ngModel"
+              ngModel name="gender" id="male" value="male" checked>
+              <label class="form-check-label" style="color: black; font-weight: normal;" for="male">
+                Male
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" #genderInput="ngModel"
+              ngModel name="gender" id="female" value="female">
+              <label class="form-check-label" style="color: black; font-weight: normal;" for="female">
+                Female
+              </label>
+            </div>
           </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              #genderInput="ngModel"
-              ngModel
-              name="gender"
-              id="female"
-              value="female"
-            />
-            <label class="form-check-label" for="female"> Female </label>
-          </div>
-
           <span
             *ngIf="genderInput.touched && genderInput.invalid && genderInput.errors?.['required']"
             style="color: red"
             class="alert"
             >This field is required *</span
           >
-        </div>
+        </fieldset>
+        
 
         <div class="form-group">
-          <label for="phone">phone :</label>
+          <label for="phone">Phone :</label>
           <input
             #phoneInput="ngModel"
             ngModel
@@ -141,7 +123,7 @@
             type="text"
             class="form-control"
             id="phone"
-            placeholder="placeholder"
+            placeholder="Phone"
             name="phone"
           />
           <span
@@ -152,7 +134,7 @@
           >
         </div>
         <div class="form-group">
-          <label for="email">email :</label>
+          <label for="email">Email :</label>
           <input
             #emailInput="ngModel"
             ngModel
@@ -160,7 +142,7 @@
             type="text"
             class="form-control"
             id="email"
-            placeholder="placeholder"
+            placeholder="Email Address"
             name="email"
           />
           <span
@@ -171,7 +153,7 @@
           >
         </div>
         <div class="form-group">
-          <label for="password">password :</label>
+          <label for="password">Password :</label>
           <input
             #passwordInput="ngModel"
             ngModel
@@ -179,7 +161,7 @@
             type="password"
             class="form-control"
             id="password"
-            placeholder="placeholder"
+            placeholder="Password"
             name="password"
           />
           <span
@@ -192,10 +174,12 @@
 
         <button
           type="submit"
-          class="btn btn-primary mr-2"
+          id="submitBtn"
+          class="btn text-light mr-2 border-0"
           [disabled]="!trainerRegisterForm.valid"
           routerLink="/main/trainer/login"
           (click)="addTrainer(trainerRegisterForm)"
+          style="background-color: #5fcf80"
         >
           Register
         </button>

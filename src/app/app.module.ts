@@ -78,6 +78,8 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import { RegisterComponent } from './dashboard/register/register.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -143,7 +145,8 @@ import { LoginStudentComponent } from './main/login-student/login-student.compon
     FeedbackFormComponent,
     RegisterStudentComponent,
     LoginStudentComponent,
-    
+    LoginComponent,
+    RegisterComponent,
   ],
 
   imports: [
