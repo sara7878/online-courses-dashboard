@@ -24,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 // import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
-// import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 // import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
 // import { AddCourseComponent } from './Forms/add-course/add-course.component';
 // import { UpdateCourseComponent } from './Forms/update-course/update-course.component';
@@ -37,7 +37,6 @@ import { UpdateCategoryComponent } from './dashboard/Forms/update-category/updat
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
 import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
 
 
@@ -64,15 +63,20 @@ import { ContactPageComponent } from './main/contact-page/contact-page.component
 import { CoursesDetailsPageComponent } from './main/courses-details-page/courses-details-page.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
-import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
+
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
-import { UploadImagesComponent } from './upload-images/upload-images.component';
+
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
 
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
 
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -107,7 +111,6 @@ import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-for
     AddExamComponent,
     UpdateExamComponent,
     AddCourseContentComponent,
-    EditCourseContentComponent,
     TestrouterComponent,
 
     AppComponent,
@@ -133,15 +136,24 @@ import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-for
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
+
     NavbarMainComponent,
-    UploadImagesComponent,
+  
     FeedbackFormComponent,
+      
+       RegisterStudentComponent,
+       LoginStudentComponent,
   ],
+
+   
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule,
     HttpClientModule,
     NgxUsefulSwiperModule
   ],

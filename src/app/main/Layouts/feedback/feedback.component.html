@@ -11,15 +11,15 @@
             <swiper [config]="config" >  
             <div class="swiper-wrapper">
   
-              <div class="swiper-slide" *ngFor="let feed of feed; let i=index">
+              <div *ngFor="let feedback of feedbacks;" class="swiper-slide">
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
                     <img src="assets/main/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                    <h3>{{feed.name }}</h3>
-                    <h4>{{feed.desc}}</h4>
+                    <h3>{{feedback.student?.fname}} {{feedback.student?.lname}}</h3>
+                    <h4>{{feedback.course?.name}}</h4>
                     <p>
                       <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                     {{feed.student?.fname}}
+                        {{feedback.desc}}
                       <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
                   </div>

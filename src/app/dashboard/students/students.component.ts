@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/_services/student.service';
 import { Student } from '../../_models/student.model';
 
 @Component({
@@ -7,16 +8,40 @@ import { Student } from '../../_models/student.model';
   styleUrls: ['./students.component.css']
 })
 export class StudentsComponent implements OnInit {
+  constructor(private studentservice:StudentService ) {}
 
-  StudentsArray:Student[]=[
-    {id:1,fname:"ahmed",lname:"yossef",phone:"235437",email:"asjhv@hbha.sdjk",img:"../../assets/images/faces-clipart/pic-1.png"},
-    {id:2,fname:"mohamed",lname:"ahmed",phone:"4373478",email:"asjhv@dj@jhd.sdjk",img:"../../assets/images/faces-clipart/pic-1.png"},
+  StudentsArray:Student[]=[]
 
-  ]
 
-  constructor() { }
 
+
+  
   ngOnInit(): void {
+    this.getAllstudents();
   }
+
+  getAllstudents() {
+    this.studentservice.getAllStudents().subscribe(
+      (res) => {
+        this.StudentsArray = res.data;
+        console.log(this.StudentsArray);
+      },
+      (err) => {
+        console.log('error in get students');
+      }
+    );}
+    
+ deleteStudent(id:number){
+      this.studentservice.deleteStudentById(id).subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (err) => {
+          console.log('Error deleting student');
+        }
+      );
+    }
+
+
 
 }

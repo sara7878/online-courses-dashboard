@@ -22,6 +22,15 @@ export class FeedbackService {
   }
   addFeeback(newFeedback: Feedback): Observable<Feedback> {
     console.log(newFeedback)
-     return this.httpClient.post<Feedback>(`${environment.baseUrl}feedbacks`,newFeedback);
+     return this.httpClient.post<Feedback>(`${environment.baseUrl}feedbacks`,newFeedback);}
+     
+     deleteFeedbackById(id: number): Observable<Feedback>{
+    return this.httpClient.delete<Feedback>(environment.baseUrl + 'feedbacks/' + id);
   }
+
+
+
+  
+
+
 }

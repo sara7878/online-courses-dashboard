@@ -20,8 +20,8 @@ export class CoursesService {
     return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
   }
 
-  create(data: Course): Observable<Course> {
-    return this.httpClient.post<Course>(environment.baseUrl + 'courses', data);
+  create(data:any){
+    return this.httpClient.post(environment.baseUrl+'courses',data);
   }
 
   deleteCourseById(id: number): Observable<Course>{

@@ -10,7 +10,7 @@ import { ExamsComponent } from './dashboard/exams/exams.component';
 import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { AddCourseComponent } from './dashboard/Forms/add-course/add-course.component';
 import { UpdateCategoryComponent } from './dashboard/Forms/update-category/update-category.component';
 import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-course.component';
@@ -34,7 +34,10 @@ import { AddQuestionComponent } from './Forms/add-question/add-question.componen
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
+
 const routes: Routes = [
+
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
 
   {
@@ -43,6 +46,7 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
+      {path:'register/student', component:RegisterStudentComponent},
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
       { path: 'categories', component: CategoriesPageComponent },

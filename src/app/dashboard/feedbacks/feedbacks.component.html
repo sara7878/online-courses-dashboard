@@ -18,14 +18,11 @@
                 <tbody>
                   <tr *ngFor="let feedback of feed; let i=index" >
                     <td>{{feedback.id}}</td>
-                    <td>{{feedback.student?.fname}}</td>
+                    <td>{{feedback.student?.fname}} {{feedback.student?.lname}}</td>
                     <td>{{feedback.course?.name}}</td>
-
-
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger "> Delete </button>
-                    </td>
-                    
+                    <td>
+                      <button type="button" class="btn btn-inverse-danger"  (click)="deletefeedback(feedback.id!)"> Delete </button>
+                     </td>
                   </tr>
                 </tbody>
               </table>

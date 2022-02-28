@@ -11,6 +11,7 @@ import { CoursesService } from 'src/app/_services/courses.service';
   styleUrls: ['./add-course-content.component.css'],
 })
 export class AddCourseContentComponent implements OnInit {
+
   CourseArray!: Course[];
 
 

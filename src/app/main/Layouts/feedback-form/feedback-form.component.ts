@@ -15,8 +15,9 @@ feed!: Feedback[]
   newfeedback: Feedback={
    
     id:0,
-    // student:{fname:''},
-    // course:{name:''},
+    course:{id:0,name:''},
+    student:{fname:''},
+    
     desc:'',
     course_id:0,
     student_id:0
@@ -25,7 +26,7 @@ feed!: Feedback[]
   //recieved= false;
   ngOnInit(): void {
     this.getAllfeedbacks();
-    
+
   }
 
   getAllfeedbacks() {
@@ -49,8 +50,8 @@ feed!: Feedback[]
 
   addFeedback(form: NgForm) {
     this.newfeedback.name = form.value['name'];
-    this.newfeedback.student_id= form.value['student_id'];
-    this.newfeedback.course_id = form.value['course_id'];
+    this.newfeedback.student.fname = form.value['name'];
+    this.newfeedback.course.name = form.value['course_id'];
     this.newfeedback.desc = form.value['desc'];
 
     // console.log(this.newContent);

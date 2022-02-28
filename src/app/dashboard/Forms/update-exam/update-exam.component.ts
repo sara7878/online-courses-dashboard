@@ -70,7 +70,7 @@ export class UpdateExamComponent implements OnInit {
       this.updatedExam.name = form.value['examName'];
       this.updatedExam.course_id = form.value['course_id'];
       this.updatedExam.max_score = form.value['max_score'];
-      // console.log(this.newContent);
+      console.log(this.updatedExam);
       this.examService.editExam(id,this.updatedExam).subscribe(
         (res) => {
           // this.coursesContentsArr = res;

@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
+
+import { Feedback } from 'src/app/_models/feedback.model';
+
 import { FeedbackService } from 'src/app/_services/feedback.service';
 import { SwiperOptions } from 'swiper';
-import { Feedback } from 'src/app/_models/feedback.model';
+
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',
@@ -9,27 +13,30 @@ import { Feedback } from 'src/app/_models/feedback.model';
 })
 export class FeedbackComponent implements OnInit {
 
-  constructor(private feedbackService: FeedbackService) { }
-
-  feed!:Feedback[]
+  constructor( private feedbackService: FeedbackService) { }
+  // FeedbackArray:Feedback[]=[
+  //   {id:1,desc:"sgjvash asxbksjhbx",student_id:{fname:"sara"},course_id:{name:"web development",id:1}}
+  // ]
+  feedbacks!:Feedback[]
 
   ngOnInit(): void {
     this.getAllfeedbacks();
   }
 
-///main
+
 
   getAllfeedbacks() {
     this.feedbackService.getAllfeedbacks().subscribe(
       (res) => {
-        this.feed = res;
-        console.log(this.feed);
+        this.feedbacks = res;
+        console.log(this.feedbacks);
       },
       (err) => {
         console.log('Error in get all feeds');
       }
     );
   }
+
 
   //swiper
   config: SwiperOptions = {
