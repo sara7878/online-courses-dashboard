@@ -29,7 +29,9 @@ getcategories():Observable<Categoryobj>{
   return this.httpClient.get<Categoryobj>(environment.baseUrl+'categories')
 }
 
-
+getCategorybyId(id: number): Observable<{data:Category,status:boolean,error:any}> {
+  return this.httpClient.get<{data:Category,status:boolean,error:any}>(`${environment.baseUrl}categories/${id}`)
+}
 // addcategory(data:Category):Observable<Category>{
 //   const headers=new HttpHeaders();
 //   return this.httpClient.post<Category>(environment.baseUrl+'categories',data,
@@ -39,6 +41,12 @@ getcategories():Observable<Categoryobj>{
 
 addcategory(data:any){
   return this.httpClient.post(environment.baseUrl+'categories',data);
+}
+
+
+
+updatecategory(id:number,data:any){
+  return this.httpClient.post(environment.baseUrl+'categories/'+id,data);
 }
 
 

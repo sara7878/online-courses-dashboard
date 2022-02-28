@@ -16,12 +16,14 @@ export class CategoriesComponent implements OnInit {
   this.getAll();
   }
 
+  url="http://localhost:8000/uploads/categores/"
+
   getAll(){
     this.categoryService.getcategories().subscribe(
       (res)=>{
         this.catarray=res.data;
         // console.log(res);
-        
+
       },
       (err)=>{
         console.log(err);
@@ -35,7 +37,7 @@ export class CategoriesComponent implements OnInit {
           console.log(res);
         },
         (err) => {
-          console.log('Error deleting trainer');
+          console.log('Error deleting category');
         }
       );
     }
