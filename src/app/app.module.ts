@@ -66,16 +66,14 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
-<<<<<<< HEAD
-import { UploadImagesComponent } from './upload-images/upload-images.component';
 import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
 
-=======
->>>>>>> 3e63b50c89b7504565f0076f21e0e497fe0427ec
 
 import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { TrainerLoginComponent } from './main/trainer-login/trainer-login.component';
+import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -135,7 +133,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
-    NavbarMainComponent
+    NavbarMainComponent,
+    TrainerLoginComponent,
+    TrainerRegisterComponent
     ],
   imports: [
     BrowserModule,

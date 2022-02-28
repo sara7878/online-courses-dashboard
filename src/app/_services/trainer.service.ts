@@ -23,6 +23,9 @@ export class TrainerService {
     return this.httpClient.delete<Trainer>(environment.baseUrl + 'trainers/' + id);
   }
 
+  addTrainer(data: any){
+    return this.httpClient.post(environment.baseUrl+'trainers/',data);
+  }
 
 
 }

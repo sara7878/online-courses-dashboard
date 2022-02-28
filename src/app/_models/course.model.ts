@@ -2,7 +2,7 @@ import { Category } from "./category.model"
 import { Trainer } from "./trainer.model"
 
 export interface Course{
-    id:number,
+    id?:number,
     name ?:string,
     img?:string,
     trainer?:Trainer, 
@@ -13,7 +13,5 @@ export interface Course{
     duration ?:number,
     preq?:string,
     desc ?:string,
-    trainer?:Trainer,
-    category?:Category
 }
 

@@ -31,6 +31,8 @@ import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
 import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
+import { TrainerLoginComponent } from './main/trainer-login/trainer-login.component';
+import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
 
 
 const routes: Routes = [
@@ -53,6 +55,8 @@ const routes: Routes = [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
         ],
       },
+      {path:'trainer/login', component: TrainerLoginComponent},
+      {path:'trainer/register', component: TrainerRegisterComponent},
     ],
   },
 

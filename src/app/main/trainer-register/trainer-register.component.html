@@ -1,0 +1,183 @@
+<div class="container mt-5 grid-margin stretch-card text-primary">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title text-center">Sign Up</h4>
+
+      <form class="forms-sample" #trainerRegisterForm="ngForm">
+        <div class="form-group">
+          <label for="exampleInputName2">Name :</label>
+          <input
+            #contentNameInput="ngModel"
+            ngModel
+            required
+            minlength="3"
+            maxlength="20"
+            pattern="^[a-zA-Z0-9 _.-]*$"
+            type="text"
+            class="form-control"
+            id="exampleInputName2"
+            placeholder="Name"
+            name="fname"
+          />
+          <span
+            *ngIf="contentNameInput.touched && contentNameInput.invalid && contentNameInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+          <span
+            *ngIf="contentNameInput.errors?.['minlength']"
+            style="color: red"
+            class="alert"
+            >Please enter more than 3 characters *</span
+          >
+          <span
+            *ngIf="contentNameInput.errors?.['maxlength']"
+            style="color: red"
+            class="alert"
+            >Please enter less than 20 characters *</span
+          >
+          <span
+            *ngIf="contentNameInput.errors?.['pattern']"
+            style="color: red"
+            class="alert"
+            >Please enter alphabets characters only *</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputName2">last Name :</label>
+          <input
+            #contentNameInput="ngModel"
+            ngModel
+            required
+            minlength="3"
+            maxlength="20"
+            pattern="^[a-zA-Z0-9 _.-]*$"
+            type="text"
+            class="form-control"
+            id="exampleInputName2"
+            placeholder="lName"
+            name="lname"
+          />
+          <span
+            *ngIf="contentNameInput.touched && contentNameInput.invalid && contentNameInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+          <span
+            *ngIf="contentNameInput.errors?.['minlength']"
+            style="color: red"
+            class="alert"
+            >Please enter more than 3 characters *</span
+          >
+          <span
+            *ngIf="contentNameInput.errors?.['maxlength']"
+            style="color: red"
+            class="alert"
+            >Please enter less than 20 characters *</span
+          >
+          <span
+            *ngIf="contentNameInput.errors?.['pattern']"
+            style="color: red"
+            class="alert"
+            >Please enter alphabets characters only *</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputName3">gender :</label>
+          <input
+            #courseContentInput="ngModel"
+            ngModel
+            required
+            type="text"
+            class="form-control"
+            id="exampleInputName3"
+            placeholder="gender"
+            name="gender"
+          />
+          
+          <span
+            *ngIf="courseContentInput.touched && courseContentInput.invalid && courseContentInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="exampleInputName3">phone :</label>
+          <input
+            #courseContentInput="ngModel"
+            ngModel
+            required
+            type="text"
+            class="form-control"
+            id="exampleInputName3"
+            placeholder="placeholder"
+            name="phone"
+          />
+          <span
+            *ngIf="courseContentInput.touched && courseContentInput.invalid && courseContentInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName3">email :</label>
+          <input
+            #courseContentInput="ngModel"
+            ngModel
+            required
+            type="text"
+            class="form-control"
+            id="exampleInputName3"
+            placeholder="placeholder"
+            name="email"
+          />
+          <span
+            *ngIf="courseContentInput.touched && courseContentInput.invalid && courseContentInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputName3">password :</label>
+          <input
+            #courseContentInput="ngModel"
+            ngModel
+            required
+            type="password"
+            class="form-control"
+            id="exampleInputName3"
+            placeholder="placeholder"
+            name="passowrd"
+          />
+          <span
+            *ngIf="courseContentInput.touched && courseContentInput.invalid && courseContentInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary mr-2"
+          [disabled]="!trainerRegisterForm.valid"
+          routerLink="/dashboard/contents"
+          (click)="addTrainer(trainerRegisterForm)"
+        >
+          Register
+        </button>
+        <button class="btn btn-light" (click)="resetForm(trainerRegisterForm)">
+          Cancel
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="container mt-5 grid-margin stretch-card font-weight-bold">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title text-center">Trainer Login</h3>
+      <!-- <p class="card-description">Basic form elements</p> -->
+      <form class="forms-sample" #TrainerLoginForm="ngForm">
+        <div class="form-group">
+          <label for="exampleInputEmail3" style="color: #5fcf80"
+            >Email address :</label
+          >
+          <input
+            #trainerEmailInput="ngModel"
+            ngModel
+            required
+            type="email"
+            class="form-control"
+            id="exampleInputEmail3"
+            placeholder="Email"
+            name="email"
+          />
+          <span
+            *ngIf="trainerEmailInput.touched && trainerEmailInput.invalid && trainerEmailInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword4" style="color: #5fcf80"
+            >Password :</label
+          >
+          <input
+            #trainerPasswordInput="ngModel"
+            ngModel
+            required
+            type="password"
+            class="form-control"
+            id="exampleInputPassword4"
+            placeholder="Password"
+            name="password"
+          />
+          <span
+            *ngIf="trainerPasswordInput.touched && trainerPasswordInput.invalid && trainerPasswordInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+
+        <button
+          type="submit"
+          class="btn text-light border-none mr-2"
+          style="background-color: #5fcf80"
+          [disabled]="!TrainerLoginForm.valid"
+        >
+          Sign In
+        </button>
+        <button class="btn btn-light">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
