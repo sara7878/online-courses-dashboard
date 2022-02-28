@@ -17,7 +17,8 @@ import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-co
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
-import { QuestionsComponent } from './dashboard/questions/questions.component';
+
+// import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
@@ -33,10 +34,10 @@ import { AddQuestionComponent } from './dashboard/Forms/add-question/add-questio
 import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
 import { TrainerLoginComponent } from './main/trainer-login/trainer-login.component';
 import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
-
+import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
 
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
+      { path: 'register/student', component: RegisterStudentComponent },
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
       { path: 'categories', component: CategoriesPageComponent },
@@ -55,8 +57,8 @@ const routes: Routes = [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
         ],
       },
-      {path:'trainer/login', component: TrainerLoginComponent},
-      {path:'trainer/register', component: TrainerRegisterComponent},
+      { path: 'trainer/login', component: TrainerLoginComponent },
+      { path: 'trainer/register', component: TrainerRegisterComponent },
     ],
   },
 
@@ -84,7 +86,10 @@ const routes: Routes = [
       { path: 'update-exam/:id', component: UpdateExamComponent },
 
       { path: 'add-course-content', component: AddCourseContentComponent },
-      { path: 'edit-course-content/:id', component: EditCourseContentComponent },
+      {
+        path: 'edit-course-content/:id',
+        component: EditCourseContentComponent,
+      },
       // { path: 'add-course', component: AddCourseComponent },
       // { path: 'update-course', component: UpdateCourseComponent },
       // { path: 'add-exam', component: AddExamComponent },

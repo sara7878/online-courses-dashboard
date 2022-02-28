@@ -8,11 +8,20 @@ import { Student } from '../_models/student.model';
   providedIn: 'root'
 })
 export class StudentService {
+
+
+
   constructor(private httpClient: HttpClient) {}
   getAllStudents(): Observable<{data:Student[],status: boolean,error: any[]}> {
     return this.httpClient.get<{data:Student[],status: boolean,error: any[]}>(`${environment.baseUrl}students`);
   }
 
+  addStudent(newStudent: Student): Observable<{data:Student[],status: boolean,error: any[]}> {
+  
+     return this.httpClient.post<{data:Student[],status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
+  }
+
+  
   getStudentById(id: number): Observable<Student> {
     return this.httpClient.get<Student>(environment.baseUrl + 'students/' + id);
   }

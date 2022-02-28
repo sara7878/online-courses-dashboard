@@ -16,7 +16,7 @@ import { CourseContentComponent } from './dashboard/course-content/course-conten
 import { ContactUsComponent } from './dashboard/contact-us/contact-us.component';
 import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
 import { ExamsComponent } from './dashboard/exams/exams.component';
-import { QuestionsComponent } from './dashboard/questions/questions.component';
+
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './dashboard/Forms/test/test.component';
@@ -38,8 +38,6 @@ import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component'
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
 import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
-
-
 
 import { HomeComponent } from './main/Layouts/home/home.component';
 import { AboutComponent } from './main/Layouts/about/about.component';
@@ -63,17 +61,23 @@ import { ContactPageComponent } from './main/contact-page/contact-page.component
 import { CoursesDetailsPageComponent } from './main/courses-details-page/courses-details-page.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
-import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
+
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
 
+import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
+import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
 
-import { ToastrModule } from 'ngx-toastr';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrainerLoginComponent } from './main/trainer-login/trainer-login.component';
 import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
+import { ToastrModule } from 'ngx-toastr';
+import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
+
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -135,8 +139,13 @@ import { TrainerRegisterComponent } from './main/trainer-register/trainer-regist
     CategoriesmainComponentComponent,
     NavbarMainComponent,
     TrainerLoginComponent,
-    TrainerRegisterComponent
-    ],
+    TrainerRegisterComponent,
+    FeedbackFormComponent,
+    RegisterStudentComponent,
+    LoginStudentComponent,
+    
+  ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -145,9 +154,9 @@ import { TrainerRegisterComponent } from './main/trainer-register/trainer-regist
     BrowserAnimationsModule,
     ToastrModule,
     HttpClientModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

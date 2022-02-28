@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { QuestionService } from 'src/app/_services/question.service';
-import { Question } from '../../_models/question.model';
+import { Question } from '../../../_models/question.model';
 
-
-// QuetionArray$!:Observable<{question: Question[]}>;
 @Component({
   selector: 'app-questions',
   templateUrl: './questions.component.html',
@@ -64,7 +62,6 @@ export class QuestionsComponent implements OnInit {
 
 
 }
-
 
 
 
