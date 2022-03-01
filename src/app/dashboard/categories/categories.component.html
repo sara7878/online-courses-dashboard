@@ -25,9 +25,7 @@
                 <td>{{category.id}}</td>
                 <td class="py-1">
                   <!-- <img [src]="'/home/sara/Graduation project/online-courses-back/public/uploads/categores/'+category.img" alt="image" /> -->
-                  <img src= "url('/home/sara/Graduation project/online-courses-dashboard/src/assets/dashboard/images/online.png')"/>
-
-                  {{category.img}}
+                  <img [src]= 'url+category.img'/>
                 </td>
                 <td>{{category.name}}</td>
                 <td>

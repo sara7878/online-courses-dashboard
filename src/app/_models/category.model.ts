@@ -1,8 +1,12 @@
+import { Course } from "./course.model";
+
 export interface Category{
 
     id?:number,
     name:string,
     img?:any,
+    courses?:Course[],
+
 
 }
 
