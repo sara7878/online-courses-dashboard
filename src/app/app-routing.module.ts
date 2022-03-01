@@ -39,6 +39,7 @@ import { CheckoutComponent } from './main/checkout/checkout.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { ContentComponent } from './main/content/content.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
 
 const routes: Routes = [
 
@@ -51,6 +52,8 @@ const routes: Routes = [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
       {path:'register/student', component:RegisterStudentComponent},
+      {path:'login/student', component:LoginStudentComponent},
+
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
       {path:'checkout' , component:CheckoutComponent},
