@@ -82,6 +82,7 @@ import { StripeModule } from 'stripe-angular';
 
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
+import { ContentComponent } from './main/content/content.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -153,7 +154,8 @@ import { RegisterComponent } from './dashboard/register/register.component';
 
 
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ContentComponent,
     ],
   imports: [
     BrowserModule,

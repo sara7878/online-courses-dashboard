@@ -1,1 +1,65 @@
-<p>login-student works!</p>
+<div class="container mt-5 grid-margin stretch-card font-weight-bold">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title text-center">Trainer Login</h3>
+        <!-- <p class="card-description">Basic form elements</p> -->
+        <form class="forms-sample" #studentLoginForm="ngForm">
+          <div class="form-group">
+            <label for="email" 
+              >Email address :</label
+            >
+            <input
+              #studentEmailInput="ngModel"
+              ngModel
+              required
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Email"
+              name="email"
+            />
+            <span
+              *ngIf="studentEmailInput.touched && studentEmailInput.invalid && studentEmailInput.errors?.['required']"
+              style="color: red"
+              class="alert"
+              >This field is required *</span
+            >
+          </div>
+          <div class="form-group">
+            <label for="password" 
+              >Password :</label
+            >
+            <input
+              #studentPasswordInput="ngModel"
+              ngModel
+              required
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              name="password"
+            />
+            <span
+              *ngIf="studentPasswordInput.touched && studentPasswordInput.invalid && studentPasswordInput.errors?.['required']"
+              style="color: red"
+              class="alert"
+              >This field is required *</span
+            >
+          </div>
+  
+          <button
+            type="submit"
+            id="submitBtn"
+            class="btn text-light border-none mr-2"
+            style="background-color: #5fcf80"
+            [disabled]="!studentLoginForm.valid"
+            routerLink="/main/home"
+            (click)="checkStudent(studentLoginForm)"
+          >
+            Sign In
+          </button>
+          <button class="btn btn-light" (click)="resetForm(studentLoginForm)">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -24,7 +24,7 @@ export class RegisterStudentComponent implements OnInit {
     gender:'',//enum
     phone:'',
     email:'',
-    pass:''
+    password:''
 
 };
 
@@ -35,7 +35,7 @@ export class RegisterStudentComponent implements OnInit {
     this.newStudent.gender= form.value['gender'];
     this.newStudent.phone = form.value['phone'];
     this.newStudent.email = form.value['email'];
-    this.newStudent.pass= form.value['pass'];
+    this.newStudent.password= form.value['password'];
 
     // console.log(this.newContent);
 
@@ -46,7 +46,7 @@ export class RegisterStudentComponent implements OnInit {
 
       },
       (err) => {
-        console.log('Error adding course content');
+        console.log('Error adding student');
 
       }
     );

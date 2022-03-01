@@ -38,6 +38,7 @@ import { RegisterStudentComponent } from './main/register-student/register-stude
 import { CheckoutComponent } from './main/checkout/checkout.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
+import { ContentComponent } from './main/content/content.component';
 
 const routes: Routes = [
 
@@ -55,7 +56,9 @@ const routes: Routes = [
       {path:'checkout' , component:CheckoutComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
+      {path: 'enroll/:courseId', component:ContentComponent },
       {path:'test', component:TestComponent},
+
       {
         path: 'courses',
         children: [

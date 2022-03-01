@@ -18,7 +18,7 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
     this.getAllcourses();
   }
-
+  url="http://localhost:8000/uploads/courses/"
   getAllcourses() {
     this.courseService.getAllCourses().subscribe(
       (res) => {
