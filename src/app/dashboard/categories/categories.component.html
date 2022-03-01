@@ -24,12 +24,13 @@
 
                 <td>{{category.id}}</td>
                 <td class="py-1">
-                  <img [src]="category.img" alt="image" />
+                  <!-- <img [src]="'/home/sara/Graduation project/online-courses-back/public/uploads/categores/'+category.img" alt="image" /> -->
+                  <img [src]= 'url+category.img'/>
                 </td>
                 <td>{{category.name}}</td>
                 <td>
 
-                  <button type="button" class="btn btn-warning btn-fw" routerLink="/update-category"> Update </button>
+                  <button type="button" class="btn btn-warning btn-fw" [routerLink]="'/dashboard/update-category/'+category.id"> Update </button>
 
                 </td>
                 <td>

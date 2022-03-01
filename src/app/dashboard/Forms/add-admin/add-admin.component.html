@@ -1,4 +1,4 @@
-<div class="col-12 grid-margin stretch-card text-primary font-weight-bold">
+<div class="col-12 grid-margin stretch-card text-primary ">
     <div class="card">
     <div class="card-body">
     <h4 class="card-title text-center ">Add New Admin</h4>
@@ -7,11 +7,11 @@
 
     <div class="form-group">
     <label for="exampleInputName1">First Name :</label>
-    <input #adminfname=ngModel ngModel required minlength="3" maxlength="191" pattern="[A-Za-z]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="fname" ngModel/>
-    <!-- <span *ngIf="adminfname.touched && adminfname.invalid && adminfname.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+    <input #adminfname=ngModel ngModel required minlength="3" maxlength="191" pattern="[A-Za-z ]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="fname" ngModel/>
+    <span *ngIf="adminfname.touched && adminfname.invalid && adminfname.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
     <span *ngIf="adminfname.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
     <span *ngIf="adminfname.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
-    <span *ngIf="adminfname.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span> -->
+    <span *ngIf="adminfname.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
 
 </div>
     <div class="form-group">

@@ -36,6 +36,9 @@ import { QuestionsComponent } from './dashboard/questions/questions/questions.co
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
+import { ContentComponent } from './main/content/content.component';
 
 const routes: Routes = [
 
@@ -53,7 +56,9 @@ const routes: Routes = [
       {path:'checkout' , component:CheckoutComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
+      {path: 'enroll/:courseId', component:ContentComponent },
       {path:'test', component:TestComponent},
+
       {
         path: 'courses',
         children: [
@@ -66,12 +71,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     children: [
-      { path: 'home', component: StatisticsComponent },
+      { path: 'login' , component: LoginComponent },
+      { path: 'home' , component: StatisticsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'trainers', component: TrainersComponent },
       { path: 'students', component: StudentsComponent },
       { path: 'admins', component: AdminsComponent },
+      { path: 'add-admin', component: AddAdminComponent },
+
       { path: 'contactus', component: ContactUsComponent },
       { path: 'contents', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
