@@ -3,7 +3,11 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Student } from '../_models/student.model';
-
+interface admin {
+  access_token:any,
+  token_type: any,
+  expires_in: any
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -11,6 +15,7 @@ export class StudentService {
 
 
 
+ 
   constructor(private httpClient: HttpClient) {}
   getAllStudents(): Observable<{data:Student[],status: boolean,error: any[]}> {
     return this.httpClient.get<{data:Student[],status: boolean,error: any[]}>(`${environment.baseUrl}students`);
@@ -18,7 +23,7 @@ export class StudentService {
 
   addStudent(newStudent: Student): Observable<{data:Student[],status: boolean,error: any[]}> {
   
-     return this.httpClient.post<{data:Student[],status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
+     return this.httpClient.post<{data:Student[],status: boolean,error: any[]}>(`${environment.baseUrl}students/register`,newStudent);
   }
 
   
@@ -31,5 +36,8 @@ export class StudentService {
     return this.httpClient.delete<Student>(environment.baseUrl + 'students/' + id);
   }
 
-
+  checkStudent(data:any): Observable<admin>{
+    console.log(data);
+    return this.httpClient.post<admin>(environment.baseUrl+'students/login',data);
+  }
 }

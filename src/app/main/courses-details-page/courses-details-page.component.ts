@@ -51,13 +51,26 @@ coursedetails: Course={
       const id = params['courseId'];
       console.log(params);
       if (id) {
+      
         this.getCoursedetails(id);
+        this.enroll(id);
         // console.log(this.coursedetails);
       }
     });
   }
 
+  enroll(course_id:number){
+    this.courseService.enroll(course_id).subscribe(
+      (res) => {
+        // this.coursesContentsArr = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error adding course content');
+      }
+    )
 
+  }
 
   getCoursedetails(id: number) {
     this.courseService.getCourseById(id).subscribe(

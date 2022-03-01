@@ -34,4 +34,9 @@ export class CoursesService {
 
     return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse);
   }
+  
+  enroll(course_id:number)
+  {
+    return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id);
+  }
 }

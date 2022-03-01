@@ -83,7 +83,7 @@ import { RegisterComponent } from './dashboard/register/register.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
 import { StripeModule } from 'stripe-angular';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
-
+import { ContentComponent } from './main/content/content.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -143,6 +143,8 @@ import { CategoryCoursesComponent } from './main/category-courses/category-cours
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
+
+
     NavbarMainComponent,
     TrainerLoginComponent,
     TrainerRegisterComponent,
@@ -152,8 +154,9 @@ import { CategoryCoursesComponent } from './main/category-courses/category-cours
     LoginComponent,
     RegisterComponent,
     CheckoutComponent,
-    CategoryCoursesComponent,
-  ],
+    CategoryCoursesComponent, 
+    ContentComponent,
+    ],
 
   imports: [
     BrowserModule,

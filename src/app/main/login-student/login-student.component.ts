@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { StudentService } from 'src/app/_services/student.service';
 
 @Component({
   selector: 'app-login-student',
@@ -7,9 +9,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginStudentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private studentService: StudentService
+    ) { }
 
   ngOnInit(): void {
+  }  
+  student = {
+    email: '',
+    password: '',
+  };
+
+  checkStudent(form: NgForm) {
+    console.log(form.value);
+    this.student.email = form.value['email'];
+    this.student.password = form.value['password'];
+// console.log(this.trainer);
+
+    this.studentService.checkStudent(this.student).subscribe(
+      (res) => {
+        console.log(res);
+        localStorage.setItem('Authorization', "bearer "+res.access_token);
+      },
+      (err) => {
+        console.log('Error logging in student');
+        console.log(err);
+        
+      }
+    );
+  }
+
+  resetForm(form: NgForm) {
+    form.reset();
   }
 
 }

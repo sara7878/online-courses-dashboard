@@ -42,6 +42,10 @@ import { CheckoutComponent } from './main/checkout/checkout.component';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { RegisterComponent } from './main/register/register.component';
 
+import { ContentComponent } from './main/content/content.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { MainLoginComponent } from './main/login/login.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
 
@@ -52,13 +56,18 @@ const routes: Routes = [
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
       { path: 'register', component: RegisterComponent },
+      { path: 'login', component: MainLoginComponent },
       { path: 'register/student', component: RegisterStudentComponent },
+      {path:'login/student', component:LoginStudentComponent},
+
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
-      { path: 'test', component: TestComponent },
+      {path: 'enroll/:courseId', component:ContentComponent },
+      {path:'test', component:TestComponent},
+
       {
         path: 'courses',
         children: [
