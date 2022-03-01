@@ -80,6 +80,9 @@ import { RegisterStudentComponent } from './main/register-student/register-stude
 import { LoginStudentComponent } from './main/login-student/login-student.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+import { StripeModule } from 'stripe-angular';
+
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -147,6 +150,7 @@ import { RegisterComponent } from './dashboard/register/register.component';
     LoginStudentComponent,
     LoginComponent,
     RegisterComponent,
+    CheckoutComponent,
   ],
 
   imports: [
@@ -158,6 +162,9 @@ import { RegisterComponent } from './dashboard/register/register.component';
     ToastrModule,
     HttpClientModule,
     NgxUsefulSwiperModule,
+    StripeModule.forRoot(
+      'pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143'
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent],

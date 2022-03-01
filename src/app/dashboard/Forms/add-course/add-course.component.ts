@@ -169,13 +169,13 @@ export class AddCourseComponent implements OnInit {
     formdata.append('preq', form.value.preq);
 
     this.data.name = form.value.name;
-    this.data.img = formdata;
+    this.data.img = form.value.image;
     this.data.price = form.value.price;
     this.data.duration = form.value.duration;
     this.data.trainer_id = form.value.trainer_id;
     this.data.category_id = form.value.category_id;
     this.data.desc = form.value.desc;
-    this.data.preq = form.value.coursepreq;
+    this.data.preq = form.value.preq;
 
     console.log(this.data);
     this.courseService.create(formdata).subscribe(

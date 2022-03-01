@@ -23,7 +23,7 @@
 
   <div class="form-group">
     <label for="">Trainer</label>
-    <select ngModel class="form-control" name="trainer" id="">
+    <select ngModel class="form-control" name="trainer_id" formControlName="trainer_id" id="">
         <option *ngFor="let trainer of trainers ;let i=index" [value]="trainer.id">{{trainer.fname}}</option>
       </select>
 </div>
