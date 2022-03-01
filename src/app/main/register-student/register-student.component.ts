@@ -13,22 +13,21 @@ export class RegisterStudentComponent implements OnInit {
 
   constructor( private studentService: StudentService) { }
   ngOnInit(): void {
-  
+
   }
    studentArray!: Student[];
 
 
   newStudent: Student = {
-    
     fname:'',
-    lname:'',      
+    lname:'',
     gender:'',//enum
     phone:'',
     email:'',
-    pass:'' 
+    pass:''
 
 };
-  
+
 
   addStudent(form: NgForm) {
     this.newStudent.fname = form.value['fname'];
@@ -44,7 +43,7 @@ export class RegisterStudentComponent implements OnInit {
       (res) => {
         // this.coursesContentsArr = res;
         console.log(res.data);
-        
+
       },
       (err) => {
         console.log('Error adding course content');

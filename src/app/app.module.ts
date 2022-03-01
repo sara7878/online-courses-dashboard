@@ -80,6 +80,8 @@ import { LoginStudentComponent } from './main/login-student/login-student.compon
 import { CheckoutComponent } from './main/checkout/checkout.component';
 import { StripeModule } from 'stripe-angular';
 
+import { LoginComponent } from './dashboard/login/login.component';
+import { RegisterComponent } from './dashboard/register/register.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -148,10 +150,11 @@ import { StripeModule } from 'stripe-angular';
        RegisterStudentComponent,
        LoginStudentComponent,
        CheckoutComponent,
-  ],
 
 
-
+    LoginComponent,
+    RegisterComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,

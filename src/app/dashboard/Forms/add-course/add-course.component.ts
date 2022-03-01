@@ -22,13 +22,13 @@ export class AddCourseComponent implements OnInit {
   data:Course={
    name:"yomna",
    img:this.ff,
-   
+
   category_id:8,
    trainer_id:8,
    preq:'klnkl',price:0
    ,desc:'knlnlnl'};
 
- 
+
 
   resetForm(form: NgForm) {
     form.reset();
@@ -51,7 +51,7 @@ export class AddCourseComponent implements OnInit {
 
   // id  :0,
   //   fname:'yomna',
-  //   lname :'hamed',      
+  //   lname :'hamed',
   //   gender :'female',//enum
   //   phone :'123456789',
   //   email  :'yomna@gmail.com',
@@ -59,8 +59,8 @@ export class AddCourseComponent implements OnInit {
   get f(){
     return this.form.controls;
 
-  } 
- 
+  }
+
 
   ngOnInit(): void {
     this.creatForm();
@@ -75,12 +75,12 @@ export class AddCourseComponent implements OnInit {
     if(this.form.invalid){
      console.log("form invalid");
     }
-   
+
 
 
     const formdata=new FormData();
-    formdata.append("image",this.files,this.files.name);
-    
+    formdata.append("img",this.files,this.files.name);
+
     formdata.append("name",form.value.name);
     formdata.append("category_id",form.value.category_id);
     formdata.append("price",form.value.price);

@@ -14,6 +14,7 @@ export class ContactUsService {
 
   getAllContacs(): Observable<Contactus[]>{
     return this.httpClient.get<Contactus[]>(`${environment.baseUrl}Contact_us`);
+
  }
 
 

@@ -1,6 +1,6 @@
   <!-- Favicons -->
   <link href="src/assets/main/img/favicon.png" rel="icon">
-  
+
   <link href="src/assets/main/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -18,18 +18,20 @@
   </div>
    -->
 <!-- <app-navbar *ngIf="active1==true"></app-navbar> -->
+<router-outlet *ngIf="active3==true"></router-outlet>
+
 <app-navbar-main *ngIf="active1==true"></app-navbar-main>
 <router-outlet *ngIf="active1==true"></router-outlet>
 <app-footer *ngIf="active1==true"></app-footer>
 
 <app-nav-bar *ngIf="active==true"></app-nav-bar>
 <div class="container-scroller" *ngIf="active==true">
-  <app-side-bar *ngIf="active==true"></app-side-bar>    
+  <app-side-bar *ngIf="active==true"></app-side-bar>
   <div class="container-fluid page-body-wrapper" *ngIf="active==true">
   <div class="main-panel" *ngIf="active==true">
   <router-outlet *ngIf="active==true"></router-outlet>
 </div></div>
-<app-stfooter class="fixed-bottom" *ngIf="active==true"></app-stfooter> 
+<app-stfooter class="fixed-bottom" *ngIf="active==true"></app-stfooter>
 </div>
 
 
@@ -40,35 +42,3 @@
 
 
 
-
-
-
-
-
-    <!-- <app-nav-bar></app-nav-bar>
-    <div class="container-scroller">
-      <app-side-bar></app-side-bar>    
-      <div class="container-fluid page-body-wrapper">
-<app-courses></app-courses>
-</div>
-</div>
-      <app-stfooter class="fixed-bottom"></app-stfooter>  -->
-
-<!-- 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Breeze Admin</title>
-
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
-    <div class="container-scroller">
-    <app-side-bar></app-side-bar>    
-    <div class="container-fluid page-body-wrapper">
-
-    <app-nav-bar></app-nav-bar>
-    <router-outlet></router-outlet>
-
-    </div>
-    </div>
-
-    
-    <app-stfooter class="fixed-bottom"></app-stfooter> -->

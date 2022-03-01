@@ -17,7 +17,7 @@ import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-co
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
- 
+
 // import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { StudentsComponent } from './dashboard/students/students.component';
@@ -36,6 +36,8 @@ import { QuestionsComponent } from './dashboard/questions/questions/questions.co
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 
 const routes: Routes = [
 
@@ -66,12 +68,15 @@ const routes: Routes = [
   {
     path: 'dashboard',
     children: [
-      { path: 'home', component: StatisticsComponent },
+      { path: 'login' , component: LoginComponent },
+      { path: 'home' , component: StatisticsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'trainers', component: TrainersComponent },
       { path: 'students', component: StudentsComponent },
       { path: 'admins', component: AdminsComponent },
+      { path: 'add-admin', component: AddAdminComponent },
+
       { path: 'contactus', component: ContactUsComponent },
       { path: 'contents', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
