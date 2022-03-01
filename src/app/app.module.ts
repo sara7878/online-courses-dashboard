@@ -82,6 +82,7 @@ import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
 import { StripeModule } from 'stripe-angular';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -151,6 +152,7 @@ import { StripeModule } from 'stripe-angular';
     LoginComponent,
     RegisterComponent,
     CheckoutComponent,
+    CategoryCoursesComponent,
   ],
 
   imports: [

@@ -158,7 +158,7 @@ export class AddCourseComponent implements OnInit {
     }
 
     const formdata = new FormData();
-    formdata.append('image', this.files, this.files.name);
+    formdata.append('img', this.files, this.files.name);
 
     formdata.append('name', form.value.name);
     formdata.append('category_id', form.value.category_id);

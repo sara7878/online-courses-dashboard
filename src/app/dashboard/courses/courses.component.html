@@ -24,7 +24,8 @@
                 <tr *ngFor="let course of Arr; let i=index" >
                   <td>{{course.id}}</td>
                   <td class="py-1">
-                    <img [src]="course.img" alt="image" />
+                    <!-- <img [src]="course.img" alt="image" /> -->
+                    <img [src]= 'url+course.img'/>
                   </td>
                   <td>{{course.name}}</td>
                   <td>{{course.category?.name}}</td>

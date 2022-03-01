@@ -24,9 +24,7 @@ export class CategororyService {
     return this.httpClient.post(environment.baseUrl + 'categories', data);
   }
 
-  getCategorybyId(
-    id: number
-  ): Observable<{ data: Category; status: boolean; error: any }> {
+  getCategorybyId(id: number ): Observable<{ data: Category; status: boolean; error: any }> {
     return this.httpClient.get<{ data: Category; status: boolean; error: any }>(
       `${environment.baseUrl}categories/${id}`
     );
@@ -46,6 +44,13 @@ export class CategororyService {
   deleteCategoryById(id: number): Observable<Category> {
     return this.httpClient.delete<Category>(
       environment.baseUrl + 'categories/' + id
+    );
+  }
+
+
+  getCoursesOfCategory(id: number ):Observable<{ data: Category; status: boolean; error: any }>{
+    return this.httpClient.get<{ data: Category; status: boolean; error: any }>(
+      `${environment.baseUrl}categories/${id}`
     );
   }
 }

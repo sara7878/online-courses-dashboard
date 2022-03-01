@@ -1,55 +1,57 @@
 <div class="col-12 grid-margin stretch-card text-primary ">
-    <div class="card">
-      <div class="card-body">
-        <h4 class="card-title text-center ">Add New Category</h4>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title text-center ">Add New Category</h4>
 
-        <form class="forms-sample" [formGroup]="form" >
+      <form class="forms-sample" [formGroup]="form" >
 
-          <div class="form-group">
-            <label >Name :</label>
-            <input formControlName="catname"  type="text" minlength="3" maxlength="10" pattern="^[a-zA-Z0-9 ]*$" class="form-control" id="exampleInputName1" placeholder="Name" name="catname" />
-            <div *ngIf="f['catname'].errors?.['minlength']" style="color: red;">name must be is atleast 3 char</div>
-            <div *ngIf="f['catname'].errors?.['maxlength']" style="color: red;">name must be is max 10 char</div>
-            <div *ngIf="f['catname'].errors?.['required']&&f['catname'].touched" style="color: red;">Name is required</div>
+        <div class="form-group">
+          <label >Name :</label>
+          <input formControlName="catname"  type="text" minlength="3" maxlength="10" pattern="^[a-zA-Z0-9 ]*$" class="form-control" id="exampleInputName1" placeholder="Name" name="catname" />
+          <div *ngIf="f['catname'].errors?.['minlength']" style="color: red;">name must be is atleast 3 char</div>
+          <div *ngIf="f['catname'].errors?.['maxlength']" style="color: red;">name must be is max 10 char</div>
+          <div *ngIf="f['catname'].errors?.['required']&&f['catname'].touched" style="color: red;">Name is required</div>
+        </div>
+
+
+        <div class="form-group">
+            <label>Image upload :</label>
+              <input formControlName="image" type="file" pattern="(.*?)\.(jpg|png|jpeg)$"   name="image" id="image" class="form-control"
+              (change)="uploadImage($event)"/>
+              <div *ngIf="f['image'].errors?.['required']&&f['image'].touched" style="color: red;">image is required</div>
+              <div *ngIf="f['image'].errors?.['pattern']" style="color: red;">must upload image </div>
           </div>
 
-            <div class="form-group">
-              <label>Image upload :</label>
-                <input formControlName="image" type="file" pattern="(.*?)\.(jpg|png|jpeg)$"   name="image" id="image" class="form-control"
-                (change)="uploadImage($event)"/>
-                <div *ngIf="f['image'].errors?.['required']&&f['image'].touched" style="color: red;">image is required</div>
-                <div *ngIf="f['image'].errors?.['pattern']" style="color: red;">must upload image </div>
-            </div>
 
-          <button type="submit" class="btn btn-primary mr-2" (click)="onsubmit(form)"> Submit </button>
-          <!-- <button class="btn btn-light" (click)="resetForm(categoryForm)">Cancel</button> -->
-        </form>
-        <!-- <form class="forms-sample" #categoryForm=ngForm>
+        <button type="submit" class="btn btn-primary mr-2" (click)="onsubmit(form)"> Submit </button>
+        <!-- <button class="btn btn-light" (click)="resetForm(categoryForm)">Cancel</button> -->
+      </form>
+      <!-- <form class="forms-sample" #categoryForm=ngForm>
+        <div class="form-group">
+          <label for="exampleInputName1">Name :</label>
+          <input #catNameInput=ngModel ngModel required minlength="3" maxlength="191" pattern="[A-Za-z ]+" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="catName" />
+              <span *ngIf="catNameInput.touched && catNameInput.invalid && catNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+              <span *ngIf="catNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
+              <span *ngIf="catNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
+              <span *ngIf="catNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
+          </div>
+
+
           <div class="form-group">
-            <label for="exampleInputName1">Name :</label>
-            <input #catNameInput=ngModel ngModel required minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" class="form-control" id="exampleInputName1" placeholder="Name" name="catName" />
-                <span *ngIf="catNameInput.touched && catNameInput.invalid && catNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-                <span *ngIf="catNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
-                <span *ngIf="catNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
-                <span *ngIf="catNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
+            <label>File upload :</label>
+            <div class="input-group col-xs-12">
+              <input type="file" #catImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$"  required class="form-control file-upload-info" placeholder="Upload Image" name="catImage"/>
             </div>
+            <span *ngIf="catImageInput.touched && catImageInput.invalid && catImageInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+            <span *ngIf="catImageInput.errors?.['pattern']" style="color: red;" class="alert">Please upload images only *</span>
+          </div>
 
 
-            <div class="form-group">
-              <label>File upload :</label>
-              <div class="input-group col-xs-12">
-                <input type="file" #catImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$"  required class="form-control file-upload-info" placeholder="Upload Image" name="catImage"/>
-              </div>
-              <span *ngIf="catImageInput.touched && catImageInput.invalid && catImageInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-              <span *ngIf="catImageInput.errors?.['pattern']" style="color: red;" class="alert">Please upload images only *</span>
-            </div>
+        <button type="submit" class="btn btn-primary mr-2" [disabled]="!categoryForm.valid" (click)="addcategory(categoryForm)"> Submit </button>
+        <button class="btn btn-light" (click)="resetForm(categoryForm)">Cancel</button>
+      </form> -->
 
 
-          <button type="submit" class="btn btn-primary mr-2" [disabled]="!categoryForm.valid" routerLink="/dashboard/categories" (click)="addcategory(categoryForm)"> Submit </button>
-          <button class="btn btn-light" (click)="resetForm(categoryForm)">Cancel</button>
-        </form> -->
-
-
-      </div>
     </div>
   </div>
+</div>

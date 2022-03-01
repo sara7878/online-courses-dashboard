@@ -1,75 +1,64 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, NgForm,FormGroup,Validators } from '@angular/forms';
 import { Category } from 'src/app/_models/category.model';
 import { CategororyService } from 'src/app/_services/categorory.service';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/post.model';
 import { HttpClient } from '@angular/common/http';
+import { CoursesService } from 'src/app/_services/courses.service';
+import { Course } from 'src/app/_models/course.model';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
-  styleUrls: ['./add-category.component.css'],
+  styleUrls: ['./add-category.component.css']
 })
 export class AddCategoryComponent implements OnInit {
-  constructor(
-    private http: HttpClient,
-    private formbuilder: FormBuilder,
-    private categoryservice: CategororyService
-  ) {}
 
-  // ff = new FormData();
-  // data: Category = { name: 'sara', img: this.ff };
+  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService) { }
+
+  ff=new FormData();
+  data:Category={name:"sara",img:this.ff};
 
 
   resetForm(form: NgForm) {
     form.reset();
   }
 
-  files: any;
-  submitted = false;
-  form!: FormGroup;
+  files:any;
+  submitted=false;
+  form!:FormGroup;
 
-  creatForm() {
-    this.form = this.formbuilder.group({
-      catname: [null, Validators.required],
-      image: [null, Validators.required],
-    });
+  creatForm(){
+    this.form=this.formbuilder.group({
+      catname:[null,Validators.required],
+      image:[null,Validators.required]
+    })
   }
 
-  get f() {
+  get f(){
     return this.form.controls;
-  }
-  ngOnInit(): void {
+
+  } 
+   ngOnInit(): void {
     this.creatForm();
   }
-  
-  uploadImage(event: any) {
-    this.files = event.target.files[0];
+  uploadImage(event:any){
+    this.files=event.target.files[0]
     console.log(this.files);
+    
   }
-
- 
   onsubmit(form:any){
     this.submitted=true;
     if(this.form.invalid){
       return;
     }
-    //  console.log(form.value);
+    //console.log(form.value);
     const formdata=new FormData();
-    formdata.append("image",this.files,this.files.name);
-    console.log(formdata); 
-
-   this.http.post('http://localhost:4200/assets', formdata)
-    .subscribe(res => {
-      console.log(res);
-    });
-
+    formdata.append("img",this.files,this.files.name);
     formdata.append("name",form.value.catname);
-    // console.log(this.data);
-
 
     this.categoryservice.addcategory(formdata).subscribe(
-      (res) => {
+      (res) =>{
         console.log(res);
       },
       (err) => {
@@ -77,5 +66,8 @@ export class AddCategoryComponent implements OnInit {
       }
     );
    }
+
+   
+
 
 }

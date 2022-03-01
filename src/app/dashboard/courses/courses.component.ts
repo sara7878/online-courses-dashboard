@@ -14,6 +14,7 @@ export class CoursesComponent implements OnInit {
   // ];
 
   Arr!: Course[];
+  url="http://localhost:8000/uploads/courses/"
 
   ngOnInit(): void {
     this.getAllcourses();

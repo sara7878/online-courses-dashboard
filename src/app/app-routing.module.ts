@@ -39,6 +39,8 @@ import { RegisterStudentComponent } from './main/register-student/register-stude
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
+import { RegisterComponent } from './main/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
@@ -49,17 +51,24 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
+      { path: 'register', component: RegisterComponent },
       { path: 'register/student', component: RegisterStudentComponent },
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
-      {path:'checkout' , component:CheckoutComponent},
+      { path: 'checkout', component: CheckoutComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
-      {path:'test', component:TestComponent},
+      { path: 'test', component: TestComponent },
       {
         path: 'courses',
         children: [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
+        ],
+      },
+      {
+        path: 'categories',
+        children: [
+          { path: 'details/:categoryId', component: CategoryCoursesComponent },
         ],
       },
       { path: 'trainer/login', component: TrainerLoginComponent },
@@ -70,8 +79,8 @@ const routes: Routes = [
   {
     path: 'dashboard',
     children: [
-      { path: 'login' , component: LoginComponent },
-      { path: 'home' , component: StatisticsComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'home', component: StatisticsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'trainers', component: TrainersComponent },
