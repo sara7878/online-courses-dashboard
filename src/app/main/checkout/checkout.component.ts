@@ -25,8 +25,8 @@ token: Payment={
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143',
       locale: 'auto',
-      // token: function (stripeToken: any) {
-      //  // console.log(stripeToken);
+      token: function (stripeToken: any) {
+       console.log(stripeToken);}
       //  this.checkoutService.addtoken().subscribe(
       //   (res) => {
       //     console.log(res);
@@ -36,19 +36,19 @@ token: Payment={
       //   }
       // );
     });
-  
+
     paymentHandler.open({
       name: 'FreakyJolly',
       description: 'Buying a Hot Coffee',
       amount: amount * 100
     });
 
-    
- 
+
+
   }
 
 
-  
+
   invokeStripe() {
     if(!window.document.getElementById('stripe-script')) {
       const script = window.document.createElement("script");
@@ -62,11 +62,11 @@ token: Payment={
           token: function (stripeToken: any) {
             console.log(stripeToken)
             alert('Payment has been successfull!')
-          
-            
+
+
 
           }
-          
+
         });
       }
       window.document.body.appendChild(script);

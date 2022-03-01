@@ -40,6 +40,7 @@ import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { ContentComponent } from './main/content/content.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
 
@@ -131,6 +132,8 @@ const routes: Routes = [
       // { path: 'update-exam/:id', component: UpdateExamComponent },
 
       { path: 'test', component: TestComponent },
+      { path: 'payment', component: PaymentComponent },
+
     ],
   },
 ];
