@@ -33,6 +33,7 @@ import { AddQuestionComponent } from './Forms/add-question/add-question.componen
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
 
 const routes: Routes = [
 
@@ -52,8 +53,12 @@ const routes: Routes = [
         path: 'courses',
         children: [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
+      
+          { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
+      // { path: 'video', component: VideoComponent },
+
     ],
   },
 

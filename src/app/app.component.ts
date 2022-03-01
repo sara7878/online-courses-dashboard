@@ -52,7 +52,7 @@ export class AppComponent {
 
       }
 
-    console.log(this.active,this.active1,this.active3,this.routeurl3);
+    // console.log(this.active,this.active1,this.active3,this.routeurl3);
 
     }
     

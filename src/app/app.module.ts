@@ -71,6 +71,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -132,7 +133,8 @@ import { RegisterComponent } from './dashboard/register/register.component';
     CategoriesmainComponentComponent,
     NavbarMainComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    VideoComponent
     ],
   imports: [
     BrowserModule,

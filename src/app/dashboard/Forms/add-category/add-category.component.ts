@@ -5,6 +5,8 @@ import { CategororyService } from 'src/app/_services/categorory.service';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/post.model';
 import { HttpClient } from '@angular/common/http';
+import { CoursesService } from 'src/app/_services/courses.service';
+import { Course } from 'src/app/_models/course.model';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -12,7 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,) { }
+  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService) { }
 
   ff=new FormData();
   data:Category={name:"sara",img:this.ff};
@@ -52,7 +54,7 @@ export class AddCategoryComponent implements OnInit {
     }
     //console.log(form.value);
     const formdata=new FormData();
-    formdata.append("image",this.files,this.files.name);
+    formdata.append("img",this.files,this.files.name);
     formdata.append("name",form.value.catname);
 
     this.categoryservice.addcategory(formdata).subscribe(
@@ -65,6 +67,7 @@ export class AddCategoryComponent implements OnInit {
     );
    }
 
+   
 
 
 }

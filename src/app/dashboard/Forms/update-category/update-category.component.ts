@@ -24,15 +24,11 @@ export class UpdateCategoryComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
-      // console.log(params);
       if (id) {
         this.getcategory(id); 
-        // console.log(this.cat.name);
       }
-    });
-    // this.cat=this
-    this.creatForm();
-    this.form.patchValue({catname: this.cat.name});
+        });
+      this.creatForm();
 
   }
 
@@ -41,7 +37,11 @@ export class UpdateCategoryComponent implements OnInit {
       (res) => {
         this.cat= res.data;
         console.log(this.cat); 
-
+        
+        this.form=this.formbuilder.group({
+          updatename:[this.cat.name,Validators.required],
+          image:[null,Validators.required]
+        })
       },
       (err) => {
         console.log('Error getting category');
@@ -55,35 +55,26 @@ export class UpdateCategoryComponent implements OnInit {
 
   creatForm(){
     this.form=this.formbuilder.group({
-      catname:[null,Validators.required],
+      updatename:[this,Validators.required],
       image:[null,Validators.required]
     })
-
   }
-
-
 
   get f(){
     return this.form.controls;
-
   } 
 
   uploadImage(event:any){
     this.files=event.target.files[0]
     console.log(this.files);
-    
   }
 
 
   onsubmit(id:any,form:any){
-    this.submitted=true;
-    if(this.form.invalid){
-      return;
-    }
     //console.log(form.value);
     const formdata=new FormData();
-    formdata.append("image",this.files,this.files.name);
-    formdata.append("name",form.value.catname);
+    formdata.append("img",this.files,this.files.name);
+    formdata.append("name",form.value.updatename);
 
     this.categoryservice.updatecategory(id,formdata).subscribe(
       (res) =>{
