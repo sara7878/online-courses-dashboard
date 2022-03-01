@@ -13,7 +13,11 @@ import { CoursesService } from 'src/app/_services/courses.service';
 })
 export class EditCourseContentComponent implements OnInit {
 
+
   CourseArray!:Course[];
+
+
+
   courseContent: CourseContent = {
     course_id: 0,
     content: '',

@@ -10,7 +10,7 @@
                 <thead>
                   <tr >
                     <th> ID</th>
-                    <th> Course Name</th>
+                    <th> Name</th>
                     <th> Max score</th>
                     <th> Show Exam</th>
                     <th> Update</th>
@@ -20,7 +20,7 @@
                 <tbody>
                   <tr *ngFor="let exam of ExamArray; let i=index" >
                     <td>{{exam.id}}</td>
-
+                    <td>{{exam.name}}</td>
                     <td>{{exam.course?.name}}</td>
                     <td>{{exam.max_score}}</td>
                     <td>

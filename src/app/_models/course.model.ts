@@ -3,8 +3,10 @@ import { Trainer } from "./trainer.model"
 
 export interface Course{
     id?:number,
-    name?:string,
+    name ?:string,
     img?:any,
+    trainer?:Trainer, 
+    category?: Category,
     trainer_id  ?:number, 
     category_id ?: number,
     price ?:number,

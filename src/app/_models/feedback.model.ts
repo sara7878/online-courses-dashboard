@@ -7,8 +7,8 @@ export interface Feedback{
     desc?:string,
     student_id ?:number,
     course_id ?:number,
-    student ?: Student,
-    course ?: Course,
+    student : Student,
+    course : Course,
 
 
 }

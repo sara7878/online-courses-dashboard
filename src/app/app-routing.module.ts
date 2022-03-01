@@ -10,14 +10,15 @@ import { ExamsComponent } from './dashboard/exams/exams.component';
 import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { EditCourseContentComponent } from './dashboard/Forms/edit-course-content/edit-course-content.component';
+import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 import { AddCourseComponent } from './dashboard/Forms/add-course/add-course.component';
 import { UpdateCategoryComponent } from './dashboard/Forms/update-category/update-category.component';
 import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-course.component';
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
-import { QuestionsComponent } from './dashboard/questions/questions.component';
+ 
+// import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
@@ -31,6 +32,10 @@ import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
 import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
+
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
 
 const routes: Routes = [
 
@@ -42,10 +47,13 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
+      {path:'register/student', component:RegisterStudentComponent},
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
+      {path:'checkout' , component:CheckoutComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
+      {path:'test', component:TestComponent},
       {
         path: 'courses',
         children: [
