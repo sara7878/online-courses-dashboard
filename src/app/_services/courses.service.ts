@@ -25,12 +25,15 @@ export class CoursesService {
 //}
   getAllCourses(): Observable<Course[]> {
    
-    const token: string = localStorage.getItem('token')!;
-    const headers = new HttpHeaders({
-      authorization: token})
-      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
+      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
   }
-
+  // getAllCourses(): Observable<Course[]> {
+   
+  //   const token: string = localStorage.getItem('token')!;
+  //   const headers = new HttpHeaders({
+  //     authorization: token})
+  //     return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
+  // }
   getCourseById(id: number): Observable<Course> {
     return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
   }

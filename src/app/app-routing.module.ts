@@ -40,6 +40,7 @@ import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { ContentComponent } from './main/content/content.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
 
@@ -57,6 +58,7 @@ const routes: Routes = [
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
       {path:'checkout' , component:CheckoutComponent},
+      {path:'search', component:SearchComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
       {path: 'enroll/:courseId', component:ContentComponent },

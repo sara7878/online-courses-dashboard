@@ -83,6 +83,9 @@ import { StripeModule } from 'stripe-angular';
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
 import { ContentComponent } from './main/content/content.component';
+
+import { SearchComponent } from './search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -156,6 +159,8 @@ import { ContentComponent } from './main/content/content.component';
     LoginComponent,
     RegisterComponent,
     ContentComponent,
+   
+    SearchComponent,
     ],
 
   imports: [
@@ -167,7 +172,8 @@ import { ContentComponent } from './main/content/content.component';
     ToastrModule,
     HttpClientModule,
     NgxUsefulSwiperModule,
-    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") 
+    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") ,
+  Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

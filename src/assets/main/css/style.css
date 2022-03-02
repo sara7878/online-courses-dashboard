@@ -1380,3 +1380,42 @@ section {
 {
   color:#3ac162
 }
+
+.search-input
+{
+  border: 1px solid #3ac162 !important;
+  border-radius: 20px !important
+}
+.cat 
+{
+  color:#444444;
+  font-weight: bold;
+}
+
+.cat:hover
+{
+  color:#5fcf80;
+}
+
+.crsName i 
+{
+  padding-right: 2px;
+  color: #5fcf80;
+  font-size: 18px;
+  line-height: 1;
+}
+.crsName li 
+{
+  list-style-type: none;
+}
+.crsName a
+{
+cursor: pointer;
+transition: 0.3s;
+
+}
+.crsName a:hover
+{
+  color: #5fcf80 !important;
+  
+}
