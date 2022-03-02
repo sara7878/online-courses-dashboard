@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Trainer } from '../_models/trainer.model';
 
-interface admin {
+interface trainer {
+  id:number,
+  role:string,
   access_token:any,
   token_type: any,
   expires_in: any
@@ -19,8 +21,8 @@ export class TrainerService {
     return this.httpClient.get<{data:Trainer[],status: boolean,error: any[]}>(`${environment.baseUrl}trainers`);
   }
 
-  getTrainerById(id: number): Observable<Trainer> {
-    return this.httpClient.get<Trainer>(environment.baseUrl + 'trainers/' + id);
+  getTrainerById(id: number): Observable<{data:Trainer,status: boolean,error: any[]}> {
+    return this.httpClient.get<{data:Trainer,status: boolean,error: any[]}>(environment.baseUrl + 'trainers/' + id);
   }
 
 
@@ -32,10 +34,13 @@ export class TrainerService {
     return this.httpClient.post<{data:Trainer,status: boolean,error: any[]}>(environment.baseUrl+'trainers/register',data);
   }
 
-
-  checkTrainer(data:any): Observable<admin>{
+  updateTrainer(id:number, updatedTrainer:any): Observable<{data:Trainer,status: boolean,error: any[]}>{
+    return this.httpClient.post<{data:Trainer,status: boolean,error: any[]}>(`${environment.baseUrl}trainers/${id}`,updatedTrainer);
+  }
+  
+  checkTrainer(data:any): Observable<trainer>{
     console.log(data);
-    return this.httpClient.post<admin>(environment.baseUrl+'trainers/login',data);
+    return this.httpClient.post<trainer>(environment.baseUrl+'trainers/login',data);
   }
 
 }

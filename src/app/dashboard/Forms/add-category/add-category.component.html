@@ -38,6 +38,19 @@
 
 
           <div class="form-group">
+              <label>Image upload :</label>
+                <input formControlName="image" type="file" pattern="(.*?)\.(jpg|png|jpeg)$"   name="image" id="image" class="form-control"
+                (change)="uploadImage($event)"/>
+                <div *ngIf="f['image'].errors?.['required']&&f['image'].touched" style="color: red;">image is required</div>
+                <div *ngIf="f['image'].errors?.['pattern']" style="color: red;">must upload image </div>
+            </div>
+
+
+          <button type="submit" class="btn btn-primary mr-2" (click)="onsubmit(form)"> Submit </button>
+           <button class="btn btn-light" (click)="resetForm(categoryForm)">Cancel</button> -->
+        <!-- </form> -->
+        <!-- <form class="forms-sample" #categoryForm=ngForm>
+          <div class="form-group">
             <label>File upload :</label>
             <div class="input-group col-xs-12">
               <input type="file" #catImageInput=ngModel ngModel pattern="(.*?)\.(jpg|png|jpeg)$"  required class="form-control file-upload-info" placeholder="Upload Image" name="catImage"/>

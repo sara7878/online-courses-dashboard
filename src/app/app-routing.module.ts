@@ -41,10 +41,13 @@ import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.compone
 import { CheckoutComponent } from './main/checkout/checkout.component';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { RegisterComponent } from './main/register/register.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
 
 import { ContentComponent } from './main/content/content.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
 import { MainLoginComponent } from './main/login/login.component';
+import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
+import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
@@ -72,6 +75,8 @@ const routes: Routes = [
         path: 'courses',
         children: [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
+      
+          { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
       {
@@ -82,6 +87,10 @@ const routes: Routes = [
       },
       { path: 'trainer/login', component: TrainerLoginComponent },
       { path: 'trainer/register', component: TrainerRegisterComponent },
+      { path: 'trainer/update', component: UpdateTrainerComponent },
+      { path: 'student/update', component: UpdateStudentComponent },
+      // { path: 'video', component: VideoComponent },
+
     ],
   },
 

@@ -84,6 +84,9 @@ import { CheckoutComponent } from './main/checkout/checkout.component';
 import { StripeModule } from 'stripe-angular';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { ContentComponent } from './main/content/content.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
+import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -156,6 +159,9 @@ import { ContentComponent } from './main/content/content.component';
     CheckoutComponent,
     CategoryCoursesComponent, 
     ContentComponent,
+    VideoComponent,
+    UpdateTrainerComponent,
+    UpdateStudentComponent
     ],
 
   imports: [

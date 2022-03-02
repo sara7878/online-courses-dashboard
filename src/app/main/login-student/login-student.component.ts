@@ -29,6 +29,10 @@ export class LoginStudentComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('Authorization', "bearer "+res.access_token);
+        localStorage.setItem('role', res.role);
+        localStorage.setItem('id', res.id+"");
+        sessionStorage.setItem('role',res.role);
+        sessionStorage.setItem('id',res.id+"");
       },
       (err) => {
         console.log('Error logging in student');

@@ -30,6 +30,10 @@ export class TrainerLoginComponent implements OnInit {
       (res) => {
         console.log(res);
         localStorage.setItem('Authorization', "bearer "+res.access_token);
+        localStorage.setItem('id', res.id+"");
+        sessionStorage.setItem('role',res.role);
+        sessionStorage.setItem('id',res.id+"");
+        localStorage.setItem('role',res.role);
       },
       (err) => {
         console.log('Error logging in Trainer');
