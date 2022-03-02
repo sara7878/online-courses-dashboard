@@ -14,32 +14,33 @@ export class LoginStudentComponent implements OnInit {
 
   ngOnInit(): void {
   }  
-  student = {
-    email: '',
-    password: '',
-  };
+ 
 
-  checkStudent(form: NgForm) {
-    console.log(form.value);
-    this.student.email = form.value['email'];
-    this.student.password = form.value['password'];
-// console.log(this.trainer);
+  data={email:"",password:""}
 
-    this.studentService.checkStudent(this.student).subscribe(
-      (res) => {
+  login(form: NgForm){
+    if(form.invalid){
+      return;
+    }
+    // console.log(form);
+    
+    this.data.email=form.value.email
+    this.data.password=form.value.password
+
+    console.log(this.data);
+
+    this.studentService.checkStudent(this.data).subscribe(
+      (res)=>{
+        localStorage.setItem('Authorization', "bearer "+res.access_token)
+        localStorage.setItem('id',res.id)
         console.log(res);
-        localStorage.setItem('token', res.access_token);
+        
       },
       (err) => {
-        console.log('Error logging in student');
-        console.log(err);
-        
+        console.log('Error login');
       }
-    );
-  }
+    )
 
-  resetForm(form: NgForm) {
-    form.reset();
   }
 
 }

@@ -29,7 +29,8 @@ data={email:"",password:""}
 
     this.adminService.Adminlogin(this.data).subscribe(
       (res)=>{
-        localStorage.setItem('token', res.access_token)
+        localStorage.setItem('Authorization', "bearer "+res.access_token)
+        
       },
       (err) => {
         console.log('Error login');

@@ -4,7 +4,8 @@ import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
 import { CoursesService } from 'src/app/_services/courses.service';
-
+import { CourseStudent } from 'src/app/_models/course_student.model';
+import { CourseStudentService } from 'src/app/_services/course-student.service';
 @Component({
   selector: 'app-courses-details-page',
   templateUrl: './courses-details-page.component.html',
@@ -41,9 +42,19 @@ coursedetails: Course={
         linkedin: "sdcbks",
     }};
 
+
+
+   coursestud:CourseStudent= {
+    student_id: 0,
+    course_id: 0
+    };
+
+
+    
   constructor(
     private activatedRoute: ActivatedRoute,
-    private courseService: CoursesService
+    private courseService: CoursesService,
+    private courseStudentService : CourseStudentService
   ) {}
 
   ngOnInit(): void {
@@ -53,22 +64,26 @@ coursedetails: Course={
       if (id) {
       
         this.getCoursedetails(id);
-        this.enroll(id);
+        //this.enroll(id);
         // console.log(this.coursedetails);
       }
     });
   }
 
   enroll(course_id:number){
-    this.courseService.enroll(course_id).subscribe(
+
+    this.coursestud.course_id = course_id;
+  this.coursestud.student_id = parseInt(localStorage.getItem("id")!);
+  console.log(this.coursestud)
+    this.courseStudentService.enroll(this.coursestud).subscribe(
       (res) => {
-        // this.coursesContentsArr = res;
+     
         console.log(res);
       },
       (err) => {
         console.log('Error adding course content');
       }
-    )
+   )
 
   }
 
