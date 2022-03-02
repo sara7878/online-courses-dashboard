@@ -12,7 +12,7 @@
         <div class="col-6">
            <ul class="crsName">
                <li *ngFor="let crs of cat.courses">
-                <a><i class="bx bx-chevron-right"></i>{{crs.name}}</a>
+                <a [routerLink]="'/main/courses/details/'+crs.id"><i class="bx bx-chevron-right"></i>{{crs.name}}</a>
                </li>
            </ul>
         </div>
