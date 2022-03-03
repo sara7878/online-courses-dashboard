@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import { Feedback } from 'src/app/_models/feedback.model';
+
 import { FeedbackService } from 'src/app/_services/feedback.service';
 import { SwiperOptions } from 'swiper';
 
@@ -47,4 +50,7 @@ export class FeedbackComponent implements OnInit {
     spaceBetween: 30
   };  
   
+
+
+
 }

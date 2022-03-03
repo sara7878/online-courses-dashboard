@@ -16,7 +16,7 @@ import { CourseContentComponent } from './dashboard/course-content/course-conten
 import { ContactUsComponent } from './dashboard/contact-us/contact-us.component';
 import { FeedbacksComponent } from './dashboard/feedbacks/feedbacks.component';
 import { ExamsComponent } from './dashboard/exams/exams.component';
-import { QuestionsComponent } from './dashboard/questions/questions.component';
+
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './dashboard/Forms/test/test.component';
@@ -63,16 +63,31 @@ import { ContactPageComponent } from './main/contact-page/contact-page.component
 import { CoursesDetailsPageComponent } from './main/courses-details-page/courses-details-page.component';
 import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
-import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
+
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 
-import { ToastrModule } from 'ngx-toastr';
+import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
+import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
+
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
+
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+// import { StripeModule } from 'stripe-angular';
+
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
 import { VideoComponent } from './main/Layouts/video/video.component';
 import { PaymentComponent } from './main/payment/payment.component';
+import { ContentComponent } from './main/content/content.component';
+
+import { SearchComponent } from './search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -132,12 +147,24 @@ import { PaymentComponent } from './main/payment/payment.component';
     CoursesDetailsPageComponent,
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
+
+
     NavbarMainComponent,
+  
+    FeedbackFormComponent,
+      
+       RegisterStudentComponent,
+       LoginStudentComponent,
+       CheckoutComponent,
+   
     LoginComponent,
     RegisterComponent,
     VideoComponent,
-    PaymentComponent
+    PaymentComponent,
+    ContentComponent,
+    SearchComponent,
     ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -146,7 +173,8 @@ import { PaymentComponent } from './main/payment/payment.component';
     BrowserAnimationsModule,
     ToastrModule,
     HttpClientModule,
-    NgxUsefulSwiperModule
+    NgxUsefulSwiperModule,
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

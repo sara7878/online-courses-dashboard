@@ -6,6 +6,6 @@ export interface Student{
     phone ?:string,
     img  ?:string
     email  ?:string,
-    pass  ?:string 
+    password ?:string 
 
 }

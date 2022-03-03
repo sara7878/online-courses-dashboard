@@ -17,7 +17,8 @@ import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-co
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
-import { QuestionsComponent } from './dashboard/questions/questions.component';
+ 
+// import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
@@ -31,10 +32,17 @@ import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
 import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
+
+import { RegisterStudentComponent } from './main/register-student/register-student.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { VideoComponent } from './main/Layouts/video/video.component';
 import { PaymentComponent } from './main/payment/payment.component';
+import { ContentComponent } from './main/content/content.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
 
@@ -46,10 +54,18 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
+      {path:'register/student', component:RegisterStudentComponent},
+      {path:'login/student', component:LoginStudentComponent},
+
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
+      {path:'checkout' , component:CheckoutComponent},
+      {path:'search', component:SearchComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
+      {path: 'enroll/:courseId', component:ContentComponent },
+      {path:'test', component:TestComponent},
+
       {
         path: 'courses',
         children: [

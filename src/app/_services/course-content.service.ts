@@ -43,6 +43,12 @@ export class CourseContentService {
     return this.httpClient.delete<CourseContent>(`${environment.baseUrl}Course_content/${id}`);
   }
 
+  // enroll()
+  // {
+  //   return this.httpClient.post<CourseContent>(`${environment.baseUrl}Course_content`,newContent);
+
+  // }
+
 }
 
 

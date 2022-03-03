@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, NgForm } from '@angular/forms';
+import { Form, FormBuilder, FormGroup, NgForm , Validators} from '@angular/forms';
 import { Category } from 'src/app/_models/category.model';
 import { Course } from 'src/app/_models/course.model';
 import { Trainer } from 'src/app/_models/trainer.model';
 import { CoursesService } from 'src/app/_services/courses.service';
-
+import { ToastrService } from 'ngx-toastr';
+import { Post } from 'src/app/post.model';
+import { ConstantPool } from '@angular/compiler';
 // import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -13,92 +15,101 @@ import { CoursesService } from 'src/app/_services/courses.service';
   styleUrls: ['./add-course.component.css'],
 })
 export class AddCourseComponent implements OnInit {
-  categories: Category[] = [
-    {
-      id: 1,
-      img: '../../assets/images/faces-clipart/pic-1.png',
-      name: 'web development',
-    },
-    {
-      id: 2,
-      img: '../../assets/images/faces-clipart/pic-1.png',
-      name: 'design development',
-    },
-  ];
-  TrainersArray: Trainer[] = [
-    {
-      id: 1,
-      fname: 'sara',
-      lname: 'mohamed',
-      phone: '123446',
-      img: '../../assets/images/faces-clipart/pic-1.png',
-      email: 'sara.mahamed7878@gmail.com',
-    },
-    {
-      id: 2,
-      fname: 'salma',
-      lname: 'mohamed',
-      phone: '276489',
-      img: '../../assets/images/faces-clipart/pic-1.png',
-      email: 'salma.mahamed7878@gmail.com',
-    },
-  ];
-  constructor(private courseService: CoursesService){}
+
+  constructor(private formbuilder:FormBuilder, private courseService: CoursesService){}
   // ,private toastrService:ToastrService, private formBuilder:FormBuilder) {}
+  ff=new FormData();
+  data:Course={
+   name:"yomna",
+   img:this.ff,
+   
+  category_id:8,
+   trainer_id:8,
+   preq:'klnkl',price:0
+   ,desc:'knlnlnl'};
 
-  newCourse: Course = {
-    id:1,
-    name: '',
-    trainer_id: 1,
-    category_id: 1,
-    img: '',
-    price: 0,
-    duration: 5,
-    preq: '',
-    desc: '',
-  };
+ 
 
-  ngOnInit(): void {}
+  resetForm(form: NgForm) {
+    form.reset();
+  }
+  files:any;
+  submitted=false;
+  form!:FormGroup;
+  creatForm(){
+    this.form=this.formbuilder.group({
+      name:[null,Validators.required],
+      category_id:[null,Validators.required],
+      price:[null,Validators.required],
+      duration:[null,Validators.required],
+     preq:[null,Validators.required],
+      desc:[null,Validators.required],
+      trainer_id:[null,Validators.required],
+      image:[null,Validators.required]
+    })
+  }
 
-  addCourse(form: NgForm) {
-    console.log(form.value);
+  // id  :0,
+  //   fname:'yomna',
+  //   lname :'hamed',      
+  //   gender :'female',//enum
+  //   phone :'123456789',
+  //   email  :'yomna@gmail.com',
+  //   password :'123558755'
+  get f(){
+    return this.form.controls;
 
-    this.newCourse.name = form.value['name'];
-    this.newCourse.img = form.value['courseImage'];
-    this.newCourse.trainer_id = form.value['trainer'];
-    this.newCourse.category_id = form.value['Category'];
-    this.newCourse.price = form.value['price'];
-    this.newCourse.duration = form.value['duration'];
-    this.newCourse.preq = form.value['preq'];
-    this.newCourse.desc = form.value['desc'];
+  } 
+ 
 
-    console.log(this.newCourse);
+  ngOnInit(): void {
+    this.creatForm();
+  }
+  uploadImage(event:any){
+    this.files=event.target.files[0]
+    console.log(this.files);
 
-    this.courseService.create(this.newCourse).subscribe(
-      (res) => {
-        // this.coursesContentsArr = res;
+  }
+  onsubmit(form:any){
+    this.submitted=true;
+    if(this.form.invalid){
+     console.log("form invalid");
+    }
+   
+
+
+    const formdata=new FormData();
+    formdata.append("image",this.files,this.files.name);
+    
+    formdata.append("name",form.value.name);
+    formdata.append("category_id",form.value.category_id);
+    formdata.append("price",form.value.price);
+    formdata.append("duration",form.value.duration);
+    formdata.append("trainer_id",form.value.trainer_id);
+    formdata.append("desc",form.value.desc);
+    formdata.append("preq",form.value.preq);
+
+
+
+    this.data.name=form.value.name;
+    this.data.img=formdata;
+    this.data.price=form.value.price;
+    this.data.duration=form.value.duration;
+    this.data.trainer_id=form.value.trainer_id;
+    this.data.category_id=form.value.category_id;
+    this.data.desc=form.value.desc;
+    this.data.preq=form.value.preq;
+
+
+    console.log(this.data);
+    this.courseService.create(formdata).subscribe(
+      (res) =>{
         console.log(res);
       },
       (err) => {
-        console.log('Error adding course content');
+        console.log('Error adding course');
       }
     );
-  }
-  CourseArray:Course[]=[{id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"angular",trainer:{id:1,fname:"sara"},category:{id:1,name:"web development"}},
-  {id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"css",trainer:{id:2,fname:"mohamed"},category:{id:2,name:"design"}}];
+   }
 
-  onsubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
-  }
-//   files: any;
-//   submitted : boolean =  false;
-//   form!:NgForm;
-// get f(){
-//   return this.form.controls;
-// }
-
-  // uploadImage(event ) {
-  //   this.files = event.target.files[0];
-  // }
 }

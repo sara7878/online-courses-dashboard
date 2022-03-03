@@ -8,6 +8,8 @@ import { take, map, tap, delay, switchMap, filter } from 'rxjs/operators';
 import { PaymentService } from '../../_services/payment.service';
 import { CoursesService } from 'src/app/_services/courses.service';
 import { Course } from 'src/app/_models/course.model';
+import { CourseStudentService } from 'src/app/_services/course-student.service';
+import { CourseStudent } from 'src/app/_models/course_student.model';
 
 
 @Component({
@@ -24,9 +26,15 @@ export class PaymentComponent implements OnInit {
     private router: Router,
     private stripeService:AngularStripeService,
     private activatedRoute: ActivatedRoute,
-    private courseService: CoursesService
+    private courseService: CoursesService,
+    private courseStudentService : CourseStudentService
+
   ) {}
 
+  coursestud:CourseStudent= {
+    student_id: 0,
+    course_id: 0
+    };
   coursedetails!:Course;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -47,12 +55,16 @@ export class PaymentComponent implements OnInit {
         this.coursedetails = res;
         console.log(res);
 
+
       },
       (err) => {
         console.log('Error getting course details');
       }
     );
   }
+
+
+
 
 
 //  @ViewChild('cardInfo', { static: false }) cardInfo: ElementRef;
@@ -154,7 +166,7 @@ export class PaymentComponent implements OnInit {
         console.log(res);
         if(res.paymentIntent && res.paymentIntent.status === "succeeded") {
           alert('your payment was successful');
-          
+          this.enroll(this.coursedetails.id!);
           form.reset();
           this.router.navigate(['/main/courses/details/'+this.coursedetails.id+'/videos']);
         } else {
@@ -172,5 +184,22 @@ export class PaymentComponent implements OnInit {
     this.card.removeEventListener('change', this.cardHandler);
     this.card.destroy();
   }
-}
 
+
+enroll(course_id:number){
+
+  this.coursestud.course_id = course_id;
+  this.coursestud.student_id = parseInt(localStorage.getItem("id")!);
+  console.log(this.coursestud)
+    this.courseStudentService.enroll(this.coursestud).subscribe(
+      (res) => {
+     
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error adding course content');
+      }
+   )
+
+  }
+}

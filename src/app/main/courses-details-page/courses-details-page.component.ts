@@ -4,7 +4,8 @@ import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
 import { CoursesService } from 'src/app/_services/courses.service';
-
+import { CourseStudent } from 'src/app/_models/course_student.model';
+import { CourseStudentService } from 'src/app/_services/course-student.service';
 @Component({
   selector: 'app-courses-details-page',
   templateUrl: './courses-details-page.component.html',
@@ -41,9 +42,18 @@ coursedetails: Course={
         linkedin: "sdcbks",
     }};
 
+
+
+   coursestud:CourseStudent= {
+    student_id: 0,
+    course_id: 0
+    };
+
+
+    
   constructor(
     private activatedRoute: ActivatedRoute,
-    private courseService: CoursesService
+    private courseService: CoursesService,
   ) {}
 
   ngOnInit(): void {
@@ -51,14 +61,15 @@ coursedetails: Course={
       const id = params['courseId'];
       console.log(params);
       if (id) {
+      
         this.getCoursedetails(id);
+        //this.enroll(id);
         // console.log(this.coursedetails);
       }
     });
   }
 
-
-
+ 
   getCoursedetails(id: number) {
     this.courseService.getCourseById(id).subscribe(
       (res) => {
