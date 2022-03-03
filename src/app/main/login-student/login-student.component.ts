@@ -32,7 +32,6 @@ export class LoginStudentComponent implements OnInit {
     this.studentService.checkStudent(this.data).subscribe(
       (res)=>{
 
-        console.log(res);
         localStorage.setItem('Authorization', "bearer "+res.access_token);
         localStorage.setItem('role', res.role);
         localStorage.setItem('id', res.id+"");

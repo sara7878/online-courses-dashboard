@@ -18,6 +18,7 @@ export class CategoriesComponent implements OnInit {
   this.getAll();
   }
 
+  
   url="http://localhost:8000/uploads/categores/"
 
   getAll(){

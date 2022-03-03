@@ -54,7 +54,6 @@ coursedetails: Course={
   constructor(
     private activatedRoute: ActivatedRoute,
     private courseService: CoursesService,
-    private courseStudentService : CourseStudentService
   ) {}
 
   ngOnInit(): void {
@@ -70,23 +69,7 @@ coursedetails: Course={
     });
   }
 
-  enroll(course_id:number){
-
-    this.coursestud.course_id = course_id;
-  this.coursestud.student_id = parseInt(localStorage.getItem("id")!);
-  console.log(this.coursestud)
-    this.courseStudentService.enroll(this.coursestud).subscribe(
-      (res) => {
-     
-        console.log(res);
-      },
-      (err) => {
-        console.log('Error adding course content');
-      }
-   )
-
-  }
-
+ 
   getCoursedetails(id: number) {
     this.courseService.getCourseById(id).subscribe(
       (res) => {
@@ -94,7 +77,7 @@ coursedetails: Course={
         console.log(res);
       },
       (err) => {
-        console.log('Error adding course content');
+        console.log('Error getting course details');
       }
     );
   }
