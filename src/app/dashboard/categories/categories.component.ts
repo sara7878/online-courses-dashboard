@@ -18,6 +18,7 @@ export class CategoriesComponent implements OnInit {
   this.getAll();
   }
 
+  
   url="http://localhost:8000/uploads/categores/"
 
   getAll(){
@@ -31,7 +32,8 @@ export class CategoriesComponent implements OnInit {
         console.log(err);
       },
       ()=>{}
-    );}
+    );
+  }
     
     deletecategory(id:number){
       this.categoryService.deleteCategoryById(id).subscribe(

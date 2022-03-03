@@ -19,4 +19,6 @@ export class AdminService {
   Adminlogin(data:any):Observable<admin>{
     return this.httpClient.post<admin>(environment.baseUrl+'login',data);
   }
+
+
 }

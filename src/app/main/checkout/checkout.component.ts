@@ -25,8 +25,10 @@ token: Payment={
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143',
       locale: 'auto',
-      // token: function (stripeToken: any) {
-      //  // console.log(stripeToken);
+      token: function (stripeToken: any) {
+       console.log(stripeToken);
+       console.log(stripeToken.id);
+       
       //  this.checkoutService.addtoken().subscribe(
       //   (res) => {
       //     console.log(res);
@@ -35,6 +37,7 @@ token: Payment={
       //     console.log('Error adding question');
       //   }
       // );
+    }
     });
   
     paymentHandler.open({

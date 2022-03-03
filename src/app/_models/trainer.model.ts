@@ -1,3 +1,6 @@
+enum gender{
+    'female','male'
+}
 export interface Trainer{
     id  ?:number,
     fname ?:string,
@@ -6,7 +9,7 @@ export interface Trainer{
     phone ?:string,
     img  ?:string,
     email ?:string,
-    pass  ?:string,
+    password  ?:string,
     facebook  ?:string,
     twitter ?:string,
     linkedin ?:string,

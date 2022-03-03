@@ -1,0 +1,65 @@
+<div class="container mt-5 grid-margin stretch-card font-weight-bold">
+  <div class="card">
+    <div class="card-body">
+      <h3 class="card-title text-center fw-bold">Trainer Login</h3>
+      <!-- <p class="card-description">Basic form elements</p> -->
+      <form class="forms-sample" #TrainerLoginForm="ngForm">
+        <div class="form-group">
+          <label for="email" 
+            >Email address :</label
+          >
+          <input
+            #trainerEmailInput="ngModel"
+            ngModel
+            required
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+            name="email"
+          />
+          <span
+            *ngIf="trainerEmailInput.touched && trainerEmailInput.invalid && trainerEmailInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+        <div class="form-group">
+          <label for="password" 
+            >Password :</label
+          >
+          <input
+            #trainerPasswordInput="ngModel"
+            ngModel
+            required
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            name="password"
+          />
+          <span
+            *ngIf="trainerPasswordInput.touched && trainerPasswordInput.invalid && trainerPasswordInput.errors?.['required']"
+            style="color: red"
+            class="alert"
+            >This field is required *</span
+          >
+        </div>
+
+        <button
+          type="submit"
+          id="submitBtn"
+          class="btn text-light border-0 mr-2"
+          [disabled]="!TrainerLoginForm.valid"
+          routerLink="/main/home"
+          (click)="checkTrainer(TrainerLoginForm)"
+          style="background-color: #5fcf80"
+        >
+          Sign In
+        </button>
+        <button class="btn btn-light" (click)="resetForm(TrainerLoginForm)">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

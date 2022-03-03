@@ -11,6 +11,7 @@
                   <tr >
                     <th> ID</th>
                     <th> Course Name</th>
+                    <th> Content Name</th>
                     <th> Content</th>
                     <th> Update</th>
                     <th> Delete</th>
@@ -20,6 +21,7 @@
                   <tr *ngFor="let course of coursesContentsArr; let i=index" >
                     <td>{{course.id}}</td>
                     <td>{{course.course?.name}}</td>
+                    <td>{{course.name}}</td>
                     <td>{{course.content}}</td>
                     <td>
                       <button type="button" class="btn btn-warning "  [routerLink]="'/dashboard/edit-course-content/'+course.id"> Update </button>

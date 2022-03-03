@@ -45,6 +45,16 @@ export class CoursesService {
   deleteCourseById(id: number): Observable<Course>{
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id);
   }
-  ;
 
+  editCourse(id: number, updatedCourse: Course): Observable<Course> {
+    console.log(id);
+    console.log(updatedCourse);
+
+    return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse);
+  }
+  
+  enroll(course_id:number)
+  {
+    return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id);
+  }
 }
