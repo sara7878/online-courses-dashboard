@@ -6,48 +6,39 @@ import { ExamsService } from '../../_services/exams.service';
 @Component({
   selector: 'app-exams',
   templateUrl: './exams.component.html',
-  styleUrls: ['./exams.component.css']
+  styleUrls: ['./exams.component.css'],
 })
 export class ExamsComponent implements OnInit {
+  constructor(private examService: ExamsService) {}
+  ExamArray!: Exam[];
 
-
-  constructor(private examService : ExamsService) { }
-  ExamArray!:Exam[]
-
-  // ExamArr =[{id:11,name:"edf", course_id:1, max_score:8, course:{id:1, name:"coursename"}}]
-
-
-ngOnInit(): void {
+  ngOnInit(): void {
     this.getAllExams();
-
   }
 
-  getAllExams(){
+  getAllExams() {
     this.examService.getAllExams().subscribe(
-      (res)=>{
-        this.ExamArray=res.data;
-        console.log(res);
-
+      (res) => {
+        this.ExamArray = res.data;
+        console.log(this.ExamArray);
       },
-      (err)=>{
+      (err) => {
         console.log(err);
       },
-      ()=>{}
-    );}
+      () => {}
+    );
+  }
 
-
-
-    deleteExam(id:number){
-      console.log(id)
-      this.examService.deleteExam(id).subscribe(
-        (res) => {
-          // this.coursesContentsArr = res;
-          console.log(res);
-
-        },
-        (err) => {
-          console.log('Error deleting exam');
-        }
-      );
-        }
+  deleteExam(id: number) {
+    console.log(id);
+    this.examService.deleteExam(id).subscribe(
+      (res) => {
+        // this.coursesContentsArr = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log('Error deleting exam');
+      }
+    );
+  }
 }

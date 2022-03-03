@@ -31,10 +31,13 @@ export class LoginStudentComponent implements OnInit {
 
     this.studentService.checkStudent(this.data).subscribe(
       (res)=>{
-        localStorage.setItem('Authorization', "bearer "+res.access_token)
-        localStorage.setItem('id',res.id)
+
         console.log(res);
-        
+        localStorage.setItem('Authorization', "bearer "+res.access_token);
+        localStorage.setItem('role', res.role);
+        localStorage.setItem('id', res.id+"");
+        sessionStorage.setItem('role',res.role);
+        sessionStorage.setItem('id',res.id+"");
       },
       (err) => {
         console.log('Error login');

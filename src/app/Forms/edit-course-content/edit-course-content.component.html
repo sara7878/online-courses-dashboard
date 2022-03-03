@@ -122,16 +122,8 @@
           >
             Edit
           </button>
-          <!-- <button
-          type="submit"
-          class="btn btn-primary mr-2"
-          [disabled]="!courseContentForm.valid"
-          (click)="updateCourseContent(this.courseContent.id!,courseContentForm)"
-          routerLink="/dashboard/contents"
-        >
-          Edit
-        </button> -->
-          <button class="btn btn-light">Cancel</button>
+
+          <button class="btn btn-light" (click)="resetForm(courseContentForm)">Cancel</button>
         </form>
       </div>
 

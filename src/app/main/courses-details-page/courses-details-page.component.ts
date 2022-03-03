@@ -36,7 +36,7 @@ coursedetails: Course={
         phone: "52748349",
         img: "img.png",
         email: "sara@gmain.com",
-        pass: "53478",
+        password: "53478",
         facebook: "asdgh",
         twitter: "dscnjksd",
         linkedin: "sdcbks",

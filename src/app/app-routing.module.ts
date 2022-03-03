@@ -17,7 +17,7 @@ import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-co
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
- 
+
 // import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { StudentsComponent } from './dashboard/students/students.component';
@@ -30,20 +30,27 @@ import { CoursesDetailsPageComponent } from './main/courses-details-page/courses
 import { CoursesPageComponent } from './main/courses-page/courses-page.component';
 import { HomePageComponent } from './main/home-page/home-page.component';
 import { TrainersPageComponent } from './main/trainers-page/trainers-page.component';
-import { AddQuestionComponent } from './Forms/add-question/add-question.component';
-import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
+import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
+import { TrainerLoginComponent } from './main/trainer-login/trainer-login.component';
+import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
-
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
-import { CheckoutComponent } from './main/checkout/checkout.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
+import { RegisterComponent } from './main/register/register.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+
 import { ContentComponent } from './main/content/content.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
 import { SearchComponent } from './search/search.component';
+import { MainLoginComponent } from './main/login/login.component';
+import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
+import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 
 const routes: Routes = [
-
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
 
   {
@@ -52,7 +59,9 @@ const routes: Routes = [
       { path: 'home', component: HomePageComponent },
       { path: '', redirectTo: '/home', pathMatch: 'full' },
       { path: 'about', component: AboutPageComponent },
-      {path:'register/student', component:RegisterStudentComponent},
+      { path: 'register', component: RegisterComponent },
+      { path: 'login', component: MainLoginComponent },
+      { path: 'register/student', component: RegisterStudentComponent },
       {path:'login/student', component:LoginStudentComponent},
 
       { path: 'courses', component: CoursesPageComponent },
@@ -68,16 +77,30 @@ const routes: Routes = [
         path: 'courses',
         children: [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
+      
+          { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
+      {
+        path: 'categories',
+        children: [
+          { path: 'details/:categoryId', component: CategoryCoursesComponent },
+        ],
+      },
+      { path: 'trainer/login', component: TrainerLoginComponent },
+      { path: 'trainer/register', component: TrainerRegisterComponent },
+      { path: 'trainer/update', component: UpdateTrainerComponent },
+      { path: 'student/update', component: UpdateStudentComponent },
+      // { path: 'video', component: VideoComponent },
+
     ],
   },
 
   {
     path: 'dashboard',
     children: [
-      { path: 'login' , component: LoginComponent },
-      { path: 'home' , component: StatisticsComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'home', component: StatisticsComponent },
       { path: 'categories', component: CategoriesComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'trainers', component: TrainersComponent },
@@ -93,14 +116,17 @@ const routes: Routes = [
       { path: 'add-category', component: AddCategoryComponent },
 
       { path: 'add-course', component: AddCourseComponent },
-      { path: 'update-course', component: UpdateCourseComponent },
+      { path: 'update-course/:id', component: UpdateCourseComponent },
       { path: 'update-category/:id', component: UpdateCategoryComponent },
 
       { path: 'add-exam', component: AddExamComponent },
       { path: 'update-exam/:id', component: UpdateExamComponent },
 
       { path: 'add-course-content', component: AddCourseContentComponent },
-      { path: 'edit-course-content/:id', component: EditCourseContentComponent },
+      {
+        path: 'edit-course-content/:id',
+        component: EditCourseContentComponent,
+      },
       // { path: 'add-course', component: AddCourseComponent },
       // { path: 'update-course', component: UpdateCourseComponent },
       // { path: 'add-exam', component: AddExamComponent },

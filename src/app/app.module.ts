@@ -21,8 +21,8 @@ import { AddCategoryComponent } from './dashboard/Forms/add-category/add-categor
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TestComponent } from './dashboard/Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddQuestionComponent } from './Forms/add-question/add-question.component';
-import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
+// import { AddQuestionComponent } from './Forms/add-question/add-question.component';
+// import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
 // import { AddCourseContentComponent } from './Forms/add-course-content/add-course-content.component';
 import { EditCourseContentComponent } from './Forms/edit-course-content/edit-course-content.component';
 // import { AddAdminComponent } from './Forms/add-admin/add-admin.component';
@@ -38,8 +38,6 @@ import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component'
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
 import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
-
-
 
 import { HomeComponent } from './main/Layouts/home/home.component';
 import { AboutComponent } from './main/Layouts/about/about.component';
@@ -66,26 +64,32 @@ import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
 import { NavbarMainComponent } from './navbar-main/navbar-main.component';
+import { AddQuestionComponent } from './dashboard/Forms/add-question/add-question.component';
+import { UpdateQuestionComponent } from './dashboard/Forms/update-question/update-question.component';
 
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
 
-
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrainerLoginComponent } from './main/trainer-login/trainer-login.component';
+import { TrainerRegisterComponent } from './main/trainer-register/trainer-register.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-component/trainersmain-component.component';
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
-import { CheckoutComponent } from './main/checkout/checkout.component';
-import { StripeModule } from 'stripe-angular';
-
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+import { StripeModule } from 'stripe-angular';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { ContentComponent } from './main/content/content.component';
 
 import { SearchComponent } from './search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { VideoComponent } from './main/Layouts/video/video.component';
+import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
+import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -148,19 +152,21 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
     NavbarMainComponent,
-  
+    TrainerLoginComponent,
+    TrainerRegisterComponent,
     FeedbackFormComponent,
-      
-       RegisterStudentComponent,
-       LoginStudentComponent,
-       CheckoutComponent,
-   
-       
+    RegisterStudentComponent,
+    LoginStudentComponent,
     LoginComponent,
     RegisterComponent,
+    CheckoutComponent,
+    CategoryCoursesComponent, 
     ContentComponent,
    
     SearchComponent,
+    VideoComponent,
+    UpdateTrainerComponent,
+    UpdateStudentComponent
     ],
 
   imports: [
@@ -176,6 +182,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
   Ng2SearchPipeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

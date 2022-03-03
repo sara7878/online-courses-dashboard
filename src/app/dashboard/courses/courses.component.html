@@ -24,17 +24,16 @@
                 <tr *ngFor="let course of Arr; let i=index" >
                   <td>{{course.id}}</td>
                   <td class="py-1">
-                    <!-- <img [src]="'/home/sara/Graduation project/online-courses-back/public/uploads/categores/'+category.img" alt="image" /> -->
                     <img [src]= 'url+course.img'/>
                   </td>
                   <td>{{course.name}}</td>
                   <td>{{course.category?.name}}</td>
                   <td>{{course.trainer?.fname}}</td>
-                  <td>                     
+                  <td>
                       <button type="button" class="btn btn-success "> Show </button>
                   </td>
                   <td>
-                    <button type="button" class="btn btn-warning " routerLink="/update-course"> Update </button>
+                    <button type="button" class="btn btn-warning " [routerLink]="'/dashboard/update-course/'+course.id"> Update </button>
 
                   </td>
 

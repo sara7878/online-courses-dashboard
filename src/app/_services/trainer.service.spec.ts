@@ -8,6 +8,7 @@ describe('TrainerService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(TrainerService);
+
   });
 
   it('should be created', () => {
