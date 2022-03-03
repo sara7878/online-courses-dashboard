@@ -36,6 +36,8 @@ export class QuestionsComponent implements OnInit {
   }
 
 
+  
+
   getone(id:number) {
     this.QuestionService.getoneQestion(id).subscribe(
       (res) => {

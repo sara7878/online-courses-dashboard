@@ -45,13 +45,13 @@
             <div class="row justify-content-center">
               <div class="d-flex col-6">
               
-                <a class="get-started-btn enroll-button" click="(enroll(id))" routerLink="/main/enroll/{{coursedetails.id}}">Enroll Now </a>
+                <!-- <a class="get-started-btn enroll-button" click="(enroll(coursedetails.id))">Enroll Now </a> -->
+                <a class="get-started-btn" [routerLink]="'/main/payment/'+coursedetails.id" >Enroll Now </a>
               </div>
             </div>
         
 
             <a href="courses.html" class="btn btn-success" [routerLink]="'/main/courses/details/'+coursedetails.id+'/videos'">go to course</a>
-            <a href="courses.html" class="btn btn-success" [routerLink]="'/main/payment/'+coursedetails.id">Enrollment</a>
 
           </div>
        

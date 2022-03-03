@@ -53,12 +53,12 @@
             class="btn text-light border-none mr-2"
             style="background-color: #5fcf80"
             [disabled]="!studentLoginForm.valid"
-            routerLink="/main/home"
-            (click)="checkStudent(studentLoginForm)"
+          
+            (click)="login(studentLoginForm)"
           >
             Sign In
           </button>
-          <button class="btn btn-light" (click)="resetForm(studentLoginForm)">Cancel</button>
+         
         </form>
       </div>
     </div>

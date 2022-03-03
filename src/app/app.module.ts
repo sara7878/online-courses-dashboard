@@ -78,13 +78,16 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
-import { StripeModule } from 'stripe-angular';
+// import { StripeModule } from 'stripe-angular';
 
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
-import { ContentComponent } from './main/content/content.component';
 import { VideoComponent } from './main/Layouts/video/video.component';
 import { PaymentComponent } from './main/payment/payment.component';
+import { ContentComponent } from './main/content/content.component';
+
+import { SearchComponent } from './search/search.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -154,12 +157,12 @@ import { PaymentComponent } from './main/payment/payment.component';
        LoginStudentComponent,
        CheckoutComponent,
 
-
     LoginComponent,
     RegisterComponent,
-    ContentComponent,
     VideoComponent,
-    PaymentComponent
+    PaymentComponent,
+    ContentComponent,
+    SearchComponent,
     ],
   imports: [
     BrowserModule,
@@ -170,7 +173,7 @@ import { PaymentComponent } from './main/payment/payment.component';
     ToastrModule,
     HttpClientModule,
     NgxUsefulSwiperModule,
-    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143")
+    Ng2SearchPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

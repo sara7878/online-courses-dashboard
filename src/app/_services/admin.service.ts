@@ -19,4 +19,16 @@ export class AdminService {
   Adminlogin(data:any):Observable<admin>{
     return this.httpClient.post<admin>(environment.baseUrl+'login',data);
   }
+
+  Adminlogout(){
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+    Authorization: token
+    })
+    // const headers =new HttpHeaders().set("Authorization", token);
+    console.log(headers);
+
+    return this.httpClient.post(environment.baseUrl+'logout',null,{ headers });
+    }
+
 }
