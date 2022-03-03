@@ -66,7 +66,7 @@ coursedetails: Course={
         console.log(res);
       },
       (err) => {
-        console.log('Error adding course content');
+        console.log('Error getting course details');
       }
     );
   }

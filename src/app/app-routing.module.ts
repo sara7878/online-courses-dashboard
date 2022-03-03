@@ -34,6 +34,7 @@ import { UpdateQuestionComponent } from './Forms/update-question/update-question
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
 import { VideoComponent } from './main/Layouts/video/video.component';
+import { PaymentComponent } from './main/payment/payment.component';
 
 const routes: Routes = [
 
@@ -57,6 +58,8 @@ const routes: Routes = [
           { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
+      { path: 'payment/:courseId', component: PaymentComponent },
+
       // { path: 'video', component: VideoComponent },
 
     ],

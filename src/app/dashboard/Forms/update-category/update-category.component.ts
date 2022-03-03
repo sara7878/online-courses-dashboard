@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/_models/category.model';
 import { CategororyService } from 'src/app/_services/categorory.service';
 
@@ -12,7 +12,7 @@ import { CategororyService } from 'src/app/_services/categorory.service';
 })
 export class UpdateCategoryComponent implements OnInit {
 
-  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,private activatedRoute: ActivatedRoute) { }
+  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,private activatedRoute: ActivatedRoute,private router: Router) { }
   
   cat:Category={id: 2, name: 'category', img: 'cate -6214efae12666.jpg'};
   ff=new FormData();
@@ -79,6 +79,8 @@ export class UpdateCategoryComponent implements OnInit {
     this.categoryservice.updatecategory(id,formdata).subscribe(
       (res) =>{
         console.log(res);
+        this.router.navigate(['/dashboard/categories']);
+
       },
       (err) => {
         console.log('Error updating category');
