@@ -15,6 +15,7 @@
                 <th> ID</th>
                 <th> Image</th>
                 <th> Category Name</th>
+                <th> Courses</th>
                 <th> Update</th>
                 <th> Delete</th>
               </tr>
@@ -28,10 +29,15 @@
                   <img [src]= 'url+category.img'/>
                 </td>
                 <td>{{category.name}}</td>
-                <td>
-
+                  <td >
+                    <ul>
+                      <li *ngFor="let course of category.courses; let i=index">
+                          {{course.name}}
+                      </li>
+                    </ul>
+                  </td>
+                  <td>
                   <button type="button" class="btn btn-warning btn-fw" [routerLink]="'/dashboard/update-category/'+category.id"> Update </button>
-
                 </td>
                 <td>
                 <button type="button" class="btn btn-inverse-danger btn-fw" (click)="deletecategory(category.id!)"> Delete </button>

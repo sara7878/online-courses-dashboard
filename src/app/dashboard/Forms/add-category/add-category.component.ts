@@ -5,6 +5,9 @@ import { CategororyService } from 'src/app/_services/categorory.service';
 import { ToastrService } from 'ngx-toastr';
 import { Post } from 'src/app/post.model';
 import { HttpClient } from '@angular/common/http';
+import { CoursesService } from 'src/app/_services/courses.service';
+import { Course } from 'src/app/_models/course.model';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
@@ -12,7 +15,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AddCategoryComponent implements OnInit {
 
-  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,) { }
+  constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,private router: Router) { }
 
   ff=new FormData();
   data:Category={name:"sara",img:this.ff};
@@ -58,6 +61,7 @@ export class AddCategoryComponent implements OnInit {
     this.categoryservice.addcategory(formdata).subscribe(
       (res) =>{
         console.log(res);
+        this.router.navigate(['/dashboard/categories']);
       },
       (err) => {
         console.log('Error adding category');
@@ -65,6 +69,7 @@ export class AddCategoryComponent implements OnInit {
     );
    }
 
+   
 
 
 }

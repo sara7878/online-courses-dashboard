@@ -20,6 +20,11 @@ export class CourseContentService {
   getCourseContent(id: number): Observable<CourseContent> {
     return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`)
   }
+  
+
+  getContentofspacificCourse(id: number): Observable<CourseContent[]> {
+    return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content/show/${id}`)
+  }
 
   addCourseContent(newContent : CourseContent): Observable<CourseContent> {
     console.log(newContent);

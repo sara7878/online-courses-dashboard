@@ -27,7 +27,7 @@ export class PaymentService {
        description: description
      };
 
-      const url = environment.baseUrl + '/payment-intent';
+      const url = environment.baseUrl +'payment-intent';
      console.log(uploadData);
      return this.http.post<any>(url, JSON.stringify(uploadData), {
        headers: new HttpHeaders({
@@ -59,7 +59,7 @@ export class PaymentService {
        itemDescription: description
      };
 
-     const url = environment.baseUrl + '/store-intent';
+     const url = environment.baseUrl + 'store-intent';
      return this.http.post<any>(url, JSON.stringify(uploadData), {
        headers: new HttpHeaders({
          'Content-Type': 'application/json'

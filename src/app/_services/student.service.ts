@@ -38,6 +38,6 @@ export class StudentService {
 
   checkStudent(data:any): Observable<admin>{
     console.log(data);
-    return this.httpClient.post<admin>(environment.baseUrl+'students/login',data);
+    return this.httpClient.post<admin>(environment.baseUrl+'login/student',data);
   }
 }

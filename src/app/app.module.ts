@@ -65,7 +65,7 @@ import { SwiperModule } from 'ngx-swiper-wrapper';
 import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
 
 import { CategoriesmainComponentComponent } from './main/Layouts/categoriesmain-component/categoriesmain-component.component';
-import { NavbarMainComponent } from './navbar-main/navbar-main.component';import { PaymentComponent } from './payment/payment.component';
+import { NavbarMainComponent } from './navbar-main/navbar-main.component';
 
 import { QuestionsComponent } from './dashboard/questions/questions/questions.component';
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
@@ -83,6 +83,8 @@ import { StripeModule } from 'stripe-angular';
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
 import { ContentComponent } from './main/content/content.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+import { PaymentComponent } from './main/payment/payment.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -156,6 +158,8 @@ import { ContentComponent } from './main/content/content.component';
     LoginComponent,
     RegisterComponent,
     ContentComponent,
+    VideoComponent,
+    PaymentComponent
     ],
   imports: [
     BrowserModule,
