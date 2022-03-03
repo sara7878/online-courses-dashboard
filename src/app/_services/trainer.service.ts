@@ -43,4 +43,7 @@ export class TrainerService {
     return this.httpClient.post<trainer>(environment.baseUrl+'trainers/login',data);
   }
 
+  getTrainersCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}trainers/count`);
+  }
 }

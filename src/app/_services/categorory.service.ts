@@ -53,4 +53,8 @@ export class CategororyService {
       `${environment.baseUrl}categories/${id}`
     );
   }
+
+  getCategoriesCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}categories/count`);
+  }
 }
