@@ -16,10 +16,6 @@ export class CoursesComponent implements OnInit {
   Arr!: Course[];
 
   ngOnInit(): void {
-    this.getAllcourses();
-  }
-  url="http://localhost:8000/uploads/courses/"
-  getAllcourses() {
     this.courseService.getAllCourses().subscribe(
       (res) => {
         this.Arr = res;
@@ -30,13 +26,25 @@ export class CoursesComponent implements OnInit {
       }
     );
   }
+  url="http://localhost:8000/uploads/courses/"
+  
+ 
+ 
 
   deleteCourse(id:number){
     this.courseService.deleteCourseById(id).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        this.ngOnInit();
+     
+        //this.Arr.push(res);
       },
+   
+     
+     
+
+
+    //  () => this.getAllcourses(),
       (err) => {
         console.log('Error deleting course');
       }

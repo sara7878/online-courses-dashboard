@@ -45,6 +45,6 @@ export class CoursesService {
   deleteCourseById(id: number): Observable<Course>{
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id);
   }
-  ;
+
 
 }
