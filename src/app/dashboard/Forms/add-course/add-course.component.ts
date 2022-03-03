@@ -90,7 +90,6 @@ export class AddCourseComponent implements OnInit {
     formdata.append("preq",form.value.preq);
 
 
-
     this.data.name=form.value.name;
     this.data.img=formdata;
     this.data.price=form.value.price;
@@ -99,7 +98,6 @@ export class AddCourseComponent implements OnInit {
     this.data.category_id=form.value.category_id;
     this.data.desc=form.value.desc;
     this.data.preq=form.value.preq;
-
 
     console.log(this.data);
     this.courseService.create(formdata).subscribe(
