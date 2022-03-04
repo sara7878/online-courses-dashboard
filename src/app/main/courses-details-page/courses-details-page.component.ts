@@ -4,7 +4,8 @@ import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
 import { CoursesService } from 'src/app/_services/courses.service';
-
+import { CourseStudent } from 'src/app/_models/course_student.model';
+import { CourseStudentService } from 'src/app/_services/course-student.service';
 @Component({
   selector: 'app-courses-details-page',
   templateUrl: './courses-details-page.component.html',
@@ -41,37 +42,39 @@ coursedetails: Course={
         linkedin: "sdcbks",
     }};
 
+
+
+   coursestud:CourseStudent= {
+    student_id: 0,
+    course_id: 0
+    };
+
+    active:boolean=false;
+    
+
+    
   constructor(
     private activatedRoute: ActivatedRoute,
-    private courseService: CoursesService
+    private courseService: CoursesService,
+    private coursestudent:CourseStudentService
   ) {}
 
+  studid:any;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['courseId'];
       console.log(params);
       if (id) {
-      
         this.getCoursedetails(id);
-        this.enroll(id);
-        // console.log(this.coursedetails);
+        this.coursestud.course_id=id
+        this.studid=localStorage.getItem('id')
+        this.coursestud.student_id=this.studid
+        this.checkenroll();
       }
     });
   }
 
-  enroll(course_id:number){
-    this.courseService.enroll(course_id).subscribe(
-      (res) => {
-        // this.coursesContentsArr = res;
-        console.log(res);
-      },
-      (err) => {
-        console.log('Error adding course content');
-      }
-    )
-
-  }
-
+ 
   getCoursedetails(id: number) {
     this.courseService.getCourseById(id).subscribe(
       (res) => {
@@ -79,11 +82,24 @@ coursedetails: Course={
         console.log(res);
       },
       (err) => {
-        console.log('Error adding course content');
+        console.log('Error getting course details');
       }
     );
   }
 
+
+  checkenroll(){
+    this.coursestudent.course_student_enroll(this.coursestud).subscribe(
+      (res)=>{
+        this.active=true
+        console.log(res);
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+  }
 
   }
   // constructor(

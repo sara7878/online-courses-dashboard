@@ -15,6 +15,8 @@ export class StudentsComponent implements OnInit {
 
 
 url="http://localhost:8000/uploads/students/";
+  p: number = 1;
+
   
   ngOnInit(): void {
     this.getAllstudents();

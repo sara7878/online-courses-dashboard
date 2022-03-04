@@ -22,7 +22,7 @@
               <div *ngIf="f['image'].errors?.['pattern']" style="color: red;">must upload image </div>
           </div>
 
-        <button type="submit" class="btn btn-primary mr-2" (click)="onsubmit(cat.id,form)" routerLink="/dashboard/categories" [disabled]="!form.valid"> Submit </button>
+        <button type="submit" class="btn btn-primary mr-2" (click)="onsubmit(cat.id,form)"  [disabled]="!form.valid"> Submit </button>
         <!-- <button class="btn btn-light" (click)="resetForm(form)">Cancel</button> -->
       </form>
 

@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit {
 
   QuetionArray!: Question[];
   Quetion!: Question;
+  p: number = 1;
 
   ngOnInit(): void {
 

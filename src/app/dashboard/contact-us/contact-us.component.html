@@ -16,21 +16,22 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let contact of ContactusArray; let i=index" >
+                  <tr *ngFor="let contact of ContactusArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{contact.id}}</td>
                     <td>{{contact.name}} </td>
                     <td>{{contact.email}}</td>
                     <td>{{contact.subject}}</td>
                     <td>{{contact.message}}                      
                     </td>
- 
-  <td>                     
+                    <td>                     
                      <button type="button"  class="btn btn-inverse-danger" (click)=" deleteContactus(contact.id!)" routerLink="contactus">Delete</button>
                     </td>
                     
                   </tr>
                 </tbody>
               </table>
+              <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+
             </div>
           </div>          
         </div>

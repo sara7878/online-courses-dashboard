@@ -17,7 +17,8 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
   this.getAll();
   }
-
+  p: number = 1;
+  
   url="http://localhost:8000/uploads/categores/"
 
   getAll(){

@@ -38,13 +38,15 @@ import { QuestionsComponent } from './dashboard/questions/questions/questions.co
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { AddAdminComponent } from './dashboard/Forms/add-admin/add-admin.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+import { PaymentComponent } from './main/payment/payment.component';
+import { ContentComponent } from './main/content/content.component';
+import { LoginStudentComponent } from './main/login-student/login-student.component';
+import { SearchComponent } from './search/search.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { RegisterComponent } from './main/register/register.component';
-import { VideoComponent } from './main/Layouts/video/video.component';
 
-import { ContentComponent } from './main/content/content.component';
-import { LoginStudentComponent } from './main/login-student/login-student.component';
 import { MainLoginComponent } from './main/login/login.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
@@ -65,7 +67,8 @@ const routes: Routes = [
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
-      { path: 'checkout', component: CheckoutComponent },
+      {path:'checkout' , component:CheckoutComponent},
+      {path:'search', component:SearchComponent},
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
       { path: 'enroll/:courseId', component: ContentComponent },
@@ -79,6 +82,8 @@ const routes: Routes = [
           { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
+      { path: 'payment/:courseId', component: PaymentComponent },
+
       {
         path: 'categories',
         children: [

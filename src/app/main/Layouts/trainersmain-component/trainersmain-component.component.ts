@@ -13,6 +13,7 @@ export class TrainersmainComponentComponent implements OnInit {
 
   TrainersArray:Trainer[]=[]
 
+  p: number = 1;
 
 
   ngOnInit(): void {
