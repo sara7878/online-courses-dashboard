@@ -8,7 +8,7 @@
 
         <div class="form-group">
           <label >Name :</label>
-          <input formControlName="updatename"  type="text" minlength="3" maxlength="10" pattern="^[a-zA-Z0-9 ]*$" class="form-control" id="exampleInputName" placeholder="Name" name="updatename" />
+          <input formControlName="updatename"  type="text" minlength="3" maxlength="30" pattern="^[a-zA-Z0-9 ]*$" class="form-control" id="exampleInputName" placeholder="Name" name="updatename" />
           <div *ngIf="f['updatename'].errors?.['minlength']" style="color: red;">name must be is atleast 3 char</div>
           <div *ngIf="f['updatename'].errors?.['maxlength']" style="color: red;">name must be is max 10 char</div>
           <div *ngIf="f['updatename'].errors?.['required']&&f['updatename'].touched" style="color: red;">Name is required</div>

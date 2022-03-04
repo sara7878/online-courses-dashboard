@@ -61,21 +61,21 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: MainLoginComponent },
       { path: 'register/student', component: RegisterStudentComponent },
-      {path:'login/student', component:LoginStudentComponent},
+      { path: 'login/student', component: LoginStudentComponent },
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
-      {path: 'enroll/:courseId', component:ContentComponent },
-      {path:'test', component:TestComponent},
+      { path: 'enroll/:courseId', component: ContentComponent },
+      { path: 'test', component: TestComponent },
 
       {
         path: 'courses',
         children: [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
-      
+
           { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
@@ -90,7 +90,6 @@ const routes: Routes = [
       { path: 'trainer/update', component: UpdateTrainerComponent },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
-
     ],
   },
 
