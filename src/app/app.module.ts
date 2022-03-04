@@ -83,16 +83,18 @@ import { CheckoutComponent } from './main/checkout/checkout.component';
 
 import { PaymentComponent } from './main/payment/payment.component';
 
-import { SearchComponent } from './search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
 import { StripeModule } from 'stripe-angular';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { ContentComponent } from './main/content/content.component';
-import { VideoComponent } from './main/Layouts/video/video.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+
+import { SearchComponent } from './search/search.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -171,6 +173,17 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
     TrainerLoginComponent,
     TrainerRegisterComponent,
     FeedbackFormComponent,
+
+       RegisterStudentComponent,
+       LoginStudentComponent,
+       CheckoutComponent,
+
+    LoginComponent,
+    RegisterComponent,
+    VideoComponent,
+    PaymentComponent,
+    ContentComponent,
+    SearchComponent,
     RegisterStudentComponent,
     LoginStudentComponent,
     LoginComponent,
@@ -195,6 +208,7 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
     StripeModule.forRoot(
       'pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143'
     ),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

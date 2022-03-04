@@ -11,7 +11,6 @@ import { CategororyService } from 'src/app/_services/categorory.service';
   styleUrls: ['./update-category.component.css'],
 })
 export class UpdateCategoryComponent implements OnInit {
- 
 
   constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,private activatedRoute: ActivatedRoute,private router: Router) { }
 

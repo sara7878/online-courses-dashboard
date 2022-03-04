@@ -14,7 +14,6 @@ import { CoursesService } from 'src/app/_services/courses.service';
 import { TrainerService } from 'src/app/_services/trainer.service';
 
 import { ToastrService } from 'ngx-toastr';
-import { Post } from 'src/app/post.model';
 import { ConstantPool } from '@angular/compiler';
 // import { ToastrService } from 'ngx-toastr';
 

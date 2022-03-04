@@ -49,22 +49,27 @@ coursedetails: Course={
     course_id: 0
     };
 
+    active:boolean=false;
+    
 
     
   constructor(
     private activatedRoute: ActivatedRoute,
     private courseService: CoursesService,
+    private coursestudent:CourseStudentService
   ) {}
 
+  studid:any;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['courseId'];
       console.log(params);
       if (id) {
-      
         this.getCoursedetails(id);
-        //this.enroll(id);
-        // console.log(this.coursedetails);
+        this.coursestud.course_id=id
+        this.studid=localStorage.getItem('id')
+        this.coursestud.student_id=this.studid
+        this.checkenroll();
       }
     });
   }
@@ -82,6 +87,19 @@ coursedetails: Course={
     );
   }
 
+
+  checkenroll(){
+    this.coursestudent.course_student_enroll(this.coursestud).subscribe(
+      (res)=>{
+        this.active=true
+        console.log(res);
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+  }
 
   }
   // constructor(

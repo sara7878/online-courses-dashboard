@@ -21,7 +21,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let category of catarray; let i=index" >
+            <tr *ngFor="let category of catarray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
 
                 <td>{{category.id}}</td>
                 <td class="py-1">
@@ -46,6 +46,8 @@
 
             </tbody>
           </table>
+          <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+
            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12" > Add New Category </button> -->
 
         </div>
@@ -57,3 +59,6 @@
     </div>
   </div>
 
+
+
+             

@@ -18,7 +18,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let exam of ExamArray; let i=index" >
+                  <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{exam.id}}</td>
                     <td>{{exam.name}}</td>
                     <td>{{exam.course?.name}}</td>
@@ -36,6 +36,8 @@
                   </tr>
                 </tbody>
               </table>
+              <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course </button> -->
             </div>
           </div>

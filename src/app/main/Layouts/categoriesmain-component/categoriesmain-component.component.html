@@ -3,7 +3,7 @@
         <div class="container" data-aos="fade-up">
 
           <div class="row">
-            <div *ngFor="let category of catarray; let i=index" class="col-md-6 d-flex align-items-stretch">
+            <div *ngFor="let category of catarray | paginate: { itemsPerPage: 4, currentPage: p }; let i=index" class="col-md-6 d-flex align-items-stretch">
               <div class="card">
                 <div class="card-img">
                   <!-- <img src="assets/main/img/events-1.jpg" alt="..."> -->
@@ -17,7 +17,8 @@
               </div>
             </div>
           </div>
-  
+          <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+
         </div>
       </section><!-- End Events Section -->
   

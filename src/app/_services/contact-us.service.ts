@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 //import { url } from "inspector";
 import { environment } from "src/environments/environment";
 import { Observable } from "rxjs";
@@ -13,19 +13,31 @@ export class ContactUsService {
   constructor(private httpClient: HttpClient) { }
 
   getAllContacs(): Observable<Contactus[]>{
-    return this.httpClient.get<Contactus[]>(`${environment.baseUrl}Contact_us`);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<Contactus[]>(`${environment.baseUrl}Contact_us`,{headers});
 
  }
 
 
 
 deleteContact(id:number){
-  return this.httpClient.delete<Contactus>(environment.baseUrl+'Contact_us/'+id)
+  const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
+  return this.httpClient.delete<Contactus>(environment.baseUrl+'Contact_us/'+id,{headers})
 
 }
 addContact(newContact: Contactus): Observable<Contactus> {
   console.log(newContact)
-   return this.httpClient.post<Contactus>(`${environment.baseUrl}Contact_us`,newContact);
+  const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
+   return this.httpClient.post<Contactus>(`${environment.baseUrl}Contact_us`,newContact,{headers});
 }
 
 }

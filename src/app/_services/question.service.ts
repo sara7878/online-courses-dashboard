@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -15,29 +15,41 @@ export class QuestionService {
     status: boolean;
     error: any;
   }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
     return this.httpClient.get<{
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions`);
+    }>(`${environment.baseUrl}questions`,{headers});
   }
 
   getoneQestion(
     id: number
   ): Observable<{ data: Question; status: boolean; error: any }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
     return this.httpClient.get<{ data: Question; status: boolean; error: any }>(
-      `${environment.baseUrl}questions/${id}`
+      `${environment.baseUrl}questions/${id}`,{headers}
     );
   }
 
-  CreateQestion(
-    data: Question
-  ): Observable<{ data: Question[]; status: boolean; error: any }> {
+  CreateQestion(data: Question): Observable<{ data: Question[]; status: boolean; error: any }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
     return this.httpClient.post<{
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions`, data);
+    }>(`${environment.baseUrl}questions`, data,{headers});
   }
 
   editQestion(
@@ -46,19 +58,27 @@ export class QuestionService {
   ): Observable<{ data: Question[]; status: boolean; error: any }> {
     console.log(id);
     console.log(updatedContent);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
     return this.httpClient.post<{
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions/${id}`, updatedContent);
+    }>(`${environment.baseUrl}questions/${id}`, updatedContent,{headers});
   }
 
   deleteQestion(id: number) {
     console.log(id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
     return this.httpClient.delete<{
       data: Question;
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions/${id}`);
+    }>(`${environment.baseUrl}questions/${id}`,{headers});
   }
 }
