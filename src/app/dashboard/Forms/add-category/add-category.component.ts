@@ -58,6 +58,19 @@ export class AddCategoryComponent implements OnInit {
     formdata.append("img",this.files,this.files.name);
     formdata.append("name",form.value.catname);
 
+
+    console.log(formdata);
+
+    //const name=form.value.catname;
+    this.data.name=form.value.catname;
+    this.data.img=formdata;
+
+
+    console.log(this.data);
+
+
+
+
     this.categoryservice.addcategory(formdata).subscribe(
       (res) =>{
         console.log(res);
@@ -69,7 +82,7 @@ export class AddCategoryComponent implements OnInit {
     );
    }
 
-   
+
 
 
 }

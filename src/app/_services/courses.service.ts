@@ -24,11 +24,11 @@ export class CoursesService {
   // return this.httpClient.get<{product:product[],numberofProducts:number}>(environment.baseUrl+'product',{headers})
 //}
   getAllCourses(): Observable<Course[]> {
-   
+
       return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
   }
   // getAllCourses(): Observable<Course[]> {
-   
+
   //   const token: string = localStorage.getItem('token')!;
   //   const headers = new HttpHeaders({
   //     authorization: token})
@@ -45,6 +45,26 @@ export class CoursesService {
   deleteCourseById(id: number): Observable<Course>{
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id);
   }
-  ;
+
+  editCourse(id: number, updatedCourse: Course): Observable<Course> {
+    console.log(id);
+    console.log(updatedCourse);
+
+    return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse);
+  }
+
+  enroll(course_id:number)
+  {
+    return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id);
+  }
+
+  getCountStudentsInCourse(id:number):Observable<number>
+  {
+    return this.httpClient.get<number>(`${environment.baseUrl}student/studentCount/${id}`);
+  }
+
+  getCoursesCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}courses/count`);
+  }
 
 }

@@ -121,8 +121,9 @@
             (click)="updateCourseContent(this.courseContent.id!,courseContentForm)"
           >
             Edit
-          </button>dit-course-content.component.html
-          <button class="btn btn-light">Cancel</button>
+          </button>
+
+          <button class="btn btn-light" (click)="resetForm(courseContentForm)">Cancel</button>
         </form>
       </div>
 

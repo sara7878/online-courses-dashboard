@@ -1,3 +1,6 @@
+enum gender{
+    'female','male'
+}
 export interface Student{
     id  ?:number,
     fname?:string,

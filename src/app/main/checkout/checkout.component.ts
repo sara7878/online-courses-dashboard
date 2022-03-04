@@ -35,6 +35,7 @@ token: Payment={
       //     console.log('Error adding question');
       //   }
       // );
+    // }
     });
 
     paymentHandler.open({

@@ -8,9 +8,10 @@ import { CategororyService } from 'src/app/_services/categorory.service';
 @Component({
   selector: 'app-update-category',
   templateUrl: './update-category.component.html',
-  styleUrls: ['./update-category.component.css']
+  styleUrls: ['./update-category.component.css'],
 })
 export class UpdateCategoryComponent implements OnInit {
+ 
 
   constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,private activatedRoute: ActivatedRoute,private router: Router) { }
 
@@ -27,21 +28,20 @@ export class UpdateCategoryComponent implements OnInit {
       if (id) {
         this.getcategory(id);
       }
-        });
-      this.creatForm();
-
+    });
+    this.creatForm();
   }
 
   getcategory(id: number) {
     this.categoryservice.getCategorybyId(id).subscribe(
       (res) => {
-        this.cat= res.data;
+        this.cat = res.data;
         console.log(this.cat);
 
-        this.form=this.formbuilder.group({
-          updatename:[this.cat.name,Validators.required],
-          image:[null,Validators.required]
-        })
+        this.form = this.formbuilder.group({
+          updatename: [this.cat.name, Validators.required],
+          image: [null, Validators.required],
+        });
       },
       (err) => {
         console.log('Error getting category');
@@ -53,31 +53,31 @@ export class UpdateCategoryComponent implements OnInit {
   //   form.reset();
   // }
 
-  creatForm(){
-    this.form=this.formbuilder.group({
-      updatename:[this,Validators.required],
-      image:[null,Validators.required]
-    })
+  creatForm() {
+    this.form = this.formbuilder.group({
+      updatename: [this, Validators.required],
+      image: [null, Validators.required],
+    });
   }
 
-  get f(){
+  get f() {
     return this.form.controls;
   }
 
-  uploadImage(event:any){
-    this.files=event.target.files[0]
+  uploadImage(event: any) {
+    this.files = event.target.files[0];
     console.log(this.files);
   }
 
-
-  onsubmit(id:any,form:any){
+  onsubmit(id: any, form: any) {
     //console.log(form.value);
-    const formdata=new FormData();
-    formdata.append("img",this.files,this.files.name);
-    formdata.append("name",form.value.updatename);
+    const formdata = new FormData();
+    formdata.append('img', this.files, this.files.name);
+    formdata.append('name', form.value.updatename);
+console.log(formdata);
 
-    this.categoryservice.updatecategory(id,formdata).subscribe(
-      (res) =>{
+    this.categoryservice.updatecategory(id, formdata).subscribe(
+      (res) => {
         console.log(res);
         this.router.navigate(['/dashboard/categories']);
 
@@ -86,7 +86,43 @@ export class UpdateCategoryComponent implements OnInit {
         console.log('Error updating category');
       }
     );
-   }
+  }
 
+  category: Category = {
+    name: '',
+  };
 
+  updatedCategory: Category = {
+    name: '',
+  };
+
+  // getCategoryById(id: number) {
+  //   this.categoryservice.getCategorybyId(id).subscribe(
+  //     (res) => {
+  //       this.category = res.data;
+  //       console.log(this.category);
+  //     },
+  //     (err) => {
+  //       console.log('Error adding category');
+  //     }
+  //   );
+  // }
+
+  resetForm(form: NgForm) {
+    form.reset();
+  }
+
+  // updateCategory(id: number, form: NgForm) {
+  //   this.updatedCategory.name = form.value['catName'];
+
+  //   console.log(this.updatedCategory);
+  //   this.categoryservice.editCategory(id, this.updatedCategory).subscribe(
+  //     (res) => {
+  //       console.log(res);
+  //     },
+  //     (err) => {
+  //       console.log('Error updating course content');
+  //     }
+  //   );
+  // }
 }

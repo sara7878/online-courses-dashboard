@@ -13,7 +13,7 @@ export class TrainersComponent implements OnInit {
 
   TrainersArray:Trainer[]=[]
 
-
+  url="http://localhost:8000/uploads/trainer/";
   
   ngOnInit(): void {
     this.getAlltrainers();
