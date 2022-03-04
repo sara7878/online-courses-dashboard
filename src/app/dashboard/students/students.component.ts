@@ -14,6 +14,7 @@ export class StudentsComponent implements OnInit {
 
 
 
+  p: number = 1;
 
   
   ngOnInit(): void {

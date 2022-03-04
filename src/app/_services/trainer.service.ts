@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -27,7 +27,11 @@ export class TrainerService {
 
 
   deleteTrainerById(id: number): Observable<Trainer>{
-    return this.httpClient.delete<Trainer>(environment.baseUrl + 'trainers/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.delete<Trainer>(environment.baseUrl + 'trainers/' + id,{headers});
   }
 
   addTrainer(data: any): Observable<{data:Trainer,status: boolean,error: any[]}>{
@@ -35,7 +39,11 @@ export class TrainerService {
   }
 
   updateTrainer(id:number, updatedTrainer:any): Observable<{data:Trainer,status: boolean,error: any[]}>{
-    return this.httpClient.post<{data:Trainer,status: boolean,error: any[]}>(`${environment.baseUrl}trainers/${id}`,updatedTrainer);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post<{data:Trainer,status: boolean,error: any[]}>(`${environment.baseUrl}trainers/${id}`,updatedTrainer,{headers});
   }
   
   checkTrainer(data:any): Observable<trainer>{

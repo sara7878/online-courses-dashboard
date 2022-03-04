@@ -93,6 +93,7 @@ import { StripeModule } from 'stripe-angular';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -191,6 +192,7 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
     HttpClientModule,
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -15,6 +15,7 @@ export class FeedbacksComponent implements OnInit {
   //   {id:1,desc:"sgjvash asxbksjhbx",student_id:{fname:"sara"},course_id:{name:"web development",id:1}}
   // ]
   feed!:Feedback[]
+  p: number = 1;
 
   ngOnInit(): void {
     this.getAllfeedbacks();

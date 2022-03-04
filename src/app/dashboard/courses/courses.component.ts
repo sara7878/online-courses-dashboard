@@ -12,6 +12,7 @@ export class CoursesComponent implements OnInit {
   // CourseArray: Course[] = [
   //   { id: 2, img: '../../assets/images/faces-clipart/pic-1.png', name: 'css' },
   // ];
+  p: number = 1;
 
   Arr!: Course[];
   url="http://localhost:8000/uploads/courses/"

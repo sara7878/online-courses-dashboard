@@ -4,7 +4,7 @@
       <!-- <tr *ngFor="let category of catarray; let i=index" > -->
     <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-      <div *ngFor="let course of courseArray; let i=index" class="col-lg-4 col-md-6 d-flex align-items-stretch">
+      <div *ngFor="let course of courseArray | paginate: { itemsPerPage: 6, currentPage: p }; let i=index" class="col-lg-4 col-md-6 d-flex align-items-stretch">
         <div class="course-item">
           <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="...">
           <div class="course-content">
@@ -29,6 +29,7 @@
         </div>
       </div> <!-- End Course Item-->
 
+      <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
 
     </div>
     

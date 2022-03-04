@@ -15,6 +15,7 @@ export class ExamsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllExams();
   }
+  p: number = 1;
 
   getAllExams() {
     this.examService.getAllExams().subscribe(

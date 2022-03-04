@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -24,7 +24,6 @@ export class StudentService {
   }
 
   addStudent(newStudent: Student): Observable<{data:Student,status: boolean,error: any[]}> {
-  
      return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
   }
 
@@ -35,11 +34,19 @@ export class StudentService {
 
 
   deleteStudentById(id: number): Observable<Student>{
-    return this.httpClient.delete<Student>(environment.baseUrl + 'students/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.delete<Student>(environment.baseUrl + 'students/' + id,{headers});
   }
 
   updateStudent(id:number, updatedStudent:any): Observable<{data:Student,status: boolean,error: any[]}>{
-    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students/${id}`,updatedStudent);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students/${id}`,updatedStudent,{headers});
   }
 
   checkStudent(data:any): Observable<student>{

@@ -14,47 +14,49 @@ import { identifierName } from '@angular/compiler';
 export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
-
-
-  // getAllproducts():Observable<{product:product[],numberofProducts:number}>{
-  //   const token: string = localStorage.getItem('token')!;
-  //   const headers = new HttpHeaders({
-  //     authorization: token
-  //   })
-  // return this.httpClient.get<{product:product[],numberofProducts:number}>(environment.baseUrl+'product',{headers})
-//}
   getAllCourses(): Observable<Course[]> {
-   
+
       return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
   }
-  // getAllCourses(): Observable<Course[]> {
-   
-  //   const token: string = localStorage.getItem('token')!;
-  //   const headers = new HttpHeaders({
-  //     authorization: token})
-  //     return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
-  // }
+
   getCourseById(id: number): Observable<Course> {
     return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
   }
 
   create(data:any){
-    return this.httpClient.post(environment.baseUrl+'courses',data);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post(environment.baseUrl+'courses',data,{headers});
   }
 
   deleteCourseById(id: number): Observable<Course>{
-    return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id ,{headers});
   }
 
   editCourse(id: number, updatedCourse: Course): Observable<Course> {
+
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
     console.log(id);
     console.log(updatedCourse);
 
-    return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse);
+    return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse,{headers});
   }
   
   enroll(course_id:number)
   {
-    return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id,{headers});
   }
 }

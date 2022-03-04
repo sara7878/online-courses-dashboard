@@ -10,6 +10,7 @@ import { CoursesService } from 'src/app/_services/courses.service';
 export class CourcesComponent implements OnInit {
 
   constructor(private courseService:CoursesService) { }
+  p: number = 1;
 
   // CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development",created_at:"19/3",updated_at:"2147"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development",created_at:"19/3",updated_at:"2147"}];
   courseArray!:Course[];
