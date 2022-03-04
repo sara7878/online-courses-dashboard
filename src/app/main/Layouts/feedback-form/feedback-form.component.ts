@@ -37,6 +37,7 @@ feed!: Feedback[]
       },
       (err) => {
         console.log('cant load data');
+        console.log(err);
       }
     );
   }
@@ -67,6 +68,7 @@ feed!: Feedback[]
       },
       (err) => {
         console.log('Error adding contact');
+        console.log(err);
       }
     );
   }

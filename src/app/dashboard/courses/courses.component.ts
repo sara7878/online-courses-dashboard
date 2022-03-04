@@ -29,6 +29,7 @@ export class CoursesComponent implements OnInit {
       },
       (err) => {
         console.log('cant load data');
+        console.log(err);
       }
     );
   }
@@ -45,14 +46,12 @@ export class CoursesComponent implements OnInit {
      
         //this.Arr.push(res);
       },
-   
-     
-     
 
 
     //  () => this.getAllcourses(),
       (err) => {
         console.log('Error deleting course');
+        console.log(err);
       }
     );
   }

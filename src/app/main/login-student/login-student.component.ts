@@ -40,6 +40,7 @@ export class LoginStudentComponent implements OnInit {
       },
       (err) => {
         console.log('Error login');
+        console.log(err);
       }
     )
 

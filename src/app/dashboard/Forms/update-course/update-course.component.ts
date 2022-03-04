@@ -60,6 +60,7 @@ export class UpdateCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting all categories');
+        console.log(err);
       }
     );
   }
@@ -72,6 +73,7 @@ export class UpdateCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error updating course ', err);
+        console.log(err);
       }
     );
   }
@@ -81,20 +83,22 @@ export class UpdateCourseComponent implements OnInit {
     // this.updatedCourse.img = form.value['courseImage'];
     this.updatedCourse.trainer_id = this.course.trainer_id;
     console.log(form.value['Category']);
-    
-    this.updatedCourse.category_id = form.value['Category'];
+    if (!form.value['Category']) {
+      this.updatedCourse.category_id = 0;
+    } else this.updatedCourse.category_id = form.value['Category'];
     this.updatedCourse.price = form.value['price'];
     this.updatedCourse.duration = form.value['duration'];
     this.updatedCourse.preq = form.value['preqname'];
     this.updatedCourse.desc = form.value['desc'];
 
-    console.log(`updated:::${this.updatedCourse}`);
+    console.log(`updated:::${this.updatedCourse.category_id}`);
     this.courseService.editCourse(id, this.updatedCourse).subscribe(
       (res) => {
         console.log(res);
       },
       (err) => {
         console.log('Error updating course content');
+        console.log(err);
       }
     );
   }

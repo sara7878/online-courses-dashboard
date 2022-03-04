@@ -42,6 +42,8 @@ export class CategoriesComponent implements OnInit {
         },
         (err) => {
           console.log('Error deleting category');
+          console.log(err);
+          
         }
       );
     }

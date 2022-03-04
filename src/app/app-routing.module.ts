@@ -67,8 +67,8 @@ const routes: Routes = [
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
-      {path:'checkout' , component:CheckoutComponent},
-      {path:'search', component:SearchComponent},
+      { path: 'checkout', component: CheckoutComponent },
+      { path: 'search', component: SearchComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
       { path: 'enroll/:courseId', component: ContentComponent },

@@ -38,6 +38,7 @@ export class AddCourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('cant load data');
+        console.log(err);
       }
     );
   }
@@ -55,6 +56,7 @@ export class AddCourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding course content');
+        console.log(err);
       }
     );
   }

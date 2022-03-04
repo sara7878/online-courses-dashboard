@@ -83,6 +83,7 @@ coursedetails: Course={
       },
       (err) => {
         console.log('Error getting course details');
+        console.log(err);
       }
     );
   }

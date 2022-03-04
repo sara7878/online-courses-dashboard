@@ -30,6 +30,7 @@ export class TrainersComponent implements OnInit {
       },
       (err) => {
         console.log('error in get trainers');
+        console.log(err);
       }
     );}
     
@@ -40,6 +41,7 @@ export class TrainersComponent implements OnInit {
         },
         (err) => {
           console.log('Error deleting trainer');
+          console.log(err);
         }
       );
     }

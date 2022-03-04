@@ -16,9 +16,9 @@
 
           <div class="form-group">
             <label>Image upload :</label>
-              <input formControlName="image" type="file" pattern="(.*?)\.(jpg|png|jpeg)$"   name="image" id="image" class="form-control" required
+              <input formControlName="image" type="file" pattern="(.*?)\.(jpg|png|jpeg)$" name="image" id="image" class="form-control" 
               (change)="uploadImage($event)"/>
-              <div *ngIf="f['image'].errors?.['required']&&f['image'].touched" style="color: red;">image is required</div>
+              <!-- <div *ngIf="f['image'].errors?.['required']&&f['image'].touched" style="color: red;">image is required</div> -->
               <div *ngIf="f['image'].errors?.['pattern']" style="color: red;">must upload image </div>
           </div>
 

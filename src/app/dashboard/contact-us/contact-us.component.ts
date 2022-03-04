@@ -33,6 +33,8 @@ export class ContactUsComponent implements OnInit {
       console.log(this.ContactusArray)},
       (err)=>{
         console.log("cant load data from contact us")
+        console.log(err);
+        
       }
 
   )
