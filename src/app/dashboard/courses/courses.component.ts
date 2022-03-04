@@ -32,13 +32,25 @@ export class CoursesComponent implements OnInit {
       }
     );
   }
+ 
+  
+ 
+ 
 
   deleteCourse(id:number){
     this.courseService.deleteCourseById(id).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        this.ngOnInit();
+     
+        //this.Arr.push(res);
       },
+   
+     
+     
+
+
+    //  () => this.getAllcourses(),
       (err) => {
         console.log('Error deleting course');
       }

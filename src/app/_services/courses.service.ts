@@ -39,6 +39,7 @@ export class CoursesService {
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id ,{headers});
   }
 
+
   editCourse(id: number, updatedCourse: Course): Observable<Course> {
 
     const token: string = localStorage.getItem('Authorization')!;
@@ -60,6 +61,7 @@ export class CoursesService {
     return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id,{headers});
   }
 
+
   getCountStudentsInCourse(id:number):Observable<number>
   {
     return this.httpClient.get<number>(`${environment.baseUrl}student/studentCount/${id}`);
@@ -68,5 +70,6 @@ export class CoursesService {
   getCoursesCount(): Observable<number>{
     return this.httpClient.get<number>(`${environment.baseUrl}courses/count`);
   }
+
 
 }

@@ -78,19 +78,22 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
-import { CheckoutComponent } from './main/checkout/checkout.component';
+
 // import { StripeModule } from 'stripe-angular';
 
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
-import { VideoComponent } from './main/Layouts/video/video.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+import { StripeModule } from 'stripe-angular';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
+
 import { PaymentComponent } from './main/payment/payment.component';
 import { ContentComponent } from './main/content/content.component';
 
 import { SearchComponent } from './search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { StripeModule } from 'stripe-angular';
-import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -177,6 +180,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CheckoutComponent,
     CategoryCoursesComponent, 
     ContentComponent,
+   
+    SearchComponent,
     VideoComponent,
     UpdateTrainerComponent,
     UpdateStudentComponent
@@ -192,7 +197,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") ,
+  
   ],
   providers: [],
   bootstrap: [AppComponent],
