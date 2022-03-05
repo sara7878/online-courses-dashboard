@@ -4,6 +4,7 @@ import { Trainer } from 'src/app/_models/trainer.model';
 import { CoursesService } from 'src/app/_services/courses.service';
 import { TrainerService } from 'src/app/_services/trainer.service';
 
+
 @Component({
   selector: 'app-popular-cources',
   templateUrl: './popular-cources.component.html',
@@ -17,29 +18,33 @@ export class PopularCourcesComponent implements OnInit {
   c_url = 'http://localhost:8000/uploads/courses/';
   t_url = 'http://localhost:8000/uploads/trainer/';
 
-  constructor(
-    private courseService: CoursesService,
-    private trainerService: TrainerService
-  ) {}
+
+  constructor(private courseService: CoursesService) { }
+  url = 'http://localhost:8000/uploads/courses/';
+
+  courseArray!: Course[];
+Array!:Course[];
 
   ngOnInit(): void {
-    this.getAllCourses();
-  }
 
-  getAllCourses() {
+    this.getAll();
+
+  }
+  
+  getAll() {
     this.courseService.getAllCourses().subscribe(
       (res) => {
-        console.log(res);
-        this.start = Math.floor(Math.random() * res.length);
-        this.coursesArr = res.slice( this.start,(this.start + 3) );
-        console.log(this.coursesArr);
-        for (let i = 0; i < this.coursesArr.length; i++) {
-          this.getCountOfStudents(i, this.coursesArr[i].id!);
+        this.courseArray = res;
+        this.Array=this.courseArray.slice(0,3);
+        console.log(this.courseArray);
+        for (let i = 0; i < this.courseArray.length; i++) {
+          this.getCountOfStudents(i, this.courseArray[i].id!);
         }
       },
       (err) => {
         console.log(err);
-      }
+      },
+      () => {}
     );
   }
 
@@ -48,6 +53,8 @@ export class PopularCourcesComponent implements OnInit {
       this.courseCount[index] = res;
     });
   }
+     
+
 
  
 }

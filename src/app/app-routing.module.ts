@@ -50,6 +50,7 @@ import { RegisterComponent } from './main/register/register.component';
 import { MainLoginComponent } from './main/login/login.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
+import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
@@ -71,8 +72,12 @@ const routes: Routes = [
       { path: 'search', component: SearchComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
-      { path: 'enroll/:courseId', component: ContentComponent },
-      { path: 'test', component: TestComponent },
+
+      {path: 'enroll/:courseId', component:ContentComponent },
+      {path:'feedback-form/:courseId', component:FeedbackFormComponent},
+      {path:'test', component:TestComponent},
+
+
 
       {
         path: 'courses',
@@ -90,9 +95,17 @@ const routes: Routes = [
           { path: 'details/:categoryId', component: CategoryCoursesComponent },
         ],
       },
-      { path: 'trainer/login', component: TrainerLoginComponent },
-      { path: 'trainer/register', component: TrainerRegisterComponent },
-      { path: 'trainer/update', component: UpdateTrainerComponent },
+      {
+        path: 'trainer',
+        children: [
+          { path: 'register', component: TrainerRegisterComponent },
+          { path: 'login', component: TrainerLoginComponent },
+          { path: 'update-profile', component: UpdateTrainerComponent },
+        ],
+      },
+      // { path: 'trainer/login', component: TrainerLoginComponent },
+      // { path: 'trainer/register', component: TrainerRegisterComponent },
+      // { path: 'trainer/update', component: UpdateTrainerComponent },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
     ],

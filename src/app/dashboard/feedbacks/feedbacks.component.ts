@@ -41,6 +41,7 @@ export class FeedbacksComponent implements OnInit {
       this.feedbackService.deleteFeedbackById(id).subscribe(
         (res) => {
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error deleting feedback');

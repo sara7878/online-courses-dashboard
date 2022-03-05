@@ -38,6 +38,7 @@ url="http://localhost:8000/uploads/students/";
       this.studentservice.deleteStudentById(id).subscribe(
         (res) => {
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error deleting student');

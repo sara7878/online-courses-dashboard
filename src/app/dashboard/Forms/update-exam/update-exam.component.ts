@@ -60,6 +60,7 @@ export class UpdateExamComponent implements OnInit {
         (res) => {
           this.examContent = res.data;
           console.log(res);
+
         },
         (err) => {
           console.log('Error getting exam');
@@ -77,6 +78,7 @@ export class UpdateExamComponent implements OnInit {
         (res) => {
           // this.coursesContentsArr = res;
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error updating course content');

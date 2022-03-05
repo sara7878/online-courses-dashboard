@@ -82,6 +82,7 @@ getQuestion(id: number) {
     this.QuestionService.editQestion(id,this.updatedQuestion).subscribe(
       (res) => {
         console.log(res);
+        this.ngOnInit();
       },
       (err) => {
         console.log('Error updating Qestion ');
