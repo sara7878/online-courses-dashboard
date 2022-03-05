@@ -23,7 +23,8 @@
                   <tr *ngFor="let trainer of TrainersArray; let i=index" >
                     <td>{{trainer.id}}</td>
                     <td class="py-1">
-                      <img [src]="trainer.img" alt="image" />
+                      <!-- <img [src]="trainer.img" alt="image" /> -->
+                      <img [src]="url+trainer.img" >
                     </td>
                     <td>{{trainer.fname}} {{trainer.lname}}</td>
                     <td>{{trainer.email}}</td>

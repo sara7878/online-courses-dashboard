@@ -6,7 +6,8 @@
             <div *ngFor="let category of catarray; let i=index" class="col-md-6 d-flex align-items-stretch">
               <div class="card">
                 <div class="card-img">
-                  <img src="assets/main/img/events-1.jpg" alt="...">
+                  <!-- <img src="assets/main/img/events-1.jpg" alt="..."> -->
+                  <img [src]="url+category.img" alt="" class="img-fluid w-100 h-100">
                 </div>
                 <div class="card-body">
                   <h5 class="card-title"><a href="/main/categories/details/{{category.id}}">{{category.name}}</a></h5>

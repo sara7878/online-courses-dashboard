@@ -92,6 +92,7 @@ export class UpdateCourseComponent implements OnInit {
     this.courseService.editCourse(id, this.updatedCourse).subscribe(
       (res) => {
         console.log(res);
+        this.ngOnInit();
       },
       (err) => {
         console.log('Error updating course content');

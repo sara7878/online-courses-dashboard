@@ -1420,3 +1420,10 @@ color:#444444;
   color: #5fcf80 !important;
   
 }
+
+.img-style
+{
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;
+}

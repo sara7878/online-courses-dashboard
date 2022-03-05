@@ -13,7 +13,7 @@ export class TrainersComponent implements OnInit {
 
   TrainersArray:Trainer[]=[]
 
-
+  url="http://localhost:8000/uploads/trainer/";
   
   ngOnInit(): void {
     this.getAlltrainers();
@@ -34,6 +34,7 @@ export class TrainersComponent implements OnInit {
       this.trainerservice.deleteTrainerById(id).subscribe(
         (res) => {
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error deleting trainer');

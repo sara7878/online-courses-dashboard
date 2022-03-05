@@ -96,6 +96,8 @@ import { VideoComponent } from './main/Layouts/video/video.component';
 
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
+
+
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -179,11 +181,12 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
     CheckoutComponent,
     CategoryCoursesComponent, 
     ContentComponent,
-   
+  
     SearchComponent,
     VideoComponent,
     UpdateTrainerComponent,
-    UpdateStudentComponent
+     UpdateStudentComponent,
+     
     ],
 
   imports: [
@@ -196,7 +199,8 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
     HttpClientModule,
     NgxUsefulSwiperModule,
     StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") ,
-  Ng2SearchPipeModule
+  Ng2SearchPipeModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent],

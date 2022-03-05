@@ -10,6 +10,22 @@ export class NavbarMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    this.checktoken();
   }
+
+ token =false;
+
+ checktoken()
+ {
+ 
+ if(localStorage.getItem("Authorization") === null)
+ {
+   this.token=true;
+ }
+else {
+  this.token=false;
+}
+ }
+
 
 }

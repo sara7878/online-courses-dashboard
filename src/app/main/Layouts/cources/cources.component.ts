@@ -1,33 +1,44 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/_models/course.model';
+import { CourseStudent } from 'src/app/_models/course_student.model';
 import { CoursesService } from 'src/app/_services/courses.service';
 
 @Component({
   selector: 'app-cources',
   templateUrl: './cources.component.html',
-  styleUrls: ['./cources.component.css']
+  styleUrls: ['./cources.component.css'],
 })
 export class CourcesComponent implements OnInit {
+  constructor(private courseService: CoursesService) {}
 
-  constructor(private courseService:CoursesService) { }
+  url = 'http://localhost:8000/uploads/courses/';
 
-  // CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development",created_at:"19/3",updated_at:"2147"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development",created_at:"19/3",updated_at:"2147"}];
-  courseArray!:Course[];
+  courseArray!: Course[];
+  courseCount: number[] = [];
+
   ngOnInit(): void {
-  this.getAll();
+    this.getAll();
   }
 
-  getAll(){
+  getAll() {
     this.courseService.getAllCourses().subscribe(
-      (res)=>{
-        this.courseArray=res;
-        console.log(res);
-        
+      (res) => {
+        this.courseArray = res;
+        console.log(this.courseArray);
+        for (let i = 0; i < this.courseArray.length; i++) {
+          this.getCountOfStudents(i, this.courseArray[i].id!);
+        }
       },
-      (err)=>{
+      (err) => {
         console.log(err);
       },
-      ()=>{}
-    );}
-    
+      () => {}
+    );
+  }
+
+  getCountOfStudents(index: number, id: number) {
+    this.courseService.getCountStudentsInCourse(id).subscribe((res) => {
+      this.courseCount[index] = res;
+    });
+  }
 }

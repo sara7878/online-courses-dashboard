@@ -14,7 +14,7 @@ export class StudentsComponent implements OnInit {
 
 
 
-
+url="http://localhost:8000/uploads/students/";
   
   ngOnInit(): void {
     this.getAllstudents();
@@ -35,6 +35,7 @@ export class StudentsComponent implements OnInit {
       this.studentservice.deleteStudentById(id).subscribe(
         (res) => {
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error deleting student');

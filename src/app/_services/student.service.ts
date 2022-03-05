@@ -46,4 +46,8 @@ export class StudentService {
     console.log(data);
     return this.httpClient.post<student>(environment.baseUrl+'login/student',data);
   }
+
+  getStudentsCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}students/count`);
+  }
 }

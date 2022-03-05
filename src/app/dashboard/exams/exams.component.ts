@@ -35,6 +35,7 @@ export class ExamsComponent implements OnInit {
       (res) => {
         // this.coursesContentsArr = res;
         console.log(res);
+        this.ngOnInit();
       },
       (err) => {
         console.log('Error deleting exam');

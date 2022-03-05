@@ -11,6 +11,9 @@ export class CategoriesmainComponentComponent implements OnInit {
 
   constructor(private categoryService:CategororyService) { }
 
+  url = 'http://localhost:8000/uploads/categores/';
+
+
   catarray!:Category[];
   ngOnInit(): void {
   this.getAll();

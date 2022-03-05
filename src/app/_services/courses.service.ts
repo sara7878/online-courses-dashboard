@@ -59,4 +59,13 @@ export class CoursesService {
     return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id);
   }
 
+  getCountStudentsInCourse(id:number):Observable<number>
+  {
+    return this.httpClient.get<number>(`${environment.baseUrl}student/studentCount/${id}`);
+  }
+
+  getCoursesCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}courses/count`);
+  }
+
 }
