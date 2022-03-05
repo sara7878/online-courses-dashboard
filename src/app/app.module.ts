@@ -94,8 +94,9 @@ import { CategoryCoursesComponent } from './main/category-courses/category-cours
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { ChatModule } from './chat/chat.module';
+// import { ChatModule } from './chat/chat.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MaterialModule } from './material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
@@ -184,7 +185,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     ContentComponent,
     VideoComponent,
     UpdateTrainerComponent,
-    UpdateStudentComponent
+    UpdateStudentComponent,
+    ChatDialogComponent
     ],
 
   imports: [
@@ -198,7 +200,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    ChatModule,
+    // ChatModule,
     FlexLayoutModule,
     // MatToolbarModule
 

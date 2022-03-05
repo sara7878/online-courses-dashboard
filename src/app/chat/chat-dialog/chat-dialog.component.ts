@@ -11,12 +11,6 @@ export class ChatDialogComponent implements OnInit {
 
 
 
-
-
-
-
-
-
   username = 'username';
   message = '';
   messages:any[] = [];

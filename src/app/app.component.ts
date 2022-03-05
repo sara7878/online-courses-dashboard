@@ -26,20 +26,27 @@ export class AppComponent {
   // CategoryArray:Category[]=[{Id:1,img:"../../assets/images/faces-clipart/pic-1.png",name:"web development"},{Id:2,img:"../../assets/images/faces-clipart/pic-1.png",name:"design development"}];
   constructor(public router: Router) {
 
+
+
   this.router.events.subscribe(events => {
     if (events instanceof NavigationEnd) {
       this.routeurl1 = this.router.url.slice(0, 10)
       this.routeurl2 = this.router.url.slice(0, 5)
       this.routeurl3 = this.router.url.slice(0, 16)
+    
+    const role=localStorage.getItem('role')
 
-        if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3){
+    if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3 && (role=='isAdmin'||role=='isTrainer')){
         this.active=true
         this.active1=false
         this.active3=false
 
       }
+      else if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3 && (role!='isAdmin' && role !='isTrainer')){
+        this.router.navigate(['/dashboard/login']);
+       }
 
-        if(this.url2==this.routeurl2){
+      if(this.url2==this.routeurl2){
         this.active1=true
         this.active=false
         this.active3=false
@@ -52,6 +59,9 @@ export class AppComponent {
 
       }
 
+
+     
+  
     // console.log(this.active,this.active1,this.active3,this.routeurl3);
 
     }

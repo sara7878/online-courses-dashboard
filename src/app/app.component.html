@@ -9,8 +9,8 @@
   <script src="https://checkout.stripe.com/checkout.js"></script>
  
   
-
-<app-navbar-main *ngIf="active1==true"></app-navbar-main>
+<app-chat-dialog *ngIf="active1==true"></app-chat-dialog>
+  <app-navbar-main *ngIf="active1==true"></app-navbar-main>
 <router-outlet *ngIf="active1==true"></router-outlet>
 <app-footer *ngIf="active1==true"></app-footer>
 

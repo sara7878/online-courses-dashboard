@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/_services/admin.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { AdminService } from 'src/app/_services/admin.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private adminservice:AdminService) { }
+  constructor(private adminservice:AdminService,private router: Router,) { }
 
   ngOnInit(): void {
   }
@@ -17,9 +18,12 @@ export class NavBarComponent implements OnInit {
     this.adminservice.Adminlogout().subscribe(
       (res)=>{
         console.log(res)
+        this.router.navigate(['/dashboard/login']);
+
       },
       (error)=>{
-        console.log(error);        
+        console.log(error);
+                
       }
     )
      localStorage.removeItem('Authorization')
