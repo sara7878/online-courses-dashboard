@@ -50,6 +50,7 @@ import { RegisterComponent } from './main/register/register.component';
 import { MainLoginComponent } from './main/login/login.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
@@ -95,6 +96,7 @@ const routes: Routes = [
       { path: 'trainer/update', component: UpdateTrainerComponent },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
+      { path: 'chat', component: ChatDialogComponent },
 
     ],
   },

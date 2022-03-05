@@ -94,7 +94,12 @@ import { CategoryCoursesComponent } from './main/category-courses/category-cours
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ChatModule } from './chat/chat.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MaterialModule } from './material.module';
+// import {MatToolbarModule} from '@angular/material/toolbar';
+// import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md'
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -192,7 +197,11 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ChatModule,
+    FlexLayoutModule,
+    // MatToolbarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
