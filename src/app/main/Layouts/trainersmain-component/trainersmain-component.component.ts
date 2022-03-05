@@ -11,7 +11,8 @@ export class TrainersmainComponentComponent implements OnInit {
 
   constructor(private trainerservice: TrainerService) {}
 
-  TrainersArray:Trainer[]=[]
+  TrainersArray:Trainer[]=[];
+  array!:Trainer[];
 
   p: number = 1;
   url = 'http://localhost:8000/uploads/trainer/';
@@ -23,8 +24,9 @@ export class TrainersmainComponentComponent implements OnInit {
   getAlltrainers() {
     this.trainerservice.getAllTrainers().subscribe(
       (res) => {
-        this.TrainersArray = res.data.slice(0,3);
-        // console.log(this.TrainersArray);
+        this.TrainersArray = res.data;
+        // this.array = this.TrainersArray.slice(0,3);
+        console.log(this.TrainersArray);
       },
       (err) => {
         console.log('error in get trainers');

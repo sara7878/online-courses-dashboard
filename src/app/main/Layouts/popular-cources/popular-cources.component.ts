@@ -31,11 +31,7 @@ export class PopularCourcesComponent implements OnInit {
       (res) => {
         console.log(res);
         this.start = Math.floor(Math.random() * res.length);
-        this.coursesArr = res.slice(
-          this.start,
-          this.start + 3
-        );
-
+        this.coursesArr = res.slice( this.start,(this.start + 3) );
         console.log(this.coursesArr);
         for (let i = 0; i < this.coursesArr.length; i++) {
           this.getCountOfStudents(i, this.coursesArr[i].id!);

@@ -5,7 +5,7 @@
     <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
       <div *ngFor="let course of courseArray | paginate: { itemsPerPage: 6, currentPage: p }; let i=index" class="col-lg-4 col-md-6 d-flex align-items-stretch">
-        <div class="course-item">
+        <div class="course-item my-5">
           <!-- <img src="assets/main/img/course-1.jpg" class="img-fluid" alt="..."> -->
           <img [src]="url+course.img" class="img-fluid w-100 h-50" alt="">
           <div class="course-content">
@@ -18,7 +18,8 @@
             <p>{{course.duration}} hour(s)</p>
             <div class="trainer d-flex justify-content-between align-items-center">
               <div class="trainer-profile d-flex align-items-center">
-                <img src="assets/main/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                <!-- <img src="assets/main/img/trainers/trainer-1.jpg" class="img-fluid" alt=""> -->
+                <img [src]="t_url+course.trainer?.img" alt="" class="img-fluid rounded">
                 <span>{{course.trainer?.fname}}</span>
               </div>
               <div class="trainer-rank d-flex align-items-center">
@@ -30,10 +31,10 @@
         </div>
       </div> <!-- End Course Item-->
 
-      <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+     
 
     </div>
-    
+    <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
 
   </div>
 </section><!-- End Courses Section -->

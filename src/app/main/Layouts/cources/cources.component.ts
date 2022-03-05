@@ -13,6 +13,7 @@ export class CourcesComponent implements OnInit {
 
 
   url = 'http://localhost:8000/uploads/courses/';
+  t_url = 'http://localhost:8000/uploads/trainer/';
 
   courseArray!: Course[];
   courseCount: number[] = [];
