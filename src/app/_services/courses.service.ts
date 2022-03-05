@@ -27,8 +27,10 @@ export class CoursesService {
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
-    })
-    return this.httpClient.post(environment.baseUrl+'courses',data,{headers});
+    });
+    console.log(headers);
+    
+    return this.httpClient.post(environment.baseUrl+'courses',data, {headers});
   }
 
   deleteCourseById(id: number): Observable<Course>{

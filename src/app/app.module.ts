@@ -100,6 +100,10 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MyCoursesComponent } from './main/my-courses/my-courses.component';
 import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
+import { AddThisCourseContentComponent } from './main/Forms/add-this-course-content/add-this-course-content.component';
+import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
+import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
+import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -191,6 +195,10 @@ import { CourseContentDetailsComponent } from './main/course-content-details/cou
      UpdateStudentComponent,
      MyCoursesComponent,
      CourseContentDetailsComponent,
+     AddThisCourseContentComponent,
+     EditThisCourseContentComponent,
+     AddThisCourseComponent,
+     EditThisCourseComponent,
      
     ],
 
