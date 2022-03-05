@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Student } from '../_models/student.model';
 interface student {
+  name:string,
   access_token:any,
   token_type: any,
   expires_in: any,
@@ -14,8 +15,6 @@ interface student {
   providedIn: 'root'
 })
 export class StudentService {
-
-
 
  
   constructor(private httpClient: HttpClient) {}
@@ -56,5 +55,19 @@ export class StudentService {
 
   getStudentsCount(): Observable<number>{
     return this.httpClient.get<number>(`${environment.baseUrl}students/count`);
+  }
+
+getCoursesOfStudent(id:number):Observable<Student>{
+  return this.httpClient.get<Student>(`${environment.baseUrl}student/courses/${id}`);
+}
+
+  logoutStudent(){
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    });
+    console.log(headers);
+    
+    return this.httpClient.post(`${environment.baseUrl}student/logout`,null,{headers});
   }
 }

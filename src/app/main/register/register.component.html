@@ -4,28 +4,7 @@
     <div class="container" style="background-color: #5fcf80;">
 
       <h2>Register Now</h2>
-      <!-- <form  method="get"> -->
-      <!-- <a
-        type="submit"
-        id="submitBtn"
-        class="btn text-light mr-2 border-0"
-        href="/main/trainer/register"
-        style="background-color: #5fcf80"
-      >
-        Register as Trainer
-      </a> -->
-      <!-- </form> -->
-      <!-- <form method="get"> -->
-      <!-- <a
-        type="submit"
-        id="submitBtn"
-        class="btn text-light mr-2 border-0"
-        href="/main/register/student"
-        style="background-color: #5fcf80"
-      >
-        Register as Student
-      </a> -->
-    <!-- </form> -->
+
     </div>
   </div>
   <!-- ======= Hero Section ======= -->
@@ -33,8 +12,13 @@
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br>Leading Tomorrow</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a routerLink="/main/trainer/register" style="background-color: #56be75;" class="get-started-btn font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >Register as Trainer</a>
-      <a routerLink="/main/register/student" style="background-color: #56be75;" class="get-started-btn font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >Register as Student</a>
+      <form method="get" action="/main/trainer/register">
+        <input type="submit" value="Register as Trainer" style="background-color: #56be75;" class="get-started-btn border-0 font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >
+      </form>
+      <form method="get" action="/main/register/student">
+         <input type="submit" value="Register as Student" style="background-color: #56be75;" class="get-started-btn border-0 font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >
+      </form>
+           
     </div>
   </section><!-- End Hero -->
 

@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Trainer } from '../_models/trainer.model';
 
 interface trainer {
+  name:string,
   id:number,
   role:string,
   access_token:any,
@@ -53,5 +54,19 @@ export class TrainerService {
 
   getTrainersCount(): Observable<number>{
     return this.httpClient.get<number>(`${environment.baseUrl}trainers/count`);
+  }
+
+  getCoursesOfTrainer(id:number):Observable<Trainer>{
+    return this.httpClient.get<Trainer>(`${environment.baseUrl}trainer/courses/${id}`);
+  }
+
+  logoutTrainer(){
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    });
+    console.log(headers);
+    
+    return this.httpClient.post(`${environment.baseUrl}trainers/logout`,null,{headers});
   }
 }

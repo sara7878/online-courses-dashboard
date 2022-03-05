@@ -7,12 +7,15 @@
    <br>
     <div class="row my-1" *ngFor="let cat of catarray | filter:searchText">
         <div class="col-3">
-            <a href="#"  class="cat fs-5">{{cat.name}}</a>
+            <a [routerLink]="'/main/categories/details/'+cat.id"  class="cat fs-5">{{cat.name}}</a>
         </div>
         <div class="col-6">
            <ul class="crsName">
-               <li *ngFor="let crs of cat.courses">
+               <li *ngFor="let crs of cat.courses.slice(0,3)">
                 <a [routerLink]="'/main/courses/details/'+crs.id"><i class="bx bx-chevron-right"></i>{{crs.name}}</a>
+               </li>
+               <li>
+                <a [routerLink]="'/main/categories/details/'+cat.id"><i class="bx bx-chevron-right"></i>See more...</a>
                </li>
            </ul>
         </div>

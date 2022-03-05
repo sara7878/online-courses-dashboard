@@ -98,6 +98,8 @@ import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-train
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MyCoursesComponent } from './main/my-courses/my-courses.component';
+import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -187,6 +189,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     VideoComponent,
     UpdateTrainerComponent,
      UpdateStudentComponent,
+     MyCoursesComponent,
+     CourseContentDetailsComponent,
      
     ],
 

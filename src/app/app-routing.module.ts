@@ -51,9 +51,11 @@ import { MainLoginComponent } from './main/login/login.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
+import { MyCoursesComponent } from './main/my-courses/my-courses.component';
+import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/main/home', pathMatch: 'full' },
 
   {
     path: 'main',
@@ -65,6 +67,7 @@ const routes: Routes = [
       { path: 'login', component: MainLoginComponent },
       { path: 'register/student', component: RegisterStudentComponent },
       { path: 'login/student', component: LoginStudentComponent },
+      { path: 'student/courses', component: MyCoursesComponent },
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
@@ -100,7 +103,11 @@ const routes: Routes = [
         children: [
           { path: 'register', component: TrainerRegisterComponent },
           { path: 'login', component: TrainerLoginComponent },
-          { path: 'update-profile', component: UpdateTrainerComponent },
+          { path: 'courses', component: MyCoursesComponent },
+          { path: 'course/details/:courseId', component: CourseContentDetailsComponent },
+          { path: 'course/details/:courseId/add-content', component: AddCourseContentComponent },
+          { path: 'update', component: UpdateTrainerComponent },
+          { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
         ],
       },
       // { path: 'trainer/login', component: TrainerLoginComponent },

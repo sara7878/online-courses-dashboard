@@ -1,3 +1,5 @@
+import { Course } from "./course.model"
+
 enum gender{
     'female','male'
 }
@@ -9,6 +11,6 @@ export interface Student{
     phone ?:string,
     img  ?:string
     email  ?:string,
-    password ?:string 
-
+    password ?:string, 
+    courses ?: Course[]
 }

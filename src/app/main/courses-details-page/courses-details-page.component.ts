@@ -12,6 +12,7 @@ import { CourseStudentService } from 'src/app/_services/course-student.service';
   styleUrls: ['./courses-details-page.component.css']
 })
 export class CoursesDetailsPageComponent implements OnInit {
+  checkUser!: string;
 
 coursedetails: Course={
     id: 1,
@@ -43,7 +44,6 @@ coursedetails: Course={
     }};
 
 
-
    coursestud:CourseStudent= {
     student_id: 0,
     course_id: 0
@@ -61,6 +61,9 @@ coursedetails: Course={
 
   studid:any;
   ngOnInit(): void {
+    if (localStorage.getItem('role') == 'isTrainer') this.checkUser = 'trainer';
+    else this.checkUser = 'student';
+
     this.activatedRoute.params.subscribe((params) => {
       const id = params['courseId'];
       console.log(params);

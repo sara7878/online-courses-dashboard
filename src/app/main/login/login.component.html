@@ -33,8 +33,14 @@
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Learning Today,<br>Leading Tomorrow</h1>
       <h2>We are team of talented designers making websites with Bootstrap</h2>
-      <a routerLink="/main/trainer/login" style="background-color: #56be75;" class="get-started-btn font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >Login as Trainer</a>
-      <a routerLink="/main/login/student" style="background-color: #56be75;" class="get-started-btn font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >Login as Student</a>
+      <form method="get" action="/main/trainer/login">
+        <input type="submit" value="Login as Trainer" style="background-color: #56be75;" class="get-started-btn border-0 font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >
+      </form>
+      
+      <form method="get" action="/main/login/student">
+        <input type="submit" value="Login as Student" style="background-color: #56be75;" class="get-started-btn border-0 font-weight-medium fw-bolder text-light p-4 fs-5 m-4" >
+      </form>
+      
     </div>
   </section><!-- End Hero -->
   </main>
