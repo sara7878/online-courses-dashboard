@@ -17,7 +17,12 @@ export class NavBarComponent implements OnInit {
   logout(){
     this.adminservice.Adminlogout().subscribe(
       (res)=>{
-        console.log(res)
+        console.log(res);
+        localStorage.removeItem('id');
+        localStorage.removeItem('Authorization');
+        localStorage.removeItem('role');
+        localStorage.removeItem('name');
+
         this.router.navigate(['/dashboard/login']);
 
       },
@@ -26,7 +31,7 @@ export class NavBarComponent implements OnInit {
                 
       }
     )
-     localStorage.removeItem('Authorization')
+     
   }
 
 }
