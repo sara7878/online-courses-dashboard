@@ -8,6 +8,7 @@ interface admin {
   access_token: any;
   token_type: any;
   expires_in: any;
+  role:any;
 }
 @Injectable({
   providedIn: 'root',

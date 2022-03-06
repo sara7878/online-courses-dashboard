@@ -30,7 +30,8 @@ data={email:"",password:""}
 
     this.adminService.Adminlogin(this.data).subscribe(
       (res)=>{
-        localStorage.setItem('Authorization', "bearer "+res.access_token)
+        localStorage.setItem('Authorization', "bearer "+res.access_token);
+        localStorage.setItem('role',res.role);
         this.router.navigate(['/dashboard/home']);
 
       },
