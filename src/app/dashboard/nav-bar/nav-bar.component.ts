@@ -19,6 +19,10 @@ export class NavBarComponent implements OnInit {
       (res)=>{
         console.log(res)
         this.router.navigate(['/dashboard/login']);
+        localStorage.removeItem('Authorization')
+        localStorage.removeItem('role')     
+        localStorage.removeItem('name')
+        localStorage.removeItem('id')
 
       },
       (error)=>{
@@ -26,7 +30,8 @@ export class NavBarComponent implements OnInit {
                 
       }
     )
-     localStorage.removeItem('Authorization')
-  }
+
+
+    }
 
 }

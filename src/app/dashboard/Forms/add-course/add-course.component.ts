@@ -15,6 +15,7 @@ import { TrainerService } from 'src/app/_services/trainer.service';
 
 import { ToastrService } from 'ngx-toastr';
 import { ConstantPool } from '@angular/compiler';
+import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -27,7 +28,9 @@ export class AddCourseComponent implements OnInit {
     private courseService: CoursesService,
     private categoryService: CategororyService,
     private trainerService: TrainerService,
-    private formbuilder: FormBuilder
+    private formbuilder: FormBuilder,
+    private router: Router
+
   ) {}
   // ,private toastrService:ToastrService, private formBuilder:FormBuilder) {}
   categories!: Category[];
@@ -74,33 +77,6 @@ export class AddCourseComponent implements OnInit {
     this.creatForm();
   }
 
-  // addCourse(form: NgForm) {
-  //   console.log(form.value);
-
-  //   this.newCourse.name = form.value['name'];
-  //   // this.newCourse.img = form.value['courseImage'];
-  //   this.newCourse.trainer_id = form.value['trainer'];
-  //   this.newCourse.category_id = form.value['Category'];
-  //   this.newCourse.price = form.value['price'];
-  //   this.newCourse.duration = form.value['duration'];
-  //   this.newCourse.preq = form.value['preq'];
-  //   this.newCourse.desc = form.value['desc'];
-
-  //   console.log(this.newCourse);
-
-  //   this.courseService.addCourse(this.newCourse).subscribe(
-  //     (res) => {
-  //       // this.coursesContentsArr = res;
-  //       console.log(res);
-  //     },
-  //     (err) => {
-  //       console.log('Error adding course');
-  //     }
-  //   );
-  //  }
-
-  // constructor(private formbuilder:FormBuilder, private courseService: CoursesService){}
-  // ,private toastrService:ToastrService, private formBuilder:FormBuilder) {}
   ff = new FormData();
   data: Course = {
     name: 'yomna',
@@ -181,6 +157,8 @@ export class AddCourseComponent implements OnInit {
     this.courseService.create(formdata).subscribe(
       (res) => {
         console.log(res);
+        this.router.navigate(['/dashboard/courses']);
+
       },
       (err) => {
         console.log('Error adding course');
