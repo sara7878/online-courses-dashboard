@@ -12,6 +12,7 @@ import { CourseStudentService } from 'src/app/_services/course-student.service';
   styleUrls: ['./courses-details-page.component.css']
 })
 export class CoursesDetailsPageComponent implements OnInit {
+  checkUser!: string;
 
 coursedetails: Course={
     id: 1,
@@ -43,28 +44,35 @@ coursedetails: Course={
     }};
 
 
-
    coursestud:CourseStudent= {
     student_id: 0,
     course_id: 0
     };
 
+    active:boolean=false;
+    
 
     
   constructor(
     private activatedRoute: ActivatedRoute,
     private courseService: CoursesService,
+    private coursestudent:CourseStudentService
   ) {}
 
+  studid:any;
   ngOnInit(): void {
+    if (localStorage.getItem('role') == 'isTrainer') this.checkUser = 'trainer';
+    else this.checkUser = 'student';
+
     this.activatedRoute.params.subscribe((params) => {
       const id = params['courseId'];
       console.log(params);
       if (id) {
-      
         this.getCoursedetails(id);
-        //this.enroll(id);
-        // console.log(this.coursedetails);
+        this.coursestud.course_id=id
+        this.studid=localStorage.getItem('id')
+        this.coursestud.student_id=this.studid
+        this.checkenroll();
       }
     });
   }
@@ -78,10 +86,24 @@ coursedetails: Course={
       },
       (err) => {
         console.log('Error getting course details');
+        console.log(err);
       }
     );
   }
 
+
+  checkenroll(){
+    this.coursestudent.course_student_enroll(this.coursestud).subscribe(
+      (res)=>{
+        this.active=true
+        console.log(res);
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    )
+  }
 
   }
   // constructor(

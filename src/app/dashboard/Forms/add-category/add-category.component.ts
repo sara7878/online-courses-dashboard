@@ -3,7 +3,6 @@ import { FormBuilder, NgForm,FormGroup,Validators } from '@angular/forms';
 import { Category } from 'src/app/_models/category.model';
 import { CategororyService } from 'src/app/_services/categorory.service';
 import { ToastrService } from 'ngx-toastr';
-import { Post } from 'src/app/post.model';
 import { HttpClient } from '@angular/common/http';
 import { CoursesService } from 'src/app/_services/courses.service';
 import { Course } from 'src/app/_models/course.model';
@@ -80,6 +79,7 @@ export class AddCategoryComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding category');
+        console.log(err);
       }
     );
    }

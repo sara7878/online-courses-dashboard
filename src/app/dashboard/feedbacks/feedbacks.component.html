@@ -18,7 +18,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let feedback of feed; let i=index" >
+                  <tr *ngFor="let feedback of feed | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{feedback.id}}</td>
                     <td>{{feedback.student?.fname}} {{feedback.student?.lname}}</td>
                     <td>{{feedback.course?.name}}</td>
@@ -31,6 +31,8 @@
                 
                 </tbody>
               </table>
+              <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Feedback </button> -->
             </div>
           </div>          

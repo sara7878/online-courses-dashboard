@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Exam } from 'src/app/_models/exam.model';
 import { ExamsService } from 'src/app/_services/exams.service';
 
@@ -10,7 +11,7 @@ import { ExamsService } from 'src/app/_services/exams.service';
 })
 export class AddExamComponent implements OnInit {
 
-  constructor(private examService: ExamsService) { }
+  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute) { }
   newexam: Exam={
     id: 0,
     course_id: 0,
@@ -18,12 +19,18 @@ export class AddExamComponent implements OnInit {
     max_score: 0,
    
   };
+  id:number=0;
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['id'];
+      console.log(params);
+      
+    });
   }
   addExam(form: NgForm) {
     this.newexam.name = form.value['examName'];
-    this.newexam.course_id= form.value['course_id'];
+    this.newexam.course_id= this.id;
     this.newexam.max_score = form.value['max_score'];
     // console.log(this.newContent);
 
@@ -35,6 +42,7 @@ export class AddExamComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding course content');
+        console.log(err);
       }
     );
   }

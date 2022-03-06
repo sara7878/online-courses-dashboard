@@ -11,10 +11,15 @@ import { CoursesService } from 'src/app/_services/courses.service';
 export class CourcesComponent implements OnInit {
   constructor(private courseService: CoursesService) {}
 
+
   url = 'http://localhost:8000/uploads/courses/';
+  t_url = 'http://localhost:8000/uploads/trainer/';
 
   courseArray!: Course[];
   courseCount: number[] = [];
+
+  p: number = 1;
+
 
   ngOnInit(): void {
     this.getAll();

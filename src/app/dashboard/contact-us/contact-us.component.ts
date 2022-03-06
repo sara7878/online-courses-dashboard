@@ -9,6 +9,7 @@ import { ContactUsService } from '../../_services/contact-us.service';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent implements OnInit {
+  p: number = 1;
 
   constructor(private contactUS: ContactUsService) { }
 
@@ -32,6 +33,8 @@ export class ContactUsComponent implements OnInit {
       console.log(this.ContactusArray)},
       (err)=>{
         console.log("cant load data from contact us")
+        console.log(err);
+        
       }
 
   )

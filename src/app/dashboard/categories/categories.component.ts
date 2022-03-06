@@ -17,7 +17,7 @@ export class CategoriesComponent implements OnInit {
   ngOnInit(): void {
   this.getAll();
   }
-
+  p: number = 1;
   
   url="http://localhost:8000/uploads/categores/"
 
@@ -43,6 +43,8 @@ export class CategoriesComponent implements OnInit {
         },
         (err) => {
           console.log('Error deleting category');
+          console.log(err);
+          
         }
       );
     }

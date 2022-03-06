@@ -18,6 +18,7 @@ export class CategoriesmainComponentComponent implements OnInit {
   ngOnInit(): void {
   this.getAll();
   }
+  p: number = 1;
 
   getAll(){
     this.categoryService.getcategories().subscribe(

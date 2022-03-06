@@ -15,6 +15,7 @@ export class QuestionsComponent implements OnInit {
 
   QuetionArray!: Question[];
   Quetion!: Question;
+  p: number = 1;
 
   ngOnInit(): void {
 
@@ -56,6 +57,7 @@ export class QuestionsComponent implements OnInit {
       },
       (err) => {
         console.log('Error deleting deleteQestion ');
+        console.log(err);
       }
     );
       }

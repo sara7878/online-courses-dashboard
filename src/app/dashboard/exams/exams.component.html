@@ -4,7 +4,7 @@
           <div class="card-body">
             <h4 class="card-title">Exams Table</h4>
             <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-exam"> Add New Exam </button>
-
+            <!-- [routerLink]="'/dashboard/add-exam/'+id" -->
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
@@ -18,7 +18,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let exam of ExamArray; let i=index" >
+                  <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{exam.id}}</td>
                     <td>{{exam.name}}</td>
                     <td>{{exam.course?.name}}</td>
@@ -36,6 +36,8 @@
                   </tr>
                 </tbody>
               </table>
+              <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
+
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course </button> -->
             </div>
           </div>

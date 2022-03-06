@@ -33,6 +33,7 @@ export class FeedbackComponent implements OnInit {
       },
       (err) => {
         console.log('Error in get all feeds');
+        console.log(err);
       }
     );
   }

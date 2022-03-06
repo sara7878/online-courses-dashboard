@@ -1,9 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Student } from '../_models/student.model';
 interface student {
+  name:string,
   access_token:any,
   token_type: any,
   expires_in: any,
@@ -15,8 +16,6 @@ interface student {
 })
 export class StudentService {
 
-
-
  
   constructor(private httpClient: HttpClient) {}
   getAllStudents(): Observable<{data:Student[],status: boolean,error: any[]}> {
@@ -24,7 +23,6 @@ export class StudentService {
   }
 
   addStudent(newStudent: Student): Observable<{data:Student,status: boolean,error: any[]}> {
-  
      return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
   }
 
@@ -35,11 +33,19 @@ export class StudentService {
 
 
   deleteStudentById(id: number): Observable<Student>{
-    return this.httpClient.delete<Student>(environment.baseUrl + 'students/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.delete<Student>(environment.baseUrl + 'students/' + id,{headers});
   }
 
   updateStudent(id:number, updatedStudent:any): Observable<{data:Student,status: boolean,error: any[]}>{
-    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students/${id}`,updatedStudent);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students/${id}`,updatedStudent,{headers});
   }
 
   checkStudent(data:any): Observable<student>{
@@ -49,5 +55,19 @@ export class StudentService {
 
   getStudentsCount(): Observable<number>{
     return this.httpClient.get<number>(`${environment.baseUrl}students/count`);
+  }
+
+getCoursesOfStudent(id:number):Observable<Student>{
+  return this.httpClient.get<Student>(`${environment.baseUrl}student/courses/${id}`);
+}
+
+  logoutStudent(){
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    });
+    console.log(headers);
+    
+    return this.httpClient.post(`${environment.baseUrl}student/logout`,null,{headers});
   }
 }

@@ -38,9 +38,11 @@ export class LoginStudentComponent implements OnInit {
         localStorage.setItem('id', res.id+"");
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
+        localStorage.setItem('name',res.name);
       },
       (err) => {
         console.log('Error login');
+        console.log(err);
       }
     )
 

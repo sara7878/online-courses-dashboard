@@ -48,6 +48,7 @@ export class VideoComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding course content');
+        console.log(err);
       }
     );
   }

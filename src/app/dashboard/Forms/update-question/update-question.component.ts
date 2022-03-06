@@ -63,6 +63,7 @@ getQuestion(id: number) {
       },
       (err) => {
         console.log('Error adding course content');
+        console.log(err);
       }
     );
   }
@@ -85,6 +86,7 @@ getQuestion(id: number) {
       },
       (err) => {
         console.log('Error updating Qestion ');
+        console.log(err);
       }
     );
   }

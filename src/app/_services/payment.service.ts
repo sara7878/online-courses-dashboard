@@ -16,8 +16,7 @@ export class PaymentService {
      email: string,
      price: number,
      currency: string,
-     description: string
-  ) {
+     description: string) {
     let uploadData = {
        id: id,
        name: name,

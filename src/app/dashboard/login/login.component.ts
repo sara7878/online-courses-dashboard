@@ -34,6 +34,7 @@ data={email:"",password:""}
       },
       (err) => {
         console.log('Error login');
+        console.log(err);
       }
     )
 

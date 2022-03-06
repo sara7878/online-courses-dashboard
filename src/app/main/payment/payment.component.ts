@@ -59,6 +59,7 @@ export class PaymentComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting course details');
+        console.log(err);
       }
     );
   }
@@ -198,6 +199,7 @@ enroll(course_id:number){
       },
       (err) => {
         console.log('Error adding course content');
+        console.log(err);
       }
    )
 

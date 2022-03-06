@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
@@ -14,38 +15,46 @@ export class AddCourseContentComponent implements OnInit {
 
   CourseArray!: Course[];
 
-
+course!:Course;
   newContent: CourseContent = {
     course_id: 0,
     content: '',
     name: '',
   };
 
+  id:number=0;
+
   constructor(
     private CourseContentService: CourseContentService,
-    private courseService: CoursesService
+    private courseService: CoursesService,
+    private activatedRoute:ActivatedRoute
   ) {}
 
   ngOnInit(): void {
-    this.getAllCourses();
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['courseId'];
+      console.log(params);})
+
+    // this.getCourseById(this.id);
   }
 
-  getAllCourses() {
-    this.courseService.getAllCourses().subscribe(
-      (res) => {
-        this.CourseArray = res;
-        console.log(this.CourseArray);
-      },
-      (err) => {
-        console.log('cant load data');
-      }
-    );
-  }
+  // getCourseById(id:number) {
+  //   this.courseService.getCourseById(id).subscribe(
+  //     (res) => {
+  //       this.course = res;
+  //       console.log(this.course);
+  //     },
+  //     (err) => {
+  //       console.log('cant load data');
+  //       console.log(err);
+  //     }
+  //   );
+  // }
 
   addCourseContent(form: NgForm) {
     this.newContent.name = form.value['contentName'];
     this.newContent.content = form.value['courseContent'];
-    this.newContent.course_id = form.value['courseId'];
+    this.newContent.course_id = this.id;
     // console.log(this.newContent);
 
     this.CourseContentService.addCourseContent(this.newContent).subscribe(
@@ -55,6 +64,7 @@ export class AddCourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding course content');
+        console.log(err);
       }
     );
   }

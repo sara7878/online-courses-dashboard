@@ -34,6 +34,7 @@ export class TrainerLoginComponent implements OnInit {
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
         localStorage.setItem('role',res.role);
+        localStorage.setItem('name',res.name);
       },
       (err) => {
         console.log('Error logging in Trainer');

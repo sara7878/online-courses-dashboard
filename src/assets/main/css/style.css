@@ -351,6 +351,21 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+.register{
+  background: url("../img/wallpaper.jpeg") top center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.register:before{
+  content: "";
+  background: rgba(0, 0, 0, 0.6) !important;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
 #hero {
   width: 100%;
   height: 80vh;

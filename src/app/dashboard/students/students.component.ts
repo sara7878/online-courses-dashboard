@@ -15,6 +15,8 @@ export class StudentsComponent implements OnInit {
 
 
 url="http://localhost:8000/uploads/students/";
+  p: number = 1;
+
   
   ngOnInit(): void {
     this.getAllstudents();
@@ -28,6 +30,7 @@ url="http://localhost:8000/uploads/students/";
       },
       (err) => {
         console.log('error in get students');
+        console.log(err);
       }
     );}
     
@@ -39,6 +42,7 @@ url="http://localhost:8000/uploads/students/";
         },
         (err) => {
           console.log('Error deleting student');
+          console.log(err);
         }
       );
     }

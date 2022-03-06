@@ -11,9 +11,11 @@ export class TrainersmainComponentComponent implements OnInit {
 
   constructor(private trainerservice: TrainerService) {}
 
-  TrainersArray:Trainer[]=[]
+  TrainersArray:Trainer[]=[];
+  array!:Trainer[];
 
-
+  p: number = 1;
+  url = 'http://localhost:8000/uploads/trainer/';
 
   ngOnInit(): void {
     this.getAlltrainers();
@@ -23,10 +25,12 @@ export class TrainersmainComponentComponent implements OnInit {
     this.trainerservice.getAllTrainers().subscribe(
       (res) => {
         this.TrainersArray = res.data;
-        // console.log(this.TrainersArray);
+        // this.array = this.TrainersArray.slice(0,3);
+        console.log(this.TrainersArray);
       },
       (err) => {
         console.log('error in get trainers');
+        console.log(err);
       }
     );
 

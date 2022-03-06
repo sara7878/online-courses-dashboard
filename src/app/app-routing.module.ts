@@ -51,9 +51,11 @@ import { MainLoginComponent } from './main/login/login.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
+import { MyCoursesComponent } from './main/my-courses/my-courses.component';
+import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/main/home', pathMatch: 'full' },
 
   {
     path: 'main',
@@ -64,24 +66,27 @@ const routes: Routes = [
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: MainLoginComponent },
       { path: 'register/student', component: RegisterStudentComponent },
-      {path:'login/student', component:LoginStudentComponent},
+      { path: 'login/student', component: LoginStudentComponent },
+      { path: 'student/courses', component: MyCoursesComponent },
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
-      {path:'checkout' , component:CheckoutComponent},
-      {path:'search', component:SearchComponent},
+      { path: 'checkout', component: CheckoutComponent },
+      { path: 'search', component: SearchComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
+
       {path: 'enroll/:courseId', component:ContentComponent },
       {path:'feedback-form/:courseId', component:FeedbackFormComponent},
       {path:'test', component:TestComponent},
+
 
 
       {
         path: 'courses',
         children: [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
-      
+
           { path: 'details/:courseId/videos', component: VideoComponent },
         ],
       },
@@ -93,12 +98,23 @@ const routes: Routes = [
           { path: 'details/:categoryId', component: CategoryCoursesComponent },
         ],
       },
-      { path: 'trainer/login', component: TrainerLoginComponent },
-      { path: 'trainer/register', component: TrainerRegisterComponent },
-      { path: 'trainer/update', component: UpdateTrainerComponent },
+      {
+        path: 'trainer',
+        children: [
+          { path: 'register', component: TrainerRegisterComponent },
+          { path: 'login', component: TrainerLoginComponent },
+          { path: 'courses', component: MyCoursesComponent },
+          { path: 'course/details/:courseId', component: CourseContentDetailsComponent },
+          { path: 'course/details/:courseId/add-content', component: AddCourseContentComponent },
+          { path: 'update', component: UpdateTrainerComponent },
+          { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
+        ],
+      },
+      // { path: 'trainer/login', component: TrainerLoginComponent },
+      // { path: 'trainer/register', component: TrainerRegisterComponent },
+      // { path: 'trainer/update', component: UpdateTrainerComponent },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
-
     ],
   },
 

@@ -49,6 +49,7 @@ export class UpdateExamComponent implements OnInit {
         },
         (err) => {
           console.log('Error getting exams');
+          console.log(err);
         }
       )
     }
@@ -63,6 +64,7 @@ export class UpdateExamComponent implements OnInit {
         },
         (err) => {
           console.log('Error getting exam');
+          console.log(err);
         }
       );
     }
@@ -80,6 +82,7 @@ export class UpdateExamComponent implements OnInit {
         },
         (err) => {
           console.log('Error updating course content');
+          console.log(err);
         }
       );
     }

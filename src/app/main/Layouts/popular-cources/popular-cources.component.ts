@@ -1,22 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/_models/course.model';
+import { Trainer } from 'src/app/_models/trainer.model';
 import { CoursesService } from 'src/app/_services/courses.service';
+import { TrainerService } from 'src/app/_services/trainer.service';
+
 
 @Component({
   selector: 'app-popular-cources',
   templateUrl: './popular-cources.component.html',
-  styleUrls: ['./popular-cources.component.css']
+  styleUrls: ['./popular-cources.component.css'],
 })
 export class PopularCourcesComponent implements OnInit {
+  coursesArr!: Course[];
+  // trainersArr!: Trainer[];
+  courseCount: number[] = [];
+  start:number=0;
+  c_url = 'http://localhost:8000/uploads/courses/';
+  t_url = 'http://localhost:8000/uploads/trainer/';
+
 
   constructor(private courseService: CoursesService) { }
   url = 'http://localhost:8000/uploads/courses/';
 
   courseArray!: Course[];
 Array!:Course[];
-  courseCount: number[] = [];
+
   ngOnInit(): void {
+
     this.getAll();
+
   }
   
   getAll() {
@@ -44,4 +56,5 @@ Array!:Course[];
      
 
 
+ 
 }
