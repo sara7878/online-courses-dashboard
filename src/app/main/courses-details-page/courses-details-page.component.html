@@ -39,23 +39,26 @@
             <div class="course-info d-flex justify-content-between align-items-center">
               <h5>Duration</h5>
               <p>{{coursedetails.duration}}</p>
-              
-              
+
+
             </div>
             <div class="row justify-content-center">
               <div class="d-flex col-6">
-              
+
                 <!-- <a class="get-started-btn enroll-button" click="(enroll(coursedetails.id))">Enroll Now </a> -->
-                <a *ngIf="active==false" class="get-started-btn" [routerLink]="'/main/payment/'+coursedetails.id" > Enroll Now </a>
-                <a *ngIf="active==true" class="get-started-btn" [routerLink]="'/main/courses/details/'+coursedetails.id+'/videos'"> Go to course</a>
+
+                <a *ngIf="active==false && checkUser=='student'" class="get-started-btn" [routerLink]="'/main/payment/'+coursedetails.id" > Enroll Now </a>
+                <a *ngIf="active==true || (checkUser=='trainer' && trainerId!=coursedetails.trainer_id)" class="get-started-btn" [routerLink]="'/main/courses/details/'+coursedetails.id+'/videos'"> Go to course</a> 
+                <a *ngIf="checkUser=='trainer' && trainerId==coursedetails.trainer_id" class="get-started-btn" [routerLink]="'/main/trainer/course/details/'+coursedetails.id"> Go to course details</a>
+                <a *ngIf="checkUser=='trainer' && trainerId==coursedetails.trainer_id" class="get-started-btn" [routerLink]="'/main/trainer/edit-course/'+coursedetails.id"> Edit course</a>
 
               </div>
             </div>
-        
+
 
 
           </div>
-       
+
         </div>
 
       </div>

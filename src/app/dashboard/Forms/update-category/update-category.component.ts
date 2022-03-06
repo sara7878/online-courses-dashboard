@@ -39,7 +39,7 @@ export class UpdateCategoryComponent implements OnInit {
 
         this.form = this.formbuilder.group({
           updatename: [this.cat.name, Validators.required],
-          image: [null, Validators.required],
+          image: [null],
         });
       },
       (err) => {
@@ -55,7 +55,7 @@ export class UpdateCategoryComponent implements OnInit {
   creatForm() {
     this.form = this.formbuilder.group({
       updatename: [this, Validators.required],
-      image: [null, Validators.required],
+      image: [null]
     });
   }
 

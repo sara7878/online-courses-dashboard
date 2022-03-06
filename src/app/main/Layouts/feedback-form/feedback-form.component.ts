@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { Feedback } from 'src/app/_models/feedback.model';
 import { FeedbackService } from 'src/app/_services/feedback.service';
 
@@ -10,7 +11,7 @@ import { FeedbackService } from 'src/app/_services/feedback.service';
 })
 export class FeedbackFormComponent implements OnInit {
 
-  constructor(private feedbackService: FeedbackService) { }
+  constructor(private feedbackService: FeedbackService,  private activatedRoute: ActivatedRoute,) { }
 feed!: Feedback[]
   newfeedback: Feedback={
    
@@ -23,23 +24,19 @@ feed!: Feedback[]
     student_id:0
    
   };
+  id!:number
   //recieved= false;
   ngOnInit(): void {
-    this.getAllfeedbacks();
+    
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['courseId'];
+      console.log(params);
+     
+       
+    });
 
   }
 
-  getAllfeedbacks() {
-    this.feedbackService.getAllfeedbacks().subscribe(
-      (res) => {
-        this.feed = res;
-        console.log(this.feed);
-      },
-      (err) => {
-        console.log('cant load data');
-      }
-    );
-  }
 
 
 
@@ -49,16 +46,14 @@ feed!: Feedback[]
 
 
   addFeedback(form: NgForm) {
-    this.newfeedback.name = form.value['name'];
-    this.newfeedback.student.fname = form.value['name'];
-    this.newfeedback.course.name = form.value['course_id'];
-    this.newfeedback.desc = form.value['desc'];
 
-    // console.log(this.newContent);
-// ['name'];
-//  ['student_id'];
-// ['course_id'];
-//   ['desc']
+this.newfeedback.desc = form.value['desc'];
+this.newfeedback.student_id= parseInt(localStorage.getItem("id")!);
+this.newfeedback.course_id=this.id;
+this.newfeedback.name= localStorage.getItem("name")!
+
+console.log(this.newfeedback);
+   
 
     this.feedbackService.addFeeback(this.newfeedback).subscribe(
       (res) => {
@@ -66,7 +61,7 @@ feed!: Feedback[]
         console.log(res);
       },
       (err) => {
-        console.log('Error adding contact');
+        console.log(err);
       }
     );
   }

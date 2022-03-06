@@ -15,8 +15,12 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
   getAllCourses(): Observable<Course[]> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
 
-      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
+      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
   }
   // getAllCourses(): Observable<Course[]> {
 
@@ -26,15 +30,21 @@ export class CoursesService {
   //     return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
   // }
   getCourseById(id: number): Observable<Course> {
-    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id,{headers});
   }
 
   create(data:any){
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
-    })
-    return this.httpClient.post(environment.baseUrl+'courses',data,{headers});
+    });
+    console.log(headers);
+
+    return this.httpClient.post(environment.baseUrl+'courses',data, {headers});
   }
 
   deleteCourseById(id: number): Observable<Course>{
@@ -44,6 +54,7 @@ export class CoursesService {
     })
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id ,{headers});
   }
+
 
   editCourse(id: number, updatedCourse: Course): Observable<Course> {
 
@@ -57,6 +68,15 @@ export class CoursesService {
     return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse,{headers});
   }
 
+  updatecourse(id: number, data: any) {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post(environment.baseUrl + 'courses/' + id, data,{headers});
+  }
+
+
   enroll(course_id:number)
   {
     const token: string = localStorage.getItem('Authorization')!;
@@ -66,6 +86,7 @@ export class CoursesService {
     return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id,{headers});
   }
 
+
   getCountStudentsInCourse(id:number):Observable<number>
   {
     return this.httpClient.get<number>(`${environment.baseUrl}student/studentCount/${id}`);
@@ -74,5 +95,6 @@ export class CoursesService {
   getCoursesCount(): Observable<number>{
     return this.httpClient.get<number>(`${environment.baseUrl}courses/count`);
   }
+
 
 }

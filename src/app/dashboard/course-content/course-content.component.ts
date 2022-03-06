@@ -24,6 +24,8 @@ export class CourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting courses contents');
+        console.log(err);
+        
       }
     );
   }
@@ -36,6 +38,8 @@ export class CourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('Error deleting course content');
+        console.log(err);
+        
       }
     );
   }

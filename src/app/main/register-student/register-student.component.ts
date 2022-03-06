@@ -47,7 +47,7 @@ export class RegisterStudentComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding student');
-
+        console.log(err);
       }
     );
   }

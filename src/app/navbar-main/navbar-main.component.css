@@ -1,7 +1,13 @@
+
 a:hover{
     text-decoration: none;
-    color: rgb(147, 236, 150) !important;
+    color: #5fcf80 !important;
 }
 a{
     margin-left: 15px;
+    font-size: 18px;
+}
+
+.button:hover{
+    color: aliceblue !important;
 }

@@ -6,23 +6,11 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-
-
-
   <script src="https://checkout.stripe.com/checkout.js"></script>
-  <!--
-  <div class="container" style="width:650px">
-    <div class="my-3">
-      <h3>bezkoder.com</h3>
-      <h4>{{ title }}</h4>
-    </div>
-    <app-upload-images></app-upload-images>
-  </div>
-   -->
-<!-- <app-navbar *ngIf="active1==true"></app-navbar> -->
-<router-outlet *ngIf="active3==true"></router-outlet>
-
-<app-navbar-main *ngIf="active1==true"></app-navbar-main>
+ 
+  
+<app-chat-dialog *ngIf="active1==true"></app-chat-dialog>
+  <app-navbar-main *ngIf="active1==true"></app-navbar-main>
 <router-outlet *ngIf="active1==true"></router-outlet>
 <app-footer *ngIf="active1==true"></app-footer>
 
@@ -37,6 +25,7 @@
 </div>
 
 
+<router-outlet *ngIf="active3==true"></router-outlet>
 
 
 

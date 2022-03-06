@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Trainer } from 'src/app/_models/trainer.model';
 import { TrainerService } from 'src/app/_services/trainer.service';
 
@@ -10,7 +11,7 @@ import { TrainerService } from 'src/app/_services/trainer.service';
 })
 export class TrainerLoginComponent implements OnInit {
 
-  constructor(private trainerService:TrainerService) { }
+  constructor(private trainerService:TrainerService,public router: Router) { }
 
   ngOnInit(): void {
   }
@@ -34,6 +35,9 @@ export class TrainerLoginComponent implements OnInit {
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
         localStorage.setItem('role',res.role);
+        localStorage.setItem('name',res.name);
+        this.router.navigate(['/main/home']);
+
       },
       (err) => {
         console.log('Error logging in Trainer');

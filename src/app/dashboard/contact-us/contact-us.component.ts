@@ -33,6 +33,8 @@ export class ContactUsComponent implements OnInit {
       console.log(this.ContactusArray)},
       (err)=>{
         console.log("cant load data from contact us")
+        console.log(err);
+        
       }
 
   )
@@ -59,6 +61,7 @@ export class ContactUsComponent implements OnInit {
     (res) => {
       // this.coursesContentsArr = res;
       console.log(res);
+      this.ngOnInit();
     },
     (err) => {
       console.log('Error deleting contact');

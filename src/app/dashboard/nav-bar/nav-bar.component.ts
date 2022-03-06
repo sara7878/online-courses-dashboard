@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/_services/admin.service';
 
 @Component({
@@ -8,22 +9,33 @@ import { AdminService } from 'src/app/_services/admin.service';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private adminservice:AdminService) { }
+  constructor(private adminservice:AdminService,private router: Router,) { }
 
   ngOnInit(): void {
   }
 
+  logout(){
+    this.adminservice.Adminlogout().subscribe(
+      (res)=>{
+        console.log(res);
+        localStorage.removeItem('Authorization');
+        localStorage.removeItem('id');
+        localStorage.removeItem('role');
+        localStorage.removeItem('name');
+        this.router.navigate(['/dashboard/login']);
 
-logout(){
-  this.adminservice.Adminlogout().subscribe(
-  (res)=>{
-  console.log(res)
-  },
-  (error)=>{
-  console.log("can't logout");
-  console.log(error);
+
+
+
+
+      },
+      (error)=>{
+        console.log(error);
+
+      }
+    )
+
   }
-  )
-  localStorage.removeItem('Authorization')
-}
+
+
 }

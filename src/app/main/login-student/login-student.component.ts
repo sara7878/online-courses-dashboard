@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StudentService } from 'src/app/_services/student.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { StudentService } from 'src/app/_services/student.service';
 })
 export class LoginStudentComponent implements OnInit {
 
-  constructor(private studentService: StudentService
+  constructor(private studentService: StudentService, private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -37,12 +38,17 @@ export class LoginStudentComponent implements OnInit {
         localStorage.setItem('id', res.id+"");
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
+        localStorage.setItem('name',res.name);
       },
       (err) => {
         console.log('Error login');
+        console.log(err);
       }
     )
 
+    this.router.navigate(['/main/home'])
+
   }
+
 
 }

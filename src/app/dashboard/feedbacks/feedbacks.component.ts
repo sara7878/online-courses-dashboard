@@ -31,6 +31,7 @@ export class FeedbacksComponent implements OnInit {
       },
       (err) => {
         console.log('Error in get all feeds');
+        console.log(err);
       }
     );
   }
@@ -40,9 +41,11 @@ export class FeedbacksComponent implements OnInit {
       this.feedbackService.deleteFeedbackById(id).subscribe(
         (res) => {
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error deleting feedback');
+          console.log(err);
         }
       );
     }
