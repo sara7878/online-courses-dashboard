@@ -32,6 +32,8 @@ data={email:"",password:""}
       (res)=>{
         localStorage.setItem('Authorization', "bearer "+res.access_token);
         localStorage.setItem('role',res.role);
+        localStorage.setItem('name',res.name);
+        localStorage.setItem('id',res.id);
         this.router.navigate(['/dashboard/home']);
 
       },
