@@ -53,6 +53,7 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
 import { MyCoursesComponent } from './main/my-courses/my-courses.component';
 import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main/home', pathMatch: 'full' },
@@ -115,6 +116,8 @@ const routes: Routes = [
       // { path: 'trainer/update', component: UpdateTrainerComponent },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
+      { path: 'chat', component: ChatDialogComponent },
+
     ],
   },
 

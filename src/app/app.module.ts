@@ -100,9 +100,14 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
 import { MyCoursesComponent } from './main/my-courses/my-courses.component';
 import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+// import { ChatModule } from './chat/chat.module';
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MaterialModule } from './material.module';
+// import {MatToolbarModule} from '@angular/material/toolbar';
+// import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md'
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -193,6 +198,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
      MyCoursesComponent,
      CourseContentDetailsComponent,
      
+   
+    ChatDialogComponent
     ],
 
   imports: [
@@ -207,6 +214,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     Ng2SearchPipeModule,
     NgxPaginationModule,
     StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") ,
+    // ChatModule,
+    FlexLayoutModule,
+    // MatToolbarModule
 
   ],
   providers: [],
