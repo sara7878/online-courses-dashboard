@@ -31,11 +31,18 @@ data={email:"",password:""}
     this.adminService.Adminlogin(this.data).subscribe(
       (res)=>{
         localStorage.setItem('Authorization', "bearer "+res.access_token)
+        localStorage.setItem('id', res.id)
+        localStorage.setItem('role', res.role)
+        localStorage.setItem('name', res.name)
+
+
+
         this.router.navigate(['/dashboard/home']);
 
       },
       (err) => {
         console.log('Error login');
+        console.log(err);
         this.router.navigate(['/dashboard/login']);
       }
     )

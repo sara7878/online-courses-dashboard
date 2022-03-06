@@ -12,7 +12,9 @@
                 <li class="nav-item" *ngFor="let content of contentArr; let i=index">
                   <a class="nav-link " data-bs-toggle="tab" href="#tab-{{i+2}}">{{content.name}}</a>
                 </li>
-
+                <li class="nav-item">
+                  <a class="nav-link " data-bs-toggle="tab" [routerLink]="'/main/feedback-form/'+id">Send Feedback</a>
+                </li>
               </ul>
             </div>
             <div class="col-lg-9 mt-4 mt-lg-0" >

@@ -97,6 +97,7 @@ export class UpdateCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting all categories');
+        console.log(err);
       }
     );
   }
@@ -133,6 +134,7 @@ export class UpdateCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error updating course ', err);
+        console.log(err);
       }
     );
   }

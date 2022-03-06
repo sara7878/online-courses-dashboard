@@ -35,7 +35,9 @@ export class TrainerLoginComponent implements OnInit {
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
         localStorage.setItem('role',res.role);
-        this.router.navigate(['/dashboard/home']);
+        localStorage.setItem('name',res.name);
+        // this.router.navigate(['/main/home']);
+        this.trainerService.trainerloginservice.emit(res)
 
       },
       (err) => {

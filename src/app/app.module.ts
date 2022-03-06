@@ -78,25 +78,39 @@ import { TrainersmainComponentComponent } from './main/Layouts/trainersmain-comp
 
 import { RegisterStudentComponent } from './main/register-student/register-student.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
-import { CheckoutComponent } from './main/checkout/checkout.component';
+
 // import { StripeModule } from 'stripe-angular';
 
 import { LoginComponent } from './dashboard/login/login.component';
 import { RegisterComponent } from './dashboard/register/register.component';
-import { VideoComponent } from './main/Layouts/video/video.component';
+import { CheckoutComponent } from './main/checkout/checkout.component';
+import { StripeModule } from 'stripe-angular';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
+
 import { PaymentComponent } from './main/payment/payment.component';
 import { ContentComponent } from './main/content/content.component';
 
 import { SearchComponent } from './search/search.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { StripeModule } from 'stripe-angular';
-import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
+import { VideoComponent } from './main/Layouts/video/video.component';
+
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
-import { NgxPaginationModule } from 'ngx-pagination';
-// import { ChatModule } from './chat/chat.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
+
+
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+// import { ChatModule } from './chat/chat.module';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MyCoursesComponent } from './main/my-courses/my-courses.component';
+import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
+import { AddThisCourseContentComponent } from './main/Forms/add-this-course-content/add-this-course-content.component';
+import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
+import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
+import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
+
+
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MaterialModule } from './material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
@@ -183,9 +197,19 @@ import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
     CheckoutComponent,
     CategoryCoursesComponent, 
     ContentComponent,
+  
+    SearchComponent,
     VideoComponent,
     UpdateTrainerComponent,
-    UpdateStudentComponent,
+     UpdateStudentComponent,
+     MyCoursesComponent,
+     CourseContentDetailsComponent,
+     AddThisCourseContentComponent,
+     EditThisCourseContentComponent,
+     AddThisCourseComponent,
+     EditThisCourseComponent,
+     
+
     ChatDialogComponent
     ],
 
@@ -200,8 +224,9 @@ import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
+    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143"),
     // ChatModule,
-    FlexLayoutModule,
+    FlexLayoutModule
     // MatToolbarModule
 
   ],

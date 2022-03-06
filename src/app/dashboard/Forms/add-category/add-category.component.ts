@@ -79,6 +79,7 @@ export class AddCategoryComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding category');
+        console.log(err);
       }
     );
    }

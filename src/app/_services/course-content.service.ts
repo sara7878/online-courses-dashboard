@@ -14,16 +14,28 @@ export class CourseContentService {
 
 
   getAllContents(): Observable<CourseContent[]> {
-    return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content`,{headers});
   }
 
   getCourseContent(id: number): Observable<CourseContent> {
-    return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`)
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`,{headers})
   }
   
 
   getContentofspacificCourse(id: number): Observable<CourseContent[]> {
-    return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content/show/${id}`)
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<CourseContent[]>(`${environment.baseUrl}Course_content/show/${id}`,{headers})
   }
 
   addCourseContent(newContent : CourseContent): Observable<CourseContent> {

@@ -39,9 +39,12 @@ export class CategoriesComponent implements OnInit {
       this.categoryService.deleteCategoryById(id).subscribe(
         (res) => {
           console.log(res);
+          this.ngOnInit();
         },
         (err) => {
           console.log('Error deleting category');
+          console.log(err);
+          
         }
       );
     }

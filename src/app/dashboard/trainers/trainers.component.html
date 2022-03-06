@@ -14,7 +14,6 @@
                     <th> Trainer Name</th>
                     <th> Email</th>
                     <th> Phone</th>
-                    <th> Show Details</th>
                     <th> Update</th>
                     <th> Delete</th>
                   </tr>
@@ -23,14 +22,13 @@
                   <tr *ngFor="let trainer of TrainersArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{trainer.id}}</td>
                     <td class="py-1">
-                      <img [src]="trainer.img" alt="image" />
+                      <!-- <img [src]="trainer.img" alt="image" /> -->
+                      <img [src]="url+trainer.img" >
                     </td>
                     <td>{{trainer.fname}} {{trainer.lname}}</td>
                     <td>{{trainer.email}}</td>
                     <td>{{trainer.phone}}</td>
-                    <td>                     
-                        <button type="button" class="btn btn-success ">Show</button>
-                    </td>
+ 
                     <td>
                       <button type="button" class="btn btn-warning ">Update</button>
                       

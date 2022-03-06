@@ -57,6 +57,7 @@ export class QuestionsComponent implements OnInit {
       },
       (err) => {
         console.log('Error deleting deleteQestion ');
+        console.log(err);
       }
     );
       }

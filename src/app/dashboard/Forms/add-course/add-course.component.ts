@@ -55,6 +55,7 @@ export class AddCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting all categories');
+        console.log(err);
       }
     );
   }
@@ -67,6 +68,7 @@ export class AddCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting all trainers');
+        console.log(err);
       }
     );
   }
@@ -162,6 +164,7 @@ export class AddCourseComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding course');
+        console.log(err);
       }
     );
   }

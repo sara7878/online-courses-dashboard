@@ -58,6 +58,7 @@ export class EditCourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('cant load data');
+        console.log(err);
       }
     );
   }
@@ -70,6 +71,7 @@ export class EditCourseContentComponent implements OnInit {
       },
       (err) => {
         console.log('Error getting course content');
+        console.log(err);
       }
     );
   }
@@ -82,9 +84,11 @@ export class EditCourseContentComponent implements OnInit {
     this.CourseContentService.editCourseContent(id,this.updatedContent).subscribe(
       (res) => {
         console.log(res);
+        this.ngOnInit();
       },
       (err) => {
         console.log('Error updating course content');
+        console.log(err);
       }
     );
   }

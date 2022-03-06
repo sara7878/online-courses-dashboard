@@ -12,7 +12,11 @@ export class ExamsService {
   constructor(private httpClient: HttpClient) { }
  
  getAllExams():Observable<{data:Exam[],status:boolean,error:any}>{
-  return this.httpClient.get<{data:Exam[],status:boolean,error:any}>(environment.baseUrl+'exams')
+  const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
+  return this.httpClient.get<{data:Exam[],status:boolean,error:any}>(environment.baseUrl+'exams',{headers})
 }
 
 

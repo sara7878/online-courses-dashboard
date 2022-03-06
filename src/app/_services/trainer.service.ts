@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Trainer } from '../_models/trainer.model';
 
 interface trainer {
+  name:string,
   id:number,
   role:string,
   access_token:any,
@@ -15,6 +16,8 @@ interface trainer {
   providedIn: 'root'
 })
 export class TrainerService {
+
+  trainerloginservice:EventEmitter<any>= new EventEmitter<any>();
 
   constructor(private httpClient: HttpClient) {}
   getAllTrainers(): Observable<{data:Trainer[],status: boolean,error: any[]}> {
@@ -51,4 +54,21 @@ export class TrainerService {
     return this.httpClient.post<trainer>(environment.baseUrl+'trainers/login',data);
   }
 
+  getTrainersCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}trainers/count`);
+  }
+
+  getCoursesOfTrainer(id:number):Observable<Trainer>{
+    return this.httpClient.get<Trainer>(`${environment.baseUrl}trainer/courses/${id}`);
+  }
+
+  logoutTrainer(){
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    });
+    console.log(headers);
+    
+    return this.httpClient.post(`${environment.baseUrl}trainers/logout`,null,{headers});
+  }
 }

@@ -22,7 +22,8 @@
                   <tr *ngFor="let student of StudentsArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{student.id}}</td>
                     <td class="py-1">
-                      <img [src]="student.img" alt="image" />
+                      <!-- <img [src]="student.img" alt="image" /> -->
+                      <img [src]= 'url+student.img'/>
                     </td>
                     <td>{{student.fname}} {{student.lname}}</td>
                     <td>{{student.email}}</td>

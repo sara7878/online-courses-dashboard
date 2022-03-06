@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { StudentService } from 'src/app/_services/student.service';
 
 @Component({
@@ -9,12 +10,14 @@ import { StudentService } from 'src/app/_services/student.service';
 })
 export class LoginStudentComponent implements OnInit {
 
-  constructor(private studentService: StudentService
-    ) { }
+  constructor(private studentService: StudentService, private router: Router,
+    ) { 
+
+    }
 
   ngOnInit(): void {
+    
   }  
- 
 
   data={email:"",password:""}
 
@@ -37,12 +40,29 @@ export class LoginStudentComponent implements OnInit {
         localStorage.setItem('id', res.id+"");
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
+        localStorage.setItem('name',res.name);
+       
+      //   this.router.navigateByUrl('/HomePageComponent', { skipLocationChange: true }).then(() => {
+      //     this.router.navigate(['/main/home']);
+      // }); 
+        
+      // window.location.reload();
+      this.studentService.studentloginservice.emit(res)
+
+      // this.router.navigate(['/main/home']);
+        // this.redirectTo('/main/home')
+
+        // this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+        // this.router.navigate(['/main/home']));
       },
       (err) => {
         console.log('Error login');
+        console.log(err);
       }
     )
 
   }
+
+
 
 }

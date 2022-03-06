@@ -19,31 +19,27 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/main/home">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/main/about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/main/categories">Categories</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/main/courses">Courses</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a routerLink="/main/trainers">Trainers</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            <ul *ngFor="let category of array; let i=index">
+              <li class="mb-2"><i class="bx bx-chevron-right"></i> <a routerLink="/main/categories/details/{{category.id}}">{{category.name}}</a></li>
+            
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            <p>Join now to receive personalized recommendations from the full Mentor catalog.</p>
+      <a routerLink="/main/courses" class="get-started-btn font-weight-medium mx-auto">Browse Courses</a>
+          
           </div>
 
         </div>

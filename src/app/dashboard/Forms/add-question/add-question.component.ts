@@ -43,6 +43,7 @@ export class AddQuestionComponent implements OnInit {
       },
       (err) => {
         console.log('Error adding question');
+        console.log(err);
       }
     );
   }

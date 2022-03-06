@@ -16,19 +16,26 @@ export class CoursesService {
 
   getAllCourses(): Observable<Course[]> {
 
+
       return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
   }
 
   getCourseById(id: number): Observable<Course> {
-    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id,{headers});
   }
 
   create(data:any){
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
-    })
-    return this.httpClient.post(environment.baseUrl+'courses',data,{headers});
+    });
+    console.log(headers);
+    
+    return this.httpClient.post(environment.baseUrl+'courses',data, {headers});
   }
 
   deleteCourseById(id: number): Observable<Course>{
@@ -38,6 +45,7 @@ export class CoursesService {
     })
     return this.httpClient.delete<Course>(environment.baseUrl + 'courses/' + id ,{headers});
   }
+
 
   editCourse(id: number, updatedCourse: Course): Observable<Course> {
 
@@ -52,11 +60,11 @@ export class CoursesService {
   }
 
   updatecourse(id: number, data: any) {
-    // const token: string = localStorage.getItem('Authorization')!;
-    // const headers = new HttpHeaders({
-    //   Authorization: token
-    // })
-    return this.httpClient.post(environment.baseUrl + 'courses/' + id, data);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post(environment.baseUrl + 'courses/' + id, data,{headers});
   }
 
   
@@ -68,4 +76,16 @@ export class CoursesService {
     })
     return this.httpClient.post(environment.baseUrl+'/student/storeCourse/',course_id,{headers});
   }
+
+
+  getCountStudentsInCourse(id:number):Observable<number>
+  {
+    return this.httpClient.get<number>(`${environment.baseUrl}student/studentCount/${id}`);
+  }
+
+  getCoursesCount(): Observable<number>{
+    return this.httpClient.get<number>(`${environment.baseUrl}courses/count`);
+  }
+
+
 }

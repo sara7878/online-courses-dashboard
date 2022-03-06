@@ -36,13 +36,13 @@ export class AppComponent {
     
     const role=localStorage.getItem('role')
 
-    if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3 && (role=='isAdmin'||role=='isTrainer')){
+    if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3 && (role=='isAdmin')){
         this.active=true
         this.active1=false
         this.active3=false
 
       }
-      else if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3 && (role!='isAdmin' && role !='isTrainer')){
+      else if(this.url1==this.routeurl1 && this.logindash!==this.routeurl3 && (role!='isAdmin')){
         this.router.navigate(['/dashboard/login']);
        }
 

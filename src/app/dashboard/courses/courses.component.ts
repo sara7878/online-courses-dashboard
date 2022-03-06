@@ -29,18 +29,29 @@ export class CoursesComponent implements OnInit {
       },
       (err) => {
         console.log('cant load data');
+        console.log(err);
       }
     );
   }
+ 
+  
+ 
+ 
 
   deleteCourse(id:number){
     this.courseService.deleteCourseById(id).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        this.ngOnInit();
+     
+        //this.Arr.push(res);
       },
+
+
+    //  () => this.getAllcourses(),
       (err) => {
         console.log('Error deleting course');
+        console.log(err);
       }
     );
   }
