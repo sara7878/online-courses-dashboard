@@ -14,7 +14,7 @@
   <div class="container">
     <div class="row mt-5">
       <div class="col-12 grid-margin stretch-card text-primary">
-        <div class="card">
+        <div class="card main-forms">
           <div class="card-body">
             <h4 class="card-title text-center">Add New Course</h4>
 
@@ -143,8 +143,9 @@
               </div>
 
               <button
+              id="submitBtn"
                 type="submit"
-                class="btn btn-primary mr-2"
+                class="btn text-light mr-2 main-btns"
                 routerLink="/main/trainer/courses"
                 (click)="onsubmit(form)"
               >

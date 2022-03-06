@@ -105,7 +105,13 @@ import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-co
 import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
 import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
 
+// import { ChatModule } from './chat/chat.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { MaterialModule } from './material.module';
+// import {MatToolbarModule} from '@angular/material/toolbar';
+// import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md'
 
 // import { ToastrModule } from 'ngx-toastr';
 
@@ -200,6 +206,7 @@ import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this
      AddThisCourseComponent,
      EditThisCourseComponent,
      
+    ChatDialogComponent
     ],
 
   imports: [
@@ -213,7 +220,10 @@ import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") ,
+    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143"),
+    // ChatModule,
+    FlexLayoutModule
+    // MatToolbarModule
 
   ],
   providers: [],

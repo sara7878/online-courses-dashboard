@@ -14,7 +14,7 @@
   <div class="container-fluid">
     <div class="row mt-5">
       <div class="col-12 grid-margin stretch-card text-primary">
-        <div class="card">
+        <div class="card main-forms">
           <div class="card-body">
             <h4 class="card-title text-center">Add New Course Content</h4>
 
@@ -103,7 +103,8 @@
 
               <button
                 type="submit"
-                class="btn btn-primary mr-2"
+                id="submitBtn"
+                class="btn text-light mr-2 main-btns"
                 [disabled]="!courseContentForm.valid"
                 [routerLink]="'/main/trainer/course/details/'+id"
                 (click)="addCourseContent(courseContentForm)"
@@ -111,7 +112,7 @@
                 Submit
               </button>
               <button
-                class="btn btn-light"
+                class="btn text-light main-btns"
                 (click)="resetForm(courseContentForm)"
               >
                 Cancel

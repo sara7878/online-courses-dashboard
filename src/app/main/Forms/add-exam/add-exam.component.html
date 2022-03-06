@@ -13,7 +13,7 @@
   <!-- End Breadcrumbs -->
 
   <div class="col-12 grid-margin stretch-card text-primary">
-    <div class="card">
+    <div class="card main-forms">
       <div class="card-body">
         <h4 class="card-title text-center">Add New Exam</h4>
 
@@ -102,8 +102,9 @@
           </div>
 
           <button
+          id="submitBtn"
             type="submit"
-            class="btn btn-primary mr-2"
+            class="btn text-light mr-2 main-btns"
             routerLink="/dashboard/exams"
             (click)="addExam(examForm)"
             [disabled]="!examForm.valid"

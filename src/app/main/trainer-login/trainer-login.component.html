@@ -1,5 +1,5 @@
 <div class="container mt-5 grid-margin stretch-card font-weight-bold" >
-  <div class="card" style="margin-top: 80px; border-color:#5fcf80; border-width: 3px;">
+  <div class="card main-forms" style="margin-top: 80px;">
     <div class="card-body">
       <h3 class="card-title text-center fw-bold">Trainer Login</h3>
       <!-- <p class="card-description">Basic form elements</p> -->
@@ -50,11 +50,10 @@
         <button
           type="submit"
           id="submitBtn"
-          class="btn text-light border-0 mr-2"
+          class="btn text-light border-0 mr-2 main-btns"
           [disabled]="!TrainerLoginForm.valid"
-          routerLink="/main/home"
+          
           (click)="checkTrainer(TrainerLoginForm)"
-          style="background-color: #5fcf80"
         >
           Sign In
         </button>

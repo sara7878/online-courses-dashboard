@@ -1,5 +1,6 @@
 import { Component, NgModule, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/_services/admin.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { AdminService } from 'src/app/_services/admin.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor( private adminService:AdminService) { }
+  constructor( private adminService:AdminService,private router: Router)  { }
 
   ngOnInit(): void {
   }
@@ -30,11 +31,13 @@ data={email:"",password:""}
     this.adminService.Adminlogin(this.data).subscribe(
       (res)=>{
         localStorage.setItem('Authorization', "bearer "+res.access_token)
+        this.router.navigate(['/dashboard/home']);
 
       },
       (err) => {
         console.log('Error login');
         console.log(err);
+        this.router.navigate(['/dashboard/login']);
       }
     )
 

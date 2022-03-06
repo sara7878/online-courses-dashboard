@@ -57,6 +57,7 @@ import { AddThisCourseContentComponent } from './main/Forms/add-this-course-cont
 import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
 import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
 import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main/home', pathMatch: 'full' },
@@ -119,6 +120,8 @@ const routes: Routes = [
       },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
+      { path: 'chat', component: ChatDialogComponent },
+
     ],
   },
 
