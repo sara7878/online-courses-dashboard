@@ -2,7 +2,7 @@
   <!-- ======= Breadcrumbs ======= -->
   <div class="breadcrumbs" data-aos="fade-in">
     <div class="container">
-      <h2>Course Details</h2>
+      <h2>" {{course.name}} " Course Details</h2>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia optio
         ipsam commodi, quisquam aliquam deleniti dolorem laboriosam sunt ratione
@@ -20,11 +20,20 @@
             <h4 class="card-title">Course Content Table</h4>
             <button
               type="button"
-              class="btn btn-fw col-sm-12 mb-3"
+              class="btn btn-fw col-sm-12 mb-3 main-btns text-light"
               style="background-color:#eef0ef;"
               [routerLink]="'/main/trainer/course/details/'+id+'/add-content'"
             >
               Add New Course content
+            </button>
+            <button
+              type="button"
+              class="btn btn-fw col-sm-12 mb-3 main-btns text-light"
+              style="background-color:#eef0ef;"
+              
+            >
+            <!-- [routerLink]="'/main/trainer/course/details/'+id+'/add-exam'" -->
+              Add New Exam
             </button>
 
             <div class="table-responsive">
@@ -49,9 +58,7 @@
                       <button
                         type="button"
                         class="btn btn-warning"
-                        [routerLink]="
-                          '/dashboard/edit-course-content/' + course.id
-                        "
+                        [routerLink]="'/main/trainer/course/details/'+id+'/'+course.id+'/edit-content'"
                       >
                         Update
                       </button>
@@ -60,7 +67,7 @@
                       <button
                         type="button"
                         class="btn btn-inverse-danger"
-                        routerLink="/dashboard/contents"
+                        [routerLink]="'/main/trainer/course/details/'+id"
                         (click)="deleteCourseContent(course.id!)"
                       >
                         Delete
@@ -69,7 +76,6 @@
                   </tr>
                 </tbody>
               </table>
-              <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Course content</button> -->
             </div>
           </div>
         </div>

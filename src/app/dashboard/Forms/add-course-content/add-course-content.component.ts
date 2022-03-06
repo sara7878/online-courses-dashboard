@@ -35,26 +35,27 @@ course!:Course;
       this.id = params['courseId'];
       console.log(params);})
 
-    // this.getCourseById(this.id);
+    this.getAllCourses();
   }
 
-  // getCourseById(id:number) {
-  //   this.courseService.getCourseById(id).subscribe(
-  //     (res) => {
-  //       this.course = res;
-  //       console.log(this.course);
-  //     },
-  //     (err) => {
-  //       console.log('cant load data');
-  //       console.log(err);
-  //     }
-  //   );
-  // }
+  getAllCourses() {
+    this.courseService.getAllCourses().subscribe(
+      (res) => {
+        this.CourseArray = res;
+        console.log(this.CourseArray);
+      },
+      (err) => {
+        console.log('cant load data');
+        console.log(err);
+      }
+    );
+  }
 
+ 
   addCourseContent(form: NgForm) {
     this.newContent.name = form.value['contentName'];
     this.newContent.content = form.value['courseContent'];
-    this.newContent.course_id = this.id;
+    this.newContent.course_id = form.value['courseId'];
     // console.log(this.newContent);
 
     this.CourseContentService.addCourseContent(this.newContent).subscribe(
@@ -68,7 +69,6 @@ course!:Course;
       }
     );
   }
-
   onSubmit(form: NgForm) {
     console.log(form);
     console.log(form.value);

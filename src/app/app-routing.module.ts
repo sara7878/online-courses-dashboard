@@ -53,6 +53,10 @@ import { UpdateStudentComponent } from './main/Forms/update-student/update-stude
 import { FeedbackFormComponent } from './main/Layouts/feedback-form/feedback-form.component';
 import { MyCoursesComponent } from './main/my-courses/my-courses.component';
 import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
+import { AddThisCourseContentComponent } from './main/Forms/add-this-course-content/add-this-course-content.component';
+import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
+import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
+import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
@@ -105,15 +109,15 @@ const routes: Routes = [
           { path: 'register', component: TrainerRegisterComponent },
           { path: 'login', component: TrainerLoginComponent },
           { path: 'courses', component: MyCoursesComponent },
+          { path: 'add-course', component: AddThisCourseComponent },
+          { path: 'edit-course/:courseId', component: EditThisCourseComponent },
           { path: 'course/details/:courseId', component: CourseContentDetailsComponent },
-          { path: 'course/details/:courseId/add-content', component: AddCourseContentComponent },
+          { path: 'course/details/:courseId/add-content', component: AddThisCourseContentComponent },
+          { path: 'course/details/:courseId/:contentId/edit-content', component: EditThisCourseContentComponent },
           { path: 'update', component: UpdateTrainerComponent },
           { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
         ],
       },
-      // { path: 'trainer/login', component: TrainerLoginComponent },
-      // { path: 'trainer/register', component: TrainerRegisterComponent },
-      // { path: 'trainer/update', component: UpdateTrainerComponent },
       { path: 'student/update', component: UpdateStudentComponent },
       // { path: 'video', component: VideoComponent },
       { path: 'chat', component: ChatDialogComponent },

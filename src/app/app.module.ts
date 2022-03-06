@@ -97,12 +97,19 @@ import { VideoComponent } from './main/Layouts/video/video.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 
-import { MyCoursesComponent } from './main/my-courses/my-courses.component';
-import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
-import { NgxPaginationModule } from 'ngx-pagination';
+
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 // import { ChatModule } from './chat/chat.module';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { MyCoursesComponent } from './main/my-courses/my-courses.component';
+import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
+import { AddThisCourseContentComponent } from './main/Forms/add-this-course-content/add-this-course-content.component';
+import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
+import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
+import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
+
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MaterialModule } from './material.module';
@@ -197,8 +204,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
      UpdateStudentComponent,
      MyCoursesComponent,
      CourseContentDetailsComponent,
+     AddThisCourseContentComponent,
+     EditThisCourseContentComponent,
+     AddThisCourseComponent,
+     EditThisCourseComponent,
      
-   
+
     ChatDialogComponent
     ],
 
@@ -213,9 +224,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     NgxUsefulSwiperModule,
     Ng2SearchPipeModule,
     NgxPaginationModule,
-    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143") ,
+    StripeModule.forRoot("pk_test_51KY7OyGurDTsIveDgdUzsTOYnK2M2yuGCIsqpaSjoQVRYaIgGoSSghxfGmJHZxTH30EkMikkhZA18REaBuCHEuQE00kkYon143"),
     // ChatModule,
-    FlexLayoutModule,
+    FlexLayoutModule
     // MatToolbarModule
 
   ],

@@ -60,8 +60,12 @@ coursedetails: Course={
   ) {}
 
   studid:any;
+  trainerId:number=0;
   ngOnInit(): void {
-    if (localStorage.getItem('role') == 'isTrainer') this.checkUser = 'trainer';
+    if (localStorage.getItem('role') == 'isTrainer'){
+      this.checkUser = 'trainer';
+      this.trainerId = parseInt(localStorage.getItem('id')!);
+    } 
     else this.checkUser = 'student';
 
     this.activatedRoute.params.subscribe((params) => {
