@@ -60,7 +60,7 @@ import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/main/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/main/home', pathMatch: 'full' },
 
   {
     path: 'main',
@@ -141,7 +141,7 @@ const routes: Routes = [
       { path: 'add-admin', component: AddAdminComponent },
 
       { path: 'contactus', component: ContactUsComponent },
-      { path: 'contents', component: CourseContentComponent },
+      { path: 'contents/:courseId/:courseName', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
       { path: 'questions/:id', component: QuestionsComponent },
       { path: 'exams', component: ExamsComponent },

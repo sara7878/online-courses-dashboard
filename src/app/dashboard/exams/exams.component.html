@@ -28,10 +28,12 @@
                         <button type="button" class="btn btn-success" [routerLink]="'/dashboard/questions/'+exam.id"> Show </button>
                     </td>
                     <td>
-                      <button type="button" class="btn btn-warning" [routerLink]="'/dashboard/update-exam/'+exam.id"> Update </button>
+                      <a class="h3 text-warning"  [routerLink]="'/dashboard/update-exam/'+exam.id"> <i class="mdi mdi-tooltip-edit font-weight-medium"></i> </a>
+
                     </td>
                     <td>
-                     <button type="button" class="btn btn-inverse-danger"  (click)="deleteExam(exam.id!)"> Delete </button>
+                     <a class="h3 text-danger" style="cursor: pointer;" (click)="deleteExam(exam.id!)"> <i class="mdi mdi-delete-forever "></i> </a>
+
                     </td>
 
                   </tr>

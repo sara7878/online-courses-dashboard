@@ -75,6 +75,7 @@ export class NavbarMainComponent implements OnInit {
           localStorage.removeItem('name');
 
           this.trainserService.trainerloginservice.emit("null")
+          this.router.navigate(['/main/home'])
 
         },
         (err) => {
@@ -93,6 +94,7 @@ export class NavbarMainComponent implements OnInit {
           localStorage.removeItem('name');
 
           this.studentService.studentloginservice.emit("null")
+          this.router.navigate(['/main/home'])
 
         },
         (err) => {
