@@ -3,8 +3,8 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Questions Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-question" > Add New Question </button>
-  
+            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" [routerLink]="'/dashboard/add-question/'+id" > Add New Question </button>
+
             <div class="table-responsive">
               <table class="table table-striped">
                 <thead>
@@ -19,7 +19,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let question of QuetionArray | paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
+                  <tr *ngFor="let question of QuetionExam.questions! | paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
                     <td>{{question.id}}</td>
                     <td>{{question.header}}</td>
                     <td>
@@ -33,12 +33,12 @@
                     <td>{{question.answer}}</td>
                     <td>{{question.score}}</td>
                     <td>
-                      <button type="button" class="btn btn-warning " [routerLink]="'/dashboard/update-question/'+question.id">Update </button>
+                      <button type="button" class="btn btn-warning " [routerLink]="'/dashboard/update-question/'+question.id+'/'+id">Update </button>
                     </td>
                     <td>
                      <button type="button" class="btn btn-inverse-danger " (click)="deleteQestion(question.id!)"> Delete </button>
                     </td>
-  
+
                   </tr>
                 </tbody>
               </table>
@@ -47,9 +47,8 @@
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Question </button> -->
             </div>
           </div>
-  
+
         </div>
       </div>
-  
-  
-  
+
+

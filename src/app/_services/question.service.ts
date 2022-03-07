@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Exam } from '../_models/exam.model';
 import { Question } from '../_models/question.model';
 
 @Injectable({
@@ -25,6 +26,23 @@ export class QuestionService {
       status: boolean;
       error: any;
     }>(`${environment.baseUrl}questions`,{headers});
+  }
+
+  getAllQuestionExam(id: number): Observable<{
+    data: Exam;
+    status: boolean;
+    error: any;
+  }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
+    return this.httpClient.get<{
+      data: Exam;
+      status: boolean;
+      error: any;
+    }>(`${environment.baseUrl}exams/questions/${id}`,{headers});
   }
 
   getoneQestion(

@@ -12,3 +12,5 @@ export interface Question{
     exam_id?:number,
 
 }
+
+

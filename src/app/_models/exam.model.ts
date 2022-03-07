@@ -8,6 +8,6 @@ export interface Exam{
     name ?:string,
     course_id ?:number,
     course?:Course,
-    max_score ?:number
-
+    max_score ?:number ,
+    questions?:Question[],
 }

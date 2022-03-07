@@ -3,7 +3,7 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Exams Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-exam"> Add New Exam </button>
+            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-exam"> Add New Exam </button> -->
             <!-- [routerLink]="'/dashboard/add-exam/'+id" -->
             <div class="table-responsive">
               <table class="table table-striped">
@@ -13,6 +13,7 @@
                     <th> Name</th>
                     <th> Max score</th>
                     <th> Show course</th>
+                    <th> Show Question</th>
                     <th> Update</th>
                     <th> Delete</th>
                   </tr>
@@ -23,9 +24,9 @@
                     <td>{{exam.name}}</td>
                     <td>{{exam.max_score}}</td>
                     <td>{{exam.course?.name}}</td>
-                    <!-- <td>
-                        <button type="button" class="btn btn-success"> Show </button>
-                    </td> -->
+                    <td>
+                        <button type="button" class="btn btn-success" [routerLink]="'/dashboard/questions/'+exam.id"> Show </button>
+                    </td>
                     <td>
                       <button type="button" class="btn btn-warning" [routerLink]="'/dashboard/update-exam/'+exam.id"> Update </button>
                     </td>

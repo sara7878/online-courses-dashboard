@@ -70,7 +70,7 @@
 
 
 
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label for="">exam</label>
                         <select
                           #examInput="ngModel"
@@ -90,7 +90,7 @@
                             >This field is required *</span
                           >
                         </select>
-                      </div>
+                      </div> -->
 
 
 
@@ -99,7 +99,7 @@
 
 
         <button type="submit" class="btn btn-primary mr-2" [disabled]="!questionForm.valid" (click)="updateQuestion(this.Question.id!,questionForm)"
-        routerLink="/dashboard/questions" > update </button>
+        > update </button>
         <button class="btn btn-light" (click)="resetForm(questionForm)">Cancel</button>
       </form>
     </div>

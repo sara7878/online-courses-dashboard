@@ -17,11 +17,13 @@ export class UpdateQuestionComponent implements OnInit {
 
 
   constructor(private QuestionService: QuestionService,
-    private activatedRoute: ActivatedRoute, private Examservices:ExamsService) { }
+    private activatedRoute: ActivatedRoute, private Examservices:ExamsService ,
+    private router:Router) { }
   // id!:number;
   // data !:Question [];
   exam!: Exam[];
 
+  exam_id:number=0;
   Question:Question = {
     header: "",
     choice_1: '',
@@ -46,6 +48,7 @@ export class UpdateQuestionComponent implements OnInit {
 
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
+      this.exam_id=params['exam_id'];
       console.log(params);
       if (id) {
         this.getQuestion(id);
@@ -77,6 +80,8 @@ getQuestion(id: number) {
       (res) => {
         this.exam = res.data;
         console.log(this.exam);
+        console.log(this.exam_id);
+
       },
       (err) => {
         console.log('Error getting all exam');
@@ -95,7 +100,9 @@ getQuestion(id: number) {
     this.updatedQuestion.choice_4 = form.value['choice_4'];
     this.updatedQuestion.answer = form.value['answer'];
     this.updatedQuestion.score = form.value['score'];
-    this.updatedQuestion.exam_id = form.value['exam_id'];
+    this.updatedQuestion.exam_id = this.exam_id;
+
+
 
 
     this.QuestionService.editQestion(id,this.updatedQuestion).subscribe(
@@ -108,6 +115,8 @@ getQuestion(id: number) {
         console.log(err);
       }
     );
+    this.router.navigate([`/dashboard/questions/${this.exam_id}`]);
+
   }
 
   resetForm(form: NgForm) {
