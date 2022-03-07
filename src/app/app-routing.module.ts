@@ -151,9 +151,9 @@ const routes: Routes = [
       { path: 'add-exam', component: AddExamComponent },
       { path: 'update-exam/:id', component: UpdateExamComponent },
 
-      { path: 'add-course-content', component: AddCourseContentComponent },
+      { path: 'add-course-content/:courseId/:courseName', component: AddCourseContentComponent },
       {
-        path: 'edit-course-content/:id',
+        path: 'edit-course-content/:id/:courseId/:courseName',
         component: EditCourseContentComponent,
       },
       // { path: 'add-course', component: AddCourseComponent },

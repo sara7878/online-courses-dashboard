@@ -38,7 +38,6 @@ export class StudentService {
 
 
   getStudentById(id: number): Observable<{data:Student,status: boolean,error: any[]}> {
-
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token

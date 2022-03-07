@@ -13,10 +13,9 @@ export class AdminsComponent implements OnInit {
   AdminsArray: Admin[] = [
     {
       id: 1,
-
-      img: '',
+      name: 'sara',
       email: 'xdgh@hgsd.com',
-      pass: '2145',
+      password: '2145',
     },
   ];
 
@@ -35,4 +34,6 @@ export class AdminsComponent implements OnInit {
       }
     );
   }
+
+  
 }

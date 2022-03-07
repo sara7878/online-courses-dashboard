@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/_models/course.model';
 import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
@@ -36,11 +36,16 @@ export class EditCourseContentComponent implements OnInit {
     private CourseContentService: CourseContentService,
     private activatedRoute: ActivatedRoute,
     private courseService: CoursesService
+    ,private router:Router
   ) {}
-
+courseid!:number;
+coursename!:string;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
+      this.courseid = params['courseId'];
+      this.coursename = params['courseName'];
+
       // console.log(params);
       if (id) {
         this.getCourseContent(id);
@@ -79,12 +84,13 @@ export class EditCourseContentComponent implements OnInit {
   updateCourseContent(id: number,form:NgForm) {
     this.updatedContent.name = form.value['contentName'];
     this.updatedContent.content = form.value['courseContent'];
-    this.updatedContent.course_id = form.value['courseId'];
+    this.updatedContent.course_id = this.courseid
     console.log(this.updatedContent);
     this.CourseContentService.editCourseContent(id,this.updatedContent).subscribe(
       (res) => {
         console.log(res);
-        this.ngOnInit();
+        // this.ngOnInit();
+        this.router.navigate([`/dashboard/contents/${this.courseid}/${this.coursename}`]);
       },
       (err) => {
         console.log('Error updating course content');

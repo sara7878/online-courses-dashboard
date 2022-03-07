@@ -2,7 +2,7 @@
       <div class="col-lg-12 grid-margin stretch-card " >
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Admin Table</h4>
+            <h4 class="card-title">Admins Table</h4>
             <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-admin"> Add New Admin </button>
 
             <div class="table-responsive">
@@ -10,23 +10,17 @@
                 <thead>
                   <tr >
                     <th> ID</th>
-                    <th> Image</th>
                     <th> Name</th>
                     <th> Email</th>
-                    <th> Delete</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let admin of AdminsArray; let i=index" >
                     <td>{{admin.id}}</td>
-                    <td class="py-1">
-                      <img [src]="admin.img" alt="image" />
-                    </td>
+
                     <td>{{admin.name}}</td>
                     <td>{{admin.email}}</td>
-                    <td>             
-                     <a class="h3 text-danger" style="cursor: pointer;"> <i class="mdi mdi-delete-forever "></i> </a>
-                    </td>
+
                   </tr>
                 </tbody>
               </table>

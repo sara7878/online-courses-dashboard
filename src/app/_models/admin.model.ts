@@ -1,8 +1,7 @@
 export interface Admin{
     id  ?:number,
-    name ?:string,  
+    name ?:string,    
     email ?:string,
-    pass ?:string,
-    img?:string,
+    password ?:string,
 
 }
