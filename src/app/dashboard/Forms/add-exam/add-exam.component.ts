@@ -17,7 +17,6 @@ export class AddExamComponent implements OnInit {
     course_id: 0,
     name: '',
     max_score: 0,
-   
   };
   id:number=0;
 

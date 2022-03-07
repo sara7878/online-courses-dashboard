@@ -20,29 +20,31 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav">
-            <a class="text-dark font-weight-medium" routerLink="/main/home"
+            <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/home"
               >Home</a
             >
-            <a class="text-dark font-weight-medium" routerLink="/main/about"
+            <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/about"
               >About</a
             >
-            <a class="text-dark font-weight-medium" routerLink="/main/courses"
+            <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/courses"
               >Courses</a
             >
-            <a class="text-dark font-weight-medium" routerLink="/main/trainers"
+            <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/trainers"
               >Trainers</a
             >
             <a
-              class="text-dark font-weight-medium"
+              class="text-dark font-weight-medium mt-3 m-2"
               routerLink="/main/categories"
               >Categories</a
             >
-            <a class="text-dark font-weight-medium" routerLink="/main/contact"
+            <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/contact"
               >Contact</a
             >
-            <a class="text-dark font-weight-medium" routerLink="/main/search"
-              ><i class="fa fa-search" aria-hidden="true"></i>
-            </a>
+            <a
+              class="text-dark font-weight-medium mt-3 m-2"
+              routerLink="/main/search"
+              ><i class="fa fa-search" aria-hidden="true"></i
+            ></a>
 
             <a
               routerLink="/main/register"
@@ -100,7 +102,6 @@
                   </a>
                   <a
                     class="dropdown-item"
-                    [routerLink]="'/main/' + checkUser + '/logout'"
                     (click)="logout()"
                   >
                     <i class="mdi mdi-logout mr-2 text-primary"></i> Sign Out

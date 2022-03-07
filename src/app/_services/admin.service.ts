@@ -44,4 +44,14 @@ export class AdminService {
       headers,
     });
   }
+
+  addAdmin(data:any):Observable<Admin>{
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token,
+    });
+    console.log(data);
+    
+    return this.httpClient.post<Admin>(`${environment.baseUrl}admins/add-admin`,data,{headers});
+  }
 }

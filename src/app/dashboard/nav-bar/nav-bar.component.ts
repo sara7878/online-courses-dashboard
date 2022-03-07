@@ -11,6 +11,7 @@ export class NavBarComponent implements OnInit {
 
   constructor(private adminservice:AdminService,private router: Router,) { }
 
+  name:string = localStorage.getItem('name')!;
   ngOnInit(): void {
   }
 

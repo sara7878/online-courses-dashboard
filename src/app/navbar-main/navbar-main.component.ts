@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentService } from '../_services/student.service';
 import { TrainerService } from '../_services/trainer.service';
 
@@ -10,7 +11,8 @@ import { TrainerService } from '../_services/trainer.service';
 export class NavbarMainComponent implements OnInit {
   constructor(
     private trainserService: TrainerService,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private router: Router
   ) {}
   checkUser!: string;
   id: number = parseInt(localStorage.getItem('id')!);
@@ -64,6 +66,7 @@ export class NavbarMainComponent implements OnInit {
           localStorage.removeItem('id');
           localStorage.removeItem('role');
           localStorage.removeItem('name');
+          this.router.navigate(['/main/login']);
         },
         (err) => {
           console.log(err);
@@ -79,6 +82,7 @@ export class NavbarMainComponent implements OnInit {
           localStorage.removeItem('id');
           localStorage.removeItem('role');
           localStorage.removeItem('name');
+          this.router.navigate(['/main/login']);
         },
         (err) => {
           console.log(err);
