@@ -6,7 +6,7 @@
 
 
         <form class="forms-sample" #courseContentForm="ngForm">
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="exampleFormControlSelect1">Course ID:</label>
             <select
               class="form-control"
@@ -18,9 +18,6 @@
             >
               <option value="">--Choose your course--</option>
               <option *ngFor="let courseContent of this.CourseArray" value="{{courseContent.id}}">{{courseContent.name}}</option>
-              <!-- [selected]="this.CourseContentArray[0].course_id.Id===courseContent.Id" -->
-              <!-- <option value="1" [selected]="this.CourseContentArray[0].course_id?.Id===1">1</option> -->
-
             </select>
             <span
               *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required'] && courseIdInput.value===''"
@@ -28,7 +25,7 @@
               class="alert"
               >This field is required *</span
             >
-          </div>
+          </div> -->
 
           <div class="form-group">
             <label for="exampleInputName2">Name :</label>

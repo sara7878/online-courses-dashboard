@@ -10,7 +10,6 @@ import { AdminService } from 'src/app/_services/admin.service';
 export class NavBarComponent implements OnInit {
 
   constructor(private adminservice:AdminService,private router: Router,) { }
-  userName:string=localStorage.getItem('name')!;
 
   name:string = localStorage.getItem('name')!;
   ngOnInit(): void {

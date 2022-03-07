@@ -9,7 +9,6 @@ export class SideBarComponent implements OnInit {
 
 name:string=localStorage.getItem('name')!;
   constructor() { }
-  userName:string=localStorage.getItem('name')!;
 
   ngOnInit(): void {
   }
