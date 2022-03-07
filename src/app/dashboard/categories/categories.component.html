@@ -5,7 +5,7 @@
     <div class="card">
       <div class="card-body">
         <h4 class="card-title">Categories Table</h4>
-        <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-category"> Add New Category </button> -->
+        <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-category"> Add New Category </button>
 
 
         <div class="table-responsive">
@@ -14,7 +14,7 @@
               <tr >
                 <th> ID</th>
                 <th> Image</th>
-                <th> Category Name</th>
+                <th> Name</th>
                 <th> Courses</th>
                 <th> Update</th>
                 <th> Delete</th>
@@ -37,11 +37,12 @@
                     </ul>
                   </td>
                   <td>
-                  <button type="button" class="btn btn-warning btn-fw" [routerLink]="'/dashboard/update-category/'+category.id"> Update </button>
+                  <a class="h3 text-warning" [routerLink]="'/dashboard/update-category/'+category.id"> <i class="mdi mdi-tooltip-edit "></i> </a>
                 </td>
                 <td>
-                <button type="button" class="btn btn-inverse-danger btn-fw" (click)="deletecategory(category.id!)"> Delete </button>
-                </td>
+                <a class="h3 text-danger" style="cursor: pointer;" (click)="deletecategory(category.id!)"> <i class="mdi mdi-delete-forever "></i> </a>
+  
+              </td>
               </tr>
 
             </tbody>

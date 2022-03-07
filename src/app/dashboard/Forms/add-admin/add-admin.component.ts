@@ -26,7 +26,7 @@ export class AddAdminComponent implements OnInit {
     this.admin.name=form.value['name'];
     this.admin.email=form.value['email'];
     this.admin.password=form.value['password'];
-console.log(form.value);
+    console.log(form.value);
 
     this.adminService.addAdmin(this.admin).subscribe(
       (res) => {

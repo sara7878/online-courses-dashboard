@@ -1,8 +1,12 @@
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center " >
-      <img src="assets/main/img/SARA.png"  width="140px" alt="" class="img-fluid logo me-auto">
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center">
+    <img
+      src="assets/main/img/SARA.png"
+      width="140px"
+      alt=""
+      class="img-fluid logo me-auto"
+    />
 
       <!-- <h1 class="logo me-auto"><img src="assets/dashboard/images/online.png" alt="logo" width="140px" /></h1> -->
         <nav id="navbar" class="navbar-expand-lg order-last order-lg-0 " >
@@ -18,28 +22,22 @@
                         <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/trainers">Trainers</a>
                         <a class=" text-dark font-weight-medium mt-3 m-2" routerLink="/main/categories">Categories</a>
                         <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/contact">Contact</a>
-                        <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/search">
-                          <a class="text-dark font-weight-medium" routerLink="/main/search">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                          </a> 
-                        </a>
-                      
+                        <a class="text-dark font-weight-medium mt-3 m-2" routerLink="/main/search"><i class="fa fa-search" aria-hidden="true"></i></a>                      
+
+                        <ng-template #login>
                         <a
                         routerLink="/main/register"
                         class="get-started-btn font-weight-medium mt-2 m-1 button"
-                        [ngStyle]="{ display: !token ? 'none' : 'block' }"
                         >Register</a
                       >
                       <a
                         routerLink="/main/login"
                         class="get-started-btn font-weight-medium mt-2 m-1 button"
-                        [ngStyle]="{ display: !token ? 'none' : 'block' }"
                         >Login</a
-                      >
+                      ></ng-template>
           
-                      <ul
+                      <ul *ngIf="userName else login"
                 class="navbar-nav navbar-nav-right ml-lg-auto"
-                [ngStyle]="{ display: token ? 'none' : 'block' }"
               >
                 <li class="nav-item nav-profile dropdown border-0">
                   <a
@@ -53,7 +51,7 @@
                       alt=""
                       src="assets/dashboard/images/faces/face1.jpg"
                     />
-                    <span class="profile-name">{{ userName }}</span>
+                    <span class="profile-name" >{{ userName }}</span>
                   </a>
                   <div
                     class="dropdown-menu navbar-dropdown w-100"

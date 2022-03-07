@@ -10,7 +10,8 @@ import { Question } from '../_models/question.model';
 export class ExamsService {
 
   constructor(private httpClient: HttpClient) { }
- 
+
+
  getAllExams():Observable<{data:Exam[],status:boolean,error:any}>{
   const token: string = localStorage.getItem('Authorization')!;
   const headers = new HttpHeaders({
@@ -19,19 +20,17 @@ export class ExamsService {
   return this.httpClient.get<{data:Exam[],status:boolean,error:any}>(environment.baseUrl+'exams',{headers})
 }
 
-addExam(newExam: Exam): Observable<{data:Exam[],status:boolean,error:any}> {
+addExam(newExam: Exam): Observable<Exam> {
   const token: string = localStorage.getItem('Authorization')!;
   const headers = new HttpHeaders({
     Authorization: token
   })
   console.log(newExam);
-   return this.httpClient.post<{data:Exam[],status:boolean,error:any}>(`${environment.baseUrl}exams`,newExam,{headers});
+   return this.httpClient.post<Exam>(`${environment.baseUrl}exams`,newExam,{headers});
 }
 
 
-
 getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
-console.log(id);
 const token: string = localStorage.getItem('Authorization')!;
   const headers = new HttpHeaders({
     Authorization: token
@@ -49,7 +48,7 @@ editExam(id:number,updatedExam:Exam): Observable<Exam> {
   })
   console.log(id);
   console.log(updatedExam);
-  
+
   return this.httpClient.post<Exam>(`${environment.baseUrl}exams/${id}`,updatedExam,{headers});
 }
 
@@ -64,3 +63,6 @@ deleteExam(id:number){
 
 }
 }
+
+
+

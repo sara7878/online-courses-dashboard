@@ -143,7 +143,7 @@ const routes: Routes = [
       { path: 'add-admin', component: AddAdminComponent },
 
       { path: 'contactus', component: ContactUsComponent },
-      { path: 'contents', component: CourseContentComponent },
+      { path: 'contents/:courseId/:courseName', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
       { path: 'questions', component: QuestionsComponent },
       { path: 'exams', component: ExamsComponent },
@@ -156,9 +156,9 @@ const routes: Routes = [
       { path: 'add-exam', component: AddExamComponent },
       { path: 'update-exam/:id', component: UpdateExamComponent },
 
-      { path: 'add-course-content', component: AddCourseContentComponent },
+      { path: 'add-course-content/:courseId/:courseName', component: AddCourseContentComponent },
       {
-        path: 'edit-course-content/:id',
+        path: 'edit-course-content/:id/:courseId/:courseName',
         component: EditCourseContentComponent,
       },
       // { path: 'add-course', component: AddCourseComponent },

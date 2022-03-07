@@ -3,33 +3,24 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Admins Table</h4>
-            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-admin"> Add New Admin </button> -->
+            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-admin"> Add New Admin </button>
 
             <div class="table-responsive">
                 <table class="table table-striped ">
                 <thead>
                   <tr >
                     <th> ID</th>
-                    <th> Admin Name</th>
+                    <th> Name</th>
                     <th> Email</th>
-                    <th> Update</th>
-                    <th> Delete</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let admin of AdminsArray; let i=index" >
                     <td>{{admin.id}}</td>
-                  
+
                     <td>{{admin.name}}</td>
                     <td>{{admin.email}}</td>
-                    <td>
-                      <button type="button" class="btn btn-warning ">Update</button>
-                      
-                    </td>
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger">Delete</button>
-                    </td>
-                    
+
                   </tr>
                 </tbody>
               </table>

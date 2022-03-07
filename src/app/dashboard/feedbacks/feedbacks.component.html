@@ -24,8 +24,8 @@
                     <td>{{feedback.course?.name}}</td>
                     <td>{{feedback.desc}}</td>
                     <td>
-                
-                      <button type="button" class="btn btn-inverse-danger"  (click)="deletefeedback(feedback.id!)"> Delete </button>
+                      <a class="h3 text-danger" style="cursor: pointer;" (click)="deletefeedback(feedback.id!)"> <i class="mdi mdi-delete-forever "></i> </a>
+
                      </td>
                   </tr>
                 

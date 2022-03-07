@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,9 +8,19 @@ import { RouterModule } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router
+
+    ) { }
 
   ngOnInit(): void {
   }
 
+  Click(){
+    this.router.navigate(['/main/trainer/register'])
+}
+
+ClickStudent(){
+  this.router.navigate(['/main/register/student'])
+
+}
 }

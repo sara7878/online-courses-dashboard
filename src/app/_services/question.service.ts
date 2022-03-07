@@ -46,9 +46,10 @@ export class QuestionService {
     error: any;
   }> {
     const token: string = localStorage.getItem('Authorization')!;
-  const headers = new HttpHeaders({
-    Authorization: token
-  })
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
     return this.httpClient.get<{
       data: Question[];
       status: boolean;
@@ -59,8 +60,13 @@ export class QuestionService {
   getoneQestion(
     id: number
   ): Observable<{ data: Question; status: boolean; error: any }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
     return this.httpClient.get<{ data: Question; status: boolean; error: any }>(
-      `${environment.baseUrl}questions/${id}`
+      `${environment.baseUrl}questions/${id}`,{headers}
     );
   }
 
@@ -73,7 +79,7 @@ export class QuestionService {
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions`, data,{headers});
+    }>(`${environment.baseUrl}questions`,data,{headers});
   }
 
   editQestion(
