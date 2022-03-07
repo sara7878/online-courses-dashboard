@@ -12,7 +12,9 @@
                     <th> ID</th>
                     <th> Student Name</th>
                     <th> Course Name</th>
+                    <th>Feedback</th>
                     <th> Delete</th>
+                   
                   </tr>
                 </thead>
                 <tbody>
@@ -20,10 +22,13 @@
                     <td>{{feedback.id}}</td>
                     <td>{{feedback.student?.fname}} {{feedback.student?.lname}}</td>
                     <td>{{feedback.course?.name}}</td>
+                    <td>{{feedback.desc}}</td>
                     <td>
+                
                       <button type="button" class="btn btn-inverse-danger"  (click)="deletefeedback(feedback.id!)"> Delete </button>
                      </td>
                   </tr>
+                
                 </tbody>
               </table>
               <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>

@@ -21,7 +21,7 @@
                   <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{exam.id}}</td>
                     <td>{{exam.name}}</td>
-                    <td>{{exam.course?.name}}</td>
+                    <td>{{exam.course_id}}</td>
                     <td>{{exam.max_score}}</td>
                     <td>
                         <button type="button" class="btn btn-success"> Show </button>

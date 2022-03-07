@@ -20,12 +20,13 @@ export class VideoComponent implements OnInit {
   urlArr:string[]=[""];
   contentArr!:CourseContent[];
   url1:any;
+   id!:number;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      const id = params['courseId'];
+      this.id = params['courseId'];
       console.log(params);
-      if (id) {
-         this.getCourseContent(id);
+      if (this.id) {
+         this.getCourseContent(this.id);
       }
        
     });

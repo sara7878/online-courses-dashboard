@@ -2,7 +2,25 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Course } from '../_models/course.model';
 import { Question } from '../_models/question.model';
+
+export interface ExamQuestion{
+  id ?:number,
+  name ?:string,
+  course_id ?:number,
+ 
+  max_score ?:number
+  header?:string
+  
+ choice_1?:string,
+ choice_2?:string,
+ choice_3?:string,
+ choice_4?:string,
+ answer?:string,
+ score?: number,
+ exam_id?:number
+}
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +28,32 @@ import { Question } from '../_models/question.model';
 export class QuestionService {
   constructor(private httpClient: HttpClient) {}
 
+  getexamQuestions( id: number): Observable<{ data: ExamQuestion; status: boolean; error: any }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<{ data: ExamQuestion; status: boolean; error: any }>(
+      `${environment.baseUrl}exams/questions/${id}`,{headers}
+    );
+  }
+
+
+
   getAllQuestion(): Observable<{
     data: Question[];
     status: boolean;
     error: any;
   }> {
+    const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
     return this.httpClient.get<{
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions`);
+    }>(`${environment.baseUrl}questions`,{headers});
   }
 
   getoneQestion(
@@ -71,4 +105,7 @@ export class QuestionService {
       error: any;
     }>(`${environment.baseUrl}questions/${id}`,{headers});
   }
+
+
+  
 }

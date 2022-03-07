@@ -10,45 +10,10 @@
 
         <div class="col-lg-8 mt-5 mt-lg-0">
 
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form" #feedForm=ngForm>
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <input  #contactNameInput=ngModel ngModel  minlength="3" maxlength="191" pattern="^[a-zA-Z0-9 _.-]*$" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                <span *ngIf="contactNameInput.touched && contactNameInput.invalid && contactNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-                <span *ngIf="contactNameInput.errors?.['minlength']" style="color: red;" class="alert">Please enter more than 2 characters *</span>
-                <span *ngIf="contactNameInput.errors?.['maxlength']" style="color: red;" class="alert">Please enter less than 192 characters *</span>
-                <span *ngIf="contactNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
+          <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-5" #feedForm=ngForm>
            
-           
-              </div>
-            </div>
 
-
-
-       
-
-
-       
-            <div class="form-group">
-                <label for="exampleFormControlSelect1">Course Name:</label>
-                <select class="form-control" id="exampleFormControlSelect1" #courseIdInput=ngModel ngModel required name="course_id">
-                  <option value="">--Choose your course--</option>
-  
-                  <option *ngFor="let feed of this.feed" value="{{feed.course?.id}}">{{feed.course.name}}</option>
-  
-                </select>
-                <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required'] && courseIdInput.value===''" style="color: red;" class="alert" >This field is required *</span>
-              </div>
-
-
-
-
-
-
-
-
-
-            <div class="form-group mt-3">
+            <div class="form-group mt-5">
               <textarea class="form-control" #subNameInput=ngModel ngModel minlength="3" pattern="^[a-zA-Z0-9 _.-]*$" maxlength="191" name="desc" rows="5" placeholder="desc" required></textarea>
             
             </div>   <span *ngIf="subNameInput.touched && subNameInput.invalid && subNameInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
@@ -62,7 +27,7 @@
               <div class="sent-message" >Your message has been sent. Thank you!</div>
             </div>
             <div class="text-center">
-              <button type="submit"  routerLink="/main/home" (click)="addFeedback(feedForm)" [disabled]="!feedForm.valid" >Send Message</button></div>
+              <button type="submit"  (click)="addFeedback(feedForm)" [disabled]="!feedForm.valid" >Send Message</button></div>
           </form>
 
         </div>

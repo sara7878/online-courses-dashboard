@@ -58,6 +58,8 @@ import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-co
 import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
 import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
+import { ExamPageComponent } from './main/exam-page/exam-page.component';
+import { ResultComponent } from './main/result/result.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main/home', pathMatch: 'full' },
@@ -93,6 +95,9 @@ const routes: Routes = [
           { path: 'details/:courseId', component: CoursesDetailsPageComponent },
 
           { path: 'details/:courseId/videos', component: VideoComponent },
+          {path:'details/:courseId/videos/exam',component:ExamPageComponent},
+          {path:'details/:courseId/videos/exam/result',component:ResultComponent}
+
         ],
       },
       { path: 'payment/:courseId', component: PaymentComponent },

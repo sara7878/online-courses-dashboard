@@ -97,6 +97,11 @@ import { VideoComponent } from './main/Layouts/video/video.component';
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
 import { UpdateStudentComponent } from './main/Forms/update-student/update-student.component';
 
+
+import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+// import { ChatModule } from './chat/chat.module';
+
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MyCoursesComponent } from './main/my-courses/my-courses.component';
 import { CourseContentDetailsComponent } from './main/course-content-details/course-content-details.component';
@@ -104,10 +109,11 @@ import { AddThisCourseContentComponent } from './main/Forms/add-this-course-cont
 import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
 import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
 import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
+import { ExamPageComponent } from './main/exam-page/exam-page.component';
+import { ResultComponent } from './main/result/result.component';
 
-// import { ChatModule } from './chat/chat.module';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
+
+
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { MaterialModule } from './material.module';
 // import {MatToolbarModule} from '@angular/material/toolbar';
@@ -206,7 +212,10 @@ import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
      AddThisCourseComponent,
      EditThisCourseComponent,
      
-    ChatDialogComponent
+
+    ChatDialogComponent,
+           ExamPageComponent,
+           ResultComponent
     ],
 
   imports: [

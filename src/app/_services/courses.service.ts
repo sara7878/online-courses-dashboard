@@ -15,12 +15,20 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
   getAllCourses(): Observable<Course[]> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
 
-      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
+      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
   }
 
   getCourseById(id: number): Observable<Course> {
-    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id,{headers});
   }
 
   create(data:any){

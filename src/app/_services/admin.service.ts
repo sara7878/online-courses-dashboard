@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 import { Admin } from '../_models/admin.model';
 
 interface admin {
-  access_token: any;
-  token_type: any;
-  expires_in: any;
-  role:any;
-  name:any;
-  id:any;
+  access_token:any,
+  token_type: any,
+  expires_in: any,
+  id:any,
+  name:any,
+  role:any
 }
 @Injectable({
   providedIn: 'root',
