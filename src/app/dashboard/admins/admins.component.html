@@ -11,10 +11,8 @@
                   <tr >
                     <th> ID</th>
                     <th> Image</th>
-                    <th> Admin Name</th>
+                    <th> Name</th>
                     <th> Email</th>
-                    <th> Password </th>
-                    <th> Update</th>
                     <th> Delete</th>
                   </tr>
                 </thead>
@@ -24,17 +22,11 @@
                     <td class="py-1">
                       <img [src]="admin.img" alt="image" />
                     </td>
-                    <td>{{admin.fname}} {{admin.last_name}}</td>
+                    <td>{{admin.name}}</td>
                     <td>{{admin.email}}</td>
-                    <td>{{admin.pass}}</td>
-                    <td>
-                      <button type="button" class="btn btn-warning ">Update</button>
-                      
+                    <td>             
+                     <a class="h3 text-danger" style="cursor: pointer;"> <i class="mdi mdi-delete-forever "></i> </a>
                     </td>
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger">Delete</button>
-                    </td>
-                    
                   </tr>
                 </tbody>
               </table>

@@ -13,7 +13,7 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-7">
           <img src="assets/main/img/course-details.jpg" class="img-fluid" alt="">
           <h3>{{coursedetails.name}}</h3>
           <p>
@@ -42,12 +42,12 @@
             
             
           </div>
-          <div class="row justify-content-center">
+          <!-- <div class="row justify-content-center">
             <div class="d-flex col-6">
-            
+             -->
               <!-- <a class="get-started-btn enroll-button" click="(enroll(coursedetails.id))">Enroll Now </a> -->
            
-              <div class="my-3 d-flex justify-content-center align-items-center">
+              <div class="my-3 d-flex  align-items-center">
                 <a
                   *ngIf="active == false && checkUser=='student'"
                   class="get-started-btn"
@@ -67,7 +67,7 @@
                 >
               </div>
               <div
-                class="my-3 d-flex align-items-center text-light justify-content-center"
+                class="my-3 d-flex align-items-center text-light"
               >
                 <a
                   *ngIf="
@@ -79,7 +79,7 @@
                   Go to course details</a
                 >
               </div>
-              <div class="my-3 d-flex justify-content-center align-items-center">
+              <div class="my-3 d-flex  align-items-center">
                 <a
                   *ngIf="
                     checkUser == 'trainer' && trainerId == coursedetails.trainer_id
@@ -95,9 +95,9 @@
       
 
 
-        </div>
+        <!-- </div>
      
-      </div>
+      </div> -->
 
     </div>
   </section><!-- End Cource Details Section -->

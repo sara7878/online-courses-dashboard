@@ -138,7 +138,7 @@ const routes: Routes = [
       { path: 'add-admin', component: AddAdminComponent },
 
       { path: 'contactus', component: ContactUsComponent },
-      { path: 'contents', component: CourseContentComponent },
+      { path: 'contents/:courseId/:courseName', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
       { path: 'questions', component: QuestionsComponent },
       { path: 'exams', component: ExamsComponent },

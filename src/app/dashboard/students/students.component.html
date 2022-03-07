@@ -13,8 +13,6 @@
                     <th> Student Name</th>
                     <th> Email</th>
                     <th> Phone</th>
-                    <th> Show Details</th>
-                    <th> Update</th>
                     <th> Delete</th>
                   </tr>
                 </thead>
@@ -28,15 +26,9 @@
                     <td>{{student.fname}} {{student.lname}}</td>
                     <td>{{student.email}}</td>
                     <td>{{student.phone}}</td>
+
                     <td>                     
-                        <button type="button" class="btn btn-success ">Show</button>
-                    </td>
-                    <td>
-                      <button type="button" class="btn btn-warning ">Update</button>
-                      
-                    </td>
-                    <td>                     
-                     <button type="button" class="btn btn-inverse-danger" (click)="deleteStudent(student.id!)">Delete</button>
+                     <a class="h3 text-danger" style="cursor: pointer;" (click)="deleteStudent(student.id!)"><i class="mdi mdi-delete-forever "></i> </a>
                     </td>
                     
                   </tr>

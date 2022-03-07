@@ -13,8 +13,7 @@ export class AdminsComponent implements OnInit {
   AdminsArray: Admin[] = [
     {
       id: 1,
-      fname: 'sara',
-      last_name: 'mohamed',
+
       img: '',
       email: 'xdgh@hgsd.com',
       pass: '2145',

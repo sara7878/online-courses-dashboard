@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StudentService } from '../_services/student.service';
 import { TrainerService } from '../_services/trainer.service';
 
@@ -10,7 +11,8 @@ import { TrainerService } from '../_services/trainer.service';
 export class NavbarMainComponent implements OnInit {
   constructor(
     private trainserService: TrainerService,
-    private studentService: StudentService
+    private studentService: StudentService,
+    private router: Router
   ) {}
   checkUser!: string;
   id: number = parseInt(localStorage.getItem('id')!);
@@ -29,6 +31,7 @@ export class NavbarMainComponent implements OnInit {
       (next)=>{
         console.log(next);     
         this.userName=next.name; 
+
       },
       (error)=>{
         console.log("error in showing items in basket")
@@ -41,6 +44,7 @@ export class NavbarMainComponent implements OnInit {
       (next)=>{
         console.log(next);     
         this.userName=next.name; 
+
       },
       (error)=>{
         console.log("error in showing items in basket")
@@ -73,6 +77,7 @@ export class NavbarMainComponent implements OnInit {
           localStorage.removeItem('name');
 
           this.trainserService.trainerloginservice.emit("null")
+          this.router.navigate(['/main/home'])
 
         },
         (err) => {
@@ -91,6 +96,7 @@ export class NavbarMainComponent implements OnInit {
           localStorage.removeItem('name');
 
           this.studentService.studentloginservice.emit("null")
+          this.router.navigate(['/main/home'])
 
         },
         (err) => {

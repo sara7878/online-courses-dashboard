@@ -24,7 +24,8 @@
                     <td>{{contact.message}}                      
                     </td>
                     <td>                     
-                     <button type="button"  class="btn btn-inverse-danger" (click)=" deleteContactus(contact.id!)" routerLink="contactus">Delete</button>
+                     <a class="h3 text-danger" style="cursor: pointer;" (click)=" deleteContactus(contact.id!)"> <i class="mdi mdi-delete-forever "></i> </a>
+
                     </td>
                     
                   </tr>
