@@ -31,8 +31,12 @@ addExam(newExam: Exam): Observable<{data:Exam[],status:boolean,error:any}> {
 
 
 getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
-
-  return this.httpClient.get<{data:Exam,status:boolean,error:any}> (`${environment.baseUrl}exams/${id}`)
+console.log(id);
+const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
+  return this.httpClient.get<{data:Exam,status:boolean,error:any}> (`${environment.baseUrl}exams/${id}`,{headers})
 }
 
 
