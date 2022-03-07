@@ -10,7 +10,8 @@ import { Question } from '../_models/question.model';
 export class ExamsService {
 
   constructor(private httpClient: HttpClient) { }
- 
+
+
  getAllExams():Observable<{data:Exam[],status:boolean,error:any}>{
   const token: string = localStorage.getItem('Authorization')!;
   const headers = new HttpHeaders({
@@ -23,9 +24,14 @@ export class ExamsService {
 
 
 
-getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
 
-  return this.httpClient.get<{data:Exam,status:boolean,error:any}> (`${environment.baseUrl}exams/${id}`)
+getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
+  const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
+
+  return this.httpClient.get<{data:Exam,status:boolean,error:any}> (`${environment.baseUrl}exams/${id}`,{headers})
 }
 
 
@@ -45,7 +51,7 @@ editExam(id:number,updatedExam:Exam): Observable<Exam> {
   })
   console.log(id);
   console.log(updatedExam);
-  
+
   return this.httpClient.post<Exam>(`${environment.baseUrl}exams/${id}`,updatedExam,{headers});
 }
 
@@ -60,3 +66,6 @@ deleteExam(id:number){
 
 }
 }
+
+
+

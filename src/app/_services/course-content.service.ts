@@ -28,7 +28,7 @@ export class CourseContentService {
     })
     return this.httpClient.get<CourseContent>(`${environment.baseUrl}Course_content/${id}`,{headers})
   }
-  
+
 
   getContentofspacificCourse(id: number): Observable<CourseContent[]> {
     const token: string = localStorage.getItem('Authorization')!;
@@ -65,7 +65,7 @@ export class CourseContentService {
     return this.httpClient.delete<CourseContent>(`${environment.baseUrl}Course_content/${id}`,{headers});
   }
 
- 
+
 
 }
 

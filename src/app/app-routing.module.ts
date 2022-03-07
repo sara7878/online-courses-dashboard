@@ -60,7 +60,7 @@ import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 
 const routes: Routes = [
-  // { path: '', redirectTo: '/main/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/main/home', pathMatch: 'full' },
 
   {
     path: 'main',

@@ -18,7 +18,7 @@ export class StudentService {
 
   studentloginservice:EventEmitter<any>= new EventEmitter<any>();
 
- 
+
   constructor(private httpClient: HttpClient) {}
   getAllStudents(): Observable<{data:Student[],status: boolean,error: any[]}> {
     const token: string = localStorage.getItem('Authorization')!;
@@ -32,13 +32,18 @@ export class StudentService {
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
-    }) 
+    })
     return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent,{headers});
   }
 
-  
+
   getStudentById(id: number): Observable<{data:Student,status: boolean,error: any[]}> {
-    return this.httpClient.get<{data:Student,status: boolean,error: any[]}>(environment.baseUrl + 'students/' + id);
+
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<{data:Student,status: boolean,error: any[]}>(environment.baseUrl + 'students/' + id,{headers});
   }
 
 
@@ -77,7 +82,7 @@ getCoursesOfStudent(id:number):Observable<Student>{
       Authorization: token
     });
     console.log(headers);
-    
+
     return this.httpClient.post(`${environment.baseUrl}student/logout`,null,{headers});
   }
 }
