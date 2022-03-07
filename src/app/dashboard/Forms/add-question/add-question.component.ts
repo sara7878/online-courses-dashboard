@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Exam } from 'src/app/_models/exam.model';
 import { Question } from 'src/app/_models/question.model';
+import { ExamsService } from 'src/app/_services/exams.service';
 import { QuestionService } from 'src/app/_services/question.service';
 
 @Component({
@@ -12,20 +14,33 @@ import { QuestionService } from 'src/app/_services/question.service';
 export class AddQuestionComponent implements OnInit {
 
   data: Question={
-    header: "",
+    header: '',
     choice_1: '',
     choice_2: '' ,
     choice_3: '' ,
     choice_4: '' ,
     answer: '' ,
     score:0,
+    exam_id:0
 };
-
-  constructor(private QuestionService: QuestionService ,private router: Router) { }
+exams!:Exam[];
+  constructor(private QuestionService: QuestionService ,private router: Router, private examService:ExamsService) { }
 
   ngOnInit(): void {
+   this.getAllexams();
   }
-
+  getAllexams() {
+    this.examService.getAllExams().subscribe(
+      (res) => {
+        this.exams= res.data;
+        console.log(this.exams);
+      },
+      (err) => {
+        console.log('Error getting all courses');
+        console.log(err);
+      }
+    );
+  }
   addQuestion(form: NgForm) {
 
     this.data.header = form.value['header'];
@@ -35,6 +50,8 @@ export class AddQuestionComponent implements OnInit {
     this.data.choice_4 = form.value['choice_4'];
     this.data.answer = form.value['answer'];
     this.data.score = form.value['score'];
+    this.data.exam_id = form.value['exam_id'];
+
 
 
     this.QuestionService.CreateQestion(this.data).subscribe(

@@ -28,7 +28,11 @@ export class StudentService {
 
   
   getStudentById(id: number): Observable<{data:Student,status: boolean,error: any[]}> {
-    return this.httpClient.get<{data:Student,status: boolean,error: any[]}>(environment.baseUrl + 'students/' + id);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.get<{data:Student,status: boolean,error: any[]}>(environment.baseUrl + 'students/' + id,{headers});
   }
 
 

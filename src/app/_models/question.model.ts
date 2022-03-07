@@ -9,5 +9,6 @@ export interface Question{
     choice_4 ?:string,
     answer?:string,
     score?:number,
+    exam_id?:number
 
 }

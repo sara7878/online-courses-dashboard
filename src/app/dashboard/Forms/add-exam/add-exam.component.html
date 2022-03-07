@@ -17,9 +17,11 @@
             </div>
 
             <div class="form-group">
-                <label for="course">Course Id :</label>
-                <input #courseIdInput=ngModel ngModel required placeholder="course" disabled [ngModel]="id" name="course_id"  class="form-control" />
-                    <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+                <label for="course">Course name:</label>
+                <select ngModel class="form-control"  required id="" name="course_id">
+                  <option *ngFor="let course of courses" [value]="course.id">{{course.name}}</option>
+                </select>
+                 
                 </div>
 
 
