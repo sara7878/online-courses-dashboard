@@ -12,7 +12,7 @@
                     <th> ID</th>
                     <th> Name</th>
                     <th> Max score</th>
-                    <th> Show Exam</th>
+                    <th> Show course</th>
                     <th> Update</th>
                     <th> Delete</th>
                   </tr>
@@ -21,11 +21,11 @@
                   <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{exam.id}}</td>
                     <td>{{exam.name}}</td>
-                    <td>{{exam.course?.name}}</td>
                     <td>{{exam.max_score}}</td>
-                    <td>
+                    <td>{{exam.course?.name}}</td>
+                    <!-- <td>
                         <button type="button" class="btn btn-success"> Show </button>
-                    </td>
+                    </td> -->
                     <td>
                       <button type="button" class="btn btn-warning" [routerLink]="'/dashboard/update-exam/'+exam.id"> Update </button>
                     </td>

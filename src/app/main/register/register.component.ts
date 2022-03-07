@@ -13,7 +13,6 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   Click(){
     this.router.navigate(['/main/trainer/register'])
 }
@@ -22,5 +21,4 @@ ClickStudent(){
   this.router.navigate(['/main/register/student'])
 
 }
-
 }

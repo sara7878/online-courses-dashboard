@@ -47,26 +47,30 @@
           >
         </div>
 
+
         <div class="form-group">
-          <label for="course">CourseId :</label>
-          <input
-            #courseIdInput="ngModel"
+          <label for="">course </label>
+          <select
+            #courseinput="ngModel"
             ngModel
-            [(ngModel)]="this.examContent.course_id"
+            placeholder="select maximum score"
             required
-            placeholder="course"
-            name="course_id"
             class="form-control"
-          />
-          <span
-            *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']"
-            style="color: red"
-            class="alert"
-            >This field is required *</span
+            name="course_id"
           >
+            <option *ngFor="let coureses of courese" [value]="coureses.id">
+              {{ coureses.name }}
+            </option>
+            <span
+              *ngIf="courseinput.touched && courseinput.invalid && courseinput.errors?.['required']"
+              style="color: red"
+              class="alert"
+              >This field is required *</span
+            >
+          </select>
         </div>
 
-
+<!--
         <div class="form-group">
           <label for="">Maximum score</label>
           <select
@@ -90,7 +94,17 @@
             class="alert"
             >This field required *</span
           >
-        </div>
+        </div> -->
+
+
+        <div class="form-group">
+          <label for="exampleInputName1">Maximum scor :</label>
+          <input #maxscoreInput=ngModel ngModel required  type="text" class="form-control" id="exampleInputName3" placeholder="max_score" name="max_score"               [ngModel]="this.examContent.max_score"
+          />
+              <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+          </div>
+
+
         <!-- <div *ngFor="let exam of ExamArray"> -->
           <button
             type="submit"

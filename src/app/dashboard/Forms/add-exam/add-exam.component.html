@@ -16,24 +16,54 @@
                 <span *ngIf="examNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
             </div>
 
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="course">Course Id :</label>
-                <input #courseIdInput=ngModel ngModel required placeholder="course" disabled [ngModel]="id" name="course_id"  class="form-control" />
+                <input #courseIdInput=ngModel ngModel required placeholder="course"  [ngModel]="id" name="course_id"  class="form-control" />
                     <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+                </div> -->
+                <div class="form-group">
+                  <label for="">course </label>
+                  <select
+                    #courseinput="ngModel"
+                    ngModel
+                    placeholder="select maximum score"
+                    required
+                    class="form-control"
+                    name="course_id"
+                  >
+                    <option *ngFor="let coureses of courese" [value]="coureses.id">
+                      {{ coureses.name }}
+                    </option>
+                    <span
+                      *ngIf="courseinput.touched && courseinput.invalid && courseinput.errors?.['required']"
+                      style="color: red"
+                      class="alert"
+                      >This field is required *</span
+                    >
+                  </select>
                 </div>
 
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="">Maximum score</label>
                     <select #maxscoreInput=ngModel ngModel placeholder="select maximum score" class="form-control" required name="max_score">
-                        <option value="5">5</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
+                        <option value="5">100</option>
+                        <option value="8">150</option>
+                        <option value="10">200</option>
 
                     </select>
                     <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
 
-                </div>
+                </div> -->
+
+
+
+                <div class="form-group">
+                  <label for="exampleInputName1">Maximum scor :</label>
+                  <input #maxscoreInput=ngModel ngModel required  type="text" class="form-control" id="exampleInputName3" placeholder="max_score" name="max_score" />
+                      <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
+
+                  </div>
 
           <button type="submit" class="btn btn-primary mr-2" routerLink="/dashboard/exams" (click)="addExam(examForm) "[disabled]="!examForm.valid"> Submit </button>
           <button class="btn btn-light">Cancel</button>

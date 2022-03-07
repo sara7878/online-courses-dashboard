@@ -15,6 +15,7 @@ import { TrainerService } from 'src/app/_services/trainer.service';
 
 import { ToastrService } from 'ngx-toastr';
 import { ConstantPool } from '@angular/compiler';
+import { Router } from '@angular/router';
 // import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -27,7 +28,9 @@ export class AddCourseComponent implements OnInit {
     private courseService: CoursesService,
     private categoryService: CategororyService,
     private trainerService: TrainerService,
-    private formbuilder: FormBuilder
+    private formbuilder: FormBuilder,
+    private router: Router
+
   ) {}
   // ,private toastrService:ToastrService, private formBuilder:FormBuilder) {}
   categories!: Category[];
@@ -75,7 +78,6 @@ export class AddCourseComponent implements OnInit {
     this.getAllTrainers();
     this.creatForm();
   }
-
 
   ff = new FormData();
   data: Course = {
@@ -157,6 +159,8 @@ export class AddCourseComponent implements OnInit {
     this.courseService.create(formdata).subscribe(
       (res) => {
         console.log(res);
+        this.router.navigate(['/dashboard/courses']);
+
       },
       (err) => {
         console.log('Error adding course');

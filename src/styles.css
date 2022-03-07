@@ -7,3 +7,7 @@
 .main-btns{
     background-color: #5fcf80 !important;
 }
+
+a:hover{
+    text-decoration: none;
+}

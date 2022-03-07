@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Exam } from 'src/app/_models/exam.model';
 import { Question } from 'src/app/_models/question.model';
+import { ExamsService } from 'src/app/_services/exams.service';
 import { QuestionService } from 'src/app/_services/question.service';
 
 @Component({
@@ -15,9 +17,10 @@ export class UpdateQuestionComponent implements OnInit {
 
 
   constructor(private QuestionService: QuestionService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute, private Examservices:ExamsService) { }
   // id!:number;
   // data !:Question [];
+  exam!: Exam[];
 
   Question:Question = {
     header: "",
@@ -51,6 +54,7 @@ export class UpdateQuestionComponent implements OnInit {
 
     });
 
+    this.getAllExam();
 
   }
 
@@ -68,6 +72,19 @@ getQuestion(id: number) {
     );
   }
 
+  getAllExam() {
+    this.Examservices.getAllExams().subscribe(
+      (res) => {
+        this.exam = res.data;
+        console.log(this.exam);
+      },
+      (err) => {
+        console.log('Error getting all exam');
+        console.log(err);
+      }
+    );
+  }
+
 
 
   updateQuestion(id: number,form:NgForm) {
@@ -78,6 +95,8 @@ getQuestion(id: number) {
     this.updatedQuestion.choice_4 = form.value['choice_4'];
     this.updatedQuestion.answer = form.value['answer'];
     this.updatedQuestion.score = form.value['score'];
+    this.updatedQuestion.exam_id = form.value['exam_id'];
+
 
     this.QuestionService.editQestion(id,this.updatedQuestion).subscribe(
       (res) => {

@@ -27,7 +27,7 @@ export class FeedbackService {
       Authorization: token
     })
      return this.httpClient.post<Feedback>(`${environment.baseUrl}feedbacks`,newFeedback,{headers});}
-     
+
   deleteFeedbackById(id: number): Observable<Feedback>{
       const token: string = localStorage.getItem('Authorization')!;
       const headers = new HttpHeaders({
@@ -35,6 +35,8 @@ export class FeedbackService {
       })
     return this.httpClient.delete<Feedback>(environment.baseUrl + 'feedbacks/' + id,{headers});
   }
+
+
 
 
 

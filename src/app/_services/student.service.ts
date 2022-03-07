@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Student } from '../_models/student.model';
@@ -16,12 +16,11 @@ interface student {
 })
 export class StudentService {
 
-
+  studentloginservice:EventEmitter<any>= new EventEmitter<any>();
 
 
   constructor(private httpClient: HttpClient) {}
   getAllStudents(): Observable<{data:Student[],status: boolean,error: any[]}> {
-
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
@@ -30,7 +29,11 @@ export class StudentService {
   }
 
   addStudent(newStudent: Student): Observable<{data:Student,status: boolean,error: any[]}> {
-     return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent,{headers});
   }
 
 

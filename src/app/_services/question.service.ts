@@ -49,7 +49,7 @@ export class QuestionService {
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions`, data,{headers});
+    }>(`${environment.baseUrl}questions`,data,{headers});
   }
 
   editQestion(

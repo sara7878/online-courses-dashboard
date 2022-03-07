@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/_models/course.model';
 import { Exam } from 'src/app/_models/exam.model';
+import { CoursesService } from 'src/app/_services/courses.service';
 import { ExamsService } from 'src/app/_services/exams.service';
 
 @Component({
@@ -11,7 +13,7 @@ import { ExamsService } from 'src/app/_services/exams.service';
 })
 export class AddExamComponent implements OnInit {
 
-  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute) { }
+  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute ,private CourseServices:CoursesService) { }
   newexam: Exam={
     id: 0,
     course_id: 0,
@@ -20,16 +22,18 @@ export class AddExamComponent implements OnInit {
   };
   id:number=0;
 
+  courese!: Course[];
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
       console.log(params);
-      
+
     });
+    this.getAllCourses();
   }
   addExam(form: NgForm) {
     this.newexam.name = form.value['examName'];
-    this.newexam.course_id= this.id;
+    this.newexam.course_id= form.value['course_id'];
     this.newexam.max_score = form.value['max_score'];
     // console.log(this.newContent);
 
@@ -46,6 +50,20 @@ export class AddExamComponent implements OnInit {
       }
     );
   }
+
+
+  getAllCourses() {
+    this.CourseServices.getAllCourses().subscribe(
+      (res) => {
+        this.courese = res;
+      },
+      (err) => {
+        console.log('Error getting all courses');
+        console.log(err);
+      }
+    );
+  }
+
 
   onSubmit(form: NgForm) {
     console.log(form);

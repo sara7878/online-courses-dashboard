@@ -13,13 +13,10 @@ export class MainLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
-  Click(){
+clickTrainer(){
     this.router.navigate(['/main/trainer/login'])
 }
-ClickStudent(){
+clickstudent(){
   this.router.navigate(['/main/login/student'])
-
 }
-
 }

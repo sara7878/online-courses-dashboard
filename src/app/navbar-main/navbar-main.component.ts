@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StudentService } from '../_services/student.service';
 import { TrainerService } from '../_services/trainer.service';
 
@@ -14,37 +14,44 @@ export class NavbarMainComponent implements OnInit {
   ) {}
   checkUser!: string;
   id: number = parseInt(localStorage.getItem('id')!);
-  userName: string = localStorage.getItem('name')!;
+  // @Input()
+  userName:string=localStorage.getItem('name')!;
+
+  // @Input()
+  // userName:any;
 
   ngOnInit(): void {
     this.checktoken();
     if (localStorage.getItem('role') == 'isTrainer') this.checkUser = 'trainer';
     else this.checkUser = 'student';
+
+    this.studentService.studentloginservice.subscribe(
+      (next)=>{
+        console.log(next);     
+        this.userName=next.name; 
+      },
+      (error)=>{
+        console.log("error in showing items in basket")
+      },
+      ()=>{}
+      
+    );
+
+    this.trainserService.trainerloginservice.subscribe(
+      (next)=>{
+        console.log(next);     
+        this.userName=next.name; 
+      },
+      (error)=>{
+        console.log("error in showing items in basket")
+      },
+      ()=>{});
   }
+
 
   token = false;
 
-  // getCourses() {
-  //   if (this.checkUser == 'trainer') {
-  //     this.trainserService.getCoursesOfTrainer(this.id).subscribe(
-  //       (res) => {
-  //         console.log(res);
-  //       },
-  //       (err) => {
-  //         console.log(err);
-  //       }
-  //     );
-  //   } else {
-  //     this.studentService.getCoursesOfStudent(this.id).subscribe(
-  //       (res) => {
-  //         console.log(res);
-  //       },
-  //       (err) => {
-  //         console.log(err);
-  //       }
-  //     );
-  //   }
-  // }
+
 
   checktoken() {
     if (localStorage.getItem('Authorization') === null) {
@@ -59,11 +66,14 @@ export class NavbarMainComponent implements OnInit {
       this.trainserService.logoutTrainer().subscribe(
         (res) => {
           console.log(res);
-          alert(res);
+          // alert(res);
           localStorage.removeItem('Authorization');
           localStorage.removeItem('id');
           localStorage.removeItem('role');
           localStorage.removeItem('name');
+
+          this.trainserService.trainerloginservice.emit("null")
+
         },
         (err) => {
           console.log(err);
@@ -74,11 +84,14 @@ export class NavbarMainComponent implements OnInit {
       this.studentService.logoutStudent().subscribe(
         (res) => {
           console.log(res);
-          alert(res);
+          // alert(res);
           localStorage.removeItem('Authorization');
           localStorage.removeItem('id');
           localStorage.removeItem('role');
           localStorage.removeItem('name');
+
+          this.studentService.studentloginservice.emit("null")
+
         },
         (err) => {
           console.log(err);
@@ -87,4 +100,7 @@ export class NavbarMainComponent implements OnInit {
       );
     }
   }
+
+
+
 }
