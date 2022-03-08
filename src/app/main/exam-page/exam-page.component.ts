@@ -31,6 +31,7 @@ export class ExamPageComponent implements OnInit {
   };
 
   ex_id = 0;
+  total=0;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -53,8 +54,6 @@ export class ExamPageComponent implements OnInit {
       }
     );
   }
-
-  total = 0;
 
   addAnswers(form: NgForm) {
     console.log(form);

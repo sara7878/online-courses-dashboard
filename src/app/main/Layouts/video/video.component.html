@@ -17,8 +17,9 @@
                  
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link " data-bs-toggle="tab" [routerLink]="'/main/courses/details/'+id+'/videos/exam'">Take Exam</a>
-                  
+                  <a class="nav-link "  *ngIf="active==false" data-bs-toggle="tab" [routerLink]="'/main/courses/details/'+id+'/videos/exam'">Take Exam</a>
+                  <a *ngIf="active==true" class="nav-link" data-bs-toggle="tab" [routerLink]="'/main/courses/details/'+id+'/videos/exam/result'"> Show Result</a>
+
                 </li>
               </ul>
             </div>
