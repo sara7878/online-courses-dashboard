@@ -21,6 +21,8 @@ export class ExamPageComponent implements OnInit {
     degree:0
 };
   ex_id=0;
+ 
+  total=0;
   ngOnInit(): void {
   
     this.activatedRoute.params.subscribe((params) => {
@@ -48,7 +50,6 @@ localStorage.setItem("exam_id" , this.examQuestion[0].exam_id)
   }
 
 
-total=0;
   addAnswers(form: NgForm)
   {
     console.log(form);
@@ -74,6 +75,8 @@ total=0;
     this.examResult.addResult(this.result).subscribe(  (res) => {
      
       console.log(res);
+     
+     
     },
     (err) => {
       console.log('Error adding course content');
