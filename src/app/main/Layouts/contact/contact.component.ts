@@ -12,12 +12,12 @@ export class ContactComponent implements OnInit {
 
   constructor(private contactService: ContactUsService) { }
   newcontact: Contactus={
-   
+
     email:'',
     name:'',
     subject:'',
     message:''
-   
+
   };
   recieved= false;
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class ContactComponent implements OnInit {
   onSubmit(form: NgForm) {
     console.log(form);
     console.log(form.value);
-    
+
   }
 
   resetForm(form: NgForm) {

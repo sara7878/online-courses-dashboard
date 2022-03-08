@@ -105,7 +105,9 @@ export class AddThisCourseComponent implements OnInit {
       desc: [null, Validators.required],
       trainer_id: [this.trainerId],
       image: [null, Validators.required],
+
     });
+
   }
 
 
@@ -122,7 +124,7 @@ export class AddThisCourseComponent implements OnInit {
     if (this.form.invalid) {
       console.log('form invalid');
     }
-   
+
 
     const formdata = new FormData();
     formdata.append('img', this.files, this.files.name);
@@ -144,10 +146,12 @@ export class AddThisCourseComponent implements OnInit {
     this.data.desc = form.value.desc;
     this.data.preq = form.value.preq;
 
+
     console.log(this.data);
     this.courseService.create(formdata).subscribe(
       (res) => {
         console.log(res);
+
       },
       (err) => {
         console.log('Error adding course');

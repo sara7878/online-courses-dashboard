@@ -31,6 +31,7 @@ deleteContact(id:number){
   return this.httpClient.delete<Contactus>(environment.baseUrl+'Contact_us/'+id,{headers})
 
 }
+
 addContact(newContact: Contactus): Observable<Contactus> {
   console.log(newContact)
   const token: string = localStorage.getItem('Authorization')!;
