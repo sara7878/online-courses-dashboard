@@ -89,4 +89,8 @@ export class ResultComponent implements OnInit {
       }
     );
   }
+  removeID()
+  {
+    localStorage.removeItem("exam_id");
+  }
 }

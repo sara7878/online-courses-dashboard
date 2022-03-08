@@ -5,6 +5,7 @@ import { CourseContent } from 'src/app/_models/course_content.model';
 import { CourseContentService } from 'src/app/_services/course-content.service';
 import { ExamResultService } from 'src/app/_services/exam-result.service';
 import { result } from 'src/app/_services/exam-result.service';
+import { QuestionService } from 'src/app/_services/question.service';
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
@@ -17,7 +18,8 @@ export class VideoComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private courseContentService: CourseContentService,
     private resultService: ExamResultService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private question: QuestionService,
   ) {}
   urlArr:string[]=[""];
   contentArr!:CourseContent[];
@@ -33,7 +35,8 @@ export class VideoComponent implements OnInit {
       exam_id:0,
       degree:0
       }
-     
+     examQuestion!: any;
+
    active:boolean=false;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -44,7 +47,10 @@ export class VideoComponent implements OnInit {
       }
        
     });
+  
+    //this.getAllexamQuestions()
     this.getresult();
+    
   }
   
 
@@ -67,6 +73,8 @@ export class VideoComponent implements OnInit {
       }
     );
   }
+
+
   getresult() {
     
     this.result.student_id=parseInt(localStorage.getItem("id")!)
@@ -91,8 +99,28 @@ console.log(this.result)
         
       }
     );
-   
+   console.log(this.active);
   }
+
+
+
+  // getAllexamQuestions() {
+  //   this.question.getexamQuestions(this.id).subscribe(
+  //     (res) => {
+  //       this.examQuestion = res.data;
+  //       console.log(this.examQuestion);
+  //       localStorage.setItem('exam_id', this.examQuestion[0].exam_id);
+
+ 
+
+  //     },
+  //     (err) => {
+  //       console.log('cant load data from exam question');
+  //       console.log(err);
+  //     }
+  //   );
+  // }
+
  
 
 }

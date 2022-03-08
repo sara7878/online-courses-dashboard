@@ -6,6 +6,7 @@ import { CourseContentService } from 'src/app/_services/course-content.service';
 import { CoursesService } from 'src/app/_services/courses.service';
 import { CourseStudent } from 'src/app/_models/course_student.model';
 import { CourseStudentService } from 'src/app/_services/course-student.service';
+import { QuestionService } from 'src/app/_services/question.service';
 @Component({
   selector: 'app-courses-details-page',
   templateUrl: './courses-details-page.component.html',
@@ -56,11 +57,15 @@ coursedetails: Course={
   constructor(
     private activatedRoute: ActivatedRoute,
     private courseService: CoursesService,
-    private coursestudent:CourseStudentService
+    private coursestudent:CourseStudentService,
+    private question: QuestionService,
+
   ) {}
+  examQuestion!: any;
 
   studid:any;
   trainerId:number=0;
+  id=0;
   ngOnInit(): void {
     if (localStorage.getItem('role') == 'isTrainer'){
       this.checkUser = 'trainer';
@@ -69,16 +74,17 @@ coursedetails: Course={
     else this.checkUser = 'student';
 
     this.activatedRoute.params.subscribe((params) => {
-      const id = params['courseId'];
+      this.id = params['courseId'];
       console.log(params);
-      if (id) {
-        this.getCoursedetails(id);
-        this.coursestud.course_id=id
+      if (this.id) {
+        this.getCoursedetails(this.id);
+        this.coursestud.course_id=this.id
         this.studid=localStorage.getItem('id')
         this.coursestud.student_id=this.studid
         this.checkenroll();
       }
     });
+   this.getAllexamQuestions();
   }
 
  
@@ -108,8 +114,26 @@ coursedetails: Course={
       }
     )
   }
+  getAllexamQuestions() {
+    this.question.getexamQuestions(this.id).subscribe(
+      (res) => {
+        this.examQuestion = res.data;
+        console.log(this.examQuestion);
+        localStorage.setItem('exam_id', this.examQuestion[0].exam_id);
+        console.log(this.examQuestion[0].exam_id)
+
+ 
+
+      },
+      (err) => {
+        console.log('cant load data from exam question');
+        console.log(err);
+      }
+    );
+  }
 
   }
+  
   // constructor(
   //   private CourseContentService: CourseContentService,
   //   private activatedRoute: ActivatedRoute,

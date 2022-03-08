@@ -14,7 +14,7 @@
         <h4>Your exam result is:</h4>
 
         <h5>{{ newresult.degree }} / {{exam_max_score}}</h5>
-        <a class="main-btns btn text-light m-5" routerLink="/main/home">Back to home</a>
+        <a class="main-btns btn text-light m-5" routerLink="/main/home" (click)="removeID()">Back to home</a>
       </div>
     </div>
   </div>

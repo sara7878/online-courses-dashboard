@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Course } from '../_models/course.model';
@@ -7,6 +7,7 @@ import { Exam } from '../_models/exam.model';
 import { Question } from '../_models/question.model';
 
 export interface ExamQuestion{
+
   id ?:number,
   name ?:string,
   course_id ?:number,
@@ -27,6 +28,7 @@ export interface ExamQuestion{
   providedIn: 'root',
 })
 export class QuestionService {
+  //questionservice:EventEmitter<any>= new EventEmitter<any>();
   constructor(private httpClient: HttpClient) {}
 
   getexamQuestions( id: number): Observable<{ data: ExamQuestion; status: boolean; error: any }> {
