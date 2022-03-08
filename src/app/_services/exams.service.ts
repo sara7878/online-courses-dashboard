@@ -12,7 +12,7 @@ export class ExamsService {
   constructor(private httpClient: HttpClient) { }
 
 
- getAllExams():Observable<{data:Exam[],status:boolean,error:any}>{
+getAllExams():Observable<{data:Exam[],status:boolean,error:any}>{
   const token: string = localStorage.getItem('Authorization')!;
   const headers = new HttpHeaders({
     Authorization: token

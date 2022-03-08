@@ -112,6 +112,8 @@ import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-co
 import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
 import { ExamPageComponent } from './main/exam-page/exam-page.component';
 import { ResultComponent } from './main/result/result.component';
+import { AddThisExamComponent } from './main/Forms/add-this-exam/add-this-exam.component';
+import { CourseExamDetailsComponent } from './main/course-exam-details/course-exam-details.component';
 
 
 
@@ -229,7 +231,9 @@ import { ResultComponent } from './main/result/result.component';
 
     ChatDialogComponent,
            ExamPageComponent,
-           ResultComponent
+           ResultComponent,
+           AddThisExamComponent,
+           CourseExamDetailsComponent
     ],
   imports: [
     BrowserModule,
