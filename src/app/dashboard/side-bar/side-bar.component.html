@@ -26,14 +26,14 @@
         </a>
       </li>
 
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <i class="mdi mdi-table-large menu-icon"></i>
           <span class="menu-title">Tables</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="ui-basic">
-          <ul class="nav flex-column sub-menu">
+          <ul class="nav flex-column sub-menu"> -->
             <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/dashboard/admins">
                 <i class="mdi mdi-contacts menu-icon"></i>
@@ -44,7 +44,7 @@
               <a class="nav-link" data-toggle="collapse" routerLink="/dashboard/categories" aria-expanded="false" aria-controls="ui-basic">
                 <i class="mdi mdi-book-multiple menu-icon"></i>
                 <span class="menu-title">Categories</span>
-              </a>          
+              </a>
              </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/dashboard/courses">
@@ -70,28 +70,30 @@
               </a>
             </li> -->
 
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/dashboard/feedbacks">
                 <i class="mdi mdi-comment-account menu-icon"></i>
                 <span class="menu-title">Feedbacks </span>
-              </a> 
-            </li>
-            <li class="nav-item">
+              </a>
+            </li>  -->
+            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/dashboard/questions">
                 <i class="mdi mdi-comment-question-outline menu-icon"></i>
                 <span class="menu-title">Questions </span>
               </a>
-            </li>
-            <li class="nav-item">
+            </li> -->
+
+
+            <!-- <li class="nav-item">
               <a class="nav-link" routerLink="/dashboard/exams">
                 <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
                 <span class="menu-title">Exams </span>
               </a>
-            </li>
-          </ul>
+            </li> -->
+          <!-- </ul>
         </div>
-      </li>
-  
+      </li> -->
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#admins" aria-expanded="false" aria-controls="admins">
           <i class="mdi mdi-contacts menu-icon"></i>
@@ -116,7 +118,7 @@
         </div>
       </li>
 
-     
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#trainers" aria-expanded="false" aria-controls="trainers">
           <i class="mdi mdi-account menu-icon"></i>
@@ -141,7 +143,7 @@
         </div>
       </li>
 
-     
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#students" aria-expanded="false" aria-controls="students">
           <i class="mdi mdi-account-multiple menu-icon"></i>
@@ -166,7 +168,7 @@
         </div>
       </li>
 
-     
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#categories" aria-expanded="false" aria-controls="categories">
           <i class="mdi mdi-book-multiple menu-icon"></i>
@@ -191,7 +193,7 @@
         </div>
       </li>
 
-     
+
       <li class="nav-item">
         <a class="nav-link" data-toggle="collapse" href="#courses" aria-expanded="false" aria-controls="courses">
           <i class="mdi mdi-book-open-page-variant menu-icon"></i>
@@ -239,8 +241,55 @@
           </ul>
         </div>
       </li>
-      
 
-     
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#feeback" aria-expanded="false" aria-controls="feeback">
+          <i class="mdi mdi-comment-account menu-icon"></i>
+          <span class="menu-title">Feedback</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="feeback">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard/feedbacks">
+                <i class="fa fa-bars pe-2" aria-hidden="true"></i>
+                <span class="menu-title">List all</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="collapse" href="#exam" aria-expanded="false" aria-controls="exam">
+          <i class="mdi mdi-comment-multiple-outline menu-icon"></i>
+          <span class="menu-title">Exam </span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="exam">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard/exams">
+                <i class="fa fa-bars pe-2" aria-hidden="true"></i>
+                <span class="menu-title">List all</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/dashboard/add-exam">
+                <i class="fa fa-plus pe-2" aria-hidden="true"></i>
+                <span class="menu-title">Add exam</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </li>
+
+
+
     </ul>
   </nav>

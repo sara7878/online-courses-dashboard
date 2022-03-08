@@ -133,7 +133,7 @@ export class AddCourseComponent implements OnInit {
     if (this.form.invalid) {
       console.log('form invalid');
     }
-   
+
 
     const formdata = new FormData();
     formdata.append('img', this.files, this.files.name);

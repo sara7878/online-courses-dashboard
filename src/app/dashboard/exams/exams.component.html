@@ -3,16 +3,17 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Exams Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-exam"> Add New Exam </button>
+            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-exam"> Add New Exam </button> -->
             <!-- [routerLink]="'/dashboard/add-exam/'+id" -->
             <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="table table-striped text-center">
                 <thead>
                   <tr >
                     <th> ID</th>
                     <th> Name</th>
                     <th> Max score</th>
-                    <th> Show Exam</th>
+                    <th> Show course</th>
+                    <th> Show Questions</th>
                     <th> Update</th>
                     <th> Delete</th>
                   </tr>
@@ -21,10 +22,11 @@
                   <tr *ngFor="let exam of ExamArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{exam.id}}</td>
                     <td>{{exam.name}}</td>
-                    <td>{{exam.course_id}}</td>
                     <td>{{exam.max_score}}</td>
+                    <td>{{exam.course?.name}}</td>
                     <td>
-                        <button type="button" class="btn btn-success"> Show </button>
+
+                      <a class="h3 text-success"  [routerLink]="'/dashboard/questions/'+exam.id">  <i class=" mdi mdi-eye"></i> </a>
                     </td>
                     <td>
                       <a class="h3 text-warning"  [routerLink]="'/dashboard/update-exam/'+exam.id"> <i class="mdi mdi-tooltip-edit font-weight-medium"></i> </a>

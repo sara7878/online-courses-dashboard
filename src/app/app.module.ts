@@ -81,17 +81,18 @@ import { LoginStudentComponent } from './main/login-student/login-student.compon
 
 // import { StripeModule } from 'stripe-angular';
 
-import { LoginComponent } from './dashboard/login/login.component';
-import { RegisterComponent } from './dashboard/register/register.component';
 import { CheckoutComponent } from './main/checkout/checkout.component';
-import { StripeModule } from 'stripe-angular';
-import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 
 import { PaymentComponent } from './main/payment/payment.component';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './dashboard/login/login.component';
+import { RegisterComponent } from './dashboard/register/register.component';
+import { StripeModule } from 'stripe-angular';
+import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { ContentComponent } from './main/content/content.component';
 
 import { SearchComponent } from './search/search.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { VideoComponent } from './main/Layouts/video/video.component';
 
 import { UpdateTrainerComponent } from './main/Forms/update-trainer/update-trainer.component';
@@ -177,16 +178,29 @@ import { ResultComponent } from './main/result/result.component';
     TrainersmainComponentComponent,
     CategoriesmainComponentComponent,
 
-
     NavbarMainComponent,
-    TrainerLoginComponent,
-    TrainerRegisterComponent,
+    PaymentComponent,
+
     FeedbackFormComponent,
-      
+
        RegisterStudentComponent,
        LoginStudentComponent,
        CheckoutComponent,
-   
+
+    LoginComponent,
+    RegisterComponent,
+    VideoComponent,
+    PaymentComponent,
+    ContentComponent,
+    SearchComponent,
+    TrainerLoginComponent,
+    TrainerRegisterComponent,
+    FeedbackFormComponent,
+
+       RegisterStudentComponent,
+       LoginStudentComponent,
+       CheckoutComponent,
+
     LoginComponent,
     RegisterComponent,
     VideoComponent,
@@ -198,9 +212,9 @@ import { ResultComponent } from './main/result/result.component';
     LoginComponent,
     RegisterComponent,
     CheckoutComponent,
-    CategoryCoursesComponent, 
+    CategoryCoursesComponent,
     ContentComponent,
-  
+
     SearchComponent,
     VideoComponent,
     UpdateTrainerComponent,
@@ -211,13 +225,12 @@ import { ResultComponent } from './main/result/result.component';
      EditThisCourseContentComponent,
      AddThisCourseComponent,
      EditThisCourseComponent,
-     
+
 
     ChatDialogComponent,
            ExamPageComponent,
            ResultComponent
     ],
-
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/_models/course.model';
 import { Exam } from 'src/app/_models/exam.model';
+import { CoursesService } from 'src/app/_services/courses.service';
 import { ExamsService } from 'src/app/_services/exams.service';
 
 @Component({
@@ -12,6 +14,7 @@ import { ExamsService } from 'src/app/_services/exams.service';
 
 export class UpdateExamComponent implements OnInit {
   ExamArray!:Exam[];
+  courese!: Course[];
 
   examContent: Exam = {
     course_id: 0,
@@ -26,7 +29,7 @@ export class UpdateExamComponent implements OnInit {
   };
 
   constructor(   private examService: ExamsService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute,private CourseServices:CoursesService) { }
 
 
     ngOnInit(): void {
@@ -39,7 +42,24 @@ export class UpdateExamComponent implements OnInit {
         }
       });
       this.getAllExams();
+
+      this.getAllCourses();
     }
+
+
+    getAllCourses() {
+      this.CourseServices.getAllCourses().subscribe(
+        (res) => {
+          this.courese = res;
+        },
+        (err) => {
+          console.log('Error getting all courses');
+          console.log(err);
+        }
+      );
+    }
+
+
 
     getAllExams(){
       this.examService.getAllExams().subscribe(
@@ -90,7 +110,6 @@ export class UpdateExamComponent implements OnInit {
     resetForm(form: NgForm) {
       form.reset();
     }
-
 
 
 

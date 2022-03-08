@@ -11,13 +11,13 @@ import { StudentService } from 'src/app/_services/student.service';
 export class LoginStudentComponent implements OnInit {
 
   constructor(private studentService: StudentService, private router: Router,
-    ) { 
+    ) {
 
     }
 
   ngOnInit(): void {
-    
-  }  
+  }
+
 
   data={email:"",password:""}
 
@@ -26,7 +26,7 @@ export class LoginStudentComponent implements OnInit {
       return;
     }
     // console.log(form);
-    
+
     this.data.email=form.value.email
     this.data.password=form.value.password
 
@@ -34,7 +34,7 @@ export class LoginStudentComponent implements OnInit {
 
     this.studentService.checkStudent(this.data).subscribe(
       (res)=>{
-
+        console.log(res);
         localStorage.setItem('Authorization', "bearer "+res.access_token);
         localStorage.setItem('role', res.role);
         localStorage.setItem('id', res.id+"");
@@ -44,8 +44,8 @@ export class LoginStudentComponent implements OnInit {
        
       //   this.router.navigateByUrl('/HomePageComponent', { skipLocationChange: true }).then(() => {
       //     this.router.navigate(['/main/home']);
-      // }); 
-        
+      // });
+
       // window.location.reload();
       this.studentService.studentloginservice.emit(res)
 

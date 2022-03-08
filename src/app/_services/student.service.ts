@@ -42,7 +42,7 @@ export class StudentService {
     const headers = new HttpHeaders({
       Authorization: token
     })
-    return this.httpClient.get<{data:Student,status: boolean,error: any[]}>(environment.baseUrl + 'students/' + id,{headers});
+    return this.httpClient.get<{data:Student,status: boolean,error: any[]}>(environment.baseUrl + 'students/' + id, {headers});
   }
 
 

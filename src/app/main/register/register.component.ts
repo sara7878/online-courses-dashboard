@@ -8,9 +8,7 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router: Router
-
-    ) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

@@ -3,10 +3,10 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Questions Table</h4>
-            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" routerLink="/dashboard/add-question" > Add New Question </button>
-  
+            <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3" [routerLink]="'/dashboard/add-question/'+id" > Add New Question </button>
+
             <div class="table-responsive">
-              <table class="table table-striped">
+              <table class="table table-striped text-center">
                 <thead>
                   <tr >
                     <th> ID</th>
@@ -19,7 +19,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let question of QuetionArray | paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
+                  <tr *ngFor="let question of QuetionExam.questions! | paginate: { itemsPerPage: 3, currentPage: p }; let i=index" >
                     <td>{{question.id}}</td>
                     <td>{{question.header}}</td>
                     <td>
@@ -33,13 +33,13 @@
                     <td>{{question.answer}}</td>
                     <td>{{question.score}}</td>
                     <td>
-                      <a class="h3 text-warning"  [routerLink]="'/dashboard/update-question/'+question.id"> <i class="mdi mdi-tooltip-edit font-weight-medium"></i> </a>
+<a class="h3 text-warning"  [routerLink]="'/dashboard/update-question/'+question.id+'/'+id"><i class="mdi mdi-tooltip-edit font-weight-medium"></i> </a>
 
                     </td>
                     <td>
                      <a class="h3 text-danger" style="cursor: pointer;" (click)="deleteQestion(question.id!)"> <i class="mdi mdi-delete-forever "></i> </a>
                     </td>
-  
+
                   </tr>
                 </tbody>
               </table>
@@ -48,9 +48,8 @@
             <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Question </button> -->
             </div>
           </div>
-  
+
         </div>
       </div>
-  
-  
-  
+
+

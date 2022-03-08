@@ -13,7 +13,7 @@ import { CategororyService } from 'src/app/_services/categorory.service';
 export class UpdateCategoryComponent implements OnInit {
 
   constructor(private http: HttpClient,private formbuilder:FormBuilder,private categoryservice:CategororyService,private activatedRoute: ActivatedRoute,private router: Router) { }
-  
+
   cat:Category={id: 2, name: 'category', img: 'cate -6214efae12666.jpg'};
   ff=new FormData();
   files:any;

@@ -39,8 +39,8 @@
           <div class="course-info d-flex justify-content-between align-items-center">
             <h5>Duration</h5>
             <p>{{coursedetails.duration}}</p>
-            
-            
+
+
           </div>
          
            
@@ -52,7 +52,7 @@
                 >
                   Enroll Now
                 </a>
-    
+
                 <a
                   *ngIf="active == true && checkUser=='student'"
                   class="get-started-btn"
@@ -89,20 +89,52 @@
               </div>
             </div>
           </div>
-      
 
+
+            <a
+              *ngIf="active == true && checkUser=='student'"
+              class="get-started-btn"
+              [routerLink]="
+                '/main/courses/details/' + coursedetails.id + '/videos'
+              "
+            >
+              Go to course</a
+            >
+          </div>
+          <div
+            class="my-3 d-flex align-items-center text-light justify-content-center"
+          >
+            <a
+              *ngIf="
+                checkUser == 'trainer' && trainerId == coursedetails.trainer_id
+              "
+              class="get-started-btn"
+              [routerLink]="'/main/trainer/course/details/' + coursedetails.id"
+            >
+              Go to course details</a
+            >
+          </div>
+          <div class="my-3 d-flex justify-content-center align-items-center">
+            <a
+              *ngIf="
+                checkUser == 'trainer' && trainerId == coursedetails.trainer_id
+              "
+              class="get-started-btn"
+              [routerLink]="'/main/trainer/edit-course/' + coursedetails.id"
+            >
+              Edit course</a
+            >
+          </div>
 
         <!-- </div>
-     
+
       </div> -->
 
-    </div>
   </section><!-- End Cource Details Section -->
 
   <!-- ======= Cource Details Tabs Section ======= -->
   <section id="cource-details-tabs" class="cource-details-tabs">
     <div class="container" data-aos="fade-up">
-
       <div class="row">
         <div class="col-lg-3">
           <ul class="nav nav-tabs flex-column">

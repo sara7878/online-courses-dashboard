@@ -78,6 +78,9 @@ const routes: Routes = [
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
+      {path:'checkout' , component:CheckoutComponent},
+      {path:'search', component:SearchComponent},
+      { path: 'checkout', component: CheckoutComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'search', component: SearchComponent },
       { path: 'categories', component: CategoriesPageComponent },
@@ -145,7 +148,7 @@ const routes: Routes = [
       { path: 'contactus', component: ContactUsComponent },
       { path: 'contents/:courseId/:courseName', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
-      { path: 'questions', component: QuestionsComponent },
+      { path: 'questions/:id', component: QuestionsComponent },
       { path: 'exams', component: ExamsComponent },
       { path: 'add-category', component: AddCategoryComponent },
 
@@ -178,8 +181,8 @@ const routes: Routes = [
       // { path: 'questions', component: QuestionsComponent },
       // { path: 'exams', component: ExamsComponent },
       // { path: 'add-category', component: AddCategoryComponent },
-      { path: 'add-question', component: AddQuestionComponent },
-      { path: 'update-question/:id', component: UpdateQuestionComponent },
+      { path: 'add-question/:id', component: AddQuestionComponent },
+      { path: 'update-question/:id/:exam_id', component: UpdateQuestionComponent },
       // { path: 'add-course', component: AddCourseComponent },
       // { path: 'update-course', component: UpdateCourseComponent },
       // { path: 'add-course-content', component: AddCourseContentComponent },
@@ -193,6 +196,8 @@ const routes: Routes = [
       // { path: 'update-exam/:id', component: UpdateExamComponent },
 
       { path: 'test', component: TestComponent },
+      { path: 'payment', component: PaymentComponent },
+
     ],
   },
 ];

@@ -29,22 +29,20 @@ export class NavbarMainComponent implements OnInit {
 
     this.studentService.studentloginservice.subscribe(
       (next)=>{
-        console.log(next);     
-        this.userName=next.name; 
-
+        console.log(next);
+        this.userName=next.name;
       },
       (error)=>{
         console.log("error in showing items in basket")
       },
       ()=>{}
-      
+
     );
 
     this.trainserService.trainerloginservice.subscribe(
       (next)=>{
-        console.log(next);     
-        this.userName=next.name; 
-
+        console.log(next);
+        this.userName=next.name;
       },
       (error)=>{
         console.log("error in showing items in basket")

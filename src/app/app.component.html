@@ -1,6 +1,6 @@
   <!-- Favicons -->
   <link href="src/assets/main/img/favicon.png" rel="icon">
-  
+
   <link href="src/assets/main/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -16,12 +16,12 @@
 
 <app-nav-bar *ngIf="active==true"></app-nav-bar>
 <div class="container-scroller" *ngIf="active==true">
-  <app-side-bar *ngIf="active==true"></app-side-bar>    
+  <app-side-bar *ngIf="active==true"></app-side-bar>
   <div class="container-fluid page-body-wrapper" *ngIf="active==true">
   <div class="main-panel" *ngIf="active==true">
   <router-outlet *ngIf="active==true"></router-outlet>
 </div></div>
-<app-stfooter class="fixed-bottom" *ngIf="active==true"></app-stfooter> 
+<app-stfooter class="fixed-bottom" *ngIf="active==true"></app-stfooter>
 </div>
 
 
