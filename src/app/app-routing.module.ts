@@ -80,8 +80,8 @@ const routes: Routes = [
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
-      {path:'checkout' , component:CheckoutComponent},
-      {path:'search', component:SearchComponent},
+      { path:'checkout' , component:CheckoutComponent},
+      { path:'search', component:SearchComponent},
       { path: 'checkout', component: CheckoutComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'search', component: SearchComponent },
