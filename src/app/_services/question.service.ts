@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Course } from '../_models/course.model';
+import { Exam } from '../_models/exam.model';
 import { Question } from '../_models/question.model';
 
 export interface ExamQuestion{
@@ -46,9 +47,10 @@ export class QuestionService {
     error: any;
   }> {
     const token: string = localStorage.getItem('Authorization')!;
-  const headers = new HttpHeaders({
-    Authorization: token
-  })
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
     return this.httpClient.get<{
       data: Question[];
       status: boolean;
@@ -56,11 +58,33 @@ export class QuestionService {
     }>(`${environment.baseUrl}questions`,{headers});
   }
 
+  getAllQuestionExam(id: number): Observable<{
+    data: Exam;
+    status: boolean;
+    error: any;
+  }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
+    return this.httpClient.get<{
+      data: Exam;
+      status: boolean;
+      error: any;
+    }>(`${environment.baseUrl}exam/questions/${id}`,{headers});
+  }
+
   getoneQestion(
     id: number
   ): Observable<{ data: Question; status: boolean; error: any }> {
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    })
+
     return this.httpClient.get<{ data: Question; status: boolean; error: any }>(
-      `${environment.baseUrl}questions/${id}`
+      `${environment.baseUrl}questions/${id}`,{headers}
     );
   }
 
@@ -73,7 +97,7 @@ export class QuestionService {
       data: Question[];
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}questions`, data,{headers});
+    }>(`${environment.baseUrl}questions`,data,{headers});
   }
 
   editQestion(

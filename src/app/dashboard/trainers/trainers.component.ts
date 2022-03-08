@@ -17,7 +17,6 @@ export class TrainersComponent implements OnInit {
   p: number = 1;
 
 
-  
   ngOnInit(): void {
     this.getAlltrainers();
   }
@@ -33,7 +32,7 @@ export class TrainersComponent implements OnInit {
         console.log(err);
       }
     );}
-    
+
  deleteTrainer(id:number){
       this.trainerservice.deleteTrainerById(id).subscribe(
         (res) => {

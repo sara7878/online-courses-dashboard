@@ -60,6 +60,8 @@ import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this
 import { ChatDialogComponent } from './chat/chat-dialog/chat-dialog.component';
 import { ExamPageComponent } from './main/exam-page/exam-page.component';
 import { ResultComponent } from './main/result/result.component';
+import { AddThisExamComponent } from './main/Forms/add-this-exam/add-this-exam.component';
+import { CourseExamDetailsComponent } from './main/course-exam-details/course-exam-details.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main/home', pathMatch: 'full' },
@@ -78,6 +80,9 @@ const routes: Routes = [
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
+      { path:'checkout' , component:CheckoutComponent},
+      { path:'search', component:SearchComponent},
+      { path: 'checkout', component: CheckoutComponent },
       { path: 'checkout', component: CheckoutComponent },
       { path: 'search', component: SearchComponent },
       { path: 'categories', component: CategoriesPageComponent },
@@ -119,6 +124,8 @@ const routes: Routes = [
           { path: 'course/details/:courseId', component: CourseContentDetailsComponent },
           { path: 'course/details/:courseId/add-content', component: AddThisCourseContentComponent },
           { path: 'course/details/:courseId/:contentId/edit-content', component: EditThisCourseContentComponent },
+          { path: 'course/details/:courseId/exams', component: CourseExamDetailsComponent },
+          { path: 'course/details/:courseId/add-exam', component: AddThisExamComponent },
           { path: 'update', component: UpdateTrainerComponent },
           { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
         ],
@@ -143,9 +150,9 @@ const routes: Routes = [
       { path: 'add-admin', component: AddAdminComponent },
 
       { path: 'contactus', component: ContactUsComponent },
-      { path: 'contents', component: CourseContentComponent },
+      { path: 'contents/:courseId/:courseName', component: CourseContentComponent },
       { path: 'feedbacks', component: FeedbacksComponent },
-      { path: 'questions', component: QuestionsComponent },
+      { path: 'questions/:id', component: QuestionsComponent },
       { path: 'exams', component: ExamsComponent },
       { path: 'add-category', component: AddCategoryComponent },
 
@@ -156,9 +163,9 @@ const routes: Routes = [
       { path: 'add-exam', component: AddExamComponent },
       { path: 'update-exam/:id', component: UpdateExamComponent },
 
-      { path: 'add-course-content', component: AddCourseContentComponent },
+      { path: 'add-course-content/:courseId/:courseName', component: AddCourseContentComponent },
       {
-        path: 'edit-course-content/:id',
+        path: 'edit-course-content/:id/:courseId/:courseName',
         component: EditCourseContentComponent,
       },
       // { path: 'add-course', component: AddCourseComponent },
@@ -178,8 +185,8 @@ const routes: Routes = [
       // { path: 'questions', component: QuestionsComponent },
       // { path: 'exams', component: ExamsComponent },
       // { path: 'add-category', component: AddCategoryComponent },
-      { path: 'add-question', component: AddQuestionComponent },
-      { path: 'update-question/:id', component: UpdateQuestionComponent },
+      { path: 'add-question/:id', component: AddQuestionComponent },
+      { path: 'update-question/:id/:exam_id', component: UpdateQuestionComponent },
       // { path: 'add-course', component: AddCourseComponent },
       // { path: 'update-course', component: UpdateCourseComponent },
       // { path: 'add-course-content', component: AddCourseContentComponent },
@@ -193,6 +200,8 @@ const routes: Routes = [
       // { path: 'update-exam/:id', component: UpdateExamComponent },
 
       { path: 'test', component: TestComponent },
+      { path: 'payment', component: PaymentComponent },
+
     ],
   },
 ];

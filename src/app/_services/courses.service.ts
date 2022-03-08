@@ -15,14 +15,17 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
   getAllCourses(): Observable<Course[]> {
-    const token: string = localStorage.getItem('Authorization')!;
-    const headers = new HttpHeaders({
-      Authorization: token
-    })
 
-      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
+
+      return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
   }
+  // getAllCourses(): Observable<Course[]> {
 
+  //   const token: string = localStorage.getItem('token')!;
+  //   const headers = new HttpHeaders({
+  //     authorization: token})
+  //     return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
+  // }
   getCourseById(id: number): Observable<Course> {
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
@@ -37,7 +40,7 @@ export class CoursesService {
       Authorization: token
     });
     console.log(headers);
-    
+
     return this.httpClient.post(environment.baseUrl+'courses',data, {headers});
   }
 
@@ -70,7 +73,7 @@ export class CoursesService {
     return this.httpClient.post(environment.baseUrl + 'courses/' + id, data,{headers});
   }
 
-  
+
   enroll(course_id:number)
   {
     const token: string = localStorage.getItem('Authorization')!;

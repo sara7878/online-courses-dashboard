@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { StudentService } from 'src/app/_services/student.service';
@@ -10,12 +10,14 @@ import { StudentService } from 'src/app/_services/student.service';
 })
 export class LoginStudentComponent implements OnInit {
 
-  constructor(private studentService: StudentService, private router: Router
-    ) { }
+  constructor(private studentService: StudentService, private router: Router,
+    ) {
+
+    }
 
   ngOnInit(): void {
-  }  
- 
+  }
+
 
   data={email:"",password:""}
 
@@ -24,7 +26,7 @@ export class LoginStudentComponent implements OnInit {
       return;
     }
     // console.log(form);
-    
+
     this.data.email=form.value.email
     this.data.password=form.value.password
 
@@ -32,13 +34,26 @@ export class LoginStudentComponent implements OnInit {
 
     this.studentService.checkStudent(this.data).subscribe(
       (res)=>{
-
+        console.log(res);
         localStorage.setItem('Authorization', "bearer "+res.access_token);
         localStorage.setItem('role', res.role);
         localStorage.setItem('id', res.id+"");
         sessionStorage.setItem('role',res.role);
         sessionStorage.setItem('id',res.id+"");
         localStorage.setItem('name',res.name);
+       
+      //   this.router.navigateByUrl('/HomePageComponent', { skipLocationChange: true }).then(() => {
+      //     this.router.navigate(['/main/home']);
+      // });
+
+      // window.location.reload();
+      this.studentService.studentloginservice.emit(res)
+
+      // this.router.navigate(['/main/home']);
+        // this.redirectTo('/main/home')
+
+        // this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+        // this.router.navigate(['/main/home']));
       },
       (err) => {
         console.log('Error login');
@@ -46,9 +61,8 @@ export class LoginStudentComponent implements OnInit {
       }
     )
 
-    this.router.navigate(['/main/home'])
-
   }
+
 
 
 }

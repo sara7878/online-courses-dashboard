@@ -13,44 +13,31 @@ import { ExamsService } from 'src/app/_services/exams.service';
 })
 export class AddExamComponent implements OnInit {
 
-  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute,private courseService:CoursesService) { }
+  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute ,private CourseServices:CoursesService) { }
   newexam: Exam={
     id: 0,
     course_id: 0,
     name: '',
     max_score: 0,
-   
   };
   courses!:Course[]
   id:number=0;
 
+  courese!: Course[];
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
       console.log(params);
-      
+
     });
     this.getAllCourses();
   }
-
-
-  getAllCourses() {
-    this.courseService.getAllCourses().subscribe(
-      (res) => {
-        this.courses = res;
-        console.log(this.courses);
-      },
-      (err) => {
-        console.log('Error getting all courses');
-        console.log(err);
-      }
-    );
-  }
   addExam(form: NgForm) {
     this.newexam.name = form.value['examName'];
-    this.newexam.course_id=  form.value['course_id'];
+    this.newexam.course_id= form.value['course_id'];
     this.newexam.max_score = form.value['max_score'];
     // console.log(this.newContent);
+
 
 
     this.examService.addExam(this.newexam).subscribe(
@@ -64,6 +51,20 @@ export class AddExamComponent implements OnInit {
       }
     );
   }
+
+
+  getAllCourses() {
+    this.CourseServices.getAllCourses().subscribe(
+      (res) => {
+        this.courese = res;
+      },
+      (err) => {
+        console.log('Error getting all courses');
+        console.log(err);
+      }
+    );
+  }
+
 
   onSubmit(form: NgForm) {
     console.log(form);

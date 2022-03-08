@@ -20,7 +20,6 @@ export class AddCategoryComponent implements OnInit {
   data:Category={name:"sara",img:this.ff};
 
 
-
   resetForm(form: NgForm) {
     form.reset();
   }
@@ -39,16 +38,15 @@ export class AddCategoryComponent implements OnInit {
   get f(){
     return this.form.controls;
 
-  } 
+  }
    ngOnInit(): void {
     this.creatForm();
   }
   uploadImage(event:any){
     this.files=event.target.files[0]
     console.log(this.files);
-    
-  }
 
+  }
   onsubmit(form:any){
     this.submitted=true;
     if(this.form.invalid){
@@ -58,7 +56,7 @@ export class AddCategoryComponent implements OnInit {
     const formdata=new FormData();
     formdata.append("img",this.files,this.files.name);
     formdata.append("name",form.value.catname);
-   
+
 
     console.log(formdata);
 
@@ -69,7 +67,7 @@ export class AddCategoryComponent implements OnInit {
 
     console.log(this.data);
 
-    
+
 
 
     this.categoryservice.addcategory(formdata).subscribe(
@@ -84,7 +82,7 @@ export class AddCategoryComponent implements OnInit {
     );
    }
 
-   
+
 
 
 }

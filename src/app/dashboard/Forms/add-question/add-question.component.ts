@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Exam } from 'src/app/_models/exam.model';
 import { Question } from 'src/app/_models/question.model';
 import { ExamsService } from 'src/app/_services/exams.service';
@@ -12,7 +12,8 @@ import { QuestionService } from 'src/app/_services/question.service';
   styleUrls: ['./add-question.component.css']
 })
 export class AddQuestionComponent implements OnInit {
-
+  exam!: Exam[];
+  exam_id:number=0;
   data: Question={
     header: '',
     choice_1: '',
@@ -21,22 +22,31 @@ export class AddQuestionComponent implements OnInit {
     choice_4: '' ,
     answer: '' ,
     score:0,
-    exam_id:0
+    exam_id:0,
 };
-exams!:Exam[];
-  constructor(private QuestionService: QuestionService ,private router: Router, private examService:ExamsService) { }
+
+  constructor(private QuestionService: QuestionService ,private router: Router ,private Examservices:ExamsService ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-   this.getAllexams();
+
+    this.activatedRoute.params.subscribe((params) => {
+      this.exam_id=params['id'];
+      console.log(params);
+    });
+
+    this.getAllExam();
+
+
   }
-  getAllexams() {
-    this.examService.getAllExams().subscribe(
+
+  getAllExam() {
+    this.Examservices.getAllExams().subscribe(
       (res) => {
-        this.exams= res.data;
-        console.log(this.exams);
+        this.exam = res.data;
+        console.log(this.exam);
       },
       (err) => {
-        console.log('Error getting all courses');
+        console.log('Error getting all exam');
         console.log(err);
       }
     );
@@ -50,19 +60,27 @@ exams!:Exam[];
     this.data.choice_4 = form.value['choice_4'];
     this.data.answer = form.value['answer'];
     this.data.score = form.value['score'];
-    this.data.exam_id = form.value['exam_id'];
-
+    // this.data.exam_id = form.value['exam_id'];
+    this.data.exam_id = this.exam_id;
+    console.log(form.value);
+    console.log(this.exam_id);
 
 
     this.QuestionService.CreateQestion(this.data).subscribe(
       (res) => {
         console.log(res);
+        console.log(res.data);
+        console.log(form.value.exam_id);
+
       },
       (err) => {
         console.log('Error adding question');
         console.log(err);
       }
     );
+
+    this.router.navigate([`/dashboard/questions/${this.exam_id}`]);
+
   }
 
 

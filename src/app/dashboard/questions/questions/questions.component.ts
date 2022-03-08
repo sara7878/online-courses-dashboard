@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Exam } from 'src/app/_models/exam.model';
 import { QuestionService } from 'src/app/_services/question.service';
 import { Question } from '../../../_models/question.model';
 
@@ -11,15 +12,25 @@ import { Question } from '../../../_models/question.model';
 })
 export class QuestionsComponent implements OnInit {
 
-  constructor(private QuestionService: QuestionService ,private router: Router) { }
+  constructor(private QuestionService: QuestionService ,private router: Router ,    private activatedRoute: ActivatedRoute,
+    ) { }
 
   QuetionArray!: Question[];
   Quetion!: Question;
   p: number = 1;
-
+  QuetionExam!:Exam;
+  id:number=0;
   ngOnInit(): void {
 
     this.getAll();
+
+    this.activatedRoute.params.subscribe((params) => {
+      this.id = params['id'];
+     if(this.id) {
+       this.getAllQuestionExam(this.id);
+     }
+    });
+
 
   }
   getAll() {
@@ -34,7 +45,11 @@ export class QuestionsComponent implements OnInit {
       },
       () => { }
     );
+
+
   }
+
+
 
 
   getone(id:number) {
@@ -50,10 +65,24 @@ export class QuestionsComponent implements OnInit {
     );
   }
 
+  getAllQuestionExam(id:number) {
+    this.QuestionService.getAllQuestionExam(id).subscribe(
+      (res) => {
+        this.QuetionExam = res.data;
+        console.log(res.data);
+      },
+      (err) => {
+        console.log(err);
+      },
+      () => { }
+    );
+  }
+
   deleteQestion(id:number){
     this.QuestionService.deleteQestion(id).subscribe(
       (res) => {
         console.log(res.data);
+        this.ngOnInit();
       },
       (err) => {
         console.log('Error deleting deleteQestion ');

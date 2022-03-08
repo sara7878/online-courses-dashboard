@@ -4,7 +4,7 @@
           <div class="card-body">
             <h4 class="card-title">Contact Us Table</h4>
             <div class="table-responsive">
-                <table class="table table-striped ">
+                <table class="table table-striped text-center">
                 <thead>
                   <tr >
                     <th> ID</th>
@@ -24,7 +24,8 @@
                     <td>{{contact.message}}                      
                     </td>
                     <td>                     
-                     <button type="button"  class="btn btn-inverse-danger" (click)=" deleteContactus(contact.id!)" routerLink="contactus">Delete</button>
+                     <a class="h3 text-danger" style="cursor: pointer;" (click)=" deleteContactus(contact.id!)"> <i class="mdi mdi-delete-forever "></i> </a>
+
                     </td>
                     
                   </tr>

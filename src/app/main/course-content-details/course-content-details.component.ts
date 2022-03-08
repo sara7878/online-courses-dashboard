@@ -17,7 +17,7 @@ export class CourseContentDetailsComponent implements OnInit {
     private courseService: CoursesService
   ) {}
   coursesContentsArr!: CourseContent[];
-course!:Course;
+  course!:Course;
   id: number = 0;
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
