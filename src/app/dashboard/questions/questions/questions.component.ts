@@ -69,7 +69,7 @@ export class QuestionsComponent implements OnInit {
     this.QuestionService.getAllQuestionExam(id).subscribe(
       (res) => {
         this.QuetionExam = res.data;
-        console.log(res);
+        console.log(res.data);
       },
       (err) => {
         console.log(err);

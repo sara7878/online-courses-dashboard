@@ -1,32 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Course } from 'src/app/_models/course.model';
 import { Exam } from 'src/app/_models/exam.model';
+import { CoursesService } from 'src/app/_services/courses.service';
 import { ExamsService } from 'src/app/_services/exams.service';
 
 @Component({
-  selector: 'app-add-exam',
-  templateUrl: './add-exam.component.html',
-  styleUrls: ['./add-exam.component.css']
+  selector: 'app-add-this-exam',
+  templateUrl: './add-this-exam.component.html',
+  styleUrls: ['./add-this-exam.component.css']
 })
-export class AddExamComponent implements OnInit {
+export class AddThisExamComponent implements OnInit {
 
-  constructor(private examService: ExamsService,private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private examService: ExamsService,
+    private activatedRoute: ActivatedRoute ,
+    private CourseServices:CoursesService,
+    private router:Router) { }
+
   newexam: Exam={
     id: 0,
     course_id: 0,
     name: '',
     max_score: 0,
-   
   };
+  courses!:Course[]
   id:number=0;
 
+  courese!: Course[];
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      this.id = params['id'];
+      this.id = params['courseId'];
       console.log(params);
-      
+
     });
+    this.getAllCourses();
   }
   addExam(form: NgForm) {
     this.newexam.name = form.value['examName'];
@@ -35,10 +44,12 @@ export class AddExamComponent implements OnInit {
     // console.log(this.newContent);
 
 
+
     this.examService.addExam(this.newexam).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
         console.log(res);
+        this.router.navigate(['/main/trainer/course/details/'+this.id+'/exams'])
       },
       (err) => {
         console.log('Error adding course content');
@@ -46,6 +57,20 @@ export class AddExamComponent implements OnInit {
       }
     );
   }
+
+
+  getAllCourses() {
+    this.CourseServices.getAllCourses().subscribe(
+      (res) => {
+        this.courese = res;
+      },
+      (err) => {
+        console.log('Error getting all courses');
+        console.log(err);
+      }
+    );
+  }
+
 
   onSubmit(form: NgForm) {
     console.log(form);
@@ -55,5 +80,5 @@ export class AddExamComponent implements OnInit {
   resetForm(form: NgForm) {
     form.reset();
   }
-}
 
+}

@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Course } from '../_models/course.model';
 import { Exam } from '../_models/exam.model';
 import { Question } from '../_models/question.model';
 
@@ -71,7 +72,7 @@ export class QuestionService {
       data: Exam;
       status: boolean;
       error: any;
-    }>(`${environment.baseUrl}exams/questions/${id}`,{headers});
+    }>(`${environment.baseUrl}exam/questions/${id}`,{headers});
   }
 
   getoneQestion(
