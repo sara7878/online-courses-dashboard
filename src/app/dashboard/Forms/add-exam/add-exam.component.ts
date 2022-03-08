@@ -20,6 +20,7 @@ export class AddExamComponent implements OnInit {
     name: '',
     max_score: 0,
   };
+  courses!:Course[]
   id:number=0;
 
   courese!: Course[];

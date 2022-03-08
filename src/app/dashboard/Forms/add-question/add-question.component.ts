@@ -15,7 +15,7 @@ export class AddQuestionComponent implements OnInit {
   exam!: Exam[];
   exam_id:number=0;
   data: Question={
-    header: "",
+    header: '',
     choice_1: '',
     choice_2: '' ,
     choice_3: '' ,
@@ -51,7 +51,6 @@ export class AddQuestionComponent implements OnInit {
       }
     );
   }
-
   addQuestion(form: NgForm) {
 
     this.data.header = form.value['header'];

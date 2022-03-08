@@ -20,7 +20,14 @@ export class ExamsService {
   return this.httpClient.get<{data:Exam[],status:boolean,error:any}>(environment.baseUrl+'exams',{headers})
 }
 
-
+addExam(newExam: Exam): Observable<{data:Exam[],status:boolean,error:any}> {
+  const token: string = localStorage.getItem('Authorization')!;
+  const headers = new HttpHeaders({
+    Authorization: token
+  })
+  console.log(newExam);
+   return this.httpClient.post<{data:Exam[],status:boolean,error:any}>(`${environment.baseUrl}exams`,newExam,{headers});
+}
 
 
 
@@ -35,14 +42,7 @@ getexam(id: number): Observable<{data:Exam,status:boolean,error:any}> {
 }
 
 
-addExam(newExam: Exam): Observable<Exam> {
-  const token: string = localStorage.getItem('Authorization')!;
-  const headers = new HttpHeaders({
-    Authorization: token
-  })
-  console.log(newExam);
-   return this.httpClient.post<Exam>(`${environment.baseUrl}exams`,newExam,{headers});
-}
+
 
 editExam(id:number,updatedExam:Exam): Observable<Exam> {
   const token: string = localStorage.getItem('Authorization')!;

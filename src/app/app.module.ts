@@ -110,6 +110,9 @@ import { AddThisCourseContentComponent } from './main/Forms/add-this-course-cont
 import { EditThisCourseContentComponent } from './main/Forms/edit-this-course-content/edit-this-course-content.component';
 import { AddThisCourseComponent } from './main/Forms/add-this-course/add-this-course.component';
 import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this-course.component';
+import { ExamPageComponent } from './main/exam-page/exam-page.component';
+import { ResultComponent } from './main/result/result.component';
+
 
 
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -224,7 +227,9 @@ import { EditThisCourseComponent } from './main/Forms/edit-this-course/edit-this
      EditThisCourseComponent,
 
 
-    ChatDialogComponent
+    ChatDialogComponent,
+           ExamPageComponent,
+           ResultComponent
     ],
   imports: [
     BrowserModule,
