@@ -16,11 +16,7 @@
                 <span *ngIf="examNameInput.errors?.['pattern']" style="color: red;" class="alert">Please enter alphabets characters only *</span>
             </div>
 
-            <!-- <div class="form-group">
-                <label for="course">Course Id :</label>
-                <input #courseIdInput=ngModel ngModel required placeholder="course"  [ngModel]="id" name="course_id"  class="form-control" />
-                    <span *ngIf="courseIdInput.touched && courseIdInput.invalid && courseIdInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-                </div> -->
+         
                 <div class="form-group">
                   <label for="">Course :</label>
                   <select
@@ -42,20 +38,6 @@
                     >
                   </select>
                 </div>
-
-
-                <!-- <div class="form-group">
-                    <label for="">Maximum score</label>
-                    <select #maxscoreInput=ngModel ngModel placeholder="select maximum score" class="form-control" required name="max_score">
-                        <option value="5">100</option>
-                        <option value="8">150</option>
-                        <option value="10">200</option>
-
-                    </select>
-                    <span *ngIf="maxscoreInput.touched && maxscoreInput.invalid && maxscoreInput.errors?.['required']" style="color: red;" class="alert" >This field is required *</span>
-
-                </div> -->
-
 
 
                 <div class="form-group">

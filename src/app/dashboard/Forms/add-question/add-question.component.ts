@@ -31,7 +31,7 @@ export class AddQuestionComponent implements OnInit {
 
     this.activatedRoute.params.subscribe((params) => {
       this.exam_id=params['id'];
-      console.log(params);
+      // console.log(params);
     });
 
     this.getAllExam();
@@ -43,7 +43,7 @@ export class AddQuestionComponent implements OnInit {
     this.Examservices.getAllExams().subscribe(
       (res) => {
         this.exam = res.data;
-        console.log(this.exam);
+        // console.log(this.exam);
       },
       (err) => {
         console.log('Error getting all exam');
@@ -62,15 +62,15 @@ export class AddQuestionComponent implements OnInit {
     this.data.score = form.value['score'];
     // this.data.exam_id = form.value['exam_id'];
     this.data.exam_id = this.exam_id;
-    console.log(form.value);
-    console.log(this.exam_id);
+    // console.log(form.value);
+    // console.log(this.exam_id);
 
 
     this.QuestionService.CreateQestion(this.data).subscribe(
       (res) => {
-        console.log(res);
-        console.log(res.data);
-        console.log(form.value.exam_id);
+        // console.log(res);
+        // console.log(res.data);
+        // console.log(form.value.exam_id);
 
       },
       (err) => {
@@ -86,8 +86,8 @@ export class AddQuestionComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    // console.log(form);
+    // console.log(form.value);
   }
 
   resetForm(form: NgForm) {

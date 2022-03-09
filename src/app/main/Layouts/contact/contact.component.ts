@@ -34,7 +34,7 @@ export class ContactComponent implements OnInit {
     this.contactService.addContact(this.newcontact).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error adding contact');
@@ -43,8 +43,8 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    // console.log(form);
+    // console.log(form.value);
 
   }
 

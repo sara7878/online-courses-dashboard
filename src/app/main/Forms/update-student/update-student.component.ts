@@ -30,7 +30,7 @@ this.createForm();
     this.studentService.getStudentById(id).subscribe(
       res=>{
         this.student=res.data;
-        console.log(this.student);
+        // console.log(this.student);
         
         this.form = this.formbuilder.group({
           fname: [this.student.fname, Validators.required],
@@ -61,7 +61,7 @@ this.createForm();
 
   uploadImage(event: any) {
     this.files = event.target.files[0];
-    console.log(this.files);
+    // console.log(this.files);
   }
 
   resetForm(form: FormGroup) {
@@ -73,18 +73,18 @@ this.createForm();
     if (this.form.invalid) {
       return;
     }
-    console.log(form.value);
+    // console.log(form.value);
     const formdata = new FormData();
     formdata.append('img', this.files, this.files.name);
     formdata.append('fname', form.value.fname);
     formdata.append('lname', form.value.lname);
     formdata.append('phone', form.value.phone);
 
-    console.log(formdata);
+    // console.log(formdata);
 
     this.studentService.updateStudent(this.studentId,formdata).subscribe(
           res=>{
-            console.log(res);
+            // console.log(res);
             
           },
           err=>{

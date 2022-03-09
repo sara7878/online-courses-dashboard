@@ -19,7 +19,7 @@ import { ExamsComponent } from './dashboard/exams/exams.component';
 
 import { AddCategoryComponent } from './dashboard/Forms/add-category/add-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TestComponent } from './dashboard/Forms/test/test.component';
+// import { TestComponent } from './dashboard/Forms/test/test.component';
 import { HttpClientModule } from '@angular/common/http';
 // import { AddQuestionComponent } from './Forms/add-question/add-question.component';
 // import { UpdateQuestionComponent } from './Forms/update-question/update-question.component';
@@ -37,7 +37,7 @@ import { UpdateCategoryComponent } from './dashboard/Forms/update-category/updat
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 import { AddCourseContentComponent } from './dashboard/Forms/add-course-content/add-course-content.component';
-import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
+// import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
 
 import { HomeComponent } from './main/Layouts/home/home.component';
 import { AboutComponent } from './main/Layouts/about/about.component';
@@ -81,7 +81,7 @@ import { LoginStudentComponent } from './main/login-student/login-student.compon
 
 // import { StripeModule } from 'stripe-angular';
 
-import { CheckoutComponent } from './main/checkout/checkout.component';
+// import { CheckoutComponent } from './main/checkout/checkout.component';
 
 import { PaymentComponent } from './main/payment/payment.component';
 
@@ -114,6 +114,10 @@ import { ExamPageComponent } from './main/exam-page/exam-page.component';
 import { ResultComponent } from './main/result/result.component';
 import { AddThisExamComponent } from './main/Forms/add-this-exam/add-this-exam.component';
 import { CourseExamDetailsComponent } from './main/course-exam-details/course-exam-details.component';
+import { EditThisExamComponent } from './main/Forms/edit-this-exam/edit-this-exam.component';
+import { QuestionsDetailsComponent } from './main/questions-details/questions-details.component';
+import { AddThisQuestionComponent } from './main/Forms/add-this-question/add-this-question.component';
+import { EditThisQuestionComponent } from './main/Forms/edit-this-question/edit-this-question.component';
 
 
 
@@ -142,7 +146,7 @@ import { CourseExamDetailsComponent } from './main/course-exam-details/course-ex
     ExamsComponent,
     QuestionsComponent,
     AddCategoryComponent,
-    TestComponent,
+    // TestComponent,
     AddQuestionComponent,
     UpdateQuestionComponent,
     AddCourseContentComponent,
@@ -154,7 +158,7 @@ import { CourseExamDetailsComponent } from './main/course-exam-details/course-ex
     AddExamComponent,
     UpdateExamComponent,
     AddCourseContentComponent,
-    TestrouterComponent,
+    // TestrouterComponent,
 
     AppComponent,
     HomeComponent,
@@ -187,7 +191,7 @@ import { CourseExamDetailsComponent } from './main/course-exam-details/course-ex
 
        RegisterStudentComponent,
        LoginStudentComponent,
-       CheckoutComponent,
+      //  CheckoutComponent,
 
     LoginComponent,
     RegisterComponent,
@@ -201,7 +205,7 @@ import { CourseExamDetailsComponent } from './main/course-exam-details/course-ex
 
        RegisterStudentComponent,
        LoginStudentComponent,
-       CheckoutComponent,
+      //  CheckoutComponent,
 
     LoginComponent,
     RegisterComponent,
@@ -213,7 +217,7 @@ import { CourseExamDetailsComponent } from './main/course-exam-details/course-ex
     LoginStudentComponent,
     LoginComponent,
     RegisterComponent,
-    CheckoutComponent,
+    // CheckoutComponent,
     CategoryCoursesComponent,
     ContentComponent,
 
@@ -233,7 +237,11 @@ import { CourseExamDetailsComponent } from './main/course-exam-details/course-ex
            ExamPageComponent,
            ResultComponent,
            AddThisExamComponent,
-           CourseExamDetailsComponent
+           CourseExamDetailsComponent,
+           EditThisExamComponent,
+           QuestionsDetailsComponent,
+           AddThisQuestionComponent,
+           EditThisQuestionComponent
     ],
   imports: [
     BrowserModule,

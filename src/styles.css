@@ -11,3 +11,7 @@
 a:hover{
     text-decoration: none;
 }
+
+pagination-controls /deep/ .ngx-pagination .current {
+    background: #5fcf80 !important;
+  }

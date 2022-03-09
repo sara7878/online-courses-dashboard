@@ -39,7 +39,7 @@ export class CourseContentService {
   }
 
   addCourseContent(newContent : CourseContent): Observable<CourseContent> {
-    console.log(newContent);
+    // console.log(newContent);
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
@@ -60,8 +60,7 @@ export class CourseContentService {
     const headers = new HttpHeaders({
       Authorization: token
     })
-    console.log(id);
-
+    // console.log(id);
     return this.httpClient.delete<CourseContent>(`${environment.baseUrl}Course_content/${id}`,{headers});
   }
 

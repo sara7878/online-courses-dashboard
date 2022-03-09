@@ -37,7 +37,7 @@ export class QuestionsComponent implements OnInit {
     this.QuestionService.getAllQuestion().subscribe(
       (res) => {
         this.QuetionArray = res.data;
-        console.log(res);
+        // console.log(res);
 
       },
       (err) => {
@@ -56,7 +56,7 @@ export class QuestionsComponent implements OnInit {
     this.QuestionService.getoneQestion(id).subscribe(
       (res) => {
         this.Quetion = res.data;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log(err);
@@ -69,7 +69,7 @@ export class QuestionsComponent implements OnInit {
     this.QuestionService.getAllQuestionExam(id).subscribe(
       (res) => {
         this.QuetionExam = res.data;
-        console.log(res.data);
+        // console.log(res.data);
       },
       (err) => {
         console.log(err);
@@ -81,7 +81,7 @@ export class QuestionsComponent implements OnInit {
   deleteQestion(id:number){
     this.QuestionService.deleteQestion(id).subscribe(
       (res) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.ngOnInit();
       },
       (err) => {

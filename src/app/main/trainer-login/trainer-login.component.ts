@@ -22,14 +22,14 @@ export class TrainerLoginComponent implements OnInit {
   };
 
   checkTrainer(form: NgForm) {
-    console.log(form.value);
+    // console.log(form.value);
     this.trainer.email = form.value['email'];
     this.trainer.password = form.value['password'];
 // console.log(this.trainer);
 
     this.trainerService.checkTrainer(this.trainer).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         localStorage.setItem('Authorization', "bearer "+res.access_token);
         localStorage.setItem('id', res.id+"");
         sessionStorage.setItem('role',res.role);

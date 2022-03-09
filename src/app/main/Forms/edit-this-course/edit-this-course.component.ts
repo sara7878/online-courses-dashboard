@@ -73,7 +73,7 @@ export class EditThisCourseComponent implements OnInit {
 
   uploadImage(event: any) {
     this.files = event.target.files[0];
-    console.log(this.files);
+    // console.log(this.files);
   }
 
 
@@ -91,36 +91,12 @@ export class EditThisCourseComponent implements OnInit {
   }
 
 
-  // getAllCategories() {
-  //   this.categoryService.getcategories().subscribe(
-  //     (res) => {
-  //       this.categories = res.data;
-  //       console.log(this.categories);
-  //     },
-  //     (err) => {
-  //       console.log('Error getting all categories');
-  //       console.log(err);
-  //     }
-  //   );
-  // }
-
-  // getAllTrainers() {
-  //   this.trainerService.getAllTrainers().subscribe(
-  //     (res) => {
-  //       this.trainers = res.data;
-  //       console.log(this.trainers);
-  //     },
-  //     (err) => {
-  //       console.log('Error getting all trainers');
-  //     }
-  //   );
-  // }
 
   getCourse(id: number) {
     this.courseService.getCourseById(id).subscribe(
       (res) => {
         this.course = res;
-        console.log(this.course);
+        // console.log(this.course);
 
         this.form = this.formbuilder.group({
           name: [this.course.name, Validators.required],
@@ -161,7 +137,7 @@ export class EditThisCourseComponent implements OnInit {
 
     this.courseService.updatecourse(id,formdata).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.router.navigate(['/main/trainer/courses']);
 
       },

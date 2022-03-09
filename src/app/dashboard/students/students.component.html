@@ -2,7 +2,6 @@
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Students Table</h4>
-            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12 mb-3"> Add New Student </button> -->
 
             <div class="table-responsive">
                 <table class="table table-striped text-center">
@@ -20,7 +19,6 @@
                   <tr *ngFor="let student of StudentsArray | paginate: { itemsPerPage: 5, currentPage: p }; let i=index" >
                     <td>{{student.id}}</td>
                     <td class="py-1">
-                      <!-- <img [src]="student.img" alt="image" /> -->
                       <img [src]= 'url+student.img'/>
                     </td>
                     <td>{{student.fname}} {{student.lname}}</td>
@@ -36,7 +34,6 @@
               </table>
               <pagination-controls (pageChange)="p = $event" style="float: right; margin: 10px;"></pagination-controls>
 
-            <!-- <button type="button" class="btn btn-primary btn-fw col-sm-12"> Add New Student </button> -->
             </div>
           </div>
 

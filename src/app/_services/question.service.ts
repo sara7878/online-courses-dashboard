@@ -29,12 +29,12 @@ export interface ExamQuestion{
 export class QuestionService {
   constructor(private httpClient: HttpClient) {}
 
-  getexamQuestions( id: number): Observable<{ data: ExamQuestion; status: boolean; error: any }> {
+  getexamQuestions( id: number): Observable<{ data: ExamQuestion[]; status: boolean; error: any }> {
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
     })
-    return this.httpClient.get<{ data: ExamQuestion; status: boolean; error: any }>(
+    return this.httpClient.get<{ data: ExamQuestion[]; status: boolean; error: any }>(
       `${environment.baseUrl}exams/questions/${id}`,{headers}
     );
   }
@@ -104,8 +104,8 @@ export class QuestionService {
     id: number,
     updatedContent: Question
   ): Observable<{ data: Question[]; status: boolean; error: any }> {
-    console.log(id);
-    console.log(updatedContent);
+    // console.log(id);
+    // console.log(updatedContent);
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token
@@ -118,7 +118,7 @@ export class QuestionService {
   }
 
   deleteQestion(id: number) {
-    console.log(id);
+    // console.log(id);
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token

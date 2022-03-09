@@ -39,7 +39,7 @@ export class ResultComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.course_id = params['courseId'];
-      console.log(params);
+      // console.log(params);
     });
     this.getresult();
     this.getCourseById(this.course_id);
@@ -49,12 +49,12 @@ export class ResultComponent implements OnInit {
   getresult() {
     this.result.student_id = parseInt(localStorage.getItem('id')!);
     this.result.exam_id = parseInt(localStorage.getItem('exam_id')!);
-    console.log(this.result);
+    // console.log(this.result);
 
     this.resultService.getresult(this.result).subscribe(
       (res) => {
         this.newresult = res;
-        console.log(this.newresult);
+        // console.log(this.newresult);
       },
 
       (err) => {
@@ -68,7 +68,7 @@ export class ResultComponent implements OnInit {
     this.courseService.getCourseById(id).subscribe(
       (res) => {
         this.courseName = res.name!;
-        console.log(res);
+        // console.log(res);
 
       },
       (err) => {
@@ -83,11 +83,18 @@ export class ResultComponent implements OnInit {
     this.examService.getexam(id).subscribe(
       (res) => {
         this.exam_max_score = res.data.max_score!;
-        console.log(res.data);
+        // console.log(res.data);
       },
       (err) => {
         console.log(err);
       }
     );
   }
+
+
+  removeID()
+  {
+    localStorage.removeItem("exam_id");
+  }
+
 }

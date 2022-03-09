@@ -11,9 +11,7 @@ import { FeedbackService } from '../../_services/feedback.service';
 export class FeedbacksComponent implements OnInit {
 
   constructor( private feedbackService: FeedbackService) { }
-  // FeedbackArray:Feedback[]=[
-  //   {id:1,desc:"sgjvash asxbksjhbx",student_id:{fname:"sara"},course_id:{name:"web development",id:1}}
-  // ]
+
   feed!:Feedback[]
   p: number = 1;
 
@@ -27,7 +25,7 @@ export class FeedbacksComponent implements OnInit {
     this.feedbackService.getAllfeedbacks().subscribe(
       (res) => {
         this.feed = res;
-        console.log(this.feed);
+        // console.log(this.feed);
       },
       (err) => {
         console.log('Error in get all feeds');
@@ -40,7 +38,7 @@ export class FeedbacksComponent implements OnInit {
   deletefeedback(id:number){
       this.feedbackService.deleteFeedbackById(id).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.ngOnInit();
         },
         (err) => {

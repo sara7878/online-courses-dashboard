@@ -91,46 +91,10 @@
           </div>
 
 
-            <a
-              *ngIf="active == true && checkUser=='student'"
-              class="get-started-btn"
-              [routerLink]="
-                '/main/courses/details/' + coursedetails.id + '/videos'
-              "
-            >
-              Go to course</a
-            >
-          </div>
-          <div
-            class="my-3 d-flex align-items-center text-light justify-content-center"
-          >
-            <a
-              *ngIf="
-                checkUser == 'trainer' && trainerId == coursedetails.trainer_id
-              "
-              class="get-started-btn"
-              [routerLink]="'/main/trainer/course/details/' + coursedetails.id"
-            >
-              Go to course details</a
-            >
-          </div>
-          <div class="my-3 d-flex justify-content-center align-items-center">
-            <a
-              *ngIf="
-                checkUser == 'trainer' && trainerId == coursedetails.trainer_id
-              "
-              class="get-started-btn"
-              [routerLink]="'/main/trainer/edit-course/' + coursedetails.id"
-            >
-              Edit course</a
-            >
-          </div>
+      </div> 
 
-        <!-- </div>
-
-      </div> -->
-
-  </section><!-- End Cource Details Section -->
+ </section>
+  <!-- End Cource Details Section -->
 
   <!-- ======= Cource Details Tabs Section ======= -->
   <section id="cource-details-tabs" class="cource-details-tabs">

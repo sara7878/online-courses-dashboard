@@ -22,7 +22,7 @@ export class CategoryCoursesComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['categoryId'];
-      console.log(params);
+      // console.log(params);
       if (id) {
         this.getCoursesOfCategory(id);
         // console.log(this.coursedetails);
@@ -33,7 +33,7 @@ export class CategoryCoursesComponent implements OnInit {
   getCoursesOfCategory(id:number){
     this.categoryService.getCoursesOfCategory(id).subscribe(
       res=>{
-        console.log(res);
+        // console.log(res);
         this.coursesArray = res;
         for (let i = 0; i < this.coursesArray.length; i++) {
           this.getCountOfStudents(i, this.coursesArray[i].id!);

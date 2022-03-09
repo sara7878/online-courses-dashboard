@@ -36,7 +36,7 @@ export class UpdateTrainerComponent implements OnInit {
       (res) => {
         // console.log(res);
         this.trainer = res.data;
-        console.log(this.trainer);
+        // console.log(this.trainer);
 
         this.form = this.formbuilder.group({
           fname: [this.trainer.fname, Validators.required],
@@ -75,7 +75,7 @@ export class UpdateTrainerComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log(form.value);
+    // console.log(form.value);
     const formdata = new FormData();
     formdata.append('img', this.files, this.files.name);
     formdata.append('fname', form.value.fname);
@@ -85,11 +85,11 @@ export class UpdateTrainerComponent implements OnInit {
     formdata.append('twitter', form.value.twitter);
     formdata.append('linkedin', form.value.linkedin);
 
-    console.log(formdata);
+    // console.log(formdata);
 
     this.trainerService.updateTrainer(this.trainerId,formdata).subscribe(
           res=>{
-            console.log(res);
+            // console.log(res);
             
           },
           err=>{
@@ -101,7 +101,7 @@ export class UpdateTrainerComponent implements OnInit {
 
   uploadImage(event: any) {
     this.files = event.target.files[0];
-    console.log(this.files);
+    // console.log(this.files);
   }
 
   resetForm(form: FormGroup) {

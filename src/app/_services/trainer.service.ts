@@ -50,7 +50,7 @@ export class TrainerService {
   }
   
   checkTrainer(data:any): Observable<trainer>{
-    console.log(data);
+    // console.log(data);
     return this.httpClient.post<trainer>(environment.baseUrl+'trainers/login',data);
   }
 
@@ -59,7 +59,11 @@ export class TrainerService {
   }
 
   getCoursesOfTrainer(id:number):Observable<Trainer>{
-    return this.httpClient.get<Trainer>(`${environment.baseUrl}trainer/courses/${id}`);
+    const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    });
+    return this.httpClient.get<Trainer>(`${environment.baseUrl}trainer/courses/${id}`,{headers});
   }
 
   logoutTrainer(){
@@ -67,7 +71,7 @@ export class TrainerService {
     const headers = new HttpHeaders({
       Authorization: token
     });
-    console.log(headers);
+    // console.log(headers);
     
     return this.httpClient.post(`${environment.baseUrl}trainers/logout`,null,{headers});
   }

@@ -33,7 +33,7 @@ export class ExamPageComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
-      console.log(params);
+      // console.log(params);
     });
     this.getAllexamQuestions();
   }
@@ -42,7 +42,7 @@ export class ExamPageComponent implements OnInit {
     this.question.getexamQuestions(this.id).subscribe(
       (res) => {
         this.examQuestion = res.data;
-        console.log(this.examQuestion);
+        // console.log(this.examQuestion);
         localStorage.setItem('exam_id', this.examQuestion[0].exam_id);
       },
       (err) => {
@@ -54,7 +54,7 @@ export class ExamPageComponent implements OnInit {
 
 
   addAnswers(form: NgForm) {
-    console.log(form);
+    // console.log(form);
 
     for (var i = 0; i < this.examQuestion.length; i++) {
       if (this.examQuestion[i].answer === Object.values(form.value)[i]) {
@@ -66,10 +66,10 @@ export class ExamPageComponent implements OnInit {
     this.result.degree = this.total;
     this.result.exam_id = this.examQuestion[0].exam_id;
 
-    console.log(this.result);
+    // console.log(this.result);
     this.examResult.addResult(this.result).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error adding course content');

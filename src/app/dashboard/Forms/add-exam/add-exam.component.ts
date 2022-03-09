@@ -27,7 +27,7 @@ export class AddExamComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['id'];
-      console.log(params);
+      // console.log(params);
 
     });
     this.getAllCourses();
@@ -43,7 +43,7 @@ export class AddExamComponent implements OnInit {
     this.examService.addExam(this.newexam).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error adding course content');
@@ -67,8 +67,8 @@ export class AddExamComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    // console.log(form);
+    // console.log(form.value);
   }
 
   resetForm(form: NgForm) {

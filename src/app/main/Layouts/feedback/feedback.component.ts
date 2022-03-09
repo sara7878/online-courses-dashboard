@@ -29,7 +29,7 @@ export class FeedbackComponent implements OnInit {
     this.feedbackService.getAllfeedbacks().subscribe(
       (res) => {
         this.feedbacks = res;
-        console.log(this.feedbacks);
+        // console.log(this.feedbacks);
       },
       (err) => {
         console.log('Error in get all feeds');

@@ -25,7 +25,7 @@ export class TrainersComponent implements OnInit {
     this.trainerservice.getAllTrainers().subscribe(
       (res) => {
         this.TrainersArray = res.data;
-        console.log(this.TrainersArray);
+        // console.log(this.TrainersArray);
       },
       (err) => {
         console.log('error in get trainers');
@@ -36,7 +36,7 @@ export class TrainersComponent implements OnInit {
  deleteTrainer(id:number){
       this.trainerservice.deleteTrainerById(id).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.ngOnInit();
         },
         (err) => {

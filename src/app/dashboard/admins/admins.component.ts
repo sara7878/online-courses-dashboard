@@ -26,7 +26,7 @@ export class AdminsComponent implements OnInit {
   getAllAdmins() {
     this.adminServicce.getAllAdmins().subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.AdminsArray = res;
       },
       (err) => {

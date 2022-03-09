@@ -44,7 +44,7 @@ export class AddCategoryComponent implements OnInit {
   }
   uploadImage(event:any){
     this.files=event.target.files[0]
-    console.log(this.files);
+    // console.log(this.files);
 
   }
   onsubmit(form:any){
@@ -58,21 +58,21 @@ export class AddCategoryComponent implements OnInit {
     formdata.append("name",form.value.catname);
 
 
-    console.log(formdata);
+    // console.log(formdata);
 
     //const name=form.value.catname;
     this.data.name=form.value.catname;
     this.data.img=formdata;
 
 
-    console.log(this.data);
+    // console.log(this.data);
 
 
 
 
     this.categoryservice.addcategory(formdata).subscribe(
       (res) =>{
-        console.log(res);
+        // console.log(res);
         this.router.navigate(['/dashboard/categories']);
       },
       (err) => {
