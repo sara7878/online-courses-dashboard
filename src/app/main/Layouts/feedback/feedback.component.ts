@@ -49,7 +49,7 @@ export class FeedbackComponent implements OnInit {
       delay: 3000,
     },
     spaceBetween: 30
-  };  
+  };
 
 
 

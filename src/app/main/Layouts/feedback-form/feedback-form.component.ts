@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -14,25 +15,25 @@ export class FeedbackFormComponent implements OnInit {
   constructor(private feedbackService: FeedbackService,  private activatedRoute: ActivatedRoute,) { }
 feed!: Feedback[]
   newfeedback: Feedback={
-   
+
     id:0,
     course:{id:0,name:''},
     student:{fname:''},
-    
+
     desc:'',
     course_id:0,
     student_id:0
-   
+
   };
   id!:number
   //recieved= false;
   ngOnInit(): void {
-    
+
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
       console.log(params);
-     
-       
+
+
     });
 
   }
@@ -53,7 +54,7 @@ this.newfeedback.course_id=this.id;
 this.newfeedback.name= localStorage.getItem("name")!
 
 console.log(this.newfeedback);
-   
+
 
     this.feedbackService.addFeeback(this.newfeedback).subscribe(
       (res) => {
@@ -69,7 +70,7 @@ console.log(this.newfeedback);
   onSubmit(form: NgForm) {
     console.log(form);
     console.log(form.value);
-    
+
   }
 
   resetForm(form: NgForm) {
