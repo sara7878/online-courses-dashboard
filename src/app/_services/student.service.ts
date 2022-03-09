@@ -29,11 +29,11 @@ export class StudentService {
   }
 
   addStudent(newStudent: Student): Observable<{data:Student,status: boolean,error: any[]}> {
-    const token: string = localStorage.getItem('Authorization')!;
-    const headers = new HttpHeaders({
-      Authorization: token
-    })
-    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent,{headers});
+    // const token: string = localStorage.getItem('Authorization')!;
+    // const headers = new HttpHeaders({
+    //   Authorization: token
+    // })
+    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
   }
 
 

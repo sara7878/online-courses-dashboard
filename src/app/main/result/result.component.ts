@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CoursesService } from 'src/app/_services/courses.service';
-import {
-  ExamResultService,
-  result,
-} from 'src/app/_services/exam-result.service';
+import { ExamResultService, result } from 'src/app/_services/exam-result.service';
 import { ExamsService } from 'src/app/_services/exams.service';
 import { StudentService } from 'src/app/_services/student.service';
 
@@ -24,6 +21,7 @@ export class ResultComponent implements OnInit {
   result: result = {
     student_id: 0,
     exam_id: 0,
+    degree: 0
   };
 
   newresult: result = {

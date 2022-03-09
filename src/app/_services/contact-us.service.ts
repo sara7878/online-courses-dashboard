@@ -34,11 +34,11 @@ deleteContact(id:number){
 
 addContact(newContact: Contactus): Observable<Contactus> {
   console.log(newContact)
-  const token: string = localStorage.getItem('Authorization')!;
-  const headers = new HttpHeaders({
-    Authorization: token
-  })
-   return this.httpClient.post<Contactus>(`${environment.baseUrl}Contact_us`,newContact,{headers});
+  // const token: string = localStorage.getItem('Authorization')!;
+  // const headers = new HttpHeaders({
+  //   Authorization: token
+  // })
+   return this.httpClient.post<Contactus>(`${environment.baseUrl}Contact_us`,newContact);
 }
 
 }

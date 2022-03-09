@@ -41,16 +41,16 @@ export class FeedbackComponent implements OnInit {
 
   //swiper
   config: SwiperOptions = {
-    pagination: { 
-      el: '.swiper-pagination', 
-      clickable: true 
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
     },
     autoplay: {
       delay: 3000,
     },
     spaceBetween: 30
   };  
-  
+
 
 
 

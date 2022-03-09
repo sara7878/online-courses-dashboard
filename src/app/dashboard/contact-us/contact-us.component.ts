@@ -34,7 +34,7 @@ export class ContactUsComponent implements OnInit {
       (err)=>{
         console.log("cant load data from contact us")
         console.log(err);
-        
+
       }
 
   )

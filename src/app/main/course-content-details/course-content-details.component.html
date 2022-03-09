@@ -26,15 +26,25 @@
             >
               Add New Course content
             </button>
-            <button
+            <div class="btn-group">
+              <button
               type="button"
-              class="btn btn-fw col-sm-12 mb-3 main-btns text-light"
+              class="btn btn-fw col-sm-12 mb-3 main-btns text-light mx-2"
               style="background-color:#eef0ef;"
               [routerLink]="'/main/trainer/course/details/'+id+'/add-exam'"
             >
-            <!-- [routerLink]="'/main/trainer/course/details/'+id+'/add-exam'" -->
               Add New Exam
             </button>
+            <button
+              type="button"
+              class="btn btn-fw col-sm-12 mb-3 main-btns text-light mx-2"
+              style="background-color:#eef0ef;"
+              [routerLink]="'/main/trainer/course/details/'+id+'/exams'"
+            >
+              Show All Exams
+            </button>
+            </div>
+            
 
             <div class="table-responsive">
               <table class="table table-striped">
