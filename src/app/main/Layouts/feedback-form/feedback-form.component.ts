@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Feedback } from 'src/app/_models/feedback.model';
 import { FeedbackService } from 'src/app/_services/feedback.service';
 
@@ -11,7 +11,7 @@ import { FeedbackService } from 'src/app/_services/feedback.service';
 })
 export class FeedbackFormComponent implements OnInit {
 
-  constructor(private feedbackService: FeedbackService,  private activatedRoute: ActivatedRoute,) { }
+  constructor(private feedbackService: FeedbackService,  private activatedRoute: ActivatedRoute,private router:Router) { }
 feed!: Feedback[]
   newfeedback: Feedback={
    
@@ -30,7 +30,7 @@ feed!: Feedback[]
     
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
-      console.log(params);
+      // console.log(params);
      
        
     });
@@ -52,13 +52,14 @@ this.newfeedback.student_id= parseInt(localStorage.getItem("id")!);
 this.newfeedback.course_id=this.id;
 this.newfeedback.name= localStorage.getItem("name")!
 
-console.log(this.newfeedback);
+// console.log(this.newfeedback);
    
 
     this.feedbackService.addFeeback(this.newfeedback).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
+this.router.navigate([`main/courses/details/${this.id}/videos`])
       },
       (err) => {
         console.log(err);
@@ -67,8 +68,8 @@ console.log(this.newfeedback);
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    // console.log(form);
+    // console.log(form.value);
     
   }
 

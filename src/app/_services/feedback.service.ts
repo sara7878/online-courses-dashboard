@@ -20,8 +20,9 @@ export class FeedbackService {
       environment.baseUrl + 'feedbacks/' + id
     );
   }
+  
   addFeeback(newFeedback: Feedback): Observable<Feedback> {
-    console.log(newFeedback)
+    // console.log(newFeedback)
     const token: string = localStorage.getItem('Authorization')!;
     const headers = new HttpHeaders({
       Authorization: token

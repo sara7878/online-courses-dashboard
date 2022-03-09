@@ -30,7 +30,7 @@ export class LoginStudentComponent implements OnInit {
     this.data.email=form.value.email
     this.data.password=form.value.password
 
-    console.log(this.data);
+    // console.log(this.data);
 
     this.studentService.checkStudent(this.data).subscribe(
       (res)=>{
@@ -42,18 +42,10 @@ export class LoginStudentComponent implements OnInit {
         sessionStorage.setItem('id',res.id+"");
         localStorage.setItem('name',res.name);
        
-      //   this.router.navigateByUrl('/HomePageComponent', { skipLocationChange: true }).then(() => {
-      //     this.router.navigate(['/main/home']);
-      // });
-
-      // window.location.reload();
+ 
       this.studentService.studentloginservice.emit(res)
 
-      // this.router.navigate(['/main/home']);
-        // this.redirectTo('/main/home')
 
-        // this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-        // this.router.navigate(['/main/home']));
       },
       (err) => {
         console.log('Error login');

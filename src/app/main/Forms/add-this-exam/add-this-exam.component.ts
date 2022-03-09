@@ -32,7 +32,7 @@ export class AddThisExamComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
-      console.log(params);
+      // console.log(params);
 
     });
     this.getAllCourses();
@@ -48,7 +48,7 @@ export class AddThisExamComponent implements OnInit {
     this.examService.addExam(this.newexam).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
         this.router.navigate(['/main/trainer/course/details/'+this.id+'/exams'])
       },
       (err) => {
@@ -73,8 +73,8 @@ export class AddThisExamComponent implements OnInit {
 
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    // console.log(form);
+    // console.log(form.value);
   }
 
   resetForm(form: NgForm) {

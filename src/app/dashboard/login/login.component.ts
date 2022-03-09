@@ -26,7 +26,7 @@ data={email:"",password:""}
     this.data.email=form.value.email
     this.data.password=form.value.password
 
-    console.log(this.data);
+    // console.log(this.data);
 
     this.adminService.Adminlogin(this.data).subscribe(
       (res)=>{

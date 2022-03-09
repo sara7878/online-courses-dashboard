@@ -49,10 +49,10 @@ export class UpdateQuestionComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['id'];
       this.exam_id=params['exam_id'];
-      console.log(params);
+      // console.log(params);
       if (id) {
         this.getQuestion(id);
-        console.log(this.Question);
+        // console.log(this.Question);
       }
 
     });
@@ -66,7 +66,7 @@ getQuestion(id: number) {
     this.QuestionService.getoneQestion(id).subscribe(
       (res) => {
         this.Question=res.data ;
-        console.log(res.data);
+        // console.log(res.data);
       },
       (err) => {
         console.log('Error adding course content');
@@ -79,8 +79,8 @@ getQuestion(id: number) {
     this.Examservices.getAllExams().subscribe(
       (res) => {
         this.exam = res.data;
-        console.log(this.exam);
-        console.log(this.exam_id);
+        // console.log(this.exam);
+        // console.log(this.exam_id);
 
       },
       (err) => {
@@ -107,7 +107,7 @@ getQuestion(id: number) {
 
     this.QuestionService.editQestion(id,this.updatedQuestion).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.ngOnInit();
       },
       (err) => {

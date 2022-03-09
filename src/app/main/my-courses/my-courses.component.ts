@@ -36,7 +36,7 @@ export class MyCoursesComponent implements OnInit {
     if (this.checkUser == 'trainer') {
       this.trainserService.getCoursesOfTrainer(this.id).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.courseArray = [];
           this.courseArray = res.courses!;
           for (let i = 0; i < this.courseArray.length; i++) {
@@ -50,7 +50,7 @@ export class MyCoursesComponent implements OnInit {
     } else {
       this.studentService.getCoursesOfStudent(this.id).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.courseArray = [];
           this.courseArray = res.courses!;
           for (let i = 0; i < this.courseArray.length; i++) {

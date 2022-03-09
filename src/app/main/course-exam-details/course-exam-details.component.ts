@@ -21,10 +21,10 @@ export class CourseExamDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
-      console.log(params);
+      // console.log(params);
     });
     this.getCourseById(this.id);
-    this.getAllExams();
+    this.getAllExamsOfCourse(this.id);
   }
   
   p: number = 1;
@@ -32,7 +32,7 @@ export class CourseExamDetailsComponent implements OnInit {
   getCourseById(id:number){
     this.courseService.getCourseById(id).subscribe(
       res=>{
-        console.log(res);
+        // console.log(res);
         this.course = res;
       },
       err=>{
@@ -42,11 +42,11 @@ export class CourseExamDetailsComponent implements OnInit {
     )
   }
 
-  getAllExams() {
-    this.examService.getAllExams().subscribe(
+  getAllExamsOfCourse(id:number) {
+    this.examService.getExamsOfCourse(id).subscribe(
       (res) => {
-        this.ExamArray = res.data;
-        console.log(this.ExamArray);
+        this.ExamArray = res.data.exams!;
+        // console.log(this.ExamArray);
       },
       (err) => {
         console.log(err);
@@ -56,11 +56,11 @@ export class CourseExamDetailsComponent implements OnInit {
   }
 
   deleteExam(id: number) {
-    console.log(id);
+    // console.log(id);
     this.examService.deleteExam(id).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
         this.ngOnInit();
       },
       (err) => {

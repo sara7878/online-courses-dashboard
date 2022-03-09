@@ -38,7 +38,7 @@ export class VideoComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
-      console.log(params);
+      // console.log(params);
       if (this.id) {
          this.getCourseContent(this.id);
       }
@@ -71,11 +71,11 @@ export class VideoComponent implements OnInit {
     
     this.result.student_id=parseInt(localStorage.getItem("id")!)
     this.result.exam_id=parseInt(localStorage.getItem("exam_id")!)
-console.log(this.result)
+// console.log(this.result)
 
     this.resultService.getresult(this.result).subscribe(
       (res) => {
-        console.log(res)
+        // console.log(res)
       
       this.newresult=res;
       if(Object.keys(res).length===0)

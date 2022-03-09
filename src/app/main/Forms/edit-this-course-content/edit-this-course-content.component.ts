@@ -40,7 +40,7 @@ export class EditThisCourseContentComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.id = params['courseId'];
       const id = params['contentId'];
-      console.log(params);
+      // console.log(params);
       if (id) {
         this.getCourseContent(id);
         // console.log(this.courseContent);
@@ -66,7 +66,7 @@ export class EditThisCourseContentComponent implements OnInit {
     this.CourseContentService.getCourseContent(id).subscribe(
       (res) => {
         this.courseContent = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error getting course content');
@@ -79,13 +79,13 @@ export class EditThisCourseContentComponent implements OnInit {
     this.updatedContent.name = form.value['contentName'];
     this.updatedContent.content = form.value['courseContent'];
     this.updatedContent.course_id = this.id;
-    console.log(this.updatedContent);
+    // console.log(this.updatedContent);
     this.CourseContentService.editCourseContent(
       id,
       this.updatedContent
     ).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.ngOnInit();
       },
       (err) => {

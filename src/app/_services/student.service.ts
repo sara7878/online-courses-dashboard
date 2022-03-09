@@ -29,11 +29,8 @@ export class StudentService {
   }
 
   addStudent(newStudent: Student): Observable<{data:Student,status: boolean,error: any[]}> {
-    const token: string = localStorage.getItem('Authorization')!;
-    const headers = new HttpHeaders({
-      Authorization: token
-    })
-    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent,{headers});
+  
+    return this.httpClient.post<{data:Student,status: boolean,error: any[]}>(`${environment.baseUrl}students`,newStudent);
   }
 
 
@@ -63,7 +60,7 @@ export class StudentService {
   }
 
   checkStudent(data:any): Observable<student>{
-    console.log(data);
+    // console.log(data);
     return this.httpClient.post<student>(environment.baseUrl+'login/student',data);
   }
 
@@ -72,7 +69,11 @@ export class StudentService {
   }
 
 getCoursesOfStudent(id:number):Observable<Student>{
-  return this.httpClient.get<Student>(`${environment.baseUrl}student/courses/${id}`);
+  const token: string = localStorage.getItem('Authorization')!;
+    const headers = new HttpHeaders({
+      Authorization: token
+    });
+  return this.httpClient.get<Student>(`${environment.baseUrl}student/courses/${id}`,{headers});
 }
 
   logoutStudent(){
@@ -80,7 +81,7 @@ getCoursesOfStudent(id:number):Observable<Student>{
     const headers = new HttpHeaders({
       Authorization: token
     });
-    console.log(headers);
+    // console.log(headers);
 
     return this.httpClient.post(`${environment.baseUrl}student/logout`,null,{headers});
   }

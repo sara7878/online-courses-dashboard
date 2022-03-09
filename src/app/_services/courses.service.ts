@@ -15,23 +15,15 @@ export class CoursesService {
   constructor(private httpClient: HttpClient) {}
 
   getAllCourses(): Observable<Course[]> {
-
-
       return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`);
   }
-  // getAllCourses(): Observable<Course[]> {
 
-  //   const token: string = localStorage.getItem('token')!;
-  //   const headers = new HttpHeaders({
-  //     authorization: token})
-  //     return this.httpClient.get<Course[]>(`${environment.baseUrl}courses`,{headers});
-  // }
   getCourseById(id: number): Observable<Course> {
-    const token: string = localStorage.getItem('Authorization')!;
-    const headers = new HttpHeaders({
-      Authorization: token
-    })
-    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id,{headers});
+    // const token: string = localStorage.getItem('Authorization')!;
+    // const headers = new HttpHeaders({
+    //   Authorization: token
+    // })
+    return this.httpClient.get<Course>(environment.baseUrl + 'courses/' + id);
   }
 
   create(data:any){
@@ -39,7 +31,7 @@ export class CoursesService {
     const headers = new HttpHeaders({
       Authorization: token
     });
-    console.log(headers);
+    // console.log(headers);
 
     return this.httpClient.post(environment.baseUrl+'courses',data, {headers});
   }
@@ -59,8 +51,8 @@ export class CoursesService {
     const headers = new HttpHeaders({
       Authorization: token
     })
-    console.log(id);
-    console.log(updatedCourse);
+    // console.log(id);
+    // console.log(updatedCourse);
 
     return this.httpClient.post<Course>(environment.baseUrl + 'courses/' + id,updatedCourse,{headers});
   }

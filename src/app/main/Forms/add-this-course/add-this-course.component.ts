@@ -47,7 +47,7 @@ export class AddThisCourseComponent implements OnInit {
     this.categoryService.getcategories().subscribe(
       (res) => {
         this.categories = res.data;
-        console.log(this.categories);
+        // console.log(this.categories);
       },
       (err) => {
         console.log('Error getting all categories');
@@ -56,18 +56,7 @@ export class AddThisCourseComponent implements OnInit {
     );
   }
 
-  // getAllTrainers() {
-  //   this.trainerService.getAllTrainers().subscribe(
-  //     (res) => {
-  //       this.trainers = res.data;
-  //       console.log(this.trainers);
-  //     },
-  //     (err) => {
-  //       console.log('Error getting all trainers');
-  //       console.log(err);
-  //     }
-  //   );
-  // }
+
 
   ngOnInit(): void {
     this.getAllCategories();
@@ -115,7 +104,7 @@ export class AddThisCourseComponent implements OnInit {
 
   uploadImage(event: any) {
     this.files = event.target.files[0];
-    console.log(this.files);
+    // console.log(this.files);
   }
   onsubmit(form: any) {
     this.submitted = true;
@@ -144,10 +133,10 @@ export class AddThisCourseComponent implements OnInit {
     this.data.desc = form.value.desc;
     this.data.preq = form.value.preq;
 
-    console.log(this.data);
+    // console.log(this.data);
     this.courseService.create(formdata).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error adding course');
@@ -158,8 +147,6 @@ export class AddThisCourseComponent implements OnInit {
 
 
 
-  // resetForm(form: NgForm) {
-  //   form.reset();
-  // }
+
 
 }

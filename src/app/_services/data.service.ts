@@ -15,7 +15,6 @@ export class DataService {
   
       return this.httpClient.get(environment.baseUrl+ `course/search_course?search_product=${name}`)
      
-  
   }
   
   

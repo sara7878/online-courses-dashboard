@@ -28,7 +28,7 @@ export class AdminService {
       Authorization: token,
     });
     // const headers =new HttpHeaders().set("Authorization", token);
-    console.log(headers);
+    // console.log(headers);
 
     return this.httpClient.post(environment.baseUrl + 'logout', null, {
       headers,
@@ -50,7 +50,7 @@ export class AdminService {
     const headers = new HttpHeaders({
       Authorization: token,
     });
-    console.log(data);
+    // console.log(data);
     
     return this.httpClient.post<Admin>(`${environment.baseUrl}admins/add-admin`,data,{headers});
   }

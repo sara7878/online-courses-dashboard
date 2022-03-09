@@ -35,7 +35,7 @@ export class UpdateExamComponent implements OnInit {
     ngOnInit(): void {
       this.activatedRoute.params.subscribe((params) => {
         const id = params['id'];
-        console.log(params);
+        // console.log(params);
         if (id) {
           this.getExams(id);
           console.log(this.examContent);
@@ -65,7 +65,7 @@ export class UpdateExamComponent implements OnInit {
       this.examService.getAllExams().subscribe(
         res=>{
           this.ExamArray = res.data;
-          console.log(res);
+          // console.log(res);
         },
         (err) => {
           console.log('Error getting exams');
@@ -79,7 +79,7 @@ export class UpdateExamComponent implements OnInit {
       this.examService.getexam(id).subscribe(
         (res) => {
           this.examContent = res.data;
-          console.log(res);
+          // console.log(res);
 
         },
         (err) => {
@@ -93,11 +93,11 @@ export class UpdateExamComponent implements OnInit {
       this.updatedExam.name = form.value['examName'];
       this.updatedExam.course_id = form.value['course_id'];
       this.updatedExam.max_score = form.value['max_score'];
-      console.log(this.updatedExam);
+      // console.log(this.updatedExam);
       this.examService.editExam(id,this.updatedExam).subscribe(
         (res) => {
           // this.coursesContentsArr = res;
-          console.log(res);
+          // console.log(res);
           this.ngOnInit();
         },
         (err) => {

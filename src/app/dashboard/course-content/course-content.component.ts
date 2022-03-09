@@ -24,7 +24,7 @@ export class CourseContentComponent implements OnInit {
       this.id = params['courseId'];
       this.coursename = params['courseName'];
 
-      console.log(params);
+      // console.log(params);
       if (this.id) {
          this.getCourseContent(this.id);
       }
@@ -37,7 +37,7 @@ export class CourseContentComponent implements OnInit {
     this.CourseContentService.getAllContents().subscribe(
       (res) => {
         this.coursesContentsArr = res;
-        console.log(this.coursesContentsArr);
+        // console.log(this.coursesContentsArr);
       },
       (err) => {
         console.log('Error getting courses contents');
@@ -51,7 +51,7 @@ export class CourseContentComponent implements OnInit {
     this.CourseContentService.deleteCourseContent(id).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
         this.ngOnInit();
 
       },

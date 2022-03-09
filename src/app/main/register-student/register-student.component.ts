@@ -42,7 +42,7 @@ export class RegisterStudentComponent implements OnInit {
     this.studentService.addStudent(this.newStudent).subscribe(
       (res) => {
         // this.coursesContentsArr = res;
-        console.log(res.data);
+        // console.log(res.data);
 
       },
       (err) => {
@@ -53,8 +53,8 @@ export class RegisterStudentComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(form.value);
+    // console.log(form);
+    // console.log(form.value);
   }
 
   resetForm(form: NgForm) {

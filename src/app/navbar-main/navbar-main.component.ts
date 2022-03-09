@@ -26,10 +26,11 @@ export class NavbarMainComponent implements OnInit {
     this.checktoken();
     if (localStorage.getItem('role') == 'isTrainer') this.checkUser = 'trainer';
     else this.checkUser = 'student';
+// console.log(this.checkUser);
 
     this.studentService.studentloginservice.subscribe(
       (next)=>{
-        console.log(next);
+        // console.log(next);
         this.userName=next.name;
       },
       (error)=>{
@@ -41,7 +42,7 @@ export class NavbarMainComponent implements OnInit {
 
     this.trainserService.trainerloginservice.subscribe(
       (next)=>{
-        console.log(next);
+        // console.log(next);
         this.userName=next.name;
       },
       (error)=>{
@@ -67,7 +68,7 @@ export class NavbarMainComponent implements OnInit {
     if (this.checkUser == 'trainer') {
       this.trainserService.logoutTrainer().subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           // alert(res);
           localStorage.removeItem('Authorization');
           localStorage.removeItem('id');
@@ -86,7 +87,7 @@ export class NavbarMainComponent implements OnInit {
     } else {
       this.studentService.logoutStudent().subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           // alert(res);
           localStorage.removeItem('Authorization');
           localStorage.removeItem('id');

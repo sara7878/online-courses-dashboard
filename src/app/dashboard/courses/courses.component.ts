@@ -9,9 +9,7 @@ import { Course } from '../../_models/course.model';
 })
 export class CoursesComponent implements OnInit {
   constructor(private courseService: CoursesService) {}
-  // CourseArray: Course[] = [
-  //   { id: 2, img: '../../assets/images/faces-clipart/pic-1.png', name: 'css' },
-  // ];
+
   p: number = 1;
 
   Arr!: Course[];
@@ -25,7 +23,7 @@ export class CoursesComponent implements OnInit {
     this.courseService.getAllCourses().subscribe(
       (res) => {
         this.Arr = res;
-        console.log(this.Arr);
+        // console.log(this.Arr);
       },
       (err) => {
         console.log('cant load data');
@@ -41,10 +39,8 @@ export class CoursesComponent implements OnInit {
   deleteCourse(id:number){
     this.courseService.deleteCourseById(id).subscribe(
       (res) => {
-        // this.coursesContentsArr = res;
         this.ngOnInit();
      
-        //this.Arr.push(res);
       },
 
 

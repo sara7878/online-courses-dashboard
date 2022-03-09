@@ -15,14 +15,14 @@ import { AddCourseComponent } from './dashboard/Forms/add-course/add-course.comp
 import { UpdateCategoryComponent } from './dashboard/Forms/update-category/update-category.component';
 import { UpdateCourseComponent } from './dashboard/Forms/update-course/update-course.component';
 import { AddExamComponent } from './dashboard/Forms/add-exam/add-exam.component';
-import { TestComponent } from './dashboard/Forms/test/test.component';
+// import { TestComponent } from './dashboard/Forms/test/test.component';
 import { UpdateExamComponent } from './dashboard/Forms/update-exam/update-exam.component';
 
 // import { QuestionsComponent } from './questions/questions.component';
 import { StatisticsComponent } from './dashboard/statistics/statistics.component';
 import { StudentsComponent } from './dashboard/students/students.component';
 import { TrainersComponent } from './dashboard/trainers/trainers.component';
-import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
+// import { TestrouterComponent } from './dashboard/testrouter/testrouter.component';
 import { AboutPageComponent } from './main/about-page/about-page.component';
 import { CategoriesPageComponent } from './main/categories-page/categories-page.component';
 import { ContactPageComponent } from './main/contact-page/contact-page.component';
@@ -43,7 +43,7 @@ import { PaymentComponent } from './main/payment/payment.component';
 import { ContentComponent } from './main/content/content.component';
 import { LoginStudentComponent } from './main/login-student/login-student.component';
 import { SearchComponent } from './search/search.component';
-import { CheckoutComponent } from './main/checkout/checkout.component';
+// import { CheckoutComponent } from './main/checkout/checkout.component';
 import { CategoryCoursesComponent } from './main/category-courses/category-courses.component';
 import { RegisterComponent } from './main/register/register.component';
 
@@ -62,6 +62,10 @@ import { ExamPageComponent } from './main/exam-page/exam-page.component';
 import { ResultComponent } from './main/result/result.component';
 import { AddThisExamComponent } from './main/Forms/add-this-exam/add-this-exam.component';
 import { CourseExamDetailsComponent } from './main/course-exam-details/course-exam-details.component';
+import { EditThisExamComponent } from './main/Forms/edit-this-exam/edit-this-exam.component';
+import { QuestionsDetailsComponent } from './main/questions-details/questions-details.component';
+import { AddThisQuestionComponent } from './main/Forms/add-this-question/add-this-question.component';
+import { EditThisQuestionComponent } from './main/Forms/edit-this-question/edit-this-question.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/main/home', pathMatch: 'full' },
@@ -80,17 +84,17 @@ const routes: Routes = [
 
       { path: 'courses', component: CoursesPageComponent },
       { path: 'trainers', component: TrainersPageComponent },
-      { path:'checkout' , component:CheckoutComponent},
+      // { path:'checkout' , component:CheckoutComponent},
       { path:'search', component:SearchComponent},
-      { path: 'checkout', component: CheckoutComponent },
-      { path: 'checkout', component: CheckoutComponent },
+      // { path: 'checkout', component: CheckoutComponent },
+      // { path: 'checkout', component: CheckoutComponent },
       { path: 'search', component: SearchComponent },
       { path: 'categories', component: CategoriesPageComponent },
       { path: 'contact', component: ContactPageComponent },
 
       {path: 'enroll/:courseId', component:ContentComponent },
       {path:'feedback-form/:courseId', component:FeedbackFormComponent},
-      {path:'test', component:TestComponent},
+      // {path:'test', component:TestComponent},
 
 
 
@@ -126,6 +130,10 @@ const routes: Routes = [
           { path: 'course/details/:courseId/:contentId/edit-content', component: EditThisCourseContentComponent },
           { path: 'course/details/:courseId/exams', component: CourseExamDetailsComponent },
           { path: 'course/details/:courseId/add-exam', component: AddThisExamComponent },
+          { path: 'course/details/:courseId/:exam_id/edit-exam', component: EditThisExamComponent },
+          { path: 'exam/:examId', component: QuestionsDetailsComponent },
+          { path: 'exam/:examId/add-question', component: AddThisQuestionComponent },
+          { path: 'exam/:examId/update-question/:questionId', component: EditThisQuestionComponent },
           { path: 'update', component: UpdateTrainerComponent },
           { path: 'logout', redirectTo:'main/login', pathMatch:'full'}
         ],
@@ -199,7 +207,7 @@ const routes: Routes = [
       // { path: 'add-exam', component: AddExamComponent },
       // { path: 'update-exam/:id', component: UpdateExamComponent },
 
-      { path: 'test', component: TestComponent },
+      // { path: 'test', component: TestComponent },
       { path: 'payment', component: PaymentComponent },
 
     ],

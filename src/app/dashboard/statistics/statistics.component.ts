@@ -34,7 +34,7 @@ export class StatisticsComponent implements OnInit {
     this.categoryService.getCategoriesCount().subscribe(
       (res) => {
         this.categoryCount = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log(err);
@@ -46,7 +46,7 @@ export class StatisticsComponent implements OnInit {
     this.courseService.getCoursesCount().subscribe(
       (res) => {
         this.courseCount = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log(err);
@@ -58,7 +58,7 @@ export class StatisticsComponent implements OnInit {
     this.studentService.getStudentsCount().subscribe(
       (res) => {
         this.studentCount = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log(err);
@@ -70,7 +70,7 @@ export class StatisticsComponent implements OnInit {
     this.trainerService.getTrainersCount().subscribe(
       (res) => {
         this.trainerCount = res;
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log(err);

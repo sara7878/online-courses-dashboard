@@ -29,13 +29,13 @@ export class CategororyService {
   getCategorybyId(
     id: number
   ): Observable<{ data: Category; status: boolean; error: any }> {
-    const token: string = localStorage.getItem('Authorization')!;
-    const headers = new HttpHeaders({
-      Authorization: token,
-    });
+    // const token: string = localStorage.getItem('Authorization')!;
+    // const headers = new HttpHeaders({
+    //   Authorization: token,
+    // });
     return this.httpClient.get<{ data: Category; status: boolean; error: any }>(
-      `${environment.baseUrl}categories/${id}`,
-      { headers }
+      `${environment.baseUrl}categories/${id}`
+      // { headers }
     );
   }
 

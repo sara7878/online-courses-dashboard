@@ -14,7 +14,7 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['courseId'];
-      console.log(params);
+      // console.log(params);
       if (id) {
         this.enroll(id);
         // console.log(this.coursedetails);

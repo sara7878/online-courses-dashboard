@@ -11,3 +11,7 @@ a{
 .button:hover{
     color: aliceblue !important;
 }
+
+#loggedInUser:hover{
+    color: rgb(147, 236, 150) !important;
+}

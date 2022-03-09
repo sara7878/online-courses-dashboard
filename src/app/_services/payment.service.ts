@@ -27,14 +27,14 @@ export class PaymentService {
      };
 
       const url = environment.baseUrl +'payment-intent';
-     console.log(uploadData);
+    //  console.log(uploadData);
      return this.http.post<any>(url, JSON.stringify(uploadData), {
        headers: new HttpHeaders({
          'Content-Type': 'application/json'
        })
      })
      .pipe(tap(resData => {
-       console.log(resData);
+      //  console.log(resData);
        return resData;
      }));
   }

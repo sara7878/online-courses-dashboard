@@ -39,7 +39,7 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const id = params['courseId'];
-      console.log(params);
+      // console.log(params);
       if (id) {
         this.getCoursedetails(id);
         // console.log(this.coursedetails);
@@ -53,7 +53,7 @@ export class PaymentComponent implements OnInit {
     this.courseService.getCourseById(id).subscribe(
       (res) => {
         this.coursedetails = res;
-        console.log(res);
+        // console.log(res);
 
 
       },
@@ -109,6 +109,7 @@ export class PaymentComponent implements OnInit {
     this.card.addEventListener('change', this.cardHandler);
     });
   }
+  emaill!:string;
   onChange( error:any) {
     if (error) {
       this.error = error.message;
@@ -133,6 +134,7 @@ export class PaymentComponent implements OnInit {
     this.name = this.coursedetails.name!;
     this.price = this.coursedetails.price!;
     this.description = this.coursedetails.desc!;
+    this.emaill=localStorage.getItem('name')!;
     return this.paymentIntentSub = this.payment.addPaymentIntentStripe(
       this.id,
       this.name,
@@ -164,7 +166,7 @@ export class PaymentComponent implements OnInit {
             }
           }
       }).then((res: { paymentIntent: { status: string; }; error: { message: any; }; }) => {
-        console.log(res);
+        // console.log(res);
         if(res.paymentIntent && res.paymentIntent.status === "succeeded") {
           alert('your payment was successful');
           this.enroll(this.coursedetails.id!);
@@ -191,11 +193,11 @@ enroll(course_id:number){
 
   this.coursestud.course_id = course_id;
   this.coursestud.student_id = parseInt(localStorage.getItem("id")!);
-  console.log(this.coursestud)
+  // console.log(this.coursestud)
     this.courseStudentService.enroll(this.coursestud).subscribe(
       (res) => {
      
-        console.log(res);
+        // console.log(res);
       },
       (err) => {
         console.log('Error adding course content');

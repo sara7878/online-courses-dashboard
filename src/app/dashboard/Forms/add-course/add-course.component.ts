@@ -32,7 +32,7 @@ export class AddCourseComponent implements OnInit {
     private router: Router
 
   ) {}
-  // ,private toastrService:ToastrService, private formBuilder:FormBuilder) {}
+
   categories!: Category[];
   trainers!: Trainer[];
   newCourse: Course = {
@@ -51,7 +51,7 @@ export class AddCourseComponent implements OnInit {
     this.categoryService.getcategories().subscribe(
       (res) => {
         this.categories = res.data;
-        console.log(this.categories);
+        // console.log(this.categories);
       },
       (err) => {
         console.log('Error getting all categories');
@@ -64,7 +64,7 @@ export class AddCourseComponent implements OnInit {
     this.trainerService.getAllTrainers().subscribe(
       (res) => {
         this.trainers = res.data;
-        console.log(this.trainers);
+        // console.log(this.trainers);
       },
       (err) => {
         console.log('Error getting all trainers');
@@ -110,23 +110,15 @@ export class AddCourseComponent implements OnInit {
     });
   }
 
-  // id  :0,
-  //   fname:'yomna',
-  //   lname :'hamed',
-  //   gender :'female',//enum
-  //   phone :'123456789',
-  //   email  :'yomna@gmail.com',
-  //   password :'123558755'
+
   get f() {
     return this.form.controls;
   }
 
-  // ngOnInit(): void {
-  //   this.creatForm();
-  // }
+
   uploadImage(event: any) {
     this.files = event.target.files[0];
-    console.log(this.files);
+    // console.log(this.files);
   }
   onsubmit(form: any) {
     this.submitted = true;
@@ -155,10 +147,10 @@ export class AddCourseComponent implements OnInit {
     this.data.desc = form.value.desc;
     this.data.preq = form.value.preq;
 
-    console.log(this.data);
+    // console.log(this.data);
     this.courseService.create(formdata).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.router.navigate(['/dashboard/courses']);
 
       },
@@ -169,12 +161,5 @@ export class AddCourseComponent implements OnInit {
     );
   }
 
-  // onsubmit(form: NgForm) {
-  //   console.log(form);
-  //   console.log(form.value);
-  // }
 
-  // resetForm(form: NgForm) {
-  //   form.reset();
-  // }
 }

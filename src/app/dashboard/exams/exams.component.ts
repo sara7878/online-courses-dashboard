@@ -21,7 +21,7 @@ export class ExamsComponent implements OnInit {
     this.examService.getAllExams().subscribe(
       (res) => {
         this.ExamArray = res.data;
-        console.log(this.ExamArray);
+        // console.log(this.ExamArray);
       },
       (err) => {
         console.log(err);
@@ -34,8 +34,7 @@ export class ExamsComponent implements OnInit {
     console.log(id);
     this.examService.deleteExam(id).subscribe(
       (res) => {
-        // this.coursesContentsArr = res;
-        console.log(res);
+        // console.log(res);
         this.ngOnInit();
       },
       (err) => {

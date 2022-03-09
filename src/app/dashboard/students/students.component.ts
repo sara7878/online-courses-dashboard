@@ -25,7 +25,7 @@ url="http://localhost:8000/uploads/students/";
     this.studentservice.getAllStudents().subscribe(
       (res) => {
         this.StudentsArray = res.data;
-        console.log(this.StudentsArray);
+        // console.log(this.StudentsArray);
       },
       (err) => {
         console.log('error in get students');
@@ -36,7 +36,7 @@ url="http://localhost:8000/uploads/students/";
  deleteStudent(id:number){
       this.studentservice.deleteStudentById(id).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res);
           this.ngOnInit();
         },
         (err) => {

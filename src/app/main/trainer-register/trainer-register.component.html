@@ -142,19 +142,19 @@
         </fieldset>
 
         <div class="form-group">
-          <label for="password">Password :</label>
+          <label for="phone">Phone :</label>
           <input
-            #passwordInput="ngModel"
+            #phoneInput="ngModel"
             ngModel
             required
-            type="password"
+            type="text"
             class="form-control"
-            id="password"
-            placeholder="Password"
-            name="password"
+            id="phone"
+            placeholder="Phone"
+            name="phone"
           />
           <span
-            *ngIf="passwordInput.touched && passwordInput.invalid && passwordInput.errors?.['required']"
+            *ngIf="phoneInput.touched && phoneInput.invalid && phoneInput.errors?.['required']"
             style="color: red"
             class="alert"
             >This field is required *</span
@@ -180,26 +180,28 @@
             >This field is required *</span
           >
         </div>
-        
+
         <div class="form-group">
-          <label for="phone">Phone :</label>
+          <label for="password">Password :</label>
           <input
-            #phoneInput="ngModel"
+            #passwordInput="ngModel"
             ngModel
             required
-            type="text"
+            type="password"
             class="form-control"
-            id="phone"
-            placeholder="Phone"
-            name="phone"
+            id="password"
+            placeholder="Password"
+            name="password"
           />
           <span
-            *ngIf="phoneInput.touched && phoneInput.invalid && phoneInput.errors?.['required']"
+            *ngIf="passwordInput.touched && passwordInput.invalid && passwordInput.errors?.['required']"
             style="color: red"
             class="alert"
             >This field is required *</span
           >
         </div>
+        
+       
         
         
 

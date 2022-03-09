@@ -86,7 +86,7 @@ coursename!:string;
     console.log(this.updatedContent);
     this.CourseContentService.editCourseContent(id,this.updatedContent).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         // this.ngOnInit();
         this.router.navigate([`/dashboard/contents/${this.courseid}/${this.coursename}`]);
       },

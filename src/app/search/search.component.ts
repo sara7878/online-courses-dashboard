@@ -57,12 +57,3 @@ this.getAllCourses();
 
 
 
-// getproductsSearch(name:any)
-// {
-// const keyword = name.target.value
-// this.dataService.getSearchCourseName(keyword).subscribe(response=>
-// {
-//   this.data=response;
-//   console.log(this.data)
-// })
-// }
